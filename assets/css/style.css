@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'SF-Pro';
+    src: url('fonts/SF-Pro-Italic.ttf') format('ttf'), /* Sesuaikan nama file font dan formatnya */
+         url('fonts/SF-Pro.ttf') format('ttf');
+    /* Tambahkan format-file dan sumber font yang sesuai sesuai dengan jenis font yang Anda gunakan */
+    /* Misalnya, tambahkan url dan format untuk .ttf atau .otf jika diperlukan */
+    font-weight: normal;
+    font-style: normal;
+  }
+* {
+    font-family: 'SF-Pro' , sans-serif;
+}
+  
