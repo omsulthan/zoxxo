@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pricing | Zoxxo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
+    <!-- External CSS -->
+    <link rel="stylesheet" href="/assets/css/style.css" />
+  </head>
+  <style>
+    .title-section {
+      font-size: 40px;
+    }
+    .tornado-title-section {
+      font-size: 40px;
+    }
+    .option-section {
+      font-size: 20px;
+    }
+    .form-check-input:checked {
+      background-color: #f21a5d !important;
+      border-color: #f21a5d !important;
+    }
+    .form-check label {
+      font-size: 14px;
+    }
+    .form-check .discount {
+      font-size: 11px;
+    }
+    .title-card-content {
+      font-size: 24px;
+    }
+    .subtitle-card-content {
+      font-size: 13px;
+    }
+    .checklist li {
+      list-style-type: none;
+    }
+
+    .checklist li input[type="checkbox"] {
+      margin-right: 5px;
+    }
+    .card-body .checklist li {
+      font-size: 12px;
+    }
+    .price {
+      font-size: 24px;
+    }
+    .jargon-section {
+      font-size: 12px;
+    }
+    #button-section a {
+      font-size: 12px;
+    }
+    #register-section img {
+      width: 300px;
+      height: 300px;
+    }
+
+    #first-content {
+      background-color: #f5f5f7;
+      margin-top: 0px;
+    }
+
+    @media (min-width: 768px) {
+      .navbar {
+        backdrop-filter: blur(10px);
+        background-color: transparent !important;
+      }
+      #first-content {
+      background-color: #f5f5f7;
+      margin-top: -44px;
+    }
+    }
+    @media (min-width: 992px) {
+      .title-section {
+        font-size: 44px;
+      }
+      .tornado-title-section {
+        width: 80%;
+        font-size: 40px;
+        line-height: 1.2cm;
+      }
+      #register-section img {
+        width: 500px;
+        height: 550px;
+      }
+      .subtitle-section {
+        width: 80%;
+        text-align: justify;
+        font-size: 24px;
+        line-height: 0.7cm;
+      }
+      #register-button-section a {
+        font-size: 20px;
+        width: 100%;
+      }
+    }
+    @media (min-width: 1280px) {
+      .form-check label {
+        font-size: 16px;
+      }
+      .choose-plan-title {
+        font-size: 24px;
+      }
+      .form-check .discount {
+        font-size: 12px;
+      }
+      .title-card-content {
+        font-size: 32px;
+      }
+      .subtitle-card-content {
+        font-size: 18px;
+      }
+      .card-body .checklist li {
+        font-size: 16px;
+      }
+      .price {
+        font-size: 32px;
+      }
+      .jargon-section {
+        font-size: 16px;
+      }
+      #button-section a {
+        font-size: 16px;
+      }
+      #register-button-section a {
+        font-size: 24px;
+        width: 100%;
+      }
+      #register-section img {
+        width: 700px;
+        height: 750px;
+      }
+      .subtitle-section {
+        width: 100%;
+        text-align: justify;
+        font-size: 24px;
+        line-height: 1cm;
+      }
+      .tornado-title-section {
+        width: 100%;
+        font-size: 60px;
+        line-height: 1.6cm;
+      }
+    }
+  </style>
+  <body>
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-expand-md bg-transparent sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand d-md-none" href="index.html"><img src="assets/img/zoxxo_BLK.png" alt="Logo Zoxxo" srcset="" width="45" height="35" /></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav justify-content-end justify-content-md-center flex-grow-1 pe-3 align-content-lg-center fw-semibold">
+            <li class="nav-item">
+              <a class="nav-link" href="pricing.html">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Tornado</a>
+            </li>
+            <li class="nav-item d-none d-md-block">
+              <a class="nav-link" href="/"><img src="assets/img/zoxxo_BLK.png" alt="Logo Zoxxo" srcset="" width="45" height="35" /></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Sign In</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Sign Up</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Content -->
+    <div id="first-content" style="" class="py-5">
+      <div style="color: #f21a5d" class="fw-bold title-section col-6 mx-auto text-center text-md-start col-md-11 col-lg-10 pt-5">
+        <div class="col-lg-4 col-md-5">Your plan is your mission!</div>
+      </div>
+      <div class="mx-auto col-6 col-md-11 text-md-start fw-semibold text-center option-section mt-4 col-lg-10 choose-plan-title">Choose your plan</div>
+      <div class="mx-auto col-9 d-flex justify-content-between flex-column col-md-11 justify-content-md-around flex-lg-row col-lg-10 justify-content-lg-between col-xl-10">
+        <div class="col-10 mx-auto d-flex justify-content-between flex-md-column col-md-12 col-lg-4 justify-content-lg-start mx-lg-0 mt-lg-3 col-xl-5">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
+            <label class="form-check-label link-offset-2 link-underline link-underline-opacity-0 fw-semibold" for="flexRadioDefault1"> Monthly billing </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked />
+            <label class="form-check-label link-offset-2 link-underline link-underline-opacity-0 fw-semibold" for="flexRadioDefault2"> Yearly billing</label>
+            <div class="text-secondary discount">Save Over 20%</div>
+          </div>
+        </div>
+        <div class="col-11 mx-auto my-3 d-block d-flex flex-column flex-md-row justify-content-md-between justify-content-lg-start gap-3 justify-content-xl-between col-xl-7">
+          <div class="card bg-transparent shadow-sm mb-4">
+            <div class="card-body">
+              <div class="col-9 mx-auto text-center title-card-content fw-semibold">Forever Free</div>
+              <div class="col-7 mx-auto text-center subtitle-card-content text-secondary">Upload files and share links as much as you like</div>
+              <div class="col-9 mx-auto my-2">
+                <ul class="checklist">
+                  <li class="fw-semibold"><i class="fas fa-check text-success me-1"></i> Transfer 2 GB</li>
+                  <li class="fw-semibold"><i class="fas fa-check text-success me-1"></i> 4 GB Storage</li>
+                </ul>
+              </div>
+              <div class="col-11 mx-auto"><hr /></div>
+              <div class="col-9 mx-auto text-center fw-bold price mt-4">0,00 EUR</div>
+              <div class="col-9 mx-auto text-center fw-semibold jargon-section">no money, no problem</div>
+              <div id="button-section" class="text-center my-3">
+                <a style="background-color: #f22967" class="btn btn-danger px-4" href="#">Create Account</a>
+              </div>
+            </div>
+          </div>
+          <div style="background-color: #f5dde7; border-color: #f21a5d" class="card shadow-sm mb-4">
+            <div class="card-body">
+              <div style="color: #f21a5d" class="col-9 mx-auto text-center title-card-content fw-semibold">Tornado</div>
+              <div class="col-7 mx-auto text-center subtitle-card-content text-secondary">Upload files and share links and much more</div>
+              <div class="col-9 mx-auto my-2">
+                <ul class="checklist">
+                  <li class="fw-semibold"><i class="fas fa-check text-success me-1"></i> Unlimited file size</li>
+                  <li class="fw-semibold"><i class="fas fa-check text-success me-1"></i> 1 TB Storage</li>
+                </ul>
+              </div>
+              <div class="col-11 mx-auto"><hr /></div>
+              <div style="color: #f21a5d" class="col-9 mx-auto text-center fw-bold price mt-4">21,00 EUR</div>
+              <div style="color: #f21a5d" class="col-9 mx-auto text-center fw-semibold jargon-section">per person, billed yearly</div>
+              <div id="button-section" class="text-center my-3">
+                <a style="background-color: #f22967" class="btn btn-danger px-5" href="#">Sign up</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Plan Section -->
+    <div class="col-11 mx-auto py-4 col-xl-10">
+      <div class="fw-semibold text-center option-section py-3 text-lg-start">Send big files</div>
+      <div class="table-responsive d-flex">
+        <table class="table text-center">
+          <tbody>
+            <tr>
+              <td class="text-start col-6">Transfer size limit</td>
+              <td>2 GB</td>
+            </tr>
+            <tr>
+              <td class="text-start">Storage</td>
+              <td>4 GB</td>
+            </tr>
+            <tr>
+              <td class="text-start">Workspaces</td>
+              <td>1 Workspace</td>
+            </tr>
+            <tr>
+              <td class="text-start">Download with no account</td>
+              <td><i class="fas fa-check text-danger"></i></td>
+            </tr>
+            <tr>
+              <td class="text-start">Track downloads</td>
+              <td><i class="fas fa-check text-danger"></i></td>
+            </tr>
+          </tbody>
+        </table>
+        <table style="border: 1px solid #f21a5d; border-radius: 10px" class="text-center col-4">
+          <tbody>
+            <tr>
+              <td style="background-color: #f5dde7">Unlimited</td>
+            </tr>
+            <tr>
+              <td style="background-color: #f5dde7">1 TB</td>
+            </tr>
+            <tr>
+              <td style="background-color: #f5dde7">5 Workspaces</td>
+            </tr>
+            <tr>
+              <td style="background-color: #f5dde7"><i class="fas fa-check text-danger"></i></td>
+            </tr>
+            <tr>
+              <td style="background-color: #f5dde7"><i class="fas fa-check text-danger"></i></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- #2 -->
+      <div class="fw-semibold text-center option-section py-3 text-lg-start">Show off your brand</div>
+      <div class="table-responsive d-flex">
+        <table class="table text-center">
+          <tbody>
+            <tr>
+              <td class="text-start col-6">Custom Download page</td>
+              <td><i class="fas fa-x text-danger"></i></td>
+            </tr>
+            <tr>
+              <td class="text-start">Wallpaper backgrounds</td>
+              <td>Advertising (and art)</td>
+            </tr>
+            <tr>
+              <td class="text-start">Custom Workspaces image</td>
+              <td><i class="fas fa-x text-danger"></i></td>
+            </tr>
+          </tbody>
+        </table>
+        <table style="border: 1px solid #f21a5d" class="col-4 text-center">
+          <tbody>
+            <tr>
+              <td style="background-color: #f5dde7"><i class="fas fa-check text-danger"></i></td>
+            </tr>
+            <tr>
+              <td style="background-color: #f5dde7">Upload your own</td>
+            </tr>
+            <tr>
+              <td style="background-color: #f5dde7"><i class="fas fa-check text-danger"></i></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- End #2 -->
+      <!-- #3 -->
+      <div class="fw-semibold text-center option-section py-3 text-lg-start">Secure your transfers</div>
+      <div class="table-responsive d-flex">
+        <table class="table text-center">
+          <tbody>
+            <tr>
+              <td class="text-start col-6">Custom Expiration dates</td>
+              <td><i class="fas fa-x text-danger"></i></td>
+            </tr>
+            <tr>
+              <td class="text-start">Password-protected transfers</td>
+              <td><i class="fas fa-x text-danger"></i></td>
+            </tr>
+            <tr>
+              <td class="text-start">Data encryption</td>
+              <td><i class="fas fa-check text-danger"></i></td>
+            </tr>
+          </tbody>
+        </table>
+        <table style="border: 1px solid #f21a5d" class="col-4 text-center">
+          <tbody>
+            <tr>
+              <td style="background-color: #f5dde7"><i class="fas fa-check text-danger"></i></td>
+            </tr>
+            <tr>
+              <td style="background-color: #f5dde7"><i class="fas fa-check text-danger"></i></td>
+            </tr>
+            <tr>
+              <td style="background-color: #f5dde7"><i class="fas fa-check text-danger"></i></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- End #3 -->
+      <!-- #4 -->
+      <div class="fw-semibold text-center option-section py-3 text-lg-start">Experience more zoxxo</div>
+      <div class="table-responsive d-flex">
+        <table class="table text-center">
+          <tbody>
+            <tr>
+              <td class="text-start col-6">zoxxo MANAGE (Filemanager)</td>
+              <td><i class="fas fa-x text-danger"></i></td>
+            </tr>
+            <tr>
+              <td class="text-start">zoxxo ADS (enhance your Brand)</td>
+              <td><i class="fas fa-check text-danger"></i></td>
+            </tr>
+          </tbody>
+        </table>
+        <table style="border: 1px solid #f21a5d" class="col-4 text-center">
+          <tbody>
+            <tr>
+              <td style="background-color: #f5dde7"><i class="fas fa-check text-danger"></i></td>
+            </tr>
+            <tr>
+              <td style="background-color: #f5dde7"><i class="fas fa-check text-danger"></i></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- End #4 -->
+    </div>
+
+    <!-- Tornado Section -->
+    <div id="register-section" style="background-color: #f5dde7; color: #f21a5d" class="w-100 d-flex flex-column flex-lg-row-reverse align-items-center px-4 justify-content-between position-relative text-center py-5">
+      <div class="col-xl-6">
+        <img class="zoxxo-post" src="assets/img/Preview10008.png" alt="Zoxxo Register Image" srcset="" />
+      </div>
+      <div class="d-sm-flex flex-sm-column flex-lg-column justify-content-lg-center justify-content-sm-start align-items-center gap-4 col-11 col-xl-4 col-lg-6 mx-auto align-items-xl-start">
+        <div class="fw-bold text-sm-center text-lg-start tornado-title-section">TORNADO Go faster and faster!</div>
+        <div class="subtitle-section">
+          <div class="fw-semibold">Why should I choose TORNADO?</div>
+          With our Plan TORNADO you will get access to all of the Features & Tools immediately. This will help you to have full experience for a low price. You can upgrade or downgrade Storage with just few clicks.
+        </div>
+        <div id="register-button-section" class="text-lg-start text-center mt-4">
+          <a style="background-color: #f22967" class="btn btn-danger" href="#">Register now for free</a>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <!-- Footer -->
+  <div style="color: #f2f3f4; background: #161616" class="card text-center rounded-0">
+    <div class="card-body pt-4 d-lg-flex justify-content-lg-between px-lg-5 col-lg-10 mx-lg-auto">
+      <div class="d-flex flex-column align-items-center gap-3 gap-lg-5">
+        <img src="assets/img/zoxxo_CLR.png" alt="" srcset="" width="50" height="40" />
+        <div class="dropdown">
+          <button style="background-color: #252525; border-color: #252525" class="btn btn-secondary dropdown-toggle px-4" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" aria-expanded="false">English</button>
+        </div>
+      </div>
+      <div class="d-flex flex-column align-items-start mt-2">
+        <span class="h4 fw-semibold">Product</span>
+        <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Overview</a>
+        <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Features</a>
+        <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Workspaces</a>
+        <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Pricing</a>
+      </div>
+      <div class="d-flex flex-column align-items-start mt-2">
+        <span class="h4 fw-semibold">Who we are</span>
+        <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Company</a>
+        <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Newsroom</a>
+        <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Advertising</a>
+        <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Brand</a>
+      </div>
+      <div class="d-flex flex-column align-items-start mt-2">
+        <span class="h4 fw-semibold">Explore</span>
+        <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Help Center</a>
+        <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Ideas</a>
+        <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Terms</a>
+        <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Privacy</a>
+      </div>
+    </div>
+    <hr class="w-75 mx-auto" />
+    <div class="d-lg-flex justify-content-lg-between w-75 mx-auto">
+      <div class="d-flex gap-3 align-items-center justify-content-center h4">
+        <a href="#" class="text-white"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="text-white"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#" class="text-white"><i class="fa-brands fa-twitter"></i></a>
+      </div>
+      <div class="card-footer text-secondary">©2022 zoxxo</div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body pb-4">
+          <div class="d-flex flex-column align-items-center gap-3">
+            <img src="assets/img/zoxxo_CLR.png" alt="" width="50" />
+            <div class="fw-semibold">Choose your language</div>
+            <div class="row col-9 gap-3">
+              <div class="col">
+                <a class="text-dark link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">English</a>
+              </div>
+              <div class="col">
+                <a class="text-dark link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">France</a>
+              </div>
+              <div class="col">
+                <a class="text-dark link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Deutch</a>
+              </div>
+              <div class="col">
+                <a class="text-dark link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Arabic</a>
+              </div>
+              <div class="col">
+                <a class="text-dark link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Espanol</a>
+              </div>
+              <div class="col">
+                <a class="text-dark link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Italiano</a>
+              </div>
+              <div class="col">
+                <a class="text-dark link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Netherlands</a>
+              </div>
+              <div class="col">
+                <a class="text-dark link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Portugues</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Script -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/bb1fce9dd9.js" crossorigin="anonymous"></script>
+  <!-- Script untuk library jQuery (dibutuhkan untuk contoh JavaScript di bawah) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</html>
