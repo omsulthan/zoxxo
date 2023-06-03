@@ -8,6 +8,9 @@
     <!-- External CSS -->
     <link rel="stylesheet" href="/assets/css/style.css" />
     <style>
+      body {
+        background-color: #f5f5f7;
+      }
       .zoxxo-bg-transparent {
         position: sticky;
         top: 0;
@@ -18,34 +21,35 @@
       #register-section img,
       #ideas-section img,
       #ads-section img {
-        width: 300px;
-        height: 300px;
+        width: 240px;
+        height: 240px;
       }
       #first-layer {
-        width: 200px;
-        height: 200px;
+        width: 300px;
+        height: 300px;
         background-color: #f5dde7;
       }
       #first-layer:hover {
         background-color: #f5b5cc;
       }
       #second-layer {
-        width: 160px;
-        height: 160px;
+        width: 260px;
+        height: 260px;
         background-color: #f5c8d9;
       }
       #second-layer:hover {
         background-color: #f5b5cc;
       }
       #third-layer {
-        width: 120px;
-        height: 120px;
-        font-size: 9px;
+        width: 220px;
+        height: 220px;
+        font-size: 14px;
+        text-align: center;
         background-color: #f5b5cc;
       }
       #third-layer img {
-        width: 50px;
-        height: 45px;
+        width: 100px;
+        height: 100px;
       }
       #feature-section {
         height: 50vh;
@@ -72,13 +76,25 @@
       }
 
       .navbar {
-        background-color: white !important;
+        background-color: transparent !important;
+      }
+
+      .show,
+      .collapsing {
+        height: 0 !important;
+      }
+      ul li {
+        backdrop-filter: blur(3px);
       }
 
       @media (min-width: 768px) {
         .navbar {
           backdrop-filter: blur(10px);
           background-color: transparent !important;
+        }
+        .show,
+        .collapsing {
+          height: auto !important;
         }
       }
       /* Lg responsive */
@@ -246,19 +262,19 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav justify-content-end justify-content-md-center flex-grow-1 pe-3 align-content-lg-center fw-semibold">
             <li class="nav-item">
-              <a class="nav-link" href="pricing.html">Pricing</a>
+              <a class="nav-link text-center" href="pricing.html">Pricing</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Tornado</a>
+              <a class="nav-link text-center" href="#">Tornado</a>
             </li>
             <li class="nav-item d-none d-md-block">
-              <a class="nav-link" href="#"><img src="assets/img/zoxxo_BLK.png" alt="Logo Zoxxo" srcset="" width="45" height="35" /></a>
+              <a class="nav-link text-center" href="#"><img src="assets/img/zoxxo_BLK.png" alt="Logo Zoxxo" srcset="" width="45" height="35" /></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Sign In</a>
+              <a class="nav-link text-center" href="#">Sign In</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Sign Up</a>
+              <a class="nav-link text-center" href="#">Sign Up</a>
             </li>
           </ul>
         </div>
@@ -279,7 +295,7 @@
               <div id="second-layer" class="mx-auto rounded-circle d-flex justify-content-center align-items-center second-ring">
                 <div id="third-layer" class="mx-auto rounded-circle d-flex justify-content-center align-items-center flex-column">
                   <img src="assets/img/icon/upload.svg" alt="Upload Icon" srcset="" />
-                  <div style="color: #f21a5d" class="w-75 mt-2 text-lg-center">Drag your files here or click here to upload</div>
+                  <div id="#text-instruction" style="color: #f21a5d" class="w-75 mt-2 text-lg-center">Drag your files here or click here to upload</div>
                 </div>
               </div>
             </div>
@@ -292,13 +308,13 @@
         </div>
 
         <!-- Share Section -->
-        <div id="share-section" style="background-color: #f5f5f7; height: 100vh" class="w-100 text-center py-3 flex-column justify-content-between justify-content-xl-around pt-5 d-none">
+        <div id="share-section" style="background-color: #f5f5f7; height: 100vh" class="w-100 text-center py-3 flex-column justify-content-between justify-content-xl-around pt-5 d-none mt-5 py-4">
           <div id="upload" style="background-color: #f5dde7" class="col-7 mx-auto rounded py-5 d-flex flex-column justify-content-center align-items-center gap-2">
             <img src="assets/img/icon/upload.svg" alt="Upload Icon" srcset="" />
             <div style="color: #f21a5d" class="w-75 mt-2">Drag your files here or click here to upload</div>
           </div>
           <div class="col-8 mx-auto text-start">
-            <div class="h6 text-secondary fw-semibold">Uploaded Files :</div>
+            <div class="h6 text-secondary fw-semibold my-3">Uploaded Files :</div>
             <table class="table table-responsive-sm">
               <thead>
                 <tr>
@@ -320,7 +336,7 @@
                 </tr>
               </tbody>
             </table>
-            <div class="col-2 mx-auto"><a class="link-offset-2 link-underline link-underline-opacity-0 h6" href="#">See More</a></div>
+            <div class="col-4 mx-auto col-md-2 col-lg-2 col-xl-4"><a class="link-offset-2 link-underline link-underline-opacity-0 h6" href="#">See More</a></div>
           </div>
 
           <div id="enjoy-section" class="zorro-enjoy d-none">
@@ -345,7 +361,7 @@
               <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
               <label for="floatingTextarea2">Message</label>
             </div>
-            <div class="col-3 mx-auto"><button onclick="handleShare()" style="background-color: #f22967" class="btn btn-danger">Share now !</button></div>
+            <div class="col-5 mx-auto col-md-3 col-lg-2 col-xl-4"><button onclick="handleShare()" style="background-color: #f22967" class="btn btn-danger">Share now !</button></div>
           </div>
           <div id="route-section" class="col-lg-8 mx-lg-auto d-flex justify-content-center gap-5">
             <div style="color: #f21a5d"><i class="fa-solid fa-x"></i> Upload</div>
@@ -357,28 +373,28 @@
       </div>
 
       <!-- Register Section -->
-      <div id="register-section" style="background-color: #f5dde7; height: 100vh; color: #f21a5d" class="w-100 d-sm-flex flex-sm-column flex-lg-row-reverse align-items-center px-4 justify-content-evenly position-relative text-center">
+      <div id="register-section" style="background-color: #f5dde7; height: 100vh; color: #f21a5d" class="w-100 d-flex flex-column flex-lg-row-reverse align-items-center px-4 justify-content-evenly position-relative text-center">
         <div>
           <img class="zoxxo-post" src="assets/img/Preview10005.png" alt="Zoxxo Register Image" srcset="" />
         </div>
-        <div class="d-sm-flex flex-sm-column flex-lg-column justify-content-lg-center justify-content-sm-start align-items-center gap-4 w-100">
-          <div class="fw-bold text-sm-center text-lg-start title-section">We don't transfer, we deliver!</div>
+        <div class="d-flex flex-column flex-lg-column justify-content-lg-center justify-content-sm-start align-items-center gap-4 w-100">
+          <div class="fw-bold text-center text-lg-start title-section">We don't transfer, we deliver!</div>
           <div class="subtitle-section">
             zoxxo do not focus on ,,just doing the work", we deliver instead. We deliver your data to your destination fast, secure and easy. For managing your data, you can use our next generation file manager with workspaces
           </div>
-          <div id="button-section" class="text-lg-start text-center">
+          <div id="button-section" class="text-lg-start text-center pb-5">
             <a style="background-color: #f22967" class="btn btn-danger px-5" href="#">Register now for free</a>
           </div>
         </div>
       </div>
 
       <!-- Ideas Section -->
-      <div id="ideas-section" style="background-color: #d6d5e5; height: 100vh; color: #999cbf" class="w-100 d-sm-flex flex-sm-column flex-lg-row-reverse align-items-center px-4 justify-content-evenly position-relative">
+      <div id="ideas-section" style="background-color: #d6d5e5; height: 100vh; color: #999cbf" class="w-100 d-flex flex-column flex-lg-row align-items-center px-4 justify-content-evenly position-relative py-4">
         <div>
           <img class="zoxxo-post" src="assets/img/Preview10004.png" alt="Zoxxo Ideas Image" srcset="" />
         </div>
-        <div class="d-sm-flex flex-sm-column flex-lg-column justify-content-lg-center justify-content-sm-start align-items-center gap-4 w-100">
-          <div class="fw-bold title-section text-sm-center text-lg-end">Big ideas, big data. Not a big deal for us!</div>
+        <div class="d-flex flex-column flex-lg-column justify-content-lg-center justify-content-sm-start align-items-center gap-4 w-100">
+          <div class="fw-bold title-section text-center text-lg-end">Big ideas, big data. Not a big deal for us!</div>
           <div class="subtitle-section text-dark text-lg-end">If you upload huge files ad want to have more space, then you should use our TORNADO plan. You can upgrade and downgrade your storage every month.</div>
           <sup class="subtitle-section text-dark text-lg-end fw-semibold">Only pay what you see</sup>
           <div id="button-section" class="text-lg-end text-center">
@@ -388,12 +404,12 @@
       </div>
 
       <!-- Ads Section -->
-      <div id="ads-section" style="background-color: #deeaf6; height: 100vh; color: #b0cde8" class="w-100 d-sm-flex flex-sm-column flex-lg-row-reverse align-items-center px-4 justify-content-evenly position-relative">
+      <div id="ads-section" style="background-color: #deeaf6; height: 100vh; color: #b0cde8" class="w-100 d-flex flex-column flex-lg-row-reverse align-items-center px-4 justify-content-evenly position-relative">
         <div>
           <img class="zoxxo-post" src="assets/img/Preview10008.png" alt="Zoxxo Ideas Image" srcset="" />
         </div>
-        <div class="d-sm-flex flex-sm-column flex-lg-column justify-content-lg-center justify-content-sm-start align-items-center gap-4 w-100">
-          <div class="fw-bold title-section text-sm-center text-lg-start">Brand on top, to make impression</div>
+        <div class="d-flex flex-column flex-lg-column justify-content-lg-center justify-content-sm-start align-items-center gap-4 w-100">
+          <div class="fw-bold title-section text-center text-lg-start">Brand on top, to make impression</div>
           <div class="subtitle-section text-dark">Make noise about your brand. Advertise next to the data from all over the world. The more you impres your audience the higher will they regocnize you!</div>
           <div id="button-section" class="text-lg-start text-center">
             <a style="background-color: #b0cde8" class="btn btn-primary border-0" href="#">Advertise with us!</a>

@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="/assets/css/style.css" />
   </head>
   <style>
+    body {
+      background-color: #f5f5f7;
+    }
     .title-section {
       font-size: 40px;
     }
@@ -16,7 +19,7 @@
       font-size: 40px;
     }
     .option-section {
-      font-size: 20px;
+      font-size: 16px;
     }
     .form-check-input:checked {
       background-color: #f21a5d !important;
@@ -57,10 +60,28 @@
       width: 300px;
       height: 300px;
     }
+    #pink-section .table > :not(caption) > * > * {
+      border-bottom-width: 0;
+    }
+    .table-feature {
+      font-size: 12px;
+    }
 
     #first-content {
       background-color: #f5f5f7;
       margin-top: 0px;
+    }
+
+    .show,
+    .collapsing {
+      height: 0 !important;
+    }
+
+    .text-small {
+      font-size: 12px;
+    }
+    ul li {
+      backdrop-filter: blur(3px);
     }
 
     @media (min-width: 768px) {
@@ -69,9 +90,15 @@
         background-color: transparent !important;
       }
       #first-content {
-      background-color: #f5f5f7;
-      margin-top: -44px;
-    }
+        background-color: #f5f5f7;
+        margin-top: -44px;
+      }
+      .table-feature {
+        font-size: 14px;
+      }
+      .text-small {
+        font-size: 13px;
+      }
     }
     @media (min-width: 992px) {
       .title-section {
@@ -95,6 +122,12 @@
       #register-button-section a {
         font-size: 20px;
         width: 100%;
+      }
+      .table-feature {
+        font-size: 16px;
+      }
+      .text-small {
+        font-size: 12px;
       }
     }
     @media (min-width: 1280px) {
@@ -144,32 +177,38 @@
         font-size: 60px;
         line-height: 1.6cm;
       }
+      .table-feature {
+        font-size: 18px;
+      }
+      .text-small {
+        font-size: 10px;
+      }
     }
   </style>
   <body>
     <!-- Header Navbar -->
     <nav class="navbar navbar-expand-md bg-transparent sticky-top">
       <div class="container-fluid">
-        <a class="navbar-brand d-md-none" href="index.html"><img src="assets/img/zoxxo_BLK.png" alt="Logo Zoxxo" srcset="" width="45" height="35" /></a>
+        <a class="navbar-brand d-md-none" href="#"><img src="assets/img/zoxxo_BLK.png" alt="Logo Zoxxo" srcset="" width="45" height="35" /></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav justify-content-end justify-content-md-center flex-grow-1 pe-3 align-content-lg-center fw-semibold">
             <li class="nav-item">
-              <a class="nav-link" href="pricing.html">Pricing</a>
+              <a class="nav-link text-center" href="pricing.html">Pricing</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Tornado</a>
+              <a class="nav-link text-center" href="#">Tornado</a>
             </li>
             <li class="nav-item d-none d-md-block">
-              <a class="nav-link" href="/"><img src="assets/img/zoxxo_BLK.png" alt="Logo Zoxxo" srcset="" width="45" height="35" /></a>
+              <a class="nav-link text-center" href="#"><img src="assets/img/zoxxo_BLK.png" alt="Logo Zoxxo" srcset="" width="45" height="35" /></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Sign In</a>
+              <a class="nav-link text-center" href="#">Sign In</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Sign Up</a>
+              <a class="nav-link text-center" href="#">Sign Up</a>
             </li>
           </ul>
         </div>
@@ -177,7 +216,7 @@
     </nav>
 
     <!-- Content -->
-    <div id="first-content" style="" class="py-5">
+    <div id="first-content" class="py-5">
       <div style="color: #f21a5d" class="fw-bold title-section col-6 mx-auto text-center text-md-start col-md-11 col-lg-10 pt-5">
         <div class="col-lg-4 col-md-5">Your plan is your mission!</div>
       </div>
@@ -194,7 +233,7 @@
             <div class="text-secondary discount">Save Over 20%</div>
           </div>
         </div>
-        <div class="col-11 mx-auto my-3 d-block d-flex flex-column flex-md-row justify-content-md-between justify-content-lg-start gap-3 justify-content-xl-between col-xl-7">
+        <div class="col-11 mx-auto my-3 d-block d-flex flex-column flex-md-row justify-content-md-end justify-content-lg-start gap-5 col-md-12 justify-content-xl-between col-xl-7">
           <div class="card bg-transparent shadow-sm mb-4">
             <div class="card-body">
               <div class="col-9 mx-auto text-center title-card-content fw-semibold">Forever Free</div>
@@ -213,7 +252,7 @@
               </div>
             </div>
           </div>
-          <div style="background-color: #f5dde7; border-color: #f21a5d" class="card shadow-sm mb-4">
+          <div style="background-color: #f5dde7; border: 2px solid#f21a5d" class="card shadow-sm mb-4">
             <div class="card-body">
               <div style="color: #f21a5d" class="col-9 mx-auto text-center title-card-content fw-semibold">Tornado</div>
               <div class="col-7 mx-auto text-center subtitle-card-content text-secondary">Upload files and share links and much more</div>
@@ -235,148 +274,161 @@
       </div>
     </div>
     <!-- End Plan Section -->
-    <div class="col-11 mx-auto py-4 col-xl-10">
-      <div class="fw-semibold text-center option-section py-3 text-lg-start">Send big files</div>
-      <div class="table-responsive d-flex">
-        <table class="table text-center">
-          <tbody>
-            <tr>
-              <td class="text-start col-6">Transfer size limit</td>
-              <td>2 GB</td>
-            </tr>
-            <tr>
-              <td class="text-start">Storage</td>
-              <td>4 GB</td>
-            </tr>
-            <tr>
-              <td class="text-start">Workspaces</td>
-              <td>1 Workspace</td>
-            </tr>
-            <tr>
-              <td class="text-start">Download with no account</td>
-              <td><i class="fas fa-check text-danger"></i></td>
-            </tr>
-            <tr>
-              <td class="text-start">Track downloads</td>
-              <td><i class="fas fa-check text-danger"></i></td>
-            </tr>
-          </tbody>
-        </table>
-        <table style="border: 1px solid #f21a5d; border-radius: 10px" class="text-center col-4">
-          <tbody>
-            <tr>
-              <td style="background-color: #f5dde7">Unlimited</td>
-            </tr>
-            <tr>
-              <td style="background-color: #f5dde7">1 TB</td>
-            </tr>
-            <tr>
-              <td style="background-color: #f5dde7">5 Workspaces</td>
-            </tr>
-            <tr>
-              <td style="background-color: #f5dde7"><i class="fas fa-check text-danger"></i></td>
-            </tr>
-            <tr>
-              <td style="background-color: #f5dde7"><i class="fas fa-check text-danger"></i></td>
-            </tr>
-          </tbody>
-        </table>
+    <div class="col-11 mx-auto py-4 col-xl-10 d-flex table-feature">
+      <div class="col-8 col-lg-9">
+        <div class="fw-semibold option-section py-3 text-start">Send big files</div>
+        <div class="table-responsive d-flex">
+          <table class="table text-center">
+            <tbody>
+              <tr>
+                <td class="text-start col-6 text-truncate">Transfer size limit</td>
+                <td>2 GB</td>
+              </tr>
+              <tr>
+                <td class="text-start">Storage</td>
+                <td>4 GB</td>
+              </tr>
+              <tr>
+                <td class="text-start text-truncate">Workspaces</td>
+                <td>1 Workspace</td>
+              </tr>
+              <tr>
+                <td class="text-start text-truncate">Download with no account</td>
+                <td><i class="fas fa-check text-danger"></i></td>
+              </tr>
+              <tr>
+                <td class="text-start">Track downloads</td>
+                <td><i class="fas fa-check text-danger"></i></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- #2 -->
+        <div class="fw-semibold option-section py-3 text-start">Show off your brand</div>
+        <div class="table-responsive d-flex">
+          <table class="table text-center">
+            <tbody>
+              <tr>
+                <td class="text-start col-6 text-truncate">Custom Download page</td>
+                <td><i class="fas fa-x text-danger"></i></td>
+              </tr>
+              <tr>
+                <td class="text-start text-truncate">Wallpaper backgrounds</td>
+                <td class="text-truncate">Advertising (and art)</td>
+              </tr>
+              <tr>
+                <td class="text-start text-truncate">Custom Workspaces image</td>
+                <td><i class="fas fa-x text-danger"></i></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- End #2 -->
+        <!-- #3 -->
+        <div class="fw-semibold option-section py-3 text-start">Secure your transfers</div>
+        <div class="table-responsive d-flex">
+          <table class="table text-center">
+            <tbody>
+              <tr>
+                <td class="text-start col-6 text-truncate">Custom Expiration dates</td>
+                <td><i class="fas fa-x text-danger"></i></td>
+              </tr>
+              <tr>
+                <td class="text-start text-truncate">Password-protected transfers</td>
+                <td><i class="fas fa-x text-danger"></i></td>
+              </tr>
+              <tr>
+                <td class="text-start">Data encryption</td>
+                <td><i class="fas fa-check text-danger"></i></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- End #3 -->
+        <!-- #4 -->
+        <div class="fw-semibold option-section py-3 text-start">Experience more zoxxo</div>
+        <div class="table-responsive d-flex">
+          <table class="table text-center">
+            <tbody>
+              <tr>
+                <td class="text-start col-6 text-truncate">zoxxo MANAGE (Filemanager)</td>
+                <td><i class="fas fa-x text-danger"></i></td>
+              </tr>
+              <tr>
+                <td class="text-start text-truncate">zoxxo ADS (enhance your Brand)</td>
+                <td><i class="fas fa-check text-danger"></i></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- End #4 -->
       </div>
-      <!-- #2 -->
-      <div class="fw-semibold text-center option-section py-3 text-lg-start">Show off your brand</div>
-      <div class="table-responsive d-flex">
-        <table class="table text-center">
-          <tbody>
-            <tr>
-              <td class="text-start col-6">Custom Download page</td>
-              <td><i class="fas fa-x text-danger"></i></td>
-            </tr>
-            <tr>
-              <td class="text-start">Wallpaper backgrounds</td>
-              <td>Advertising (and art)</td>
-            </tr>
-            <tr>
-              <td class="text-start">Custom Workspaces image</td>
-              <td><i class="fas fa-x text-danger"></i></td>
-            </tr>
-          </tbody>
-        </table>
-        <table style="border: 1px solid #f21a5d" class="col-4 text-center">
-          <tbody>
-            <tr>
-              <td style="background-color: #f5dde7"><i class="fas fa-check text-danger"></i></td>
-            </tr>
-            <tr>
-              <td style="background-color: #f5dde7">Upload your own</td>
-            </tr>
-            <tr>
-              <td style="background-color: #f5dde7"><i class="fas fa-check text-danger"></i></td>
-            </tr>
-          </tbody>
-        </table>
+      <div id="pink-section" class="col-4 col-lg-3 mt-1">
+        <div class="fw-semibold text-center option-section py-3 text-lg-start text-white">_</div>
+        <div class="table-responsive d-flex">
+          <table style="border: 2px solid #f21a5d" class="table text-center">
+            <tbody>
+              <tr>
+                <td style="background-color: #f5dde7">Unlimited</td>
+              </tr>
+              <tr>
+                <td style="background-color: #f5dde7">1 TB</td>
+              </tr>
+              <tr>
+                <td style="background-color: #f5dde7">5 Workspaces</td>
+              </tr>
+              <tr>
+                <td style="background-color: #f5dde7"><i class="fas fa-check text-danger"></i></td>
+              </tr>
+              <tr>
+                <td style="background-color: #f5dde7"><i class="fas fa-check text-danger"></i></td>
+              </tr>
+              <tr>
+                <td class="text-small" style="background-color: #f5dde7; color: #f5dde7">_</td>
+              </tr>
+              <tr>
+                <td style="background-color: #f5dde7; color: #f5dde7">_</td>
+              </tr>
+              <tr>
+                <td style="background-color: #f5dde7"><i class="fas fa-check text-danger mt-lg-0"></i></td>
+              </tr>
+              <tr>
+                <td style="background-color: #f5dde7">Upload your own</td>
+              </tr>
+              <tr>
+                <td style="background-color: #f5dde7"><i class="fas fa-check text-danger"></i></td>
+              </tr>
+              <tr>
+                <td class="text-small" style="background-color: #f5dde7; color: #f5dde7">_</td>
+              </tr>
+              <tr>
+                <td style="background-color: #f5dde7; color: #f5dde7">_</td>
+              </tr>
+              <tr>
+                <td style="background-color: #f5dde7"><i class="fas fa-check text-danger mt-3 mt-md-0"></i></td>
+              </tr>
+              <tr>
+                <td style="background-color: #f5dde7"><i class="fas fa-check text-danger"></i></td>
+              </tr>
+              <tr>
+                <td style="background-color: #f5dde7"><i class="fas fa-check text-danger"></i></td>
+              </tr>
+              <tr>
+                <td class="text-small" style="background-color: #f5dde7; color: #f5dde7">_</td>
+              </tr>
+              <tr>
+                <td style="background-color: #f5dde7; color: #f5dde7">_</td>
+              </tr>
+              <tr>
+                <td style="background-color: #f5dde7"><i class="fas fa-check text-danger mt-2 mt-lg-0"></i></td>
+              </tr>
+              <tr>
+                <td style="background-color: #f5dde7"><i class="fas fa-check text-danger"></i></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
-      <!-- End #2 -->
-      <!-- #3 -->
-      <div class="fw-semibold text-center option-section py-3 text-lg-start">Secure your transfers</div>
-      <div class="table-responsive d-flex">
-        <table class="table text-center">
-          <tbody>
-            <tr>
-              <td class="text-start col-6">Custom Expiration dates</td>
-              <td><i class="fas fa-x text-danger"></i></td>
-            </tr>
-            <tr>
-              <td class="text-start">Password-protected transfers</td>
-              <td><i class="fas fa-x text-danger"></i></td>
-            </tr>
-            <tr>
-              <td class="text-start">Data encryption</td>
-              <td><i class="fas fa-check text-danger"></i></td>
-            </tr>
-          </tbody>
-        </table>
-        <table style="border: 1px solid #f21a5d" class="col-4 text-center">
-          <tbody>
-            <tr>
-              <td style="background-color: #f5dde7"><i class="fas fa-check text-danger"></i></td>
-            </tr>
-            <tr>
-              <td style="background-color: #f5dde7"><i class="fas fa-check text-danger"></i></td>
-            </tr>
-            <tr>
-              <td style="background-color: #f5dde7"><i class="fas fa-check text-danger"></i></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <!-- End #3 -->
-      <!-- #4 -->
-      <div class="fw-semibold text-center option-section py-3 text-lg-start">Experience more zoxxo</div>
-      <div class="table-responsive d-flex">
-        <table class="table text-center">
-          <tbody>
-            <tr>
-              <td class="text-start col-6">zoxxo MANAGE (Filemanager)</td>
-              <td><i class="fas fa-x text-danger"></i></td>
-            </tr>
-            <tr>
-              <td class="text-start">zoxxo ADS (enhance your Brand)</td>
-              <td><i class="fas fa-check text-danger"></i></td>
-            </tr>
-          </tbody>
-        </table>
-        <table style="border: 1px solid #f21a5d" class="col-4 text-center">
-          <tbody>
-            <tr>
-              <td style="background-color: #f5dde7"><i class="fas fa-check text-danger"></i></td>
-            </tr>
-            <tr>
-              <td style="background-color: #f5dde7"><i class="fas fa-check text-danger"></i></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <!-- End #4 -->
     </div>
 
     <!-- Tornado Section -->
