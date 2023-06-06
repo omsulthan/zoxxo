@@ -79,6 +79,18 @@
     .offer-section {
       font-size: 24px;
     }
+    .input-addon {
+      position: relative;
+    }
+
+    .addon {
+      position: absolute;
+      right: 10px; /* Sesuaikan dengan jarak yang diinginkan */
+      top: 50%;
+      transform: translateY(-50%);
+      /* Atur tampilan lainnya, seperti warna, ukuran, dll. */
+    }
+
     @media (min-width: 768px) {
       .navbar {
         backdrop-filter: blur(10px);
@@ -198,7 +210,7 @@
 
     <!-- Content -->
     <!-- Tornado Section -->
-    <div id="register-section" style="background-color: #f5dde7; color: #f21a5d" class="w-100 d-flex flex-column flex-lg-row-reverse align-items-center px-4 justify-content-between position-relative text-center py-5">
+    <div id="register-section" style="background-color: #f5dde7; margin-top: -60px; color: #f21a5d" class="w-100 d-flex flex-column flex-lg-row-reverse align-items-center px-4 justify-content-between position-relative text-center py-5">
       <div class="col-xl-6">
         <img class="zoxxo-post" src="assets/img/Preview10008.png" alt="Zoxxo Register Image" srcset="" />
       </div>
@@ -250,8 +262,10 @@
             <label class="custom-btn" for="btn-check-3">8 TB</label>
             <input type="radio" name="storage" class="btn-check" id="btn-check-4" autocomplete="off" />
             <label class="custom-btn" for="btn-check-4">16 TB</label>
-            <input type="radio" name="storage" class="btn-check" id="btn-check-5" autocomplete="off" />
-            <label class="custom-btn" for="btn-check-5">__GB</label>
+            <div class="input-addon  col-2">
+              <input class="col-12 py-2 px-4 custom-btn" type="text" placeholder="_" maxlength="2" />
+              <span class="addon">GB</span>
+            </div>
           </div>
         </div>
         <div class="py-3 radio-section">
