@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Zoxxo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
+    <!-- External CSS -->
+    <link rel="stylesheet" href="/assets/css/style.css" />
+  </head>
+  <style>
+    .title-login {
+      font-size: 32px;
+    }
+    hr {
+      flex-grow: 1;
+      height: 1px;
+      background-color: #000;
+    }
+    #forgot-password a {
+      font-size: 12px;
+      text-decoration-color: red;
+    }
+    #button-section {
+      margin-top: 32px;
+    }
+    @media (min-width: 992px) {
+      .my-way {
+        display: block;
+        background-image: url("assets/img/Cover-Image.png");
+        height: 100vh;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      .title-login {
+        font-size: 40px;
+      }
+      .subtitle-login {
+        font-size: 24px;
+      }
+      #button-section button {
+        font-size: 20px;
+      }
+      .login-section {
+        font-size: 20px;
+      }
+    }
+  </style>
+  <body>
+    <div class="d-flex flex-col">
+      <div class="d-none d-xl-block my-way col-xl-7"></div>
+      <div style="background-color: #f5f5f7; height: 100vh" class="d-flex flex-column py-4 gap-3 align-items-center col-12 justify-content-evenly col-xl-5 px-5">
+        <div><a href="/"><img src="assets/img/zoxxo_CLR.png" alt="" width="70" height="60" /></a></div>
+        <div class="text-center">
+          <div class="fw-bold title-login">Log in to your box!</div>
+          <div class="col-8 mx-auto text-black-50 subtitle-login col-xl-6">deliver your Data fast, save & without interference of others</div>
+        </div>
+        <div style="display: none; font-size: 12px" class="warning-alert alert alert-warning py-1 px-4 text-center d-xl-none" role="alert">
+          <div>Congratulation! You have verified your account.</div>
+          <div>Please log in to enjoy the full experience</div>
+        </div>
+        <div id="button-section" class="d-flex flex-column gap-3">
+          <button style="background-color: #cccccd" class="btn rounded-pill d-flex align-items-center p-0 mx-auto pe-5 col-12">
+            <div class="me-3">
+              <img src="assets/img/icon/apple-icon.svg" alt="" />
+            </div>
+            Continue with apple
+          </button>
+          <button style="background-color: #d7e2f6" class="btn rounded-pill d-flex align-items-center p-0 mx-auto pe-5 col-12">
+            <div class="me-3">
+              <img src="assets/img/icon/google-icon.svg" alt="" />
+            </div>
+            Continue with google
+          </button>
+        </div>
+        <div class="col-10 mx-auto d-flex align-items-center justify-content-center">
+          <hr />
+          <span>OR</span>
+          <hr />
+        </div>
+        <div class="col-10">
+          <form>
+            <div class="mb-3">
+              <input type="text" class="form-control bg-transparent" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="E-Mail" />
+            </div>
+            <div class="mb-3">
+              <input type="password" class="form-control bg-transparent" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Password" />
+            </div>
+            <div id="forgot-password" class="text-center"><a class="text-danger" href="#">Forgot Password?</a></div>
+          </form>
+        </div>
+        <div class="col-11 mx-auto d-xl-none">
+          <div class="login-section text-lg-start text-center mt-3">
+            <a onclick="handleLogin()" style="background-color: #f22967" class="btn btn-danger col-12" href="#">Log in to your zoxxo account!</a>
+          </div>
+        </div>
+        <div class="col-11 mx-auto d-none d-xl-block">
+          <div class="login-section text-lg-start text-center mt-3">
+            <a onclick="handleLoginXL()" style="background-color: #f22967" class="btn btn-danger col-12" href="#">Log in to your zoxxo account!</a>
+          </div>
+        </div>
+        <div style="display: none; font-size: 14px" class="warning-alert-xl alert alert-warning py-1 px-4 text-center col-11" role="alert">
+          <div>Congratulation! You have verified your account.</div>
+          <div>Please log in to enjoy the full experience</div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <!-- Script -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/bb1fce9dd9.js" crossorigin="anonymous"></script>
+  <!-- Script untuk library jQuery (dibutuhkan untuk contoh JavaScript di bawah) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- My Script -->
+  <script>
+    const handleLogin = () => {
+      $("#button-section").css("marginTop", "0");
+      $(".warning-alert").css("display", "block");
+      $(".warning-alert").addClass("d-");
+    };
+    const handleLoginXL = () => {
+      $("#button-section").css("marginTop", "0");
+      $(".warning-alert-xl").css("display", "block");
+    };
+  </script>
+</html>
