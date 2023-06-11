@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Box - Plan And Storage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
+    <!-- External CSS -->
+    <link rel="stylesheet" href="/assets/css/style.css" />
+  </head>
+  <style>
+    .plan-title {
+      font-size: 20px;
+    }
+    .radio-section input[type="radio"]:checked + label {
+      /* Atur gaya CSS yang diinginkan ketika radio button tercentang */
+      background-color: #fee6ed;
+    }
+    .option-section {
+      font-size: 16px;
+    }
+    .title-radio {
+      font-size: 16px;
+    }
+    .input-addon {
+      position: relative;
+    }
+    .custom-btn {
+      border: 1px solid#f21a5d;
+      padding: 4px 12px;
+      border-radius: 4px;
+    }
+    .custom-btn-workspaces {
+      border: 1px solid#f21a5d;
+      padding: 4px 24px;
+      border-radius: 4px;
+    }
+    .custom-btn-workspaces:hover {
+      background-color: #fee6ed;
+      cursor: pointer;
+    }
+    .custom-btn:hover {
+      background-color: #fee6ed;
+      cursor: pointer;
+    }
+    .addon {
+      position: absolute;
+      right: 10px; /* Sesuaikan dengan jarak yang diinginkan */
+      top: 50%;
+      transform: translateY(-50%);
+      /* Atur tampilan lainnya, seperti warna, ukuran, dll. */
+    }
+    .table-feature {
+      font-size: 12px;
+    }
+    #pink-section .table > :not(caption) > * > * {
+      border-bottom-width: 0;
+    }
+    .segitiga-lancip {
+      width: 0;
+      height: 0;
+      border-left: 46vw solid transparent;
+      border-right: 46vw solid transparent;
+      border-top: 100px solid #f8f8f9; /* Sesuaikan dengan warna yang diinginkan */
+      position: relative;
+    }
+    .segitiga-lancip-tornado {
+      width: 0;
+      height: 0;
+      border-left: 46vw solid transparent;
+      border-right: 46vw solid transparent;
+      border-top: 100px solid #f21a5d;
+      position: relative;
+    }
+    .segitiga-lancip-2 {
+      width: 0;
+      height: 0;
+      border-left: 45.5vw solid transparent;
+      border-right: 45.5vw solid transparent;
+      border-top: 100px solid #fee5ed;
+      position: relative;
+      bottom: 102px;
+      z-index: 1;
+    }
+    .list-section {
+      font-size: 32px;
+    }
+    .checklist li {
+      list-style-type: none;
+    }
+    .checklist li {
+      font-size: 12px;
+    }
+    .current-content {
+      font-size: 14px;
+    }
+    .current-content a {
+      font-size: 14px;
+      color: #535353;
+      text-decoration: underline;
+      text-decoration-color: #535353 !important;
+    }
+    @media (min-width: 768px) {
+      .font-breadcrumb {
+        font-size: 18px;
+      }
+      .checklist li {
+        font-size: 14px;
+      }
+      .list-section {
+        font-size: 40px;
+      }
+      .limit-section {
+        font-size: 20px;
+      }
+      .more-section {
+        font-size: 24px;
+      }
+      .title-radio {
+        font-size: 20px;
+      }
+      .custom-btn {
+        font-size: 18px;
+        padding: 8px 16px;
+      }
+      .table-feature {
+        font-size: 14px;
+      }
+      .custom-btn-workspaces {
+        font-size: 18px;
+        padding: 8px 28px;
+      }
+      .segitiga-lancip {
+        width: 0;
+        height: 0;
+        border-left: 42vw solid transparent;
+        border-right: 42vw solid transparent;
+        border-top: 100px solid #f8f8f9; /* Sesuaikan dengan warna yang diinginkan */
+        position: relative;
+      }
+      .segitiga-lancip-tornado {
+        width: 0;
+        height: 0;
+        border-left: 42.2vw solid transparent;
+        border-right: 42vw solid transparent;
+        border-top: 100px solid #f21a5d;
+        position: relative;
+      }
+      .segitiga-lancip-2 {
+        width: 0;
+        height: 0;
+        border-left: 42vw solid transparent;
+        border-right: 42vw solid transparent;
+        border-top: 100px solid #fee5ed;
+        position: relative;
+        bottom: 102px;
+        z-index: 1;
+      }
+      .current-content {
+        font-size: 24px;
+      }
+      .current-content a {
+        font-size: 24px;
+      }
+    }
+    @media (min-width: 992px) {
+      .list-section {
+        font-size: 20px;
+      }
+      .card-sticky {
+        position: sticky;
+        top: 80px;
+      }
+      .table-feature {
+        font-size: 16px;
+      }
+      .current-content {
+        font-size: 14px;
+      }
+      .current-content a {
+        font-size: 14px;
+      }
+      .more-section {
+        font-size: 13px;
+      }
+      .segitiga-lancip {
+        width: 0;
+        height: 0;
+        border-left: 10.3vw solid transparent;
+        border-right: 10.3vw solid transparent;
+        border-top: 80px solid #f8f8f9;
+        position: relative;
+      }
+      .segitiga-lancip-2 {
+        width: 0;
+        height: 0;
+        border-left: 10vw solid transparent;
+        border-right: 10vw solid transparent;
+        border-top: 78px solid #fee5ed;
+        position: relative;
+        bottom: 81px;
+        z-index: 1;
+      }
+      .segitiga-lancip-tornado {
+        width: 0;
+        height: 0;
+        border-left: 10.3vw solid transparent;
+        border-right: 10.3vw solid transparent;
+        border-top: 80px solid #f21a5d;
+        position: relative;
+      }
+      .limit-section {
+        font-size: 16px;
+      }
+    }
+    @media (min-width: 1200px) {
+      .plan-title {
+        font-size: 28px;
+      }
+      .table-feature {
+        font-size: 18px;
+      }
+      .checklist li {
+        font-size: 16px;
+      }
+      .segitiga-lancip {
+        width: 0;
+        height: 0;
+        border-left: 7.4vw solid transparent;
+        border-right: 7.4vw solid transparent;
+        border-top: 80px solid #f8f8f9;
+        position: relative;
+      }
+      .segitiga-lancip-2 {
+        width: 0;
+        height: 0;
+        border-left: 7.2vw solid transparent;
+        border-right: 7.2vw solid transparent;
+        border-top: 78px solid #fee5ed;
+        position: relative;
+        bottom: 80px;
+        z-index: 1;
+      }
+      .segitiga-lancip-tornado {
+        width: 0;
+        height: 0;
+        border-left: 7.4vw solid transparent;
+        border-right: 7.4vw solid transparent;
+        border-top: 80px solid #f21a5d;
+        position: relative;
+      }
+      .addon {
+        left: 70px;
+        right: 0;
+      }
+      .current-content a {
+        font-size: 16px;
+        color: #535353;
+        text-decoration: underline;
+        text-decoration-color: #535353 !important;
+      }
+      .current-content {
+        font-size: 16px;
+      }
+    }
+  </style>
+  <body>
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-expand-md bg-transparent sticky-top">
+      <div class="container-fluid col-md-11">
+        <a class="navbar-brand" href="/"><img src="../assets/img/zoxxo_CLR.png" alt="Logo Zoxxo" srcset="" width="45" height="35" /></a>
+        <div style="width: 36px; height: 36px; background-color: #2b2b2b; border-radius: 99999999px; font-size: 14px; color: white" class="d-flex justify-content-center align-items-center fw-bold">U</div>
+      </div>
+      <hr />
+    </nav>
+
+    <div class="d-flex justify-content-between justify-content-md-start col-11 mx-auto mt-4 gap-2 font-breadcrumb">
+      <div class="fw-semibold">Plan and Storage</div>
+      <div class="d-none d-md-inline">|</div>
+      <div class="text-black-50">Change your plan and / or upgrade your storage</div>
+    </div>
+    <hr class="col-11 mx-auto mb-4" />
+
+    <!-- Content -->
+    <div class="d-flex flex-column flex-lg-row gap-lg justify-content-lg-between">
+      <!-- First Flex Section -->
+      <div class="col-12 mx-auto text-md-start col-md-11 d-flex flex-column col-lg-8 col-xl-8">
+        <div class="d-flex flex-lg-row col-12 col-lg-4 flex-column justify-content-xl-between">
+          <div style="background-color: #f8f8f9; color: #535353" class="col-11 text-center mx-auto p-5 fw-normal mb-3 current-content d-flex justify-content-center align-items-center flex-column gap-4">
+            <div class="col-xl-10">Your current plan is TORNADO. You can switch back to Free or upgrade more Storage.</div>
+            <div class="col-xl-8">Need a custom solution? <a class="link-offset-2 link-underline contact-link" href="#">Contact our sales team</a></div>
+          </div>
+          <!-- First List -->
+          <div class="mb-4 col-lg-12">
+            <div style="background-color: #f8f8f9; color: #535353; font-size: 14px" class="col-11 col-xl-8 mx-auto py-4 py-xl-2 fw-normal d-flex flex-column justify-content-between">
+              <div class="fw-semibold list-section text-center">FREE</div>
+              <div style="color: #535353" class="col-8 mx-auto mb-3 text-center more-section">Upload files and share links as much as you like</div>
+              <div class="fw-semibold list-section text-center">0,00 EUR</div>
+              <div class="fw-semibold text-center limit-section">a month</div>
+              <div class="col-5 col-md-3 my-2 col-lg-9 mx-auto">
+                <ul class="checklist">
+                  <li class="fw-semibold"><i class="fas fa-check text-success me-1"></i> Transfer 2 GB</li>
+                  <li class="fw-semibold"><i class="fas fa-check text-success me-1"></i> 4 GB Storage</li>
+                </ul>
+              </div>
+              <div style="color: #535353" class="col-12 mx-auto col-lg-12 col-xl-4 text-center"><a class="link-offset-2 link-underline link-underline-opacity-0 h6 text-truncate" href="#">See All Features</a></div>
+            </div>
+            <div class="d-flex align-content-center justify-content-center">
+              <div class="segitiga-lancip"></div>
+            </div>
+          </div>
+          <!-- Second List -->
+          <div class="col-lg-12">
+            <div
+              style="background-color: #fee5ed; color: #535353; font-size: 14px; border-top: 3px #f21a5d solid; border-left: 3px #f21a5d solid; border-right: 3px #f21a5d solid"
+              class="col-11 col-xl-8 mx-auto py-4 py-xl-2 fw-normal d-flex flex-column justify-content-between"
+            >
+              <div class="fw-semibold list-section text-center">TORNADO</div>
+              <div style="color: #535353" class="col-8 mx-auto mb-3 text-center more-section">Upload files, share links and much more</div>
+              <div class="fw-semibold list-section text-center">21,00 EUR</div>
+              <div class="fw-semibold text-center limit-section">a month</div>
+              <div class="col-6 my-2 col-md-4 mx-auto col-lg-12 col-xl-9">
+                <ul class="checklist">
+                  <li class="fw-semibold"><i class="fas fa-check text-success me-1"></i> Unlimited file size</li>
+                  <li class="fw-semibold"><i class="fas fa-check text-success me-1"></i> 1 TB Storage</li>
+                </ul>
+              </div>
+              <div style="color: #535353" class="col-12 mx-auto col-lg-12 text-center"><a class="link-offset-2 link-underline link-underline-opacity-0 h6 text-truncate" href="#">See All Features</a></div>
+            </div>
+            <div class="d-flex align-content-center justify-content-center">
+              <div class="segitiga-lancip-tornado mx-auto d-flex align-content-center justify-content-center">
+                <div class="segitiga-lancip-2"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- How much section -->
+        <div class="py-3 radio-section col-11 mx-auto">
+          <div class="title-radio fw-semibold">How much extra storage do you need ?</div>
+          <div class="col-11 mx-auto d-flex justify-content-between py-2 col-lg-12 justify-content-lg-start gap-lg-3">
+            <input type="radio" name="storage" class="btn-check" id="btn-check-1" autocomplete="off" />
+            <label class="custom-btn" for="btn-check-1">2 TB</label>
+            <input type="radio" name="storage" class="btn-check" id="btn-check-2" autocomplete="off" />
+            <label class="custom-btn" for="btn-check-2">4 TB</label>
+            <input type="radio" name="storage" class="btn-check" id="btn-check-3" autocomplete="off" />
+            <label class="custom-btn" for="btn-check-3">8 TB</label>
+            <input type="radio" name="storage" class="btn-check" id="btn-check-4" autocomplete="off" />
+            <label class="custom-btn" for="btn-check-4">16 TB</label>
+            <div class="input-addon col-2">
+              <input class="col-12 py-2 px-2 px-lg-4 custom-btn col-xl-7" type="text" placeholder="_" maxlength="2" />
+              <span class="addon">GB</span>
+            </div>
+          </div>
+        </div>
+        <!-- Workspaces Section -->
+        <div class="py-3 radio-section col-11 mx-auto">
+          <div class="title-radio fw-semibold">How may extra Workspaces do you need ?</div>
+          <div class="col-11 mx-auto d-flex justify-content-between py-2 col-lg-12 justify-content-lg-start gap-lg-3">
+            <input type="radio" name="workspaces" class="btn-check" id="btn-workspaces-1" autocomplete="off" />
+            <label class="custom-btn-workspaces" for="btn-workspaces-1">3</label>
+            <input type="radio" name="workspaces" class="btn-check" id="btn-workspaces-2" autocomplete="off" />
+            <label class="custom-btn-workspaces" for="btn-workspaces-2">5</label>
+            <input type="radio" name="workspaces" class="btn-check" id="btn-workspaces-3" autocomplete="off" />
+            <label class="custom-btn-workspaces" for="btn-workspaces-3">10</label>
+            <input type="radio" name="workspaces" class="btn-check" id="btn-workspaces-4" autocomplete="off" />
+            <label class="custom-btn-workspaces" for="btn-workspaces-4">20</label>
+            <input type="radio" name="workspaces" class="btn-check" id="btn-workspaces-5" autocomplete="off" />
+            <label class="custom-btn-workspaces" for="btn-workspaces-5">50</label>
+          </div>
+        </div>
+        <div class="col-11 mx-auto py-4 col-xl-11 d-flex table-feature">
+          <div class="col-8 col-lg-9">
+            <div class="fw-semibold option-section py-3 text-start">Send big files</div>
+            <div class="table-responsive d-flex">
+              <table class="table text-center">
+                <tbody>
+                  <tr>
+                    <td class="text-start col-6 text-truncate">Transfer size limit</td>
+                    <td>5 GB</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start">Storage</td>
+                    <td>1 TB</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start text-truncate">Workspaces</td>
+                    <td>1 Workspace</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start text-truncate">Download with no account</td>
+                    <td><i class="fas fa-check text-danger"></i></td>
+                  </tr>
+                  <tr>
+                    <td class="text-start">Track downloads</td>
+                    <td><i class="fas fa-check text-danger"></i></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- #2 -->
+            <div class="fw-semibold option-section py-3 text-start">Show off your brand</div>
+            <div class="table-responsive d-flex">
+              <table class="table text-center">
+                <tbody>
+                  <tr>
+                    <td class="text-start col-6 text-truncate">Custom Download page</td>
+                    <td><i class="fas fa-x text-danger"></i></td>
+                  </tr>
+                  <tr>
+                    <td class="text-start text-truncate">Wallpaper backgrounds</td>
+                    <td class="text-truncate">Advertising (and art)</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start text-truncate">Custom Workspaces image</td>
+                    <td><i class="fas fa-x text-danger"></i></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- End #2 -->
+            <!-- #3 -->
+            <div class="fw-semibold option-section py-3 text-start">Secure your transfers</div>
+            <div class="table-responsive d-flex">
+              <table class="table text-center">
+                <tbody>
+                  <tr>
+                    <td class="text-start col-6 text-truncate">Custom Expiration dates</td>
+                    <td><i class="fas fa-x text-danger"></i></td>
+                  </tr>
+                  <tr>
+                    <td class="text-start text-truncate">Password-protected transfers</td>
+                    <td><i class="fas fa-x text-danger"></i></td>
+                  </tr>
+                  <tr>
+                    <td class="text-start">Data encryption</td>
+                    <td><i class="fas fa-check text-danger"></i></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- End #3 -->
+            <!-- #4 -->
+            <div class="fw-semibold option-section py-3 text-start">Experience more zoxxo</div>
+            <div class="table-responsive d-flex">
+              <table class="table text-center">
+                <tbody>
+                  <tr>
+                    <td class="text-start col-6 text-truncate">zoxxo MANAGE (Filemanager)</td>
+                    <td><i class="fas fa-x text-danger"></i></td>
+                  </tr>
+                  <tr>
+                    <td class="text-start text-truncate">zoxxo ADS (enhance your Brand)</td>
+                    <td><i class="fas fa-check text-danger"></i></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- End #4 -->
+          </div>
+          <div id="pink-section" class="col-4 col-lg-3 mt-1">
+            <div class="fw-semibold text-center option-section py-3 text-lg-start text-white">_</div>
+            <div class="table-responsive d-flex">
+              <table style="border: 2px solid #f21a5d" class="table text-center">
+                <tbody>
+                  <tr>
+                    <td style="background-color: #f5dde7">Unlimited</td>
+                  </tr>
+                  <tr>
+                    <td style="background-color: #f5dde7">20 TB</td>
+                  </tr>
+                  <tr>
+                    <td style="background-color: #f5dde7">5 Workspaces</td>
+                  </tr>
+                  <tr>
+                    <td style="background-color: #f5dde7"><i class="fas fa-check text-danger"></i></td>
+                  </tr>
+                  <tr>
+                    <td style="background-color: #f5dde7"><i class="fas fa-check text-danger"></i></td>
+                  </tr>
+                  <tr>
+                    <td class="text-small" style="background-color: #f5dde7; color: #f5dde7">_</td>
+                  </tr>
+                  <tr>
+                    <td style="background-color: #f5dde7; color: #f5dde7">_</td>
+                  </tr>
+                  <tr>
+                    <td style="background-color: #f5dde7"><i class="fas fa-check text-danger mt-lg-0"></i></td>
+                  </tr>
+                  <tr>
+                    <td style="background-color: #f5dde7">Upload your own</td>
+                  </tr>
+                  <tr>
+                    <td style="background-color: #f5dde7"><i class="fas fa-check text-danger"></i></td>
+                  </tr>
+                  <tr>
+                    <td class="text-small" style="background-color: #f5dde7; color: #f5dde7">_</td>
+                  </tr>
+                  <tr>
+                    <td style="background-color: #f5dde7; color: #f5dde7">_</td>
+                  </tr>
+                  <tr>
+                    <td style="background-color: #f5dde7"><i class="fas fa-check text-danger mt-3 mt-md-0"></i></td>
+                  </tr>
+                  <tr>
+                    <td style="background-color: #f5dde7"><i class="fas fa-check text-danger"></i></td>
+                  </tr>
+                  <tr>
+                    <td style="background-color: #f5dde7"><i class="fas fa-check text-danger"></i></td>
+                  </tr>
+                  <tr>
+                    <td class="text-small" style="background-color: #f5dde7; color: #f5dde7">_</td>
+                  </tr>
+                  <tr>
+                    <td style="background-color: #f5dde7; color: #f5dde7">_</td>
+                  </tr>
+                  <tr>
+                    <td style="background-color: #f5dde7"><i class="fas fa-check text-danger mt-2 mt-lg-0"></i></td>
+                  </tr>
+                  <tr>
+                    <td style="background-color: #f5dde7"><i class="fas fa-check text-danger"></i></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Second Flex Section -->
+      <!-- Your plan -->
+      <div class="col-11 mx-auto mb-5 mt-2 col-lg-3 col-xl-3">
+        <div class="card card-sticky">
+          <ul class="list-group list-group-flush plan-title">
+            <li class="list-group-item fw-bolder">Your new plan</li>
+          </ul>
+          <div class="card-body">
+            <div class="d-flex justify-content-between mb-2">
+              <div>
+                <div class="subject-title fw-semibold">TORNADO (monthly)</div>
+                <div class="subject-detail text-black-50">Unlimited file size</div>
+                <div class="subject-detail text-black-50">20 TB Storage</div>
+                <div class="subject-detail text-black-50">5 Workspaces</div>
+              </div>
+              <div class="subject-title fw-semibold">21,00 EUR</div>
+            </div>
+            <div class="d-flex justify-content-between mb-2">
+              <div>
+                <div class="subject-title fw-semibold">Extra Storage</div>
+                <div class="subject-detail text-black-50">20 TB Extra Storage</div>
+              </div>
+              <div class="subject-title fw-semibold">20,00 EUR</div>
+            </div>
+            <div class="d-flex justify-content-between mb-2">
+              <div>
+                <div class="subject-title fw-semibold">Prorated discount</div>
+              </div>
+              <div class="subject-title fw-semibold">-5,00 EUR</div>
+            </div>
+            <div class="d-flex justify-content-between mb-2">
+              <div>
+                <div class="subject-title fw-semibold">Reverse chrage (19%)</div>
+              </div>
+              <div class="subject-title fw-semibold">0,00 EUR</div>
+            </div>
+            <hr />
+            <div class="d-flex justify-content-between plan-title fw-bold">
+              <div>TOTAL</div>
+              <div>46,00 EUR</div>
+            </div>
+            <hr />
+            <ul class="text-black-50">
+              <li>You’ll pay 46.00 EUR now, which is prorated for the current billing period.</li>
+              <li>Your plan is billed yearly and will renew for 890 EUR (plus any applicable taxes and minus any discounts) on Invalid Date.</li>
+              <li>You can cancel any time before this date.</li>
+            </ul>
+            <div id="checkout-section" class="text-lg-start text-center mt-4">
+              <a style="background-color: #f22967" class="btn btn-danger col-12" href="#">Countinue with this plan!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/bb1fce9dd9.js" crossorigin="anonymous"></script>
+  <!-- Script untuk library jQuery (dibutuhkan untuk contoh JavaScript di bawah) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- My Script -->
+</html>

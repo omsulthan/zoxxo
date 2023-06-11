@@ -79,20 +79,20 @@
         background-color: transparent !important;
       }
 
-      .show,
+      .container-fluid .show,
       .collapsing {
         height: 0 !important;
       }
       ul li {
-        backdrop-filter: blur(3px);
+        backdrop-filter: blur(50px);
       }
 
       @media (min-width: 768px) {
         .navbar {
-          backdrop-filter: blur(10px);
+          backdrop-filter: blur(50px);
           background-color: transparent !important;
         }
-        .show,
+        .container-fluid .show,
         .collapsing {
           height: auto !important;
         }
@@ -336,7 +336,7 @@
                 </tr>
               </tbody>
             </table>
-            <div class="col-4 mx-auto col-md-2 col-lg-2 col-xl-4"><a class="link-offset-2 link-underline link-underline-opacity-0 h6" href="#">See More</a></div>
+            <div class="col-4 mx-auto col-md-2 col-lg-12 col-xl-4 mx-lg-auto"><a class="link-offset-2 link-underline link-underline-opacity-0 h6" data-bs-toggle="modal" data-bs-target="#seeMoreModal">See More</a></div>
           </div>
 
           <div id="enjoy-section" class="zorro-enjoy d-none">
@@ -529,6 +529,135 @@
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- See More Modal -->
+      <div class="modal fade" id="seeMoreModal" tabindex="5" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="col-12 mx-auto text-start">
+                <div class="h6 text-secondary fw-semibold my-3">Uploaded Files :</div>
+                <table class="table table-responsive-sm">
+                  <thead>
+                    <tr>
+                      <th class="text-secondary fw-light">Name</th>
+                      <th class="text-secondary fw-light">Size</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>name_of_file.jpg</td>
+                      <td>20.00MB</td>
+                      <td><button class="btn btn-close"></button></td>
+                    </tr>
+                    <tr>
+                      <td>name_of_file.jpg</td>
+                      <td>20.00MB</td>
+                      <td><button class="btn btn-close"></button></td>
+                    </tr>
+                    <tr>
+                      <td>name_of_file.jpg</td>
+                      <td>20.00MB</td>
+                      <td><button class="btn btn-close"></button></td>
+                    </tr>
+                    <tr>
+                      <td>name_of_file.jpg</td>
+                      <td>20.00MB</td>
+                      <td><button class="btn btn-close"></button></td>
+                    </tr>
+                    <tr>
+                      <td>name_of_file.jpg</td>
+                      <td>20.00MB</td>
+                      <td><button class="btn btn-close"></button></td>
+                    </tr>
+                    <tr>
+                      <td>name_of_file.jpg</td>
+                      <td>20.00MB</td>
+                      <td><button class="btn btn-close"></button></td>
+                    </tr>
+                    <tr>
+                      <td>name_of_file.jpg</td>
+                      <td>20.00MB</td>
+                      <td><button class="btn btn-close"></button></td>
+                    </tr>
+                    <tr>
+                      <td>name_of_file.jpg</td>
+                      <td>20.00MB</td>
+                      <td><button class="btn btn-close"></button></td>
+                    </tr>
+                    <tr>
+                      <td>name_of_file.jpg</td>
+                      <td>20.00MB</td>
+                      <td><button class="btn btn-close"></button></td>
+                    </tr>
+                    <tr>
+                      <td>name_of_file.jpg</td>
+                      <td>20.00MB</td>
+                      <td><button class="btn btn-close"></button></td>
+                    </tr>
+                    <tr>
+                      <td>name_of_file.jpg</td>
+                      <td>20.00MB</td>
+                      <td><button class="btn btn-close"></button></td>
+                    </tr>
+                    <tr>
+                    <tr>
+                      <td>name_of_file.jpg</td>
+                      <td>20.00MB</td>
+                      <td><button class="btn btn-close"></button></td>
+                    </tr>
+                    <tr>
+                    <tr>
+                      <td>name_of_file.jpg</td>
+                      <td>20.00MB</td>
+                      <td><button class="btn btn-close"></button></td>
+                    </tr>
+                    <tr>
+                    <tr>
+                      <td>name_of_file.jpg</td>
+                      <td>20.00MB</td>
+                      <td><button class="btn btn-close"></button></td>
+                    </tr>
+                    <tr>
+                    <tr>
+                      <td>name_of_file.jpg</td>
+                      <td>20.00MB</td>
+                      <td><button class="btn btn-close"></button></td>
+                    </tr>
+                    <tr>
+                      <td>name_of_file.jpg</td>
+                      <td>20.00MB</td>
+                      <td><button class="btn btn-close"></button></td>
+                    </tr>
+                    <tr>
+                      <td>name_of_file.jpg</td>
+                      <td>20.00MB</td>
+                      <td><button class="btn btn-close"></button></td>
+                    </tr>
+                    <tr>
+                      <td>name_of_file.jpg</td>
+                      <td>20.00MB</td>
+                      <td><button class="btn btn-close"></button></td>
+                    </tr>
+                    <tr>
+                      <td>name_of_file.jpg</td>
+                      <td>20.00MB</td>
+                      <td><button class="btn btn-close"></button></td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-ifno" data-bs-dismiss="modal">Close</button>
+              <button type="button" style="background-color: #f22967" class="btn btn-danger">Save changes</button>
             </div>
           </div>
         </div>
