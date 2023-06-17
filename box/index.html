@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Zoxxo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <style>
+    .offcanvas {
+      width: 65vw !important;
+    }
+    .text-content {
+      font-size: 32px;
+      letter-spacing: 2px;
+    }
+    .active {
+      background-color: #f0f0f0;
+      padding: 0;
+    }
+    .offcanvas-body {
+      padding: 0;
+    }
+    .title-content {
+      font-size: 20px;
+    }
+    .active-view {
+      background-color: #9997bf;
+    }
+    .deactive-view {
+      background-color: #f4f4f4;
+      color: #9997bf !important;
+    }
+    .card-content-title {
+      font-size: 14px;
+    }
+    .modal-header {
+      border-bottom: none !important;
+    }
+    .modal-footer {
+      border-top: none !important;
+      padding-bottom: 28px;
+    }
+  </style>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md bg-white sticky-top shadow-sm">
+      <div class="container-fluid col-md-11 align-items-center d-flex justify-content-between">
+        <a style="color: #525253" class="navbar-brand" href="/"><img src="../assets/img/zoxxo_CLR.png" alt="Logo Zoxxo" srcset="" width="45" height="35" /><span class="ms-2">BOX</span></a>
+        <div class="d-flex gap-2">
+          <button class="bg-transparent border-0 d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"><i class="fa-solid fa-bars"></i></button>
+          <div
+            style="width: 36px; height: 36px; background-color: #2b2b2b; border-radius: 99999999px; font-size: 14px; color: white"
+            class="d-flex justify-content-center align-items-center fw-bold"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            U
+          </div>
+          <div style="right: 8px !important; left: auto !important" class="dropdown-menu">
+            <div class="d-flex gap-2 align-items-center dropdown-item">
+              <div style="width: 36px; height: 36px; background-color: #2b2b2b; border-radius: 99999999px; font-size: 14px; color: white" class="d-flex justify-content-center align-items-center fw-bold">U</div>
+              <div>info@username.com</div>
+            </div>
+            <hr />
+            <div class="dropdown-item">
+              <div class="text-secondary fw-bold">Profile</div>
+              <a class="ms-2 pt-2 text-decoration-none text-black" href="#">Dashboard</a>
+            </div>
+            <hr />
+            <div class="dropdown-item d-flex flex-column">
+              <div class="text-secondary fw-bold">Tools</div>
+              <a class="ms-2 pt-2 text-decoration-none text-black" href="#">Zoxxo Manage</a>
+              <a class="ms-2 pt-2 text-decoration-none text-black" href="#">Zoxxo ads</a>
+              <a class="ms-2 pt-2 text-decoration-none text-black" href="#">Help Center</a>
+              <hr />
+            </div>
+            <div class="dropdown-item d-flex flex-column">
+              <a class="ms-2 pb-2 text-decoration-none text-black" href="#">Logout</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="offcanvas-lg offcanvas-start d-lg-none" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasExampleLabel"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column justify-content-between">
+          <div>
+            <!-- Search -->
+            <div class="p-3">
+              <div class="input-group d-flex align-items-center">
+                <div class="input-group-prepend">
+                  <span style="padding: 10px; background-color: #f0f0f0" class="input-group-text border-0 rounded-0"><i class="fas fa-search"></i></span>
+                </div>
+                <input style="background-color: #f0f0f0" type="text" class="form-control border-0 rounded-0" placeholder="Find workspace or file" />
+              </div>
+              <hr />
+            </div>
+
+            <!-- General Settings -->
+            <a href="#" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black">
+              <div class="fw-normal">General Settings</div>
+            </a>
+
+            <!-- Dashboard -->
+            <a href="/box/" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black active">
+              <div class="fw-normal">Dashboard</div>
+            </a>
+            <!-- Account -->
+            <a href="#" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black">
+              <div class="fw-normal">Account</div>
+            </a>
+            <!-- Plan & Biliing -->
+            <a href="#" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black">
+              <div class="fw-normal">Plan & Billing</div>
+            </a>
+            <!-- Preferences -->
+            <a href="preferences.html" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black">
+              <div class="fw-normal">Preferences</div>
+            </a>
+            <!-- Communications -->
+            <a href="communcations.html" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black">
+              <div class="fw-normal">Communcation</div>
+            </a>
+          </div>
+          <div class="p-3">
+            <div class="text-center text-secondary">7 out of 10 GB</div>
+            <div class="progress mb-2">
+              <div class="progress-bar bg-danger" role="progressbar" aria-label="Info example" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <hr />
+            <div class="text-center">Help & Inspiration</div>
+          </div>
+        </div>
+      </div>
+      <hr />
+    </nav>
+
+    <!-- Sidebar -->
+    <div class="d-flex">
+      <div style="height: 93vh; box-shadow: 0 1rem 1rem 1px rgba(0, 0, 0, 0.175) !important; top: 61px;" class="sticky-top d-lg-flex flex-column justify-content-between col-lg-3 col-xl-2 d-none">
+        <div>
+          <!-- Search -->
+          <div class="p-3">
+            <div class="input-group d-flex align-items-center">
+              <div class="input-group-prepend">
+                <span style="padding: 10px; background-color: #f0f0f0" class="input-group-text border-0 rounded-0"><i class="fas fa-search"></i></span>
+              </div>
+              <input style="background-color: #f0f0f0" type="text" class="form-control border-0 rounded-0" placeholder="Find workspace or file" />
+            </div>
+            <hr />
+          </div>
+
+          <!-- General Settings -->
+          <a href="#" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black">
+            <div class="fw-normal">General Settings</div>
+          </a>
+
+          <!-- Dashboard -->
+          <a href="/box/" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black active">
+            <div class="fw-normal">Dashboard</div>
+          </a>
+          <!-- Account -->
+          <a href="account.html" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black">
+            <div class="fw-normal">Account</div>
+          </a>
+          <!-- Plan & Biliing -->
+          <a href="plan-billing.html" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black">
+            <div class="fw-normal">Plan & Billing</div>
+          </a>
+          <!-- Preferences -->
+          <a href="preferences.html" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black">
+            <div class="fw-normal">Preferences</div>
+          </a>
+          <!-- Communications -->
+          <a href="communcations.html" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black">
+            <div class="fw-normal">Communcation</div>
+          </a>
+        </div>
+        <div class="p-3">
+          <div class="text-center text-secondary">7 out of 10 GB</div>
+          <div class="progress mb-2">
+            <div class="progress-bar bg-danger" role="progressbar" aria-label="Info example" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <hr />
+          <div class="text-center">Help & Inspiration</div>
+        </div>
+      </div>
+      <!-- Content -->
+      <div class="p-2 col-lg-9 col-xl-10 col-12">
+        <!-- Header Content -->
+        <div class="d-flex justify-content-lg-between flex-column flex-lg-row align-items-lg-center">
+          <div class="d-flex gap-3 text-secondary title-content px-2 align-items-baseline py-lg-2 mb-3 mb-lg-0">
+            <div class="text-danger h4">Dashboard</div>
+            <div>|</div>
+            <div class="text-truncate">Choose the Application you want to start with</div>
+          </div>
+          <!-- Upload File view Section -->
+          <div class="d-flex gap-3 text-secondary justify-content-between px-2 py-lg-2 px-lg-5 align-items-center">
+            <button style="background-color: #f21a5d; color: white" class="d-flex btn btn-sm align-items-center gap-2 px-4 py-2"><i class="fa-solid fa-plus"></i> Upload a file</button>
+          </div>
+        </div>
+        <hr />
+
+        <!-- Main Content -->
+        <div id="grid-view">
+          <div class="d-flex flex-column flex-md-row justify-content-md-center justify-content-lg-start gap-md-3 px-md-3">
+            <!-- First Item -->
+            <div class="d-flex flex-column mb-3">
+              <div class="card col-9 col-md-12 mx-auto shadow-sm">
+                <div style="background-color: #9997bf" class="text-center">
+                  <div style="padding: 80px 120px" class="d-flex flex-column align-items-center justify-content-center my-auto gap-2">
+                    <a style="color: #525253" class="navbar-brand" href="/"><img src="../assets/img/zoxxo_CLR.png" alt="Logo Zoxxo" srcset="" width="120" height="110" /></a>
+                    <div class="text-danger text-content">Manage</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Second Item -->
+            <div class="d-flex flex-column gap-2 mb-3">
+              <div class="card col-9 col-md-12 mx-auto shadow-sm">
+                <div style="background-color: #b0cde8" class="text-center">
+                  <div style="padding: 80px 120px" class="d-flex flex-column align-items-center justify-content-center my-auto gap-2">
+                    <a style="color: #525253" class="navbar-brand" href="/"><img src="../assets/img/zoxxo_CLR.png" alt="Logo Zoxxo" srcset="" width="120" height="110" /></a>
+                    <div class="text-danger text-content">Ads</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/bb1fce9dd9.js" crossorigin="anonymous"></script>
+  <!-- Script untuk library jQuery (dibutuhkan untuk contoh JavaScript di bawah) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- My Script -->
+  <script>
+    const handleList = () => {
+      $("#grid-view").hide();
+      $("#list-view").show();
+      $("#list-button").removeClass("deactive-view");
+      $("#list-button").addClass("active-view");
+      $("#grid-button").addClass("deactive-view");
+      $("#grid-button").removeClass("active-view");
+    };
+    const handleGrid = () => {
+      $("#grid-view").show();
+      $("#list-view").hide();
+      $("#grid-button").removeClass("deactive-view");
+      $("#grid-button").addClass("active-view");
+      $("#list-button").addClass("deactive-view");
+      $("#list-button").removeClass("active-view");
+    };
+  </script>
+</html>

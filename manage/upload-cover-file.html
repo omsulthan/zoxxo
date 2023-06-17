@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Zoxxo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <style>
+    .upload-button {
+      cursor: pointer;
+    }
+    #first-layer {
+      width: 300px;
+      height: 300px;
+      background-color: #ebebf1;
+    }
+    #first-layer:hover {
+      background-color: #dadae6;
+    }
+    #second-layer {
+      width: 260px;
+      height: 260px;
+      background-color: #e2e2eb;
+    }
+    #second-layer:hover {
+      background-color: #dadae6;
+    }
+    #third-layer {
+      width: 220px;
+      height: 220px;
+      font-size: 14px;
+      text-align: center;
+      background-color: #dadae6;
+    }
+    #third-layer img {
+      width: 100px;
+      height: 100px;
+    }
+    .my-way {
+      display: none;
+    }
+    table tr td,
+    table tr th {
+      background-color: transparent !important;
+    }
+    @media (min-width: 992px) {
+      #first-layer {
+        width: 300px;
+        height: 300px;
+      }
+      #second-layer {
+        width: 260px;
+        height: 260px;
+      }
+      #third-layer {
+        width: 220px;
+        height: 220px;
+        font-size: 14px;
+      }
+
+      #third-layer img {
+        width: 80px;
+        height: 60px;
+      }
+    }
+    @media (min-width: 1200px) {
+      .my-way {
+        display: block;
+        background-image: url("../assets/img/bg-preview.svg");
+        height: 100vh;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
+    @media (min-width: 1280px) {
+      #first-layer {
+        width: 400px;
+        height: 400px;
+      }
+      #second-layer {
+        width: 360px;
+        height: 360px;
+      }
+      #third-layer {
+        width: 300px;
+        height: 300px;
+        font-size: 18px;
+      }
+      #third-layer img {
+        width: 140px;
+        height: 100px;
+      }
+    }
+  </style>
+  <body>
+    <div class="d-flex justify-content-between">
+      <div id="third-section" style="background-color: #f5f5f7; height: 100vh" class="col-xl-5 col-12 py-5 d-flex flex-column justify-content-between justify-content-xl-around">
+        <div class="text-center">
+          <div class="fw-bold h1">Upload your Data</div>
+          <div class="h5 text-secondary w-50 mx-auto">Drag your cover image and upload it for current workspaces</div>
+        </div>
+        <div  class="d-flex justify-content-center align-items-center pointer upload-button">
+          <div id="first-layer" class="mx-auto rounded-circle d-flex justify-content-center align-items-center">
+            <div id="second-layer" class="mx-auto rounded-circle d-flex justify-content-center align-items-center second-ring">
+              <div id="third-layer" class="mx-auto rounded-circle d-flex justify-content-center align-items-center flex-column">
+                <img src="../assets/img/icon/upload-blue.svg" alt="Upload Icon" srcset="" />
+                <div id="#text-instruction" style="color: #8f8f97" class="w-75 mt-2 text-lg-center">Drag your files here or click here to upload</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-between col-6 mx-auto">
+          <button style="width: 40px; height: 40px" class="bg-danger rounded-circle btn btn-danger"></button>
+          <button style="width: 40px; height: 40px" class="bg-primary rounded-circle btn btn-primary"></button>
+          <button style="width: 40px; height: 40px" class="bg-warning rounded-circle btn btn-warning"></button>
+          <button style="width: 40px; height: 40px" class="bg-secondary rounded-circle btn btn-secondary"></button>
+          <button style="width: 40px; height: 40px" class="bg-success rounded-circle btn btn-success"></button>
+          <button style="width: 40px; height: 40px" class="bg-danger rounded-circle btn btn-danger"></button>
+        </div>
+        <div class="d-flex justify-content-center gap-3 justify-content-xl-end px-xl-5">
+          <button style="border: 1px solid #9997bf; color: #9997bf" class="btn rounded">Upload</button>
+          <button style="background-color: #9997bf" class="btn btn-primary rounded">Save and Exit</button>
+        </div>
+      </div>
+      <div class="my-way col-xl-7 d-xl-flex justify-content-xl-center align-items-xl-center">
+        <div class="bg-white rounded p-2"><img src="../assets/img/Cover-Image.png" width="200" alt="" /></div>
+      </div>
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/bb1fce9dd9.js" crossorigin="anonymous"></script>
+  <!-- Script untuk library jQuery (dibutuhkan untuk contoh JavaScript di bawah) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- My Script -->
+</html>

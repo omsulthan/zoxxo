@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Zoxxo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <style>
+    .upload-button {
+      cursor: pointer;
+    }
+    #first-layer {
+      width: 300px;
+      height: 300px;
+      background-color: #ebebf1;
+    }
+    #first-layer:hover {
+      background-color: #dadae6;
+    }
+    #second-layer {
+      width: 260px;
+      height: 260px;
+      background-color: #e2e2eb;
+    }
+    #second-layer:hover {
+      background-color: #dadae6;
+    }
+    #third-layer {
+      width: 220px;
+      height: 220px;
+      font-size: 14px;
+      text-align: center;
+      background-color: #dadae6;
+    }
+    #third-layer img {
+      width: 100px;
+      height: 100px;
+    }
+    .my-way {
+      display: none;
+    }
+    table tr td,
+    table tr th {
+      background-color: transparent !important;
+    }
+    @media (min-width: 992px) {
+      #first-layer {
+        width: 300px;
+        height: 300px;
+      }
+      #second-layer {
+        width: 260px;
+        height: 260px;
+      }
+      #third-layer {
+        width: 220px;
+        height: 220px;
+        font-size: 14px;
+      }
+
+      #third-layer img {
+        width: 80px;
+        height: 60px;
+      }
+    }
+    @media (min-width: 1200px) {
+      .my-way {
+        display: block;
+        background-image: url("../assets/img/bg-preview.svg");
+        height: 100vh;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
+    @media (min-width: 1280px) {
+      #first-layer {
+        width: 400px;
+        height: 400px;
+      }
+      #second-layer {
+        width: 360px;
+        height: 360px;
+      }
+      #third-layer {
+        width: 300px;
+        height: 300px;
+        font-size: 18px;
+      }
+      #third-layer img {
+        width: 140px;
+        height: 100px;
+      }
+    }
+  </style>
+  <body>
+    <div class="d-flex justify-content-between">
+      <!-- First Section -->
+      <div id="first-section" style="background-color: #f5f5f7; height: 100vh" class="col-xl-5 col-12 py-5 d-flex flex-column justify-content-between justify-content-xl-around d-flex">
+        <div class="text-center">
+          <div class="fw-bold h1">Upload your Data</div>
+          <div class="h5 text-secondary w-50 mx-auto">Drag your cover image and upload it for current workspaces</div>
+        </div>
+        <div onclick="handleClick()" class="d-flex justify-content-center align-items-center pointer upload-button">
+          <div id="first-layer" class="mx-auto rounded-circle d-flex justify-content-center align-items-center">
+            <div id="second-layer" class="mx-auto rounded-circle d-flex justify-content-center align-items-center second-ring">
+              <div id="third-layer" class="mx-auto rounded-circle d-flex justify-content-center align-items-center flex-column">
+                <img src="../assets/img/icon/upload-blue.svg" alt="Upload Icon" srcset="" />
+                <div id="#text-instruction" style="color: #8f8f97" class="w-75 mt-2 text-lg-center">Drag your files here or click here to upload</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center gap-3 justify-content-xl-end px-xl-5">
+          <button style="border: 1px solid #9997bf; color: #9997bf" class="btn rounded">Upload</button>
+          <button onclick="handleFirst()" style="background-color: #9997bf" class="btn btn-primary rounded">Save and Exit</button>
+        </div>
+      </div>
+
+      <!-- Second Section -->
+      <div id="second-section" style="background-color: #f5f5f7; height: 100vh" class="w-100 text-center py-3 flex-column justify-content-between justify-content-xl-around pt-5 d-none py-4">
+        <div class="text-center">
+          <div class="fw-bold h1">Upload your Data</div>
+          <div class="h5 text-primary-emphasis w-50 mx-auto">Drag your cover image and upload it for current workspaces</div>
+        </div>
+        <div id="upload" style="background-color: #dadae6" class="col-7 mx-auto rounded py-5 d-flex flex-column justify-content-center align-items-center gap-2">
+          <img src="../assets/img/icon/upload-blue.svg" alt="Upload Icon" srcset="" />
+          <div style="color: #9997bf" class="w-75 mt-2">Drag your files here or click here to upload</div>
+        </div>
+        <div class="col-8 mx-auto text-start">
+          <div class="h6 text-secondary fw-semibold my-3">Uploaded Files :</div>
+          <table class="table table-responsive-sm">
+            <thead>
+              <tr>
+                <th class="text-secondary fw-light">Name</th>
+                <th class="text-secondary fw-light">Size</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>name_of_file.jpg</td>
+                <td>20.00MB</td>
+                <td><button class="btn btn-close"></button></td>
+              </tr>
+              <tr>
+                <td>name_of_file.jpg</td>
+                <td>20.00MB</td>
+                <td><button class="btn btn-close"></button></td>
+              </tr>
+            </tbody>
+          </table>
+          <div style="color: #9997bf" class="col-12 mx-auto col-md-2 col-lg-2 col-xl-4 text-center"><a class="link-offset-2 link-underline link-underline-opacity-0 h6" href="#">See More</a></div>
+        </div>
+
+        <!-- Share Link Section Default -->
+        <div id="route-section" class="d-flex justify-content-center gap-5">
+          <div style="color: #9997bf"><i class="fa-solid fa-x"></i> Upload</div>
+          <div style="color: #9f9f9f"><i class="fa-solid fa-x"></i> Customize</div>
+          <div style="color: #9f9f9f"><i class="fa-solid fa-x"></i> Enjoy</div>
+        </div>
+        <div class="d-flex justify-content-center gap-3 justify-content-xl-end px-xl-5">
+          <button style="border: 1px solid #9997bf; color: #9997bf" class="btn rounded">Cancel</button>
+          <button onclick="handleSecond()" style="background-color: #9997bf" class="btn btn-primary rounded">Next step</button>
+        </div>
+      </div>
+
+      <!-- Third Section -->
+      <div id="third-section" style="background-color: #f5f5f7; height: 100vh" class="col-xl-5 col-12 py-5 d-flex flex-column justify-content-between justify-content-xl-around d-none">
+        <div class="text-center">
+          <div class="fw-bold h1">Upload your Data</div>
+          <div class="h5 text-secondary w-50 mx-auto">Drag your cover image and upload it for current workspaces</div>
+        </div>
+        <div onclick="handleClick()" class="d-flex justify-content-center align-items-center pointer upload-button">
+          <div id="first-layer" class="mx-auto rounded-circle d-flex justify-content-center align-items-center">
+            <div id="second-layer" class="mx-auto rounded-circle d-flex justify-content-center align-items-center second-ring">
+              <div id="third-layer" class="mx-auto rounded-circle d-flex justify-content-center align-items-center flex-column">
+                <img src="../assets/img/icon/upload-blue.svg" alt="Upload Icon" srcset="" />
+                <div id="#text-instruction" style="color: #8f8f97" class="w-75 mt-2 text-lg-center">Drag your files here or click here to upload</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-between col-6 mx-auto">
+          <button style="width: 40px; height: 40px" class="bg-danger rounded-circle btn btn-danger"></button>
+          <button style="width: 40px; height: 40px" class="bg-primary rounded-circle btn btn-primary"></button>
+          <button style="width: 40px; height: 40px" class="bg-warning rounded-circle btn btn-warning"></button>
+          <button style="width: 40px; height: 40px" class="bg-secondary rounded-circle btn btn-secondary"></button>
+          <button style="width: 40px; height: 40px" class="bg-success rounded-circle btn btn-success"></button>
+          <button style="width: 40px; height: 40px" class="bg-danger rounded-circle btn btn-danger"></button>
+        </div>
+        <div id="route-section" class="d-flex justify-content-center gap-5">
+          <div style="color: #9997bf"><i class="fa-solid fa-x"></i> Upload</div>
+          <div style="color: #9997bf"><i class="fa-solid fa-x"></i> Customize</div>
+          <div style="color: #9f9f9f"><i class="fa-solid fa-x"></i> Enjoy</div>
+        </div>
+        <div class="d-flex justify-content-center gap-3 justify-content-xl-end px-xl-5">
+          <button style="border: 1px solid #9997bf; color: #9997bf" class="btn rounded">Cancel</button>
+          <button onclick="handleThird()" style="background-color: #9997bf" class="btn btn-primary rounded">Next step</button>
+        </div>
+      </div>
+
+      <!-- Enjoy Section -->
+      <div id="enjoy-section" style="background-color: #f5f5f7; height: 100vh" class="w-100 text-center py-3 flex-column justify-content-between justify-content-xl-around pt-5 d-none py-4">
+        <div class="text-center">
+          <div class="fw-bold h1">ready to share!</div>
+          <div class="h5 text-primary-emphasis w-50 mx-auto">your Data is now ready to share with your partners, friends & fmaily</div>
+        </div>
+        <div class="col-8 mx-auto text-start">
+          <div class="h6 text-secondary fw-semibold my-3">Uploaded Files :</div>
+          <table class="table table-responsive-sm">
+            <thead>
+              <tr>
+                <th class="text-secondary fw-light">Name</th>
+                <th class="text-secondary fw-light">Size</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>name_of_file.jpg</td>
+                <td>20.00MB</td>
+                <td><button class="btn btn-close"></button></td>
+              </tr>
+              <tr>
+                <td>name_of_file.jpg</td>
+                <td>20.00MB</td>
+                <td><button class="btn btn-close"></button></td>
+              </tr>
+              <tr>
+                <td>name_of_file.jpg</td>
+                <td>20.00MB</td>
+                <td><button class="btn btn-close"></button></td>
+              </tr>
+            </tbody>
+          </table>
+          <div style="color: #9997bf" class="col-12 mx-auto col-md-2 col-lg-2 col-xl-4 text-center"><a class="link-offset-2 link-underline link-underline-opacity-0 h6" href="#">See More</a></div>
+        </div>
+
+        <div class="col-8 mx-auto">
+          <div class="input-group mb-3">
+            <input style="border: #9997bf; color: #9997bf" type="text" class="form-control" aria-label="Amount (to the nearest dollar)" value="https://xd.adobe.com/view/5f5ec478-1928-4e28-80ea-11e61c21d60e-0a0d/grid" />
+            <button style="border: #9997bf; color: #9997bf" class="input-group-text"><i class="fa-solid fa-copy"></i></button>
+          </div>
+        </div>
+
+        <!-- Share Link Section Default -->
+        <div id="route-section" class="d-flex justify-content-center gap-5">
+          <div style="color: #9997bf"><i class="fa-solid fa-x"></i> Upload</div>
+          <div style="color: #9997bf"><i class="fa-solid fa-x"></i> Customize</div>
+          <div style="color: #9997bf"><i class="fa-solid fa-x"></i> Enjoy</div>
+        </div>
+        <div class="d-flex justify-content-center gap-3 justify-content-xl-end px-xl-5">
+          <button onclick="handleFinish()" style="background-color: #9997bf" class="btn btn-primary rounded">Back to Workspaces</button>
+        </div>
+      </div>
+      <div class="my-way col-xl-7 d-xl-flex justify-content-xl-center align-items-xl-center">
+        <div class="bg-white rounded p-2"><img src="../assets/img/Cover-Image.png" width="200" alt="" /></div>
+      </div>
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/bb1fce9dd9.js" crossorigin="anonymous"></script>
+  <!-- Script untuk library jQuery (dibutuhkan untuk contoh JavaScript di bawah) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- My Script -->
+  <script>
+    const handleFirst = () => {
+      $("#first-section").addClass("d-none");
+      $("#first-section").removeClass("d-flex");
+      $("#second-section").addClass("d-flex");
+      $("#second-section").removeClass("d-none");
+    };
+    const handleSecond = () => {
+      $("#second-section").addClass("d-none");
+      $("#second-section").removeClass("d-flex");
+      $("#third-section").addClass("d-flex");
+      $("#third-section").removeClass("d-none");
+    };
+    const handleThird = () => {
+      $("#third-section").addClass("d-none");
+      $("#third-section").removeClass("d-flex");
+      $("#enjoy-section").addClass("d-flex");
+      $("#enjoy-section").removeClass("d-none");
+    };
+    const handleFinish = () => {
+      $("#enjoy-section").addClass("d-none");
+      $("#enjoy-section").removeClass("d-flex");
+      $("#first-section").addClass("d-flex");
+      $("#first-section").removeClass("d-none");
+    };
+  </script>
+</html>

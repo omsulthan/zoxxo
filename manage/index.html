@@ -6,7 +6,7 @@
     <title>Zoxxo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
     <!-- External CSS -->
-    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
   </head>
   <style>
     .offcanvas {
@@ -32,15 +32,51 @@
     .card-content-title {
       font-size: 14px;
     }
+    .modal-header {
+      border-bottom: none !important;
+    }
+    .modal-footer {
+      border-top: none !important;
+      padding-bottom: 28px;
+    }
   </style>
   <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-md bg-transparent sticky-top shadow-sm">
+    <nav class="navbar navbar-expand-md bg-white sticky-top shadow-sm">
       <div class="container-fluid col-md-11 align-items-center d-flex justify-content-between">
         <a style="color: #525253" class="navbar-brand" href="/"><img src="../assets/img/zoxxo_CLR.png" alt="Logo Zoxxo" srcset="" width="45" height="35" /><span class="ms-2">MANAGE</span></a>
         <div class="d-flex gap-2">
           <button class="bg-transparent border-0 d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"><i class="fa-solid fa-bars"></i></button>
-          <div style="width: 36px; height: 36px; background-color: #2b2b2b; border-radius: 99999999px; font-size: 14px; color: white" class="d-flex justify-content-center align-items-center fw-bold">U</div>
+          <div
+            style="width: 36px; height: 36px; background-color: #2b2b2b; border-radius: 99999999px; font-size: 14px; color: white"
+            class="d-flex justify-content-center align-items-center fw-bold"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            U
+          </div>
+          <div style="right: 8px !important; left: auto !important" class="dropdown-menu">
+            <div class="d-flex gap-2 align-items-center dropdown-item">
+              <div style="width: 36px; height: 36px; background-color: #2b2b2b; border-radius: 99999999px; font-size: 14px; color: white" class="d-flex justify-content-center align-items-center fw-bold">U</div>
+              <div>info@username.com</div>
+            </div>
+            <hr />
+            <div class="dropdown-item">
+              <div class="text-secondary fw-bold">Profile</div>
+              <a class="ms-2 pt-2 text-decoration-none text-black" href="#">Dashboard</a>
+            </div>
+            <hr />
+            <div class="dropdown-item d-flex flex-column">
+              <div class="text-secondary fw-bold">Tools</div>
+              <a class="ms-2 pt-2 text-decoration-none text-black" href="#">Zoxxo Manage</a>
+              <a class="ms-2 pt-2 text-decoration-none text-black" href="#">Zoxxo ads</a>
+              <a class="ms-2 pt-2 text-decoration-none text-black" href="#">Help Center</a>
+              <hr />
+            </div>
+            <div class="dropdown-item d-flex flex-column">
+              <a class="ms-2 pb-2 text-decoration-none text-black" href="#">Logout</a>
+            </div>
+          </div>
         </div>
       </div>
       <div class="offcanvas-lg offcanvas-start d-lg-none" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
@@ -64,7 +100,7 @@
             <!-- Add Workspace -->
             <div class="d-flex justify-content-between align-items-center mb-3 p-3">
               <div class="fw-normal">Workspaces</div>
-              <button style="background-color: #d8d8d8" class="btn btn-sm text-dark"><i class="fas fa-plus"></i></button>
+              <button type="button" style="background-color: #d8d8d8" class="btn btn-sm text-dark" data-bs-toggle="modal" data-bs-target="#createWorkspaceModal"><i class="fas fa-plus"></i></button>
             </div>
 
             <!-- Private Workspace -->
@@ -104,7 +140,7 @@
           <!-- Add Workspace -->
           <div class="d-flex justify-content-between align-items-center mb-3 p-3">
             <div class="fw-normal">Workspaces</div>
-            <button style="background-color: #d8d8d8" class="btn btn-sm text-dark"><i class="fas fa-plus"></i></button>
+            <button type="button" style="background-color: #d8d8d8" class="btn btn-sm text-dark" data-bs-toggle="modal" data-bs-target="#createWorkspaceModal"><i class="fas fa-plus"></i></button>
           </div>
 
           <!-- Private Workspace -->
@@ -130,7 +166,12 @@
             <div>Private Workspace</div>
             <div>|</div>
             <button class="bg-transparent border-0 text-secondary"><i class="fa-solid fa-arrow-up-from-bracket"></i> Share</button>
-            <button class="bg-transparent border-0 text-secondary"><i class="fa-solid fa-ellipsis"></i></button>
+            <i class="fa-solid fa-ellipsis btn" data-bs-toggle="dropdown"></i>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="upload-cover-workspace.html">Upload cover image</a></li>
+              <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#renameWorkspaceModal">Rename</a></li>
+              <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#deleteWorkspaceModal">Delete</a></li>
+            </ul>
           </div>
           <!-- Upload File view Section -->
           <div class="d-flex gap-3 text-secondary justify-content-between px-2 py-lg-2">
@@ -153,7 +194,13 @@
                 <div class="card-body">
                   <div class="d-flex justify-content-between align-items-baseline">
                     <p class="card-text">123 Downloads</p>
-                    <i class="fa-solid fa-ellipsis"></i>
+                    <i class="fa-solid fa-ellipsis btn" data-bs-toggle="dropdown"></i>
+                    <ul class="dropdown-menu">
+                      <li><a style="cursor: pointer" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#shareLinkModal">Copy Link</a></li>
+                      <li><a class="dropdown-item" href="upload-cover-file.html">Upload cover image</a></li>
+                      <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#renameModal">Rename</a></li>
+                      <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</a></li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -165,7 +212,13 @@
                 <div class="card-body">
                   <div class="d-flex justify-content-between align-items-baseline">
                     <p class="card-text">123 Downloads</p>
-                    <i class="fa-solid fa-ellipsis"></i>
+                    <i class="fa-solid fa-ellipsis btn" data-bs-toggle="dropdown"></i>
+                    <ul class="dropdown-menu">
+                      <li><a style="cursor: pointer" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#shareLinkModal">Copy Link</a></li>
+                      <li><a class="dropdown-item" href="upload-cover-file.html">Upload cover image</a></li>
+                      <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#renameModal">Rename</a></li>
+                      <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</a></li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -177,7 +230,13 @@
                 <div class="card-body">
                   <div class="d-flex justify-content-between align-items-baseline">
                     <p class="card-text">123 Downloads</p>
-                    <i class="fa-solid fa-ellipsis"></i>
+                    <i class="fa-solid fa-ellipsis btn" data-bs-toggle="dropdown"></i>
+                    <ul class="dropdown-menu">
+                      <li><a style="cursor: pointer" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#shareLinkModal">Copy Link</a></li>
+                      <li><a class="dropdown-item" href="upload-cover-file.html">Upload cover image</a></li>
+                      <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#renameModal">Rename</a></li>
+                      <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</a></li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -187,7 +246,7 @@
 
         <!-- List View -->
         <div id="list-view" style="display: none">
-          <div class="d-flex justify-content-between align-items-baseline px-2 mb-3">
+          <div class="d-flex justify-content-between align-items-baseline px-4 mb-3">
             <div>
               <div>Name</div>
             </div>
@@ -211,7 +270,15 @@
                 <div class="d-flex gap-4 gap-lg-5">
                   <div>21.01.2023</div>
                   <div>123</div>
-                  <div><i class="fa-solid fa-ellipsis"></i></div>
+                  <div>
+                    <i class="fa-solid fa-ellipsis btn" data-bs-toggle="dropdown"></i>
+                    <ul class="dropdown-menu">
+                      <li><a style="cursor: pointer" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#shareLinkModal">Copy Link</a></li>
+                      <li><a class="dropdown-item" href="upload-cover-file.html">Upload cover image</a></li>
+                      <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#renameModal">Rename</a></li>
+                      <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</a></li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -230,7 +297,15 @@
                 <div class="d-flex gap-4 gap-lg-5">
                   <div>21.01.2023</div>
                   <div>123</div>
-                  <div><i class="fa-solid fa-ellipsis"></i></div>
+                  <div>
+                    <i class="fa-solid fa-ellipsis btn" data-bs-toggle="dropdown"></i>
+                    <ul class="dropdown-menu">
+                      <li><a style="cursor: pointer" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#shareLinkModal">Copy Link</a></li>
+                      <li><a class="dropdown-item" href="upload-cover-file.html">Upload cover image</a></li>
+                      <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#renameModal">Rename</a></li>
+                      <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</a></li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -249,10 +324,145 @@
                 <div class="d-flex gap-4 gap-lg-5">
                   <div>21.01.2023</div>
                   <div>123</div>
-                  <div><i class="fa-solid fa-ellipsis"></i></div>
+                  <div>
+                    <i class="fa-solid fa-ellipsis btn" data-bs-toggle="dropdown"></i>
+                    <ul class="dropdown-menu">
+                      <li><a style="cursor: pointer" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#shareLinkModal">Copy Link</a></li>
+                      <li><a class="dropdown-item" href="upload-cover-file.html">Upload cover image</a></li>
+                      <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#renameModal">Rename</a></li>
+                      <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</a></li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Create Workspace Modal -->
+    <div class="modal fade" id="createWorkspaceModal" tabindex="-1" aria-labelledby="createWorkspaceModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-2" style="color: #000000; font-size: 24px">Create a new workspace</div>
+            <form>
+              <div class="mb-3">
+                <input style="border-color: #707070" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name your workspaces" />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button style="background-color: #f4f4f4; color: #aaaaaa; border-color: #f4f4f4" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button style="background-color: #9997bf; border-color: #9997bf" type="button" class="btn btn-primary">Create workspace</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Delete Modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-2" style="color: #000000; font-size: 24px">Delete name of the file ?</div>
+            <div>If you delete Name of the file.</div>
+            <div>You’ll lose all of the Data in it.</div>
+          </div>
+          <div class="modal-footer">
+            <button style="background-color: #f4f4f4; color: #aaaaaa; border-color: #f4f4f4" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-danger">Create workspace</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Delete Workspace Modal -->
+    <div class="modal fade" id="deleteWorkspaceModal" tabindex="-1" aria-labelledby="deleteWorkspaceModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-2" style="color: #000000; font-size: 24px">Delete workspace ?</div>
+            <div>If you delete workspace Private Workspace</div>
+            <div>You’ll lose all of the Data in it.</div>
+          </div>
+          <div class="modal-footer">
+            <button style="background-color: #f4f4f4; color: #aaaaaa; border-color: #f4f4f4" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-danger">Create workspace</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Rename Modal -->
+    <div class="modal fade" id="renameModal" tabindex="-1" aria-labelledby="renameModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-2" style="color: #000000; font-size: 24px">Rename your uploaded file</div>
+            <form>
+              <div class="input-group mb-3">
+                <input style="border-color: #707070" type="text" class="form-control" placeholder="Name of the file" />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button style="background-color: #f4f4f4; color: #aaaaaa; border-color: #f4f4f4" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button style="background-color: #9997bf; border-color: #9997bf" type="button" class="btn btn-primary">Create workspace</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Rename Workspace Modal -->
+    <div class="modal fade" id="renameWorkspaceModal" tabindex="-1" aria-labelledby="renameWorkspaceModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-2" style="color: #000000; font-size: 24px">Rename your workspace</div>
+            <form>
+              <div class="input-group mb-3">
+                <input style="border-color: #707070" type="text" class="form-control" placeholder="Name of the file" value="Private workspace" />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button style="background-color: #f4f4f4; color: #aaaaaa; border-color: #f4f4f4" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button style="background-color: #9997bf; border-color: #9997bf" type="button" class="btn btn-primary">Create workspace</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Share Link Modal -->
+    <div class="modal fade" id="shareLinkModal" tabindex="-1" aria-labelledby="shareLinkModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-2" style="color: #000000; font-size: 24px">Share this link</div>
+            <form>
+              <div class="input-group mb-3">
+                <input style="border-color: #707070" type="text" class="form-control" aria-label="Amount (to the nearest dollar)" value="https://xd.adobe.com/view/5f5ec478-1928-4e28-80ea-11e61c21d60e-0a0d/grid" />
+                <button style="border-color: #707070; color: #9997bf" class="input-group-text"><i class="fa-solid fa-copy"></i></button>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button style="background-color: #f4f4f4; color: #aaaaaa; border-color: #f4f4f4" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button style="background-color: #9997bf; border-color: #9997bf" type="button" class="btn btn-primary">Create workspace</button>
           </div>
         </div>
       </div>
