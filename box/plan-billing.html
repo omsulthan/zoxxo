@@ -72,6 +72,16 @@
     table tr th {
       background-color: transparent !important;
     }
+    .dropdown-link a div:hover {
+      background-color: #f0f0f0 !important;
+      border-radius: 10px;
+    }
+    .list-link:hover {
+      background-color: #f5f3f3 !important;
+    }
+    .method-button:hover {
+      background-color: #d3d3d3;
+    }
     @media (min-width: 992px) {
       .pay-safe-subtitle {
         font-size: 16px;
@@ -105,25 +115,39 @@
             U
           </div>
           <div style="right: 8px !important; left: auto !important" class="dropdown-menu">
-            <div class="d-flex gap-2 align-items-center dropdown-item">
-              <div style="width: 36px; height: 36px; background-color: #2b2b2b; border-radius: 99999999px; font-size: 14px; color: white" class="d-flex justify-content-center align-items-center fw-bold">U</div>
-              <div>info@username.com</div>
+            <div class="d-flex gap-2 align-items-center p-3">
+              <div style="width: 48px; height: 48px; background-color: #2b2b2b; border-radius: 99999999px; font-size: 14px; color: white" class="d-flex justify-content-center align-items-center fw-bold">U</div>
+              <div>
+                <div>Username</div>
+                <div>info@username.com</div>
+              </div>
             </div>
             <hr />
-            <div class="dropdown-item">
+            <div class="px-3 dropdown-link">
               <div class="text-secondary fw-bold">Profile</div>
-              <a class="ms-2 pt-2 text-decoration-none text-black" href="#">Dashboard</a>
+              <a class="text-decoration-none text-black" href="#">
+                <div class="col-12 p-2">Dashboard</div>
+              </a>
             </div>
             <hr />
-            <div class="dropdown-item d-flex flex-column">
+            <div class="d-flex flex-column px-3 dropdown-link">
               <div class="text-secondary fw-bold">Tools</div>
-              <a class="ms-2 pt-2 text-decoration-none text-black" href="#">Zoxxo Manage</a>
-              <a class="ms-2 pt-2 text-decoration-none text-black" href="#">Zoxxo ads</a>
-              <a class="ms-2 pt-2 text-decoration-none text-black" href="#">Help Center</a>
+              <a class="text-decoration-none text-black" href="#">
+                <div class="col-12 p-2">Zoxxo Manage</div>
+              </a>
+              <a class="text-decoration-none text-black" href="#">
+                <div class="col-12 p-2">Zoxxo ads</div>
+              </a>
+
+              <a class="text-decoration-none text-black" href="#">
+                <div class="col-12 p-2">Help center</div>
+              </a>
               <hr />
             </div>
-            <div class="dropdown-item d-flex flex-column">
-              <a class="ms-2 pb-2 text-decoration-none text-black" href="#">Logout</a>
+            <div class="d-flex flex-column px-3 dropdown-link">
+              <a class="text-decoration-none text-black" href="#">
+                <div class="col-12 p-2">Logout</div>
+              </a>
             </div>
           </div>
         </div>
@@ -135,42 +159,24 @@
         </div>
         <div class="offcanvas-body d-flex flex-column justify-content-between">
           <div>
-            <!-- Search -->
-            <div class="p-3">
-              <div class="input-group d-flex align-items-center">
-                <div class="input-group-prepend">
-                  <span style="padding: 10px; background-color: #f0f0f0" class="input-group-text border-0 rounded-0"><i class="fas fa-search"></i></span>
+            <div>
+              <!-- Mobile View -->
+              <!-- Search -->
+              <div class="p-3">
+                <div class="input-group d-flex align-items-center">
+                  <div class="input-group-prepend">
+                    <span style="padding: 10px; background-color: #f0f0f0" class="input-group-text border-0 rounded-0"><i class="fas fa-search"></i></span>
+                  </div>
+                  <input style="background-color: #f0f0f0" type="text" class="form-control border-0 rounded-0" placeholder="Find workspace or file" id="searchInput" />
                 </div>
-                <input style="background-color: #f0f0f0" type="text" class="form-control border-0 rounded-0" placeholder="Find workspace or file" />
+                <hr />
               </div>
-              <hr />
+              <div class="sidebar-list">
+                <a href="#" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black list-link">
+                  <div class="fw-normal">General Settings</div>
+                </a>
+              </div>
             </div>
-
-            <!-- General Settings -->
-            <a href="general-html" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black">
-              <div class="fw-normal">General Settings</div>
-            </a>
-
-            <!-- Dashboard -->
-            <a href="/box/" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black">
-              <div class="fw-normal">Dashboard</div>
-            </a>
-            <!-- Account -->
-            <a href="account.html" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black">
-              <div class="fw-normal">Account</div>
-            </a>
-            <!-- Plan & Biliing -->
-            <a href="plan-billing.html" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black active">
-              <div class="fw-normal">Plan & Billing</div>
-            </a>
-            <!-- Preferences -->
-            <a href="#" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black">
-              <div class="fw-normal">Preferences</div>
-            </a>
-            <!-- Communications -->
-            <a href="#" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black">
-              <div class="fw-normal">Communcation</div>
-            </a>
           </div>
           <div class="p-3">
             <div class="text-center text-secondary">7 out of 10 GB</div>
@@ -186,44 +192,24 @@
     </nav>
     <!-- Sidebar -->
     <div class="d-flex">
-      <div style="height: 93vh; box-shadow: 0 1rem 1rem 1px rgba(0, 0, 0, 0.175) !important; top: 61px" class="d-lg-flex flex-column justify-content-between col-lg-3 col-xl-2 d-none sticky-top">
+      <div style="height: 93vh; box-shadow: 0 1rem 1rem 1px rgba(0, 0, 0, 0.175) !important; top: 61px" class="sticky-top d-lg-flex flex-column justify-content-between col-lg-3 col-xl-2 d-none">
         <div>
+          <!-- Desktop View -->
           <!-- Search -->
           <div class="p-3">
             <div class="input-group d-flex align-items-center">
               <div class="input-group-prepend">
                 <span style="padding: 10px; background-color: #f0f0f0" class="input-group-text border-0 rounded-0"><i class="fas fa-search"></i></span>
               </div>
-              <input style="background-color: #f0f0f0" type="text" class="form-control border-0 rounded-0" placeholder="Find workspace or file" />
+              <input style="background-color: #f0f0f0" type="text" class="form-control border-0 rounded-0" placeholder="Find workspace or file" id="searchInputDesktop" />
             </div>
             <hr />
           </div>
-
-          <!-- General Settings -->
-          <a href="general.html" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black">
-            <div class="fw-normal">General Settings</div>
-          </a>
-
-          <!-- Dashboard -->
-          <a href="/box/" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black">
-            <div class="fw-normal">Dashboard</div>
-          </a>
-          <!-- Account -->
-          <a href="account.html" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black">
-            <div class="fw-normal">Account</div>
-          </a>
-          <!-- Plan & Biliing -->
-          <a href="plan-billing.html" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black active">
-            <div class="fw-normal">Plan & Billing</div>
-          </a>
-          <!-- Preferences -->
-          <a href="preferences.html" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black">
-            <div class="fw-normal">Preferences</div>
-          </a>
-          <!-- Communications -->
-          <a href="communcations.html" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black">
-            <div class="fw-normal">Communcation</div>
-          </a>
+          <div class="sidebar-list-desktop">
+            <a href="#" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black list-link">
+              <div class="fw-normal">General Settings</div>
+            </a>
+          </div>
         </div>
         <div class="p-3">
           <div class="text-center text-secondary">7 out of 10 GB</div>
@@ -237,7 +223,7 @@
       <!-- Content -->
       <div class="p-2 col-lg-9 col-xl-10 col-12">
         <!-- Header Content -->
-        <div class="d-flex justify-content-lg-between flex-column flex-lg-row align-items-lg-center">
+        <div class="d-flex justify-content-lg-between flex-column flex-lg-row align-items-lg-center ps-4">
           <div class="d-flex gap-3 text-secondary title-content px-2 align-items-baseline py-lg-2 mb-3 mb-lg-0">
             <div class="text-danger h4">Plan and billing</div>
             <div>|</div>
@@ -275,7 +261,7 @@
                     <div>Username Company GmbH</div>
                     <div>Streetname and number 21</div>
                     <div>Postal code, City, Country</div>
-                    <button type="button" class="btn btn-outline-danger mt-3">Edit billing details</button>
+                    <button type="button" class="btn btn-outline-danger mt-3" data-bs-toggle="modal" data-bs-target="#billingDetails">Edit billing details</button>
                   </div>
                 </div>
               </div>
@@ -290,7 +276,7 @@
                     <div>Name on Card is Max Mustermann</div>
                   </div>
                   <div class="mt-4">
-                    <button type="button" class="btn btn-outline-danger mt-3">Edit payment method</button>
+                    <button type="button" class="btn btn-outline-danger mt-3" data-bs-toggle="modal" data-bs-target="#paymentModal">Edit payment method</button>
                   </div>
                 </div>
               </div>
@@ -353,10 +339,226 @@
       </div>
     </div>
   </body>
+  <!-- Billing details Modal -->
+  <div class="modal fade" id="billingDetails" tabindex="-1" aria-labelledby="billingDetailsLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 600px;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body px-3">
+          <div class="mb-2" style="color: #000000; font-size: 24px">Billing details</div>
+          <div>
+            <form>
+              <div class="mb-3">
+                <label for="nameCompany" class="form-label text-black-50 h6">Name of company*</label>
+                <input type="email" placeholder="Name of the company" class="form-control" id="nameCompany" aria-describedby="emailHelp" />
+              </div>
+              <div class="mb-3">
+                <label for="nameCompany" class="form-label text-black-50 h6">Address*</label>
+                <input
+                  type="email"
+                  placeholder="Name of the Street and Number
+                "
+                  class="form-control"
+                  id="nameCompany"
+                  aria-describedby="emailHelp"
+                />
+              </div>
+              <div class="mb-3 d-flex justify-content-between gap-2">
+                <div>
+                  <label for="nameCompany" class="form-label text-black-50 h6">Postal code*</label>
+                  <input
+                    type="email"
+                    placeholder="123456
+                  "
+                    class="form-control"
+                    id="nameCompany"
+                    aria-describedby="emailHelp"
+                  />
+                </div>
+                <div>
+                  <label for="nameCompany" class="form-label text-black-50 h6">City*</label>
+                  <input
+                    type="email"
+                    placeholder="Frankfurt am Main
+                  "
+                    class="form-control"
+                    id="nameCompany"
+                    aria-describedby="emailHelp"
+                  />
+                </div>
+                <div>
+                  <label for="nameCompany" class="form-label text-black-50 h6">City*</label>
+                  <button style="border: 1px solid #e8ebee !important; padding: 6px 4px; color: #797b7e" class="bg-transparent border-1 dropdown-toggle rounded" data-bs-toggle="dropdown" aria-expanded="false">Country</button>
+                  <ul class="dropdown-menu">
+                    <li class="dropdown-item">Indonesia</li>
+                    <li class="dropdown-item">Malaysia</li>
+                    <li class="dropdown-item">Brunei</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="nameCompany" class="form-label text-black-50 h6">VAT Number*</label>
+                <input
+                  type="email"
+                  placeholder="DE - 12345678
+                "
+                  class="form-control"
+                  id="nameCompany"
+                  aria-describedby="emailHelp"
+                />
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button style="background-color: #f4f4f4; color: #aaaaaa; border-color: #f4f4f4" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-danger">Confirm</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Payment Method Modal -->
+  <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 600px;">
+      <div class="modal-content px-3 mx-auto">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-2" style="color: #000000; font-size: 24px">Payment Method</div>
+          <div class="d-flex gap-2 mb-3">
+            <button class="border-0 py-2 px-3 rounded method-button"><img src="../assets/img/icon/master-card.png" width="45" height="35" alt="" /></button>
+            <button class="border-0 py-2 px-3 rounded method-button"><img src="../assets/img/icon/visa.png" width="75" height="24" alt="" /></button>
+            <button class="border-0 py-2 px-3 rounded method-button"><img src="../assets/img/icon/paypal.png" width="90" height="24" alt="" /></button>
+            <button class="border-0 py-2 px-3 rounded method-button"><img src="../assets/img/icon/paysafe.png" width="86" height="21" alt="" /></button>
+          </div>
+          <div class="mb-3">
+            <label for="nameCompany" class="form-label text-black-50 h6">Name on card*</label>
+            <input
+              type="email"
+              placeholder="Name on card
+            "
+              class="form-control"
+              id="nameCompany"
+              aria-describedby="emailHelp"
+            />
+          </div>
+          <div class="mb-3 position-relative">
+            <label for="nameCompany" class="form-label text-black-50 h6">Card number*</label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="fas fa-credit-card"></i></span>
+              <input type="email" placeholder="Card number" class="form-control" id="nameCompany" aria-describedby="emailHelp" />
+              <span class="input-group-text">MM / YY CVC</span>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button style="background-color: #f4f4f4; color: #aaaaaa; border-color: #f4f4f4" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-danger">Confirm</button>
+        </div>
+      </div>
+    </div>
+  </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/bb1fce9dd9.js" crossorigin="anonymous"></script>
   <!-- Script untuk library jQuery (dibutuhkan untuk contoh JavaScript di bawah) -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- My Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Data contoh untuk pencarian
+      const data = [
+        `
+        <a href="/box/" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black list-link ps-4">
+        <div class="fw-normal">Dashboard</div>
+            </a>
+          `,
+        `
+        <a href="account.html" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black list-link ps-4">
+        <div class="fw-normal">Account</div>
+          </a>
+        `,
+        `
+        <a href="plan-billing.html" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black list-link active ps-4">
+        <div class="fw-normal">Plan & Billing</div>
+          </a>
+        `,
+        `
+        <a href="preferences.html" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black list-link ps-4">
+        <div class="fw-normal">Preferences</div>
+          </a>
+        `,
+        `
+        <a href="communcations.html" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black list-link ps-4">
+        <div class="fw-normal">Communcation</div>
+          </a>
+        `,
+      ];
+
+      // Mengambil elemen input dan daftar hasil pencarian
+      const searchInput = document.getElementById("searchInput");
+      const searchResults = document.querySelector(".sidebar-list");
+
+      // Fungsi untuk melakukan pencarian live
+      const performSearch = () => {
+        // Menghapus hasil pencarian sebelumnya
+        searchResults.innerHTML = `
+        <a href="#" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black list-link">
+                  <div class="fw-normal">General Settings</div>
+                </a>
+        `;
+
+        // Mendapatkan nilai input
+        const searchTerm = searchInput.value.toLowerCase();
+
+        // Memfilter data berdasarkan nilai input
+        const filteredData = data.filter((item) => item.toLowerCase().includes(searchTerm));
+
+        filteredData.forEach((item) => {
+          const div = document.createElement("div");
+          div.classList.add("result");
+          div.innerHTML = item;
+          searchResults.append(div);
+        });
+      };
+
+      // Event listener untuk input saat berubah
+      searchInput.addEventListener("input", performSearch);
+      performSearch();
+
+      // Mengambil elemen input dan daftar hasil pencarian
+      const searchInputDesktop = document.getElementById("searchInputDesktop");
+      const searchResultsDesktop = document.querySelector(".sidebar-list-desktop");
+
+      // Fungsi untuk melakukan pencarian live
+      const performSearchDesktop = () => {
+        // Menghapus hasil pencarian sebelumnya
+        searchResultsDesktop.innerHTML = `
+        <a href="#" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black list-link">
+                  <div class="fw-normal">General Settings</div>
+                </a>
+        `;
+
+        // Mendapatkan nilai input
+        const searchTerm = searchInputDesktop.value.toLowerCase();
+
+        // Memfilter data berdasarkan nilai input
+        const filteredData = data.filter((item) => item.toLowerCase().includes(searchTerm));
+
+        filteredData.forEach((item) => {
+          const div = document.createElement("div");
+          div.classList.add("result");
+          div.innerHTML = item;
+          searchResultsDesktop.append(div);
+        });
+      };
+
+      // Event listener untuk input saat berubah
+      searchInputDesktop.addEventListener("input", performSearchDesktop);
+      performSearchDesktop();
+    });
+  </script>
 </html>

@@ -56,6 +56,7 @@
     }
     .form-check-input:checked {
       background-color: red;
+      border: none;
     }
 
     .form-check-input:checked ~ .form-check-label {
@@ -67,6 +68,16 @@
     }
     .pay-safe-title {
       font-size: 18px;
+    }
+    .dropdown-link a div:hover {
+      background-color: #f0f0f0 !important;
+      border-radius: 10px;
+    }
+    .list-link:hover {
+      background-color: #f5f3f3 !important;
+    }
+    .method-button:hover {
+      background-color: #d3d3d3;
     }
     @media (min-width: 992px) {
       .pay-safe-subtitle {
@@ -101,25 +112,39 @@
             U
           </div>
           <div style="right: 8px !important; left: auto !important" class="dropdown-menu">
-            <div class="d-flex gap-2 align-items-center dropdown-item">
-              <div style="width: 36px; height: 36px; background-color: #2b2b2b; border-radius: 99999999px; font-size: 14px; color: white" class="d-flex justify-content-center align-items-center fw-bold">U</div>
-              <div>info@username.com</div>
+            <div class="d-flex gap-2 align-items-center p-3">
+              <div style="width: 48px; height: 48px; background-color: #2b2b2b; border-radius: 99999999px; font-size: 14px; color: white" class="d-flex justify-content-center align-items-center fw-bold">U</div>
+              <div>
+                <div>Username</div>
+                <div>info@username.com</div>
+              </div>
             </div>
             <hr />
-            <div class="dropdown-item">
+            <div class="px-3 dropdown-link">
               <div class="text-secondary fw-bold">Profile</div>
-              <a class="ms-2 pt-2 text-decoration-none text-black" href="#">Dashboard</a>
+              <a class="text-decoration-none text-black" href="#">
+                <div class="col-12 p-2">Dashboard</div>
+              </a>
             </div>
             <hr />
-            <div class="dropdown-item d-flex flex-column">
+            <div class="d-flex flex-column px-3 dropdown-link">
               <div class="text-secondary fw-bold">Tools</div>
-              <a class="ms-2 pt-2 text-decoration-none text-black" href="#">Zoxxo Manage</a>
-              <a class="ms-2 pt-2 text-decoration-none text-black" href="#">Zoxxo ads</a>
-              <a class="ms-2 pt-2 text-decoration-none text-black" href="#">Help Center</a>
+              <a class="text-decoration-none text-black" href="#">
+                <div class="col-12 p-2">Zoxxo Manage</div>
+              </a>
+              <a class="text-decoration-none text-black" href="#">
+                <div class="col-12 p-2">Zoxxo ads</div>
+              </a>
+
+              <a class="text-decoration-none text-black" href="#">
+                <div class="col-12 p-2">Help center</div>
+              </a>
               <hr />
             </div>
-            <div class="dropdown-item d-flex flex-column">
-              <a class="ms-2 pb-2 text-decoration-none text-black" href="#">Logout</a>
+            <div class="d-flex flex-column px-3 dropdown-link">
+              <a class="text-decoration-none text-black" href="#">
+                <div class="col-12 p-2">Logout</div>
+              </a>
             </div>
           </div>
         </div>
@@ -131,42 +156,24 @@
         </div>
         <div class="offcanvas-body d-flex flex-column justify-content-between">
           <div>
-            <!-- Search -->
-            <div class="p-3">
-              <div class="input-group d-flex align-items-center">
-                <div class="input-group-prepend">
-                  <span style="padding: 10px; background-color: #f0f0f0" class="input-group-text border-0 rounded-0"><i class="fas fa-search"></i></span>
+            <div>
+              <!-- Mobile View -->
+              <!-- Search -->
+              <div class="p-3">
+                <div class="input-group d-flex align-items-center">
+                  <div class="input-group-prepend">
+                    <span style="padding: 10px; background-color: #f0f0f0" class="input-group-text border-0 rounded-0"><i class="fas fa-search"></i></span>
+                  </div>
+                  <input style="background-color: #f0f0f0" type="text" class="form-control border-0 rounded-0" placeholder="Find workspace or file" id="searchInput" />
                 </div>
-                <input style="background-color: #f0f0f0" type="text" class="form-control border-0 rounded-0" placeholder="Find workspace or file" />
+                <hr />
               </div>
-              <hr />
+              <div class="sidebar-list">
+                <a href="#" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black list-link">
+                  <div class="fw-normal">General Settings</div>
+                </a>
+              </div>
             </div>
-
-            <!-- General Settings -->
-            <a href="general-html" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black">
-              <div class="fw-normal">General Settings</div>
-            </a>
-
-            <!-- Dashboard -->
-            <a href="/box/" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black">
-              <div class="fw-normal">Dashboard</div>
-            </a>
-            <!-- Account -->
-            <a href="account.html" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black">
-              <div class="fw-normal">Account</div>
-            </a>
-            <!-- Plan & Biliing -->
-            <a href="plan-billing.html" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black">
-              <div class="fw-normal">Plan & Billing</div>
-            </a>
-            <!-- Preferences -->
-            <a href="#" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black">
-              <div class="fw-normal">Preferences</div>
-            </a>
-            <!-- Communications -->
-            <a href="#" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black active">
-              <div class="fw-normal">Communcation</div>
-            </a>
           </div>
           <div class="p-3">
             <div class="text-center text-secondary">7 out of 10 GB</div>
@@ -182,44 +189,24 @@
     </nav>
     <!-- Sidebar -->
     <div class="d-flex">
-      <div style="height: 93vh; box-shadow: 0 1rem 1rem 1px rgba(0, 0, 0, 0.175) !important; top: 61px;" class="sticky-top d-lg-flex flex-column justify-content-between col-lg-3 col-xl-2 d-none">
+      <div style="height: 93vh; box-shadow: 0 1rem 1rem 1px rgba(0, 0, 0, 0.175) !important; top: 61px" class="sticky-top d-lg-flex flex-column justify-content-between col-lg-3 col-xl-2 d-none">
         <div>
+          <!-- Desktop View -->
           <!-- Search -->
           <div class="p-3">
             <div class="input-group d-flex align-items-center">
               <div class="input-group-prepend">
                 <span style="padding: 10px; background-color: #f0f0f0" class="input-group-text border-0 rounded-0"><i class="fas fa-search"></i></span>
               </div>
-              <input style="background-color: #f0f0f0" type="text" class="form-control border-0 rounded-0" placeholder="Find workspace or file" />
+              <input style="background-color: #f0f0f0" type="text" class="form-control border-0 rounded-0" placeholder="Find workspace or file" id="searchInputDesktop" />
             </div>
             <hr />
           </div>
-
-          <!-- General Settings -->
-          <a href="general.html" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black">
-            <div class="fw-normal">General Settings</div>
-          </a>
-
-          <!-- Dashboard -->
-          <a href="/box/" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black">
-            <div class="fw-normal">Dashboard</div>
-          </a>
-          <!-- Account -->
-          <a href="account.html" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black">
-            <div class="fw-normal">Account</div>
-          </a>
-          <!-- Plan & Biliing -->
-          <a href="plan-billing.html" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black">
-            <div class="fw-normal">Plan & Billing</div>
-          </a>
-          <!-- Preferences -->
-          <a href="preferences.html" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black">
-            <div class="fw-normal">Preferences</div>
-          </a>
-          <!-- Communications -->
-          <a href="communcations.html" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black active">
-            <div class="fw-normal">Communcation</div>
-          </a>
+          <div class="sidebar-list-desktop">
+            <a href="#" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black list-link">
+              <div class="fw-normal">General Settings</div>
+            </a>
+          </div>
         </div>
         <div class="p-3">
           <div class="text-center text-secondary">7 out of 10 GB</div>
@@ -285,7 +272,7 @@
               <hr class="col-11 mx-auto" />
             </div>
           </div>
-          <div class="col-lg-3 rounded" style="background-color: #F5DDE7; height: min-content;">
+          <div class="col-lg-3 rounded" style="background-color: #f5dde7; height: min-content">
             <div class="text-center pay-safe p-3 d-flex flex-column justify-content-center align-items-center">
               <img src="../assets/img/icon/pay-safe.png" width= "120px"; height="32px;"" alt="" />
               <img src="../assets/img/Preview10005.png" width="200px" height="200px" alt="" />
@@ -303,4 +290,98 @@
   <!-- Script untuk library jQuery (dibutuhkan untuk contoh JavaScript di bawah) -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- My Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Data contoh untuk pencarian
+      const data = [
+        `
+          <a href="/box/" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black list-link ps-4">
+          <div class="fw-normal">Dashboard</div>
+              </a>
+            `,
+        `
+          <a href="account.html" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black list-link ps-4">
+          <div class="fw-normal">Account</div>
+            </a>
+          `,
+        `
+          <a href="plan-billing.html" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black list-link ps-4">
+          <div class="fw-normal">Plan & Billing</div>
+            </a>
+          `,
+        `
+          <a href="preferences.html" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black list-link ps-4">
+          <div class="fw-normal">Preferences</div>
+            </a>
+          `,
+        `
+          <a href="communcations.html" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black list-link ps-4 active">
+          <div class="fw-normal">Communcation</div>
+            </a>
+          `,
+      ];
+
+      // Mengambil elemen input dan daftar hasil pencarian
+      const searchInput = document.getElementById("searchInput");
+      const searchResults = document.querySelector(".sidebar-list");
+
+      // Fungsi untuk melakukan pencarian live
+      const performSearch = () => {
+        // Menghapus hasil pencarian sebelumnya
+        searchResults.innerHTML = `
+          <a href="#" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black list-link">
+                    <div class="fw-normal">General Settings</div>
+                  </a>
+          `;
+
+        // Mendapatkan nilai input
+        const searchTerm = searchInput.value.toLowerCase();
+
+        // Memfilter data berdasarkan nilai input
+        const filteredData = data.filter((item) => item.toLowerCase().includes(searchTerm));
+
+        filteredData.forEach((item) => {
+          const div = document.createElement("div");
+          div.classList.add("result");
+          div.innerHTML = item;
+          searchResults.append(div);
+        });
+      };
+
+      // Event listener untuk input saat berubah
+      searchInput.addEventListener("input", performSearch);
+      performSearch();
+
+      // Mengambil elemen input dan daftar hasil pencarian
+      const searchInputDesktop = document.getElementById("searchInputDesktop");
+      const searchResultsDesktop = document.querySelector(".sidebar-list-desktop");
+
+      // Fungsi untuk melakukan pencarian live
+      const performSearchDesktop = () => {
+        // Menghapus hasil pencarian sebelumnya
+        searchResultsDesktop.innerHTML = `
+          <a href="#" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black list-link">
+                    <div class="fw-normal">General Settings</div>
+                  </a>
+          `;
+
+        // Mendapatkan nilai input
+        const searchTerm = searchInputDesktop.value.toLowerCase();
+
+        // Memfilter data berdasarkan nilai input
+        const filteredData = data.filter((item) => item.toLowerCase().includes(searchTerm));
+
+        filteredData.forEach((item) => {
+          const div = document.createElement("div");
+          div.classList.add("result");
+          div.innerHTML = item;
+          searchResultsDesktop.append(div);
+        });
+      };
+
+      // Event listener untuk input saat berubah
+      searchInputDesktop.addEventListener("input", performSearchDesktop);
+      performSearchDesktop();
+    });
+  </script>
 </html>
