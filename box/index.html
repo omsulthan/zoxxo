@@ -176,7 +176,7 @@
           </div>
           <!-- Upload File view Section -->
           <div class="d-flex gap-3 text-secondary justify-content-between px-2 py-lg-2 px-lg-5 align-items-center">
-            <button style="background-color: #f21a5d; color: white" class="d-flex btn btn-sm align-items-center gap-2 px-4 py-2"><i class="fa-solid fa-plus"></i> Upload a file</button>
+            <a href="../upload-image.html" style="background-color: #f21a5d; color: white" class="d-flex btn btn-sm align-items-center gap-2 px-4 py-2"><i class="fa-solid fa-plus"></i> Upload a file</a>
           </div>
         </div>
         <hr />
@@ -238,28 +238,28 @@
       // Data contoh untuk pencarian
       const data = [
         `
-          <a href="/box/" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black list-link ps-4 active">
-          <div class="fw-normal">Dashboard</div>
+          <a href="/box/" class="d-flex justify-content-between align-items-center mb-1 p-3 text-decoration-none text-black list-link ps-4 active">
+          <div class="fw-normal"><i class="fa-solid fa-gauge"></i> Dashboard</div>
               </a>
             `,
         `
-          <a href="account.html" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black list-link ps-4">
-          <div class="fw-normal">Account</div>
+          <a href="account.html" class="d-flex justify-content-between align-items-center mb-1 p-3 text-decoration-none text-black list-link ps-4">
+          <div class="fw-normal"><i class="fa-solid fa-user"></i> Account</div>
             </a>
           `,
         `
-          <a href="plan-billing.html" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black list-link ps-4">
-          <div class="fw-normal">Plan & Billing</div>
+          <a href="plan-billing.html" class="d-flex justify-content-between align-items-center mb-1 p-3 text-decoration-none text-black list-link ps-4">
+          <div class="fw-normal"><i class="fa-solid fa-money-bill"></i> Plan & Billing</div>
             </a>
           `,
         `
-          <a href="preferences.html" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black list-link ps-4 ">
-          <div class="fw-normal">Preferences</div>
+          <a href="preferences.html" class="d-flex justify-content-between align-items-center mb-1 p-3 text-decoration-none text-black list-link ps-4 ">
+          <div class="fw-normal"><i class="fa-solid fa-key"></i> Preferences</div>
             </a>
           `,
         `
-          <a href="communcations.html" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black list-link ps-4">
-          <div class="fw-normal">Communcation</div>
+          <a href="communcations.html" class="d-flex justify-content-between align-items-center mb-1 p-3 text-decoration-none text-black list-link ps-4">
+          <div class="fw-normal"><i class="fa-solid fa-comment"></i> Communcation</div>
             </a>
           `,
       ];
@@ -272,7 +272,7 @@
       const performSearch = () => {
         // Menghapus hasil pencarian sebelumnya
         searchResults.innerHTML = `
-          <a href="#" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black list-link">
+          <a href="#" class="d-flex justify-content-between align-items-center p-3 text-decoration-none text-black list-link">
                     <div class="fw-normal">General Settings</div>
                   </a>
           `;
@@ -303,7 +303,7 @@
       const performSearchDesktop = () => {
         // Menghapus hasil pencarian sebelumnya
         searchResultsDesktop.innerHTML = `
-          <a href="#" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black list-link">
+          <a href="#" class="d-flex justify-content-between align-items-center p-3 text-decoration-none text-black list-link">
                     <div class="fw-normal">General Settings</div>
                   </a>
           `;

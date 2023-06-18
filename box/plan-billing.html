@@ -172,9 +172,6 @@
                 <hr />
               </div>
               <div class="sidebar-list">
-                <a href="#" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black list-link">
-                  <div class="fw-normal">General Settings</div>
-                </a>
               </div>
             </div>
           </div>
@@ -206,9 +203,6 @@
             <hr />
           </div>
           <div class="sidebar-list-desktop">
-            <a href="#" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black list-link">
-              <div class="fw-normal">General Settings</div>
-            </a>
           </div>
         </div>
         <div class="p-3">
@@ -231,7 +225,7 @@
           </div>
           <!-- Upload File view Section -->
           <div class="d-flex gap-3 text-secondary justify-content-between px-2 py-lg-2 px-lg-5 align-items-center">
-            <button style="background-color: #f21a5d; color: white" class="d-flex btn btn-sm align-items-center gap-2 px-4 py-2"><i class="fa-solid fa-plus"></i> Upload a file</button>
+            <a href="../upload-image.html" style="background-color: #f21a5d; color: white" class="d-flex btn btn-sm align-items-center gap-2 px-4 py-2"><i class="fa-solid fa-plus"></i> Upload a file</a>
           </div>
         </div>
         <hr />
@@ -246,8 +240,7 @@
                   <div class="subtitle-section text-secondary">Powerful plan with Storage upgrade option.</div>
                 </div>
                 <div class="mt-4 d-flex justify-content-center justify-content-lg-start gap-2">
-                  <button type="button" class="btn btn-danger">Upgrade Storage</button>
-                  <button type="button" class="btn btn-outline-danger">Download to FREE Plan</button>
+                  <a href="plan-storage.html" type="button" class="btn btn-danger">Upgrade Storage</a>
                 </div>
               </div>
             </div>
@@ -341,7 +334,7 @@
   </body>
   <!-- Billing details Modal -->
   <div class="modal fade" id="billingDetails" tabindex="-1" aria-labelledby="billingDetailsLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" style="max-width: 600px;">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 600px">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -390,7 +383,14 @@
                 </div>
                 <div>
                   <label for="nameCompany" class="form-label text-black-50 h6">City*</label>
-                  <button style="border: 1px solid #e8ebee !important; padding: 6px 12px; color: #797b7e" class="bg-transparent border-1 dropdown-toggle rounded col-12 d-flex gap-3 align-items-center" data-bs-toggle="dropdown" aria-expanded="false">Country</button>
+                  <button
+                    style="border: 1px solid #e8ebee !important; padding: 6px 12px; color: #797b7e"
+                    class="bg-transparent border-1 dropdown-toggle rounded col-12 d-flex gap-3 align-items-center"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Country
+                  </button>
                   <ul class="dropdown-menu">
                     <li class="dropdown-item">Indonesia</li>
                     <li class="dropdown-item">Malaysia</li>
@@ -421,7 +421,7 @@
   </div>
   <!-- Payment Method Modal -->
   <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" style="max-width: 600px;">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 600px">
       <div class="modal-content px-3 mx-auto">
         <div class="modal-header">
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -472,28 +472,28 @@
       // Data contoh untuk pencarian
       const data = [
         `
-        <a href="/box/" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black list-link ps-4">
-        <div class="fw-normal">Dashboard</div>
+        <a href="/box/" class="d-flex justify-content-between align-items-center mb-1 p-3 text-decoration-none text-black list-link ps-4">
+          <div class="fw-normal"><i class="fa-solid fa-gauge"></i> Dashboard</div>
             </a>
           `,
         `
-        <a href="account.html" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black list-link ps-4">
-        <div class="fw-normal">Account</div>
+        <a href="account.html" class="d-flex justify-content-between align-items-center mb-1 p-3 text-decoration-none text-black list-link ps-4">
+          <div class="fw-normal"><i class="fa-solid fa-user"></i> Account</div>
           </a>
         `,
         `
-        <a href="plan-billing.html" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black list-link active ps-4">
-        <div class="fw-normal">Plan & Billing</div>
+        <a href="plan-billing.html" class="d-flex justify-content-between align-items-center mb-1 p-3 text-decoration-none text-black list-link active ps-4">
+          <div class="fw-normal"><i class="fa-solid fa-money-bill"></i> Plan & Billing</div>
           </a>
         `,
         `
-        <a href="preferences.html" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black list-link ps-4">
-        <div class="fw-normal">Preferences</div>
+        <a href="preferences.html" class="d-flex justify-content-between align-items-center mb-1 p-3 text-decoration-none text-black list-link ps-4">
+          <div class="fw-normal"><i class="fa-solid fa-key"></i> Preferences</div>
           </a>
         `,
         `
-        <a href="communcations.html" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black list-link ps-4">
-        <div class="fw-normal">Communcation</div>
+        <a href="communcations.html" class="d-flex justify-content-between align-items-center mb-1 p-3 text-decoration-none text-black list-link ps-4">
+          <div class="fw-normal"><i class="fa-solid fa-comment"></i> Communcation</div>
           </a>
         `,
       ];
@@ -506,7 +506,7 @@
       const performSearch = () => {
         // Menghapus hasil pencarian sebelumnya
         searchResults.innerHTML = `
-        <a href="#" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black list-link">
+        <a href="#" class="d-flex justify-content-between align-items-center p-3 text-decoration-none text-black list-link">
                   <div class="fw-normal">General Settings</div>
                 </a>
         `;
@@ -537,7 +537,7 @@
       const performSearchDesktop = () => {
         // Menghapus hasil pencarian sebelumnya
         searchResultsDesktop.innerHTML = `
-        <a href="#" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black list-link">
+        <a href="#" class="d-flex justify-content-between align-items-center p-3 text-decoration-none text-black list-link">
                   <div class="fw-normal">General Settings</div>
                 </a>
         `;
