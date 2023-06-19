@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Zoxxo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <style>
+    .offcanvas {
+      width: 65vw !important;
+    }
+    .text-content {
+      font-size: 32px;
+      letter-spacing: 2px;
+    }
+    .active {
+      background-color: #f0f0f0;
+      padding: 0;
+    }
+    .offcanvas-body {
+      padding: 0;
+    }
+    .title-content {
+      font-size: 20px;
+    }
+    .active-view {
+      background-color: #9997bf;
+    }
+    .deactive-view {
+      background-color: #f4f4f4;
+      color: #9997bf !important;
+    }
+    .card-content-title {
+      font-size: 14px;
+    }
+    .modal-header {
+      border-bottom: none !important;
+    }
+    .modal-footer {
+      border-top: none !important;
+      padding-bottom: 28px;
+    }
+    .dropdown-link a div:hover {
+      background-color: #f0f0f0 !important;
+      border-radius: 10px;
+    }
+    .list-link:hover {
+      background-color: #f5f3f3 !important;
+    }
+    table tr td,
+    table tr th {
+      background-color: transparent !important;
+      padding: 16px !important;
+    }
+    .form-switch input[type="checkbox"].form-check-input {
+      height: 25px;
+      width: 45px;
+    }
+
+    .form-switch .form-check-label {
+      padding-left: 70px;
+    }
+    .form-check-input:checked {
+      background-color: #b0cde8;
+      border: none;
+    }
+
+    .form-check-input:checked ~ .form-check-label {
+      color: white;
+    }
+    .plan-title {
+      font-size: 20px;
+    }
+    .subject-title {
+      font-size: 14px;
+    }
+    .subject-detail {
+      font-size: 14px;
+    }
+    @media (min-width: 992px) {
+      .card-sticky {
+        position: sticky;
+        top: 80px;
+      }
+    }
+    @media (min-width: 992px) {
+      .card-sticky {
+        position: sticky;
+        top: 80px;
+      }
+    }
+    @media (min-width: 1280px) {
+      .plan-title {
+        font-size: 28px;
+      }
+    }
+  </style>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md bg-white sticky-top shadow-sm">
+      <div class="container-fluid col-md-11 align-items-center d-flex justify-content-between">
+        <a style="color: #525253" class="navbar-brand" href="/"><img src="../assets/img/zoxxo_CLR.png" alt="Logo Zoxxo" srcset="" width="45" /><span class="ms-2">Ads</span></a>
+        <div class="d-flex gap-2">
+          <button class="bg-transparent border-0 d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"><i class="fa-solid fa-bars"></i></button>
+          <div
+            style="width: 36px; height: 36px; background-color: #2b2b2b; border-radius: 99999999px; font-size: 14px; color: white; cursor: pointer"
+            class="d-flex justify-content-center align-items-center fw-bold"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            U
+          </div>
+          <div style="right: 8px !important; left: auto !important" class="dropdown-menu">
+            <div class="d-flex gap-2 align-items-center p-3">
+              <div style="width: 48px; height: 48px; background-color: #2b2b2b; border-radius: 99999999px; font-size: 14px; color: white" class="d-flex justify-content-center align-items-center fw-bold">U</div>
+              <div>
+                <div>Username</div>
+                <div>info@username.com</div>
+              </div>
+            </div>
+            <hr />
+            <div class="px-3 dropdown-link">
+              <div class="text-secondary fw-bold">Profile</div>
+              <a class="text-decoration-none text-black" href="#">
+                <div class="col-12 p-2">Dashboard</div>
+              </a>
+            </div>
+            <hr />
+            <div class="d-flex flex-column px-3 dropdown-link">
+              <div class="text-secondary fw-bold">Tools</div>
+              <a class="text-decoration-none text-black" href="#">
+                <div class="col-12 p-2">Zoxxo Manage</div>
+              </a>
+              <a class="text-decoration-none text-black" href="#">
+                <div class="col-12 p-2">Zoxxo ads</div>
+              </a>
+
+              <a class="text-decoration-none text-black" href="#">
+                <div class="col-12 p-2">Help center</div>
+              </a>
+              <hr />
+            </div>
+            <div class="d-flex flex-column px-3 dropdown-link">
+              <a class="text-decoration-none text-black" href="#">
+                <div class="col-12 p-2">Logout</div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="offcanvas-lg offcanvas-start d-lg-none" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasExampleLabel"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column justify-content-between">
+          <div>
+            <div>
+              <!-- Mobile View -->
+              <!-- Search -->
+              <div class="p-3">
+                <div class="input-group d-flex align-items-center">
+                  <div class="input-group-prepend">
+                    <span style="padding: 10px; background-color: #f0f0f0" class="input-group-text border-0 rounded-0"><i class="fas fa-search"></i></span>
+                  </div>
+                  <input style="background-color: #f0f0f0" type="text" class="form-control border-0 rounded-0" placeholder="Find workspace or file" id="searchInput" />
+                </div>
+                <hr />
+              </div>
+              <div class="sidebar-list"></div>
+            </div>
+          </div>
+          <div class="p-3">
+            <hr />
+            <div class="text-center">Help & Inspiration</div>
+          </div>
+        </div>
+      </div>
+      <hr />
+    </nav>
+
+    <!-- Sidebar -->
+    <div class="d-flex">
+      <div style="height: 93vh; box-shadow: 0 1rem 1rem 1px rgba(0, 0, 0, 0.175) !important; top: 61px" class="sticky-top d-lg-flex flex-column justify-content-between col-lg-3 col-xl-2 d-none">
+        <div>
+          <!-- Desktop View -->
+          <!-- Search -->
+          <div class="p-3">
+            <div class="input-group d-flex align-items-center">
+              <div class="input-group-prepend">
+                <span style="padding: 10px; background-color: #f0f0f0" class="input-group-text border-0 rounded-0"><i class="fas fa-search"></i></span>
+              </div>
+              <input style="background-color: #f0f0f0" type="text" class="form-control border-0 rounded-0" placeholder="Find workspace or file" id="searchInputDesktop" />
+            </div>
+            <hr />
+          </div>
+          <div class="sidebar-list-desktop"></div>
+        </div>
+        <div class="p-3">
+          <hr />
+          <div class="text-center">Help & Inspiration</div>
+        </div>
+      </div>
+      <!-- Content -->
+      <div class="p-2 col-lg-9 col-xl-10 col-12">
+        <!-- Header Content -->
+        <div class="d-flex justify-content-lg-between flex-column flex-lg-row align-items-lg-center ps-4">
+          <div class="d-flex gap-3 text-secondary title-content px-2 align-items-baseline py-lg-2 mb-3 mb-lg-0">
+            <div class="text-dark h4">New Campaign</div>
+            <div>|</div>
+            <div class="text-truncate">Create your Campaign with your creatives</div>
+          </div>
+          <!-- Upload File view Section -->
+          <div class="d-flex gap-3 text-secondary justify-content-between px-2 py-lg-2 px-lg-5 align-items-center">
+            <a href="/ads" style="border: 1px solid #b0cde8; color: black" class="d-flex btn btn-sm align-items-center gap-2 px-4 py-2"> Save & Exit</a>
+          </div>
+        </div>
+        <hr />
+
+        <!-- Main Content -->
+        <div class="p-4 flex-column d-flex flex-lg-row gap-lg-2">
+          <div class="d-flex flex-column gap-3 col-lg-9">
+            <!-- Description -->
+            <div style="background-color: #f8f8f9" class="col-12 mx-auto p-3">
+              <div class="fw-bold mb-2">Description</div>
+              <div class="text-secondary mb-3">Name your Campaign and write a small description</div>
+              <div>
+                <form>
+                  <div class="mb-3">
+                    <input type="email" placeholder="Title" class="form-control bg-transparent" id="nameCompany" aria-describedby="emailHelp" />
+                  </div>
+                  <div class="form-floating">
+                    <textarea class="form-control bg-transparent" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                    <label for="floatingTextarea2">Description</label>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!-- Display -->
+            <div style="background-color: #f8f8f9" class="col-12 mx-auto p-3">
+              <div class="fw-bold mb-2">Display</div>
+              <div class="text-secondary mb-3">Choose the placement for your Ads</div>
+              <div class="d-flex gap-3 align-items-center">
+                <button style="background-color: #b0cde8" class="btn btn-info">Upload Screen</button>
+                <button style="border: 1px solid #b0cde8; color: black" class="btn btn-outline-info">Save & Exit</button>
+              </div>
+            </div>
+            <!-- Creatives upload screen -->
+            <div style="background-color: #f8f8f9" class="col-12 mx-auto p-3">
+              <div>
+                <div class="fw-bold mb-2">Creatives Upload Screen</div>
+                <div class="text-secondary mb-3">Upload your Creatives (recommended size 1112 x 1080 px)</div>
+                <hr />
+              </div>
+              <div>
+                <div class="d-flex justify-content-between mb-3 align-items-center">
+                  <div>
+                    <div class="fw-bold">A/B Testing</div>
+                    <div class="subtitle-section text-secondary">Test two creatives, so you know which performs better</div>
+                  </div>
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked />
+                  </div>
+                </div>
+                <hr />
+              </div>
+              <div>
+                <div class="fw-bold mb-2">Set target & upload creative</div>
+                <div class="text-secondary mb-3">Paste your target URL and upload creative</div>
+                <div class="mb-3">
+                  <input type="email" placeholder="Url" class="form-control bg-transparent" id="nameCompany" aria-describedby="emailHelp" />
+                </div>
+                <div class="text-secondary mb-3">Creative_for_zoxxo_Ad_01.jpg</div>
+                <label for="uploadScreen" style="background-color: #b0cde8" class="btn btn-info px-5">Upload</label>
+                <input id="uploadScreen" type="file" hidden />
+                <hr />
+              </div>
+              <div>
+                <div class="fw-bold mb-2">A/B Testing creative</div>
+                <div class="text-secondary mb-3">Paste your target URL and upload creative</div>
+                <div class="mb-3">
+                  <input type="email" placeholder="Url" class="form-control bg-transparent" id="nameCompany" aria-describedby="emailHelp" />
+                </div>
+                <div class="text-secondary mb-3">Creative_for_zoxxo_Ad_01.jpg</div>
+                <label for="uploadScreen" style="background-color: #b0cde8" class="btn btn-info px-5">Upload</label>
+                <input id="uploadScreen" type="file" hidden />
+                <hr />
+              </div>
+            </div>
+            <!-- Timing -->
+            <div style="background-color: #f8f8f9" class="col-12 mx-auto p-3">
+              <div class="fw-bold mb-2">Timing</div>
+              <div class="text-secondary mb-3">Set your date for advertisement (minimum advertisement period is one week)</div>
+              <div class="d-flex gap-3">
+                <div style="border: 1px solid #b0cde8" type="button" class="btn dropdown-toggle d-flex justify-content-between align-items-center col-3" data-bs-toggle="dropdown" aria-expanded="false" for="startDate">Start Date</div>
+                <div style="border: 1px solid #b0cde8" type="button" class="btn dropdown-toggle d-flex justify-content-between align-items-center col-3" data-bs-toggle="dropdown" aria-expanded="false" for="endDate">End Date</div>
+              </div>
+            </div>
+          </div>
+          <!-- Your plan -->
+          <div class="col-12 mx-auto mb-5 mt-2 col-lg-3 col-xl-3">
+            <div class="card card-sticky">
+              <ul class="list-group list-group-flush plan-title">
+                <li class="list-group-item fw-bolder">Your Campaign</li>
+              </ul>
+              <div class="card-body">
+                <div class="d-flex justify-content-between mb-2">
+                  <div>
+                    <div class="subject-title fw-semibold">Description</div>
+                    <div class="subject-detail text-black-50">Title of the Campaign</div>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between mb-2">
+                  <div>
+                    <div class="subject-title fw-semibold">Display</div>
+                    <div class="subject-detail text-black-50">Upload Screen</div>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between mb-2">
+                  <div>
+                    <div class="subject-title fw-semibold">Creatives</div>
+                    <div class="subject-detail text-black-50">Name of the uploaded Creatives</div>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between mb-2">
+                  <div>
+                    <div class="subject-title fw-semibold">Description</div>
+                    <div class="subject-detail text-black-50">Title of the Campaign</div>
+                  </div>
+                  <div class="subject-title fw-semibold">210,00 EUR</div>
+                </div>
+                <div class="d-flex justify-content-between mb-2">
+                  <div>
+                    <div class="subject-title fw-semibold">Reverse chrage (19%)</div>
+                  </div>
+                  <div class="subject-title fw-semibold">0,00 EUR</div>
+                </div>
+                <hr />
+                <div class="d-flex justify-content-between plan-title fw-bold">
+                  <div>TOTAL</div>
+                  <div>210,00 EUR</div>
+                </div>
+                <hr />
+                <ul class="text-black-50">
+                  <li>You’ll pay 210.00 EUR now for this Campaign. If you deactivate the campaign before the set period, the costs incurred will not be credited.</li>
+                </ul>
+                <div class="d-flex text-center gap-4 justify-content-center">
+                  <div class="bg-white border-danger border rounded-3 py-5 py-xl-3 col-5">Preview</div>
+                  <div class="bg-white border-danger border rounded-3 py-5 py-xl-3 col-5">Preview</div>
+                </div>
+                <div id="checkout-section" class="text-lg-start text-center mt-4">
+                  <a style="background-color: #b0cde8" class="btn btn-info col-12" href="billing-payment.html">Countinue</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/bb1fce9dd9.js" crossorigin="anonymous"></script>
+  <!-- Script untuk library jQuery (dibutuhkan untuk contoh JavaScript di bawah) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- My Script -->
+  <script>
+    const handleClick = () => {
+      $("#campaigns-grid").addClass("d-flex");
+      $("#grid-view").addClass("d-none");
+      $("#grid-view").removeClass("d-flex");
+      $("#campaigns-grid").removeClass("d-none");
+    };
+    const handleTest = () => {
+      $("#campaigns-grid").addClass("d-none");
+      $("#campaigns-grid").removeClass("d-flex");
+      $("#grid-view").addClass("d-flex");
+      $("#grid-view").removeClass("d-none");
+    };
+    document.addEventListener("DOMContentLoaded", function () {
+      // Data contoh untuk pencarian
+      const data = [
+        `
+          <a href="/ads/" class="d-flex justify-content-between align-items-center mb-1 p-3 text-decoration-none text-black list-link ps-4">
+          <div class="fw-normal"><i class="fa-solid fa-gauge"></i> Dashboard</div>
+              </a>
+            `,
+        `
+          <a href="current-campaigns.html" class="d-flex justify-content-between align-items-center mb-1 p-3 text-decoration-none text-black list-link ps-4">
+          <div class="fw-normal"><i class="fa-solid fa-flag"></i> Current Campaigns</div>
+          <div>3</div>
+            </a>
+          `,
+        `
+          <a href="past-campaigns.html" class="d-flex justify-content-between align-items-center mb-1 p-3 text-decoration-none text-black list-link ps-4">
+          <div class="fw-normal"><i class="fa-regular fa-flag"></i> Past Campaigns</div>
+          <div>1</div>
+            </a>
+          `,
+      ];
+
+      // Mengambil elemen input dan daftar hasil pencarian
+      const searchInput = document.getElementById("searchInput");
+      const searchResults = document.querySelector(".sidebar-list");
+
+      // Fungsi untuk melakukan pencarian live
+      const performSearch = () => {
+        // Menghapus hasil pencarian sebelumnya
+        searchResults.innerHTML = `
+          <a href="#" class="d-flex justify-content-between align-items-center p-3 text-decoration-none text-black list-link">
+                    <div class="fw-normal">Advertisement</div>
+                  </a>
+          `;
+
+        // Mendapatkan nilai input
+        const searchTerm = searchInput.value.toLowerCase();
+
+        // Memfilter data berdasarkan nilai input
+        const filteredData = data.filter((item) => item.toLowerCase().includes(searchTerm));
+
+        filteredData.forEach((item) => {
+          const div = document.createElement("div");
+          div.classList.add("result");
+          div.innerHTML = item;
+          searchResults.append(div);
+        });
+      };
+
+      // Event listener untuk input saat berubah
+      searchInput.addEventListener("input", performSearch);
+      performSearch();
+
+      // Mengambil elemen input dan daftar hasil pencarian
+      const searchInputDesktop = document.getElementById("searchInputDesktop");
+      const searchResultsDesktop = document.querySelector(".sidebar-list-desktop");
+
+      // Fungsi untuk melakukan pencarian live
+      const performSearchDesktop = () => {
+        // Menghapus hasil pencarian sebelumnya
+        searchResultsDesktop.innerHTML = `
+          <a href="#" class="d-flex justify-content-between align-items-center p-3 text-decoration-none text-black list-link">
+                    <div class="fw-normal">Advertisement</div>
+                  </a>
+          `;
+
+        // Mendapatkan nilai input
+        const searchTerm = searchInputDesktop.value.toLowerCase();
+
+        // Memfilter data berdasarkan nilai input
+        const filteredData = data.filter((item) => item.toLowerCase().includes(searchTerm));
+
+        filteredData.forEach((item) => {
+          const div = document.createElement("div");
+          div.classList.add("result");
+          div.innerHTML = item;
+          searchResultsDesktop.append(div);
+        });
+      };
+
+      // Event listener untuk input saat berubah
+      searchInputDesktop.addEventListener("input", performSearchDesktop);
+      performSearchDesktop();
+    });
+  </script>
+</html>

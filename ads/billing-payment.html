@@ -21,7 +21,7 @@
       padding-left: 70px;
     }
     .form-check-input:checked {
-      background-color: red;
+      background-color: #b0cde8;
       border: none;
     }
 
@@ -55,8 +55,54 @@
     <!-- Header Navbar -->
     <nav class="navbar navbar-expand-md bg-white sticky-top">
       <div class="container-fluid col-md-11">
-        <a class="navbar-brand" href="/"><img src="../assets/img/zoxxo_CLR.png" alt="Logo Zoxxo" srcset="" width="45" /></a>
-        <div style="width: 36px; height: 36px; background-color: #2b2b2b; border-radius: 99999999px; font-size: 14px; color: white" class="d-flex justify-content-center align-items-center fw-bold">U</div>
+        <a style="color: #525253" class="navbar-brand" href="/"><img src="../assets/img/zoxxo_CLR.png" alt="Logo Zoxxo" srcset="" width="45" /><span class="ms-2">Ads</span></a>
+        <div class="d-flex gap-2">
+          <button class="bg-transparent border-0 d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"><i class="fa-solid fa-bars"></i></button>
+          <div
+            style="width: 36px; height: 36px; background-color: #2b2b2b; border-radius: 99999999px; font-size: 14px; color: white; cursor: pointer"
+            class="d-flex justify-content-center align-items-center fw-bold"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            U
+          </div>
+          <div style="right: 8px !important; left: auto !important" class="dropdown-menu">
+            <div class="d-flex gap-2 align-items-center p-3">
+              <div style="width: 48px; height: 48px; background-color: #2b2b2b; border-radius: 99999999px; font-size: 14px; color: white" class="d-flex justify-content-center align-items-center fw-bold">U</div>
+              <div>
+                <div>Username</div>
+                <div>info@username.com</div>
+              </div>
+            </div>
+            <hr />
+            <div class="px-3 dropdown-link">
+              <div class="text-secondary fw-bold">Profile</div>
+              <a class="text-decoration-none text-black" href="#">
+                <div class="col-12 p-2">Dashboard</div>
+              </a>
+            </div>
+            <hr />
+            <div class="d-flex flex-column px-3 dropdown-link">
+              <div class="text-secondary fw-bold">Tools</div>
+              <a class="text-decoration-none text-black" href="#">
+                <div class="col-12 p-2">Zoxxo Manage</div>
+              </a>
+              <a class="text-decoration-none text-black" href="#">
+                <div class="col-12 p-2">Zoxxo ads</div>
+              </a>
+
+              <a class="text-decoration-none text-black" href="#">
+                <div class="col-12 p-2">Help center</div>
+              </a>
+              <hr />
+            </div>
+            <div class="d-flex flex-column px-3 dropdown-link">
+              <a class="text-decoration-none text-black" href="#">
+                <div class="col-12 p-2">Logout</div>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
       <hr />
     </nav>
@@ -82,7 +128,7 @@
                 <div>Username Company GmbH</div>
                 <div>Streetname and number 21</div>
                 <div>Postal code, City, Country</div>
-                <button type="button" class="btn btn-outline-danger mt-3">Edit billing details</button>
+                <button type="button" class="btn btn-outline-secondary mt-3">Edit billing details</button>
               </div>
             </div>
           </div>
@@ -98,7 +144,7 @@
                 <div>Name on Card is Max Mustermann</div>
               </div>
               <div class="mt-4">
-                <button type="button" class="btn btn-outline-danger mt-3">Edit payment method</button>
+                <button type="button" class="btn btn-outline-secondary mt-3">Edit payment method</button>
               </div>
             </div>
           </div>
@@ -121,33 +167,36 @@
       </div>
       <!-- Second Flex Section -->
       <!-- Your plan -->
-      <div class="col-11 mx-auto mb-5 mt-2 col-lg-3 col-xl-3">
+      <div class="col-12 mx-auto mb-5 mt-2 col-lg-3 col-xl-3">
         <div class="card card-sticky">
           <ul class="list-group list-group-flush plan-title">
-            <li class="list-group-item fw-bolder">Your new plan</li>
+            <li class="list-group-item fw-bolder">Your Campaign</li>
           </ul>
           <div class="card-body">
             <div class="d-flex justify-content-between mb-2">
               <div>
-                <div class="subject-title fw-semibold">TORNADO (monthly)</div>
-                <div class="subject-detail text-black-50">Unlimited file size</div>
-                <div class="subject-detail text-black-50">20 TB Storage</div>
-                <div class="subject-detail text-black-50">5 Workspaces</div>
+                <div class="subject-title fw-semibold">Description</div>
+                <div class="subject-detail text-black-50">Title of the Campaign</div>
               </div>
-              <div class="subject-title fw-semibold">21,00 EUR</div>
             </div>
             <div class="d-flex justify-content-between mb-2">
               <div>
-                <div class="subject-title fw-semibold">Extra Storage</div>
-                <div class="subject-detail text-black-50">20 TB Extra Storage</div>
+                <div class="subject-title fw-semibold">Display</div>
+                <div class="subject-detail text-black-50">Upload Screen</div>
               </div>
-              <div class="subject-title fw-semibold">20,00 EUR</div>
             </div>
             <div class="d-flex justify-content-between mb-2">
               <div>
-                <div class="subject-title fw-semibold">Prorated discount</div>
+                <div class="subject-title fw-semibold">Creatives</div>
+                <div class="subject-detail text-black-50">Name of the uploaded Creatives</div>
               </div>
-              <div class="subject-title fw-semibold">-5,00 EUR</div>
+            </div>
+            <div class="d-flex justify-content-between mb-2">
+              <div>
+                <div class="subject-title fw-semibold">Description</div>
+                <div class="subject-detail text-black-50">Title of the Campaign</div>
+              </div>
+              <div class="subject-title fw-semibold">210,00 EUR</div>
             </div>
             <div class="d-flex justify-content-between mb-2">
               <div>
@@ -158,16 +207,18 @@
             <hr />
             <div class="d-flex justify-content-between plan-title fw-bold">
               <div>TOTAL</div>
-              <div>46,00 EUR</div>
+              <div>210,00 EUR</div>
             </div>
             <hr />
             <ul class="text-black-50">
-              <li>You’ll pay 46.00 EUR now, which is prorated for the current billing period.</li>
-              <li>Your plan is billed yearly and will renew for 890 EUR (plus any applicable taxes and minus any discounts) on Invalid Date.</li>
-              <li>You can cancel any time before this date.</li>
+              <li>You’ll pay 210.00 EUR now for this Campaign. If you deactivate the campaign before the set period, the costs incurred will not be credited.</li>
             </ul>
+            <div class="d-flex text-center gap-4 justify-content-center">
+              <div class="bg-white border-danger border rounded-3 py-5 py-xl-3 col-5">Preview</div>
+              <div class="bg-white border-danger border rounded-3 py-5 py-xl-3 col-5">Preview</div>
+            </div>
             <div id="checkout-section" class="text-lg-start text-center mt-4">
-              <a style="background-color: #f22967" class="btn btn-danger col-12" href="#">Countinue with this plan!</a>
+              <a style="background-color: #b0cde8" class="btn btn-info col-12" href="billing-payment.html">Countinue</a>
             </div>
           </div>
         </div>
