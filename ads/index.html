@@ -12,9 +12,6 @@
     .offcanvas {
       width: 65vw !important;
     }
-    .subtitle-section {
-      font-size: 14px;
-    }
     .text-content {
       font-size: 32px;
       letter-spacing: 2px;
@@ -46,33 +43,6 @@
       border-top: none !important;
       padding-bottom: 28px;
     }
-    .form-switch input[type="checkbox"].form-check-input {
-      height: 25px;
-      width: 45px;
-    }
-
-    .form-switch .form-check-label {
-      padding-left: 70px;
-    }
-    .form-check-input:checked {
-      background-color: red;
-    }
-
-    .form-check-input:checked ~ .form-check-label {
-      color: white;
-    }
-    .pay-safe-subtitle {
-      font-size: 14px;
-      color: #525253;
-    }
-    .pay-safe-title {
-      font-size: 18px;
-    }
-    .auth {
-      width: 80px;
-      height: 80px;
-      font-size: 18px;
-    }
     .dropdown-link a div:hover {
       background-color: #f0f0f0 !important;
       border-radius: 10px;
@@ -80,32 +50,21 @@
     .list-link:hover {
       background-color: #f5f3f3 !important;
     }
-    @media (min-width: 992px) {
-      .pay-safe-subtitle {
-        font-size: 16px;
-      }
-      .pay-safe-title {
-        font-size: 20px;
-      }
-    }
-    @media (min-width: 1200px) {
-      .pay-safe-subtitle {
-        font-size: 18px;
-      }
-      .pay-safe-title {
-        font-size: 22px;
-      }
+    table tr td,
+    table tr th {
+      background-color: transparent !important;
+      padding: 16px !important;
     }
   </style>
   <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-md bg-white sticky-top shadow-sm">
       <div class="container-fluid col-md-11 align-items-center d-flex justify-content-between">
-        <a style="color: #525253" class="navbar-brand" href="/"><img src="../assets/img/zoxxo_CLR.png" alt="Logo Zoxxo" srcset="" width="45" /><span class="ms-2">BOX</span></a>
+        <a style="color: #525253" class="navbar-brand" href="/"><img src="../assets/img/zoxxo_CLR.png" alt="Logo Zoxxo" srcset="" width="45" /><span class="ms-2">Ads</span></a>
         <div class="d-flex gap-2">
           <button class="bg-transparent border-0 d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"><i class="fa-solid fa-bars"></i></button>
           <div
-            style="width: 36px; height: 36px; background-color: #2b2b2b; border-radius: 99999999px; font-size: 14px; color: white"
+            style="width: 36px; height: 36px; background-color: #2b2b2b; border-radius: 99999999px; font-size: 14px; color: white; cursor: pointer"
             class="d-flex justify-content-center align-items-center fw-bold"
             data-bs-toggle="dropdown"
             aria-expanded="false"
@@ -173,10 +132,6 @@
             </div>
           </div>
           <div class="p-3">
-            <div class="text-center text-secondary">7 out of 10 GB</div>
-            <div class="progress mb-2">
-              <div class="progress-bar bg-danger" role="progressbar" aria-label="Info example" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
             <hr />
             <div class="text-center">Help & Inspiration</div>
           </div>
@@ -184,6 +139,7 @@
       </div>
       <hr />
     </nav>
+
     <!-- Sidebar -->
     <div class="d-flex">
       <div style="height: 93vh; box-shadow: 0 1rem 1rem 1px rgba(0, 0, 0, 0.175) !important; top: 61px" class="sticky-top d-lg-flex flex-column justify-content-between col-lg-3 col-xl-2 d-none">
@@ -202,10 +158,6 @@
           <div class="sidebar-list-desktop"></div>
         </div>
         <div class="p-3">
-          <div class="text-center text-secondary">7 out of 10 GB</div>
-          <div class="progress mb-2">
-            <div class="progress-bar bg-danger" role="progressbar" aria-label="Info example" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
           <hr />
           <div class="text-center">Help & Inspiration</div>
         </div>
@@ -215,117 +167,135 @@
         <!-- Header Content -->
         <div class="d-flex justify-content-lg-between flex-column flex-lg-row align-items-lg-center ps-4">
           <div class="d-flex gap-3 text-secondary title-content px-2 align-items-baseline py-lg-2 mb-3 mb-lg-0">
-            <div class="text-danger h4">Account</div>
+            <div onclick="handleClick()"  class="text-dark h4">Dashboard</div>
             <div>|</div>
-            <div class="text-truncate">Change your zoxxo URL, request your name and more…</div>
+            <div onclick="handleTest()"  class="text-truncate">Start new campaign and reach out the zoxxo users</div>
           </div>
           <!-- Upload File view Section -->
           <div class="d-flex gap-3 text-secondary justify-content-between px-2 py-lg-2 px-lg-5 align-items-center">
-            <a href="../upload-image.html" style="background-color: #f21a5d; color: white" class="d-flex btn btn-sm align-items-center gap-2 px-4 py-2"><i class="fa-solid fa-plus"></i> Upload a file</a>
+            <a href="../upload-image.html" style="background-color: #b0cde8; color: black" class="d-flex btn btn-sm align-items-center gap-2 px-4 py-2"><i class="fa-solid fa-plus"></i> Start new campaign</a>
           </div>
         </div>
         <hr />
+
         <!-- Main Content -->
-        <div class="d-flex flex-column flex-lg-row gap-3 px-lg-4">
-          <div class="col-lg-9">
-            <div class="rounded p-3" style="background-color: #f8f8f9">
-              <div class="d-flex p-3 px-lg-5 flex-column gap-4 mb-3 text-center text-lg-start">
-                <div class="d-flex flex-column gap-2 flex-lg-row align-items-lg-center gap-lg-3">
-                  <div style="background-color: #2b2b2b; border-radius: 99999999px; color: white" class="auth d-flex justify-content-center align-items-center fw-bold mx-auto mx-lg-0">U</div>
-                  <div>Username</div>
-                </div>
-                <div class="subtitle-section text-secondary">
-                  <button type="button" class="btn btn-outline-secondary me-3" data-bs-toggle="modal" data-bs-target="#changeAccount">Change account name</button>
-                  <a href="upload-gravatar.html" type="button" class="btn btn-outline-secondary">Change Gravatar</a>
-                </div>
-                <hr />
-                <div>
-                  <div class="fw-bold mb-2">zoxxo URL</div>
-                  <div class="subtitle-section text-secondary">All the URLs for your files contain this:</div>
-                  <div class="mt-4">
-                    <div class="fw-semibold">username.zoxxo.io</div>
-                    <button type="button" class="btn btn-outline-secondary mt-3" data-bs-toggle="modal" data-bs-target="#editUrl">Edit your URL</button>
-                  </div>
-                </div>
-              </div>
+        <div id="grid-view" class="text-center py-5 flex-column d-flex justify-content-center align-items-center">
+          <div>
+            <img src="../assets/img/icon/box-dashboard.png" width="450" height="300" alt="" />
+          </div>
+          <div class="text-secondary h5 mt-5 ms-3">You still have no campaigns</div>
+        </div>
+        <div id="campaigns-grid" class="p-4 flex-column d-flex d-none">
+          <div class="d-flex justify-content-between">
+            <div>
+              <div class="fw-bold">Campaigns</div>
+              <div class="text-secondary">You can track and trace your campaigns</div>
             </div>
-            <div class="p-3">
-              <div class="d-flex p-3 px-lg-5 flex-column gap-4 mb-3 text-center text-lg-start">
-                <div>
-                  <div class="fw-bold mb-2">Delete your account</div>
-                  <div class="subtitle-section text-secondary">If you do this, all your files, links and stats will be deleted forever.</div>
-                  <div class="subtitle-section text-secondary">To keep your files, links and stats, <a class="text-danger text-decoration-underline" href="#">cancel your subscription</a> instead of deleting your account.</div>
-                  <div class="mt-4">
-                    <button style="background-color: #d8d8d8" type="button" class="btn text-danger">Delete my account</button>
-                  </div>
-                </div>
+            <div>
+              <button
+                style="border: 1px solid #b0cde8 !important; padding: 6px 12px; color: black"
+                class="bg-transparent border-1 dropdown-toggle rounded col-12 d-flex gap-5 align-items-center"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Name of the campaign
+              </button>
+              <ul class="dropdown-menu">
+                <li class="dropdown-item">Campaign 1</li>
+                <li class="dropdown-item">Campaign 2</li>
+                <li class="dropdown-item">Campaign 3</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Main COntent -->
+          <div>
+            <div class="mt-4 d-flex flex-column gap-3 flex-xl-row justify-content-xl-between">
+              <div class="bg-body-secondary p-5 text-center col-xl-2 rounded-2">
+                <div style="letter-spacing: 1px" class="fw-bold h4">210.786</div>
+                <div class="text-secondary">Total Impressions</div>
+              </div>
+              <div class="bg-body-secondary p-5 text-center col-xl-2 rounded-2">
+                <div style="letter-spacing: 1px" class="fw-bold h4">7.210</div>
+                <div class="text-secondary">Total clicks</div>
+              </div>
+              <div class="bg-body-secondary p-5 text-center col-xl-2 rounded-2">
+                <div style="letter-spacing: 1px" class="fw-bold h4">0,03 EUR</div>
+                <div class="text-secondary">Cost per click</div>
+              </div>
+              <div class="bg-body-secondary p-5 text-center col-xl-2 rounded-2">
+                <div style="letter-spacing: 1px" class="fw-bold h4">3,42%</div>
+                <div class="text-secondary">Click through rate</div>
+              </div>
+              <div class="bg-body-secondary p-5 text-center col-xl-2 rounded-2">
+                <div style="letter-spacing: 1px" class="fw-bold h4">3,42%</div>
+                <div class="text-secondary">Click through rate</div>
               </div>
             </div>
           </div>
-
-          <div class="col-lg-3 rounded" style="background-color: #f5dde7; height: min-content">
-            <div class="text-center pay-safe p-3 d-flex flex-column justify-content-center align-items-center">
-              <img src="../assets/img/icon/pay-safe.png" width= "120px"; height="32px;"" alt="" />
-              <img src="../assets/img/Preview10005.png" width="200px" height="200px" alt="" />
-              <div class="fw-bold my-2 pay-safe-title">Paysafe is coming!</div>
-              <div class="pay-safe-subtitle">We are working on Paysafe Payment Method and will launch it very soon. Stay tuned!</div>
+          <div class="d-flex flex-column flex-xl-row mt-xl-4 gap-xl-0 mt-3 mt-xl-0 justify-content-xl-between gap-xl-2">
+            <!-- Table Section -->
+            <div class="rounded p-3 mb-3 col-xl-9" style="background-color: #f8f8f9; height: min-content;">
+              <div class="d-flex p-3 px-lg-5 flex-column justify-content-between gap-4 mb-3 my-auto">
+                <div>
+                  <div class="fw-bold mb-2 text-center text-lg-start">Campaigns in Details</div>
+                  <table class="table table-responsive">
+                    <thead>
+                      <tr>
+                        <th scope="col" class="text-secondary fw-normal">Date</th>
+                        <th scope="col" class="text-center text-secondary fw-normal">Impressions</th>
+                        <th scope="col" class="text-center text-secondary fw-normal">Clicks</th>
+                        <th scope="col" class="text-end text-secondary fw-normal">CTR</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>2 June 2023</td>
+                        <td class="text-center">10.101</td>
+                        <td class="text-center">230</td>
+                        <td class="text-end">2,28%</td>
+                      </tr>
+                      <tr>
+                        <td>2 June 2023</td>
+                        <td class="text-center">31.230</td>
+                        <td class="text-center">879</td>
+                        <td class="text-end">2,81%</td>
+                      </tr>
+                      <tr>
+                        <td>2 June 2023</td>
+                        <td class="text-center">47.120</td>
+                        <td class="text-center">1.907</td>
+                        <td class="text-end">4,0%</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div class="text-center text-info">See more</div>
+                </div>
+              </div>
+            </div>
+            <div class="bg-body-secondary p-4 text-center col-xl-3 rounded-2 text-xl-start">
+              <div class="h5">Your Campaign</div>
+              <hr />
+              <div class="mb-3">
+                <div class="fw-bold">Description</div>
+                <div class="text-secondary mt-1">Title of the Campaign</div>
+              </div>
+              <div class="mb-3">
+                <div class="fw-bold">Display</div>
+                <div class="text-secondary mt-1">Upload Screen</div>
+              </div>
+              <div class="mb-3">
+                <div class="fw-bold">Timing</div>
+                <div class="text-secondary mt-1">01.01.2022 - 12.01.2022</div>
+              </div>
+              <div class="mb-3 col-md-3 col-4 mx-auto col-lg-5 mx-xl-0 text-xl-center">
+                <div class="bg-white border-danger border rounded-3 py-5 py-xl-3 ">Preview</div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </body>
-
-  <!-- Change Account Modal -->
-  <div class="modal fade" id="changeAccount" tabindex="-1" aria-labelledby="changeAccountLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" style="max-width: 600px">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="mb-2" style="color: #000000; font-size: 24px">Change account name</div>
-          <form>
-            <div style="border: 0.5px solid #707070" class="input-group mb-3">
-              <input type="text" class="form-control border-0" aria-label="Amount (to the nearest dollar)" value="Username" />
-              <div class="input-group-text bg-transparent"><i class="fa-solid fa-circle-check" style="color: #10c45b; font-size: 20px"></i></div>
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button style="background-color: #f4f4f4; color: #aaaaaa; border-color: #f4f4f4" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-          <button type="button" class="btn btn-danger">Confirm</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Edit URL Modal -->
-  <div class="modal fade" id="editUrl" tabindex="-1" aria-labelledby="editUrlLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" style="max-width: 600px">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="mb-2" style="color: #000000; font-size: 24px">Edit your URL</div>
-          <div class="d-flex align-items-center gap-4">
-            <div>
-              <form>
-                <div style="border: 0.5px solid #707070" class="input-group mb-3">
-                  <input type="text" class="form-control border-0" aria-label="Amount (to the nearest dollar)" value="Username" />
-                </div>
-              </form>
-            </div>
-            <div class="fw-bold">.zoxoo.io</div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button style="background-color: #f4f4f4; color: #aaaaaa; border-color: #f4f4f4" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-          <button type="button" class="btn btn-danger">Confirm</button>
-        </div>
-      </div>
-    </div>
-  </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/bb1fce9dd9.js" crossorigin="anonymous"></script>
@@ -333,32 +303,36 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- My Script -->
   <script>
+    const handleClick = () => {
+      $("#campaigns-grid").addClass("d-flex");
+      $("#grid-view").addClass("d-none");
+      $("#grid-view").removeClass("d-flex");
+      $("#campaigns-grid").removeClass("d-none");
+    };
+    const handleTest = () => {
+      $("#campaigns-grid").addClass("d-none");
+      $("#campaigns-grid").removeClass("d-flex");
+      $("#grid-view").addClass("d-flex");
+      $("#grid-view").removeClass("d-none");
+    };
     document.addEventListener("DOMContentLoaded", function () {
       // Data contoh untuk pencarian
       const data = [
         `
-          <a href="/box/" class="d-flex justify-content-between align-items-center mb-1 p-3 text-decoration-none text-black list-link ps-4">
-            <div class="fw-normal"><i class="fa-solid fa-gauge"></i> Dashboard</div>
+          <a href="/ads/" class="d-flex justify-content-between align-items-center mb-1 p-3 text-decoration-none text-black list-link ps-4 active">
+          <div class="fw-normal"><i class="fa-solid fa-gauge"></i> Dashboard</div>
               </a>
             `,
         `
-          <a href="account.html" class="d-flex justify-content-between align-items-center mb-1 p-3 text-decoration-none text-black list-link ps-4 active">
-            <div class="fw-normal"><i class="fa-solid fa-user"></i> Account</div>
+          <a href="current-campaigns.html" class="d-flex justify-content-between align-items-center mb-1 p-3 text-decoration-none text-black list-link ps-4">
+          <div class="fw-normal"><i class="fa-solid fa-flag"></i> Current Campaigns</div>
+          <div>3</div>
             </a>
           `,
         `
-          <a href="plan-billing.html" class="d-flex justify-content-between align-items-center mb-1 p-3 text-decoration-none text-black list-link ps-4">
-            <div class="fw-normal"><i class="fa-solid fa-money-bill"></i> Plan & Billing</div>
-            </a>
-          `,
-        `
-          <a href="preferences.html" class="d-flex justify-content-between align-items-center mb-1 p-3 text-decoration-none text-black list-link ps-4">
-            <div class="fw-normal"><i class="fa-solid fa-key"></i> Preferences</div>
-            </a>
-          `,
-        `
-          <a href="communcations.html" class="d-flex justify-content-between align-items-center mb-1 p-3 text-decoration-none text-black list-link ps-4">
-            <div class="fw-normal"><i class="fa-solid fa-comment"></i> Communcation</div>
+          <a href="past-campaigns.html" class="d-flex justify-content-between align-items-center mb-1 p-3 text-decoration-none text-black list-link ps-4">
+          <div class="fw-normal"><i class="fa-regular fa-flag"></i> Past Campaigns</div>
+          <div>1</div>
             </a>
           `,
       ];
@@ -371,8 +345,8 @@
       const performSearch = () => {
         // Menghapus hasil pencarian sebelumnya
         searchResults.innerHTML = `
-          <a href="#" class="d-flex justify-content-between align-items-center mb-3 p-3 text-decoration-none text-black list-link">
-                    <div class="fw-normal">General Settings</div>
+          <a href="#" class="d-flex justify-content-between align-items-center p-3 text-decoration-none text-black list-link">
+                    <div class="fw-normal">Advertisement</div>
                   </a>
           `;
 
@@ -403,7 +377,7 @@
         // Menghapus hasil pencarian sebelumnya
         searchResultsDesktop.innerHTML = `
           <a href="#" class="d-flex justify-content-between align-items-center p-3 text-decoration-none text-black list-link">
-                    <div class="fw-normal">General Settings</div>
+                    <div class="fw-normal">Advertisement</div>
                   </a>
           `;
 
