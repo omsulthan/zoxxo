@@ -44,11 +44,11 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-md bg-white sticky-top shadow-sm">
       <div class="container-fluid col-md-11 align-items-center d-flex justify-content-between">
-        <a style="color: #525253" class="navbar-brand" href="/"><img src="../assets/img/zoxxo_CLR.png" alt="Logo Zoxxo" srcset="" width="45" /><span class="ms-2">MANAGE</span></a>
+        <a style="color: #525253" class="navbar-brand" href="/"><img src="../assets/img/zoxxo_CLR.png" alt="Logo Zoxxo" srcset="" width="45" /><span class="ms-2">BOX</span></a>
         <div class="d-flex gap-2">
           <button class="bg-transparent border-0 d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"><i class="fa-solid fa-bars"></i></button>
           <div
-            style="width: 36px; height: 36px; background-color: #2b2b2b; border-radius: 99999999px; font-size: 14px; color: white"
+            style="width: 36px; height: 36px; background-color: #2b2b2b; border-radius: 99999999px; font-size: 14px; color: white; cursor: pointer"
             class="d-flex justify-content-center align-items-center fw-bold"
             data-bs-toggle="dropdown"
             aria-expanded="false"
@@ -56,25 +56,39 @@
             U
           </div>
           <div style="right: 8px !important; left: auto !important" class="dropdown-menu">
-            <div class="d-flex gap-2 align-items-center dropdown-item">
-              <div style="width: 36px; height: 36px; background-color: #2b2b2b; border-radius: 99999999px; font-size: 14px; color: white" class="d-flex justify-content-center align-items-center fw-bold">U</div>
-              <div>info@username.com</div>
+            <div class="d-flex gap-2 align-items-center p-3">
+              <div style="width: 48px; height: 48px; background-color: #2b2b2b; border-radius: 99999999px; font-size: 14px; color: white" class="d-flex justify-content-center align-items-center fw-bold">U</div>
+              <div>
+                <div>Username</div>
+                <div>info@username.com</div>
+              </div>
             </div>
             <hr />
-            <div class="dropdown-item">
+            <div class="px-3 dropdown-link">
               <div class="text-secondary fw-bold">Profile</div>
-              <a class="ms-2 pt-2 text-decoration-none text-black" href="#">Dashboard</a>
+              <a class="text-decoration-none text-black" href="#">
+                <div class="col-12 p-2">Dashboard</div>
+              </a>
             </div>
             <hr />
-            <div class="dropdown-item d-flex flex-column">
+            <div class="d-flex flex-column px-3 dropdown-link">
               <div class="text-secondary fw-bold">Tools</div>
-              <a class="ms-2 pt-2 text-decoration-none text-black" href="#">Zoxxo Manage</a>
-              <a class="ms-2 pt-2 text-decoration-none text-black" href="#">Zoxxo ads</a>
-              <a class="ms-2 pt-2 text-decoration-none text-black" href="#">Help Center</a>
+              <a class="text-decoration-none text-black" href="#">
+                <div class="col-12 p-2">Zoxxo Manage</div>
+              </a>
+              <a class="text-decoration-none text-black" href="#">
+                <div class="col-12 p-2">Zoxxo ads</div>
+              </a>
+
+              <a class="text-decoration-none text-black" href="#">
+                <div class="col-12 p-2">Help center</div>
+              </a>
               <hr />
             </div>
-            <div class="dropdown-item d-flex flex-column">
-              <a class="ms-2 pb-2 text-decoration-none text-black" href="#">Logout</a>
+            <div class="d-flex flex-column px-3 dropdown-link">
+              <a class="text-decoration-none text-black" href="#">
+                <div class="col-12 p-2">Logout</div>
+              </a>
             </div>
           </div>
         </div>
@@ -86,33 +100,25 @@
         </div>
         <div class="offcanvas-body d-flex flex-column justify-content-between">
           <div>
-            <!-- Search -->
-            <div class="p-3">
-              <div class="input-group d-flex align-items-center">
-                <div class="input-group-prepend">
-                  <span style="padding: 10px; background-color: #f0f0f0" class="input-group-text border-0 rounded-0"><i class="fas fa-search"></i></span>
+            <div>
+              <!-- Mobile View -->
+              <!-- Search -->
+              <div class="p-3">
+                <div class="input-group d-flex align-items-center">
+                  <div class="input-group-prepend">
+                    <span style="padding: 10px; background-color: #f0f0f0" class="input-group-text border-0 rounded-0"><i class="fas fa-search"></i></span>
+                  </div>
+                  <input style="background-color: #f0f0f0" type="text" class="form-control border-0 rounded-0" placeholder="Find workspace or file" id="searchInput" />
                 </div>
-                <input style="background-color: #f0f0f0" type="text" class="form-control border-0 rounded-0" placeholder="Find workspace or file" />
+                <hr />
               </div>
-              <hr />
-            </div>
-
-            <!-- Add Workspace -->
-            <div class="d-flex justify-content-between align-items-center mb-3 p-3">
-              <div class="fw-normal">Workspaces</div>
-              <button type="button" style="background-color: #d8d8d8" class="btn btn-sm text-dark" data-bs-toggle="modal" data-bs-target="#createWorkspaceModal"><i class="fas fa-plus"></i></button>
-            </div>
-
-            <!-- Private Workspace -->
-            <div class="d-flex justify-content-between align-items-center active p-3">
-              <div class="fw-normal">Private Workspaces</div>
-              <div class="fw-bold">3</div>
+              <div class="sidebar-list"></div>
             </div>
           </div>
           <div class="p-3">
             <div class="text-center text-secondary">7 out of 10 GB</div>
             <div class="progress mb-2">
-              <div class="progress-bar bg-info" role="progressbar" aria-label="Info example" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar bg-danger" role="progressbar" aria-label="Info example" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
             <hr />
             <div class="text-center">Help & Inspiration</div>
@@ -124,42 +130,32 @@
 
     <!-- Sidebar -->
     <div class="d-flex">
-      <div style="height: 93vh" class="d-lg-flex flex-column justify-content-between col-lg-3 col-xl-2 d-none">
+      <div style="height: 93vh; box-shadow: 0 1rem 1rem 1px rgba(0, 0, 0, 0.175) !important; top: 61px" class="sticky-top d-lg-flex flex-column justify-content-between col-lg-3 col-xl-2 d-none">
         <div>
+          <!-- Desktop View -->
           <!-- Search -->
           <div class="p-3">
             <div class="input-group d-flex align-items-center">
               <div class="input-group-prepend">
                 <span style="padding: 10px; background-color: #f0f0f0" class="input-group-text border-0 rounded-0"><i class="fas fa-search"></i></span>
               </div>
-              <input style="background-color: #f0f0f0" type="text" class="form-control border-0 rounded-0" placeholder="Find workspace or file" />
+              <input style="background-color: #f0f0f0" type="text" class="form-control border-0 rounded-0" placeholder="Find workspace or file" id="searchInputDesktop" />
             </div>
             <hr />
           </div>
-
-          <!-- Add Workspace -->
-          <div class="d-flex justify-content-between align-items-center mb-3 p-3">
-            <div class="fw-normal">Workspaces</div>
-            <button type="button" style="background-color: #d8d8d8" class="btn btn-sm text-dark" data-bs-toggle="modal" data-bs-target="#createWorkspaceModal"><i class="fas fa-plus"></i></button>
-          </div>
-
-          <!-- Private Workspace -->
-          <div class="d-flex justify-content-between align-items-center active p-3">
-            <div class="fw-normal">Private Workspaces</div>
-            <div class="fw-bold">3</div>
-          </div>
+          <div class="sidebar-list-desktop"></div>
         </div>
         <div class="p-3">
           <div class="text-center text-secondary">7 out of 10 GB</div>
           <div class="progress mb-2">
-            <div class="progress-bar bg-info" role="progressbar" aria-label="Info example" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="progress-bar bg-danger" role="progressbar" aria-label="Info example" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
           </div>
           <hr />
           <div class="text-center">Help & Inspiration</div>
         </div>
       </div>
       <!-- Content -->
-      <div class="p-2 col-lg-9 col-xl-10 col-12">
+      <div class="p-2 col-lg-9 col-xl-10 col-12 px-4">
         <!-- Header Content -->
         <div class="d-flex justify-content-lg-between flex-column flex-lg-row align-items-lg-center">
           <div class="d-flex gap-3 text-secondary title-content px-2 align-items-center py-lg-2 mb-3 mb-lg-0">
@@ -223,24 +219,6 @@
                 </div>
               </div>
             </div>
-            <!-- Third Item -->
-            <div class="d-flex flex-column gap-2 mb-3">
-              <div class="card col-9 mx-auto shadow-sm">
-                <div style="background-color: #735577" class="text-center p-5 text-white">Name of the uploaded files</div>
-                <div class="card-body">
-                  <div class="d-flex justify-content-between align-items-baseline">
-                    <p class="card-text">123 Downloads</p>
-                    <i class="fa-solid fa-ellipsis btn" data-bs-toggle="dropdown"></i>
-                    <ul class="dropdown-menu">
-                      <li><a style="cursor: pointer" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#shareLinkModal">Copy Link</a></li>
-                      <li><a class="dropdown-item" href="../upload-cover-file.html">Upload cover image</a></li>
-                      <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#renameModal">Rename</a></li>
-                      <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
 
@@ -289,33 +267,6 @@
               <div class="d-flex justify-content-between">
                 <div class="d-flex align-items-center gap-2">
                   <div style="width: 40px; height: 40px; background-color: #b0cde8" class="rounded"></div>
-                  <div class="d-flex flex-column">
-                    <div class="fw-bold card-content-title col-9 col-lg-12">Name of the uploaded files</div>
-                    <div style="color: #aaaaaa" class="card-content-title col-12">Created: 01.01.2023</div>
-                  </div>
-                </div>
-                <div class="d-flex gap-4 gap-lg-5">
-                  <div>21.01.2023</div>
-                  <div>123</div>
-                  <div>
-                    <i class="fa-solid fa-ellipsis btn" data-bs-toggle="dropdown"></i>
-                    <ul class="dropdown-menu">
-                      <li><a style="cursor: pointer" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#shareLinkModal">Copy Link</a></li>
-                      <li><a class="dropdown-item" href="../upload-cover-file.html">Upload cover image</a></li>
-                      <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#renameModal">Rename</a></li>
-                      <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- List Item 3 -->
-          <div class="card mb-3">
-            <div class="card-body">
-              <div class="d-flex justify-content-between">
-                <div class="d-flex align-items-center gap-2">
-                  <div style="width: 40px; height: 40px; background-color: #735577" class="rounded"></div>
                   <div class="d-flex flex-column">
                     <div class="fw-bold card-content-title col-9 col-lg-12">Name of the uploaded files</div>
                     <div style="color: #aaaaaa" class="card-content-title col-12">Created: 01.01.2023</div>
@@ -491,5 +442,80 @@
       $("#list-button").addClass("deactive-view");
       $("#list-button").removeClass("active-view");
     };
+    document.addEventListener("DOMContentLoaded", function () {
+      // Data contoh untuk pencarian
+      const data = [
+        `
+          <a href="/manage" class="d-flex justify-content-between align-items-center mb-1 p-3 text-decoration-none text-black list-link ps-4 active">
+          <div class="fw-normal"><i class="fa-solid fa-key"></i> Private Workspace</div>
+            <div class="fw-bold">3</div>
+              </a>
+            `,
+      ];
+
+      // Mengambil elemen input dan daftar hasil pencarian
+      const searchInput = document.getElementById("searchInput");
+      const searchResults = document.querySelector(".sidebar-list");
+
+      // Fungsi untuk melakukan pencarian live
+      const performSearch = () => {
+        // Menghapus hasil pencarian sebelumnya
+        searchResults.innerHTML = `
+            <div class="d-flex justify-content-between align-items-center mb-3 p-3">
+              <div class="fw-normal">Workspaces</div>
+              <button type="button" style="background-color: #d8d8d8" class="btn btn-sm text-dark" data-bs-toggle="modal" data-bs-target="#createWorkspaceModal"><i class="fas fa-plus"></i></button>
+            </div>
+          `;
+
+        // Mendapatkan nilai input
+        const searchTerm = searchInput.value.toLowerCase();
+
+        // Memfilter data berdasarkan nilai input
+        const filteredData = data.filter((item) => item.toLowerCase().includes(searchTerm));
+
+        filteredData.forEach((item) => {
+          const div = document.createElement("div");
+          div.classList.add("result");
+          div.innerHTML = item;
+          searchResults.append(div);
+        });
+      };
+
+      // Event listener untuk input saat berubah
+      searchInput.addEventListener("input", performSearch);
+      performSearch();
+
+      // Mengambil elemen input dan daftar hasil pencarian
+      const searchInputDesktop = document.getElementById("searchInputDesktop");
+      const searchResultsDesktop = document.querySelector(".sidebar-list-desktop");
+
+      // Fungsi untuk melakukan pencarian live
+      const performSearchDesktop = () => {
+        // Menghapus hasil pencarian sebelumnya
+        searchResultsDesktop.innerHTML = `
+            <div class="d-flex justify-content-between align-items-center mb-3 p-3">
+              <div class="fw-normal">Workspaces</div>
+              <button type="button" style="background-color: #d8d8d8" class="btn btn-sm text-dark" data-bs-toggle="modal" data-bs-target="#createWorkspaceModal"><i class="fas fa-plus"></i></button>
+            </div>
+          `;
+
+        // Mendapatkan nilai input
+        const searchTerm = searchInputDesktop.value.toLowerCase();
+
+        // Memfilter data berdasarkan nilai input
+        const filteredData = data.filter((item) => item.toLowerCase().includes(searchTerm));
+
+        filteredData.forEach((item) => {
+          const div = document.createElement("div");
+          div.classList.add("result");
+          div.innerHTML = item;
+          searchResultsDesktop.append(div);
+        });
+      };
+
+      // Event listener untuk input saat berubah
+      searchInputDesktop.addEventListener("input", performSearchDesktop);
+      performSearchDesktop();
+    });
   </script>
 </html>
