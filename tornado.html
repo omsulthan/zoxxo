@@ -9,6 +9,14 @@
     <link rel="stylesheet" href="/assets/css/style.css" />
   </head>
   <style>
+    .title-login {
+      font-size: 32px;
+    }
+    hr {
+      flex-grow: 1;
+      height: 1px;
+      background-color: #000;
+    }
     ul li {
       backdrop-filter: blur(50px) contrast(1.2);
     }
@@ -124,6 +132,9 @@
       #register-section img {
         width: 500px;
         height: 550px;
+      }
+      .title-login {
+        font-size: 40px;
       }
       #register-button-section a {
         font-size: 20px;
@@ -373,7 +384,128 @@
           <!-- End #4 -->
         </div>
       </div>
-      <div class="col-11 mx-auto mb-5 mt-2 col-lg-5 col-xl-3">
+      <!-- Login -->
+      <div id="card-login" style="display: none;" class="col-11 mx-auto mb-5 mt-2 col-lg-5 col-xl-3">
+        <div class="d-flex flex-column border rounded">
+          <div class="d-flex flex-column py-4 gap-1 col-12 justify-content-evenly px-2">
+            <div class="text-start">
+              <h4 class="text-secondary mx-2">Sign in or <a onclick="handleRegister()" class="text-secondary">Register now</a></h4>
+              <hr />
+            </div>
+            <div class="d-flex flex-column align-items-center">
+              <div class="text-center">
+                <div class="fw-bold title-login">Log in to your box!</div>
+                <div class="col-8 mx-auto text-black-50 subtitle-login col-xl-6 pb-3">deliver your Data fast, save & without interference of others</div>
+              </div>
+              <div style="display: none; font-size: 12px" class="warning-alert alert alert-warning py-1 px-4 text-center d-xl-none" role="alert">
+                <div>Congratulation! You have verified your account.</div>
+                <div>Please log in to enjoy the full experience</div>
+              </div>
+
+              <div class="col-10">
+                <form>
+                  <div class="mb-3">
+                    <input type="text" class="form-control bg-transparent" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username" />
+                  </div>
+                  <div class="mb-3">
+                    <input type="email" class="form-control bg-transparent" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Password" />
+                  </div>
+                  <div id="forgot-password" class="text-center"><a class="text-danger" href="#">Forgot Password?</a></div>
+                </form>
+              </div>
+              <div class="col-11 mx-auto">
+                <div class="login-section text-lg-start text-center mt-3">
+                  <a style="background-color: #f22967" class="btn btn-danger col-12" href="login.html">Create an zoxxo account</a>
+                </div>
+              </div>
+              <div class="col-10 mx-auto d-flex align-items-center justify-content-center">
+                <hr />
+                <span>OR</span>
+                <hr />
+              </div>
+              <div id="button-section" class="d-flex flex-column gap-3">
+                <button style="background-color: #cccccd" class="btn rounded-pill d-flex align-items-center p-0 mx-auto pe-5 col-12">
+                  <div class="me-3">
+                    <img src="assets/img/icon/apple-icon.svg" alt="" />
+                  </div>
+                  Continue with apple
+                </button>
+                <button style="background-color: #d7e2f6" class="btn rounded-pill d-flex align-items-center p-0 mx-auto pe-5 col-12">
+                  <div class="me-3">
+                    <img src="assets/img/icon/google-icon.svg" alt="" />
+                  </div>
+                  Continue with google
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Register -->
+      <div id="card-register" style="display: none;" class="col-11 mx-auto mb-5 mt-2 col-lg-5 col-xl-3">
+        <div class="d-flex flex-column border rounded card-sticky">
+          <div class="d-flex flex-column py-4 gap-1 col-12 justify-content-evenly px-2">
+            <div class="text-start">
+              <h4 class="text-secondary mx-2">Register now or <a class="text-secondary" href="">Sign in</a></h4>
+              <hr />
+            </div>
+            <div class="d-flex flex-column align-items-center">
+              <div class="text-center">
+                <div class="fw-bold title-login">Create your box!</div>
+                <div class="col-8 mx-auto text-black-50 subtitle-login col-xl-6">deliver your Data fast, save & without interference of others</div>
+              </div>
+              <div style="display: none; font-size: 12px" class="warning-alert alert alert-warning py-1 px-4 text-center d-xl-none" role="alert">
+                <div>Congratulation! You have verified your account.</div>
+                <div>Please log in to enjoy the full experience</div>
+              </div>
+
+              <div class="col-10">
+                <form>
+                  <div class="mb-3">
+                    <input type="text" class="form-control bg-transparent" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name or company" />
+                  </div>
+                  <div class="mb-3">
+                    <input type="email" class="form-control bg-transparent" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="E-Mail" />
+                  </div>
+                  <div class="mb-3">
+                    <input type="text" class="form-control bg-transparent" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username" />
+                  </div>
+                  <div class="mb-3">
+                    <input type="password" class="form-control bg-transparent" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Password" />
+                  </div>
+                  <div id="forgot-password" class="text-center col-12 col-xl-9 mx-xl-auto">By creating an account, you agree to our <a class="text-danger" href="#">Terms of Service and Privacy & Cookie Statement.</a></div>
+                </form>
+              </div>
+              <div class="col-11 mx-auto">
+                <div class="login-section text-lg-start text-center mt-3">
+                  <a style="background-color: #f22967" class="btn btn-danger col-12" href="login.html">Create an zoxxo account</a>
+                </div>
+              </div>
+              <div class="col-10 mx-auto d-flex align-items-center justify-content-center">
+                <hr />
+                <span>OR</span>
+                <hr />
+              </div>
+              <div id="button-section" class="d-flex flex-column gap-3">
+                <button style="background-color: #cccccd" class="btn rounded-pill d-flex align-items-center p-0 mx-auto pe-5 col-12">
+                  <div class="me-3">
+                    <img src="assets/img/icon/apple-icon.svg" alt="" />
+                  </div>
+                  Continue with apple
+                </button>
+                <button style="background-color: #d7e2f6" class="btn rounded-pill d-flex align-items-center p-0 mx-auto pe-5 col-12">
+                  <div class="me-3">
+                    <img src="assets/img/icon/google-icon.svg" alt="" />
+                  </div>
+                  Continue with google
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Your plan -->
+      <div id="card-transaction" class="col-11 mx-auto mb-5 mt-2 col-lg-5 col-xl-3">
         <div class="card card-sticky">
           <ul class="list-group list-group-flush plan-title">
             <li class="list-group-item fw-bolder">Your new plan</li>
@@ -418,58 +550,58 @@
               <li>Your plan is billed yearly and will renew for 890 EUR (plus any applicable taxes and minus any discounts) on Invalid Date.</li>
               <li>You can cancel any time before this date.</li>
             </ul>
-            <div id="checkout-section" class="text-lg-start text-center mt-4">
-              <a style="background-color: #f22967" class="btn btn-danger col-12" href="#">Countinue with this plan!</a>
+            <div onclick="handleContinue()" id="checkout-section" class="text-lg-start text-center mt-4">
+              <a style="background-color: #f22967" class="btn btn-danger col-12">Countinue with this plan!</a>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- Offer Section -->
-    <div style="background-color: #f21a5d" class="text-white text-center py-5 offer-section">
-      <div>Want to save more money?</div>
-      <div>Go for yearly plan and save over 20%!</div>
-    </div>
-    <div style="color: #f2f3f4; background: #161616" class="card text-center rounded-0">
-      <div class="card-body pt-4 d-lg-flex justify-content-lg-between px-lg-5 col-lg-10 mx-lg-auto">
-        <div class="d-flex flex-column align-items-center gap-3 gap-lg-5">
-          <img src="assets/img/zoxxo_CLR.png" alt="" srcset="" width="50" height="40" />
-          <div class="dropdown">
-            <button style="background-color: #252525; border-color: #252525" class="btn btn-secondary dropdown-toggle px-4" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" aria-expanded="false">English</button>
+        <!-- Offer Section -->
+        <div style="background-color: #f21a5d" class="text-white text-center py-5 offer-section">
+          <div>Want to save more money?</div>
+          <div>Go for yearly plan and save over 20%!</div>
+        </div>
+        <div style="color: #f2f3f4; background: #161616" class="card text-center rounded-0">
+          <div class="card-body pt-4 d-lg-flex justify-content-lg-between px-lg-5 col-lg-10 mx-lg-auto">
+            <div class="d-flex flex-column align-items-center gap-3 gap-lg-5">
+              <img src="assets/img/zoxxo_CLR.png" alt="" srcset="" width="50" height="40" />
+              <div class="dropdown">
+                <button style="background-color: #252525; border-color: #252525" class="btn btn-secondary dropdown-toggle px-4" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" aria-expanded="false">English</button>
+              </div>
+            </div>
+            <div class="d-flex flex-column align-items-start mt-2">
+              <span class="h4 fw-semibold">Product</span>
+              <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Overview</a>
+              <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Features</a>
+              <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Workspaces</a>
+              <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Pricing</a>
+            </div>
+            <div class="d-flex flex-column align-items-start mt-2">
+              <span class="h4 fw-semibold">Who we are</span>
+              <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Company</a>
+              <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Newsroom</a>
+              <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Advertising</a>
+              <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Brand</a>
+            </div>
+            <div class="d-flex flex-column align-items-start mt-2">
+              <span class="h4 fw-semibold">Explore</span>
+              <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Help Center</a>
+              <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Ideas</a>
+              <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Terms</a>
+              <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Privacy</a>
+            </div>
+          </div>
+          <hr class="w-75 mx-auto" />
+          <div class="d-lg-flex justify-content-lg-between w-75 mx-auto">
+            <div class="d-flex gap-3 align-items-center justify-content-center h4">
+              <a href="#" class="text-white"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" class="text-white"><i class="fa-brands fa-facebook"></i></a>
+              <a href="#" class="text-white"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+            <div class="card-footer text-secondary">©2022 zoxxo</div>
           </div>
         </div>
-        <div class="d-flex flex-column align-items-start mt-2">
-          <span class="h4 fw-semibold">Product</span>
-          <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Overview</a>
-          <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Features</a>
-          <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Workspaces</a>
-          <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Pricing</a>
-        </div>
-        <div class="d-flex flex-column align-items-start mt-2">
-          <span class="h4 fw-semibold">Who we are</span>
-          <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Company</a>
-          <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Newsroom</a>
-          <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Advertising</a>
-          <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Brand</a>
-        </div>
-        <div class="d-flex flex-column align-items-start mt-2">
-          <span class="h4 fw-semibold">Explore</span>
-          <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Help Center</a>
-          <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Ideas</a>
-          <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Terms</a>
-          <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Privacy</a>
-        </div>
-      </div>
-      <hr class="w-75 mx-auto" />
-      <div class="d-lg-flex justify-content-lg-between w-75 mx-auto">
-        <div class="d-flex gap-3 align-items-center justify-content-center h4">
-          <a href="#" class="text-white"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#" class="text-white"><i class="fa-brands fa-facebook"></i></a>
-          <a href="#" class="text-white"><i class="fa-brands fa-twitter"></i></a>
-        </div>
-        <div class="card-footer text-secondary">©2022 zoxxo</div>
-      </div>
-    </div>
   </body>
 
   <!-- Script -->
@@ -478,4 +610,15 @@
   <script src="https://kit.fontawesome.com/bb1fce9dd9.js" crossorigin="anonymous"></script>
   <!-- Script untuk library jQuery (dibutuhkan untuk contoh JavaScript di bawah) -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Script -->
+  <script>
+    const handleContinue = () => {
+      $('#card-transaction').hide()
+      $('#card-login').show()
+    }
+    const handleRegister = () => {
+      $('#card-register').show()
+      $('#card-login').hide()
+    }
+  </script>
 </html>

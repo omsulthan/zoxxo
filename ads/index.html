@@ -167,9 +167,9 @@
         <!-- Header Content -->
         <div class="d-flex justify-content-lg-between flex-column flex-lg-row align-items-lg-center ps-4">
           <div class="d-flex gap-3 text-secondary title-content px-2 align-items-baseline py-lg-2 mb-3 mb-lg-0">
-            <div onclick="handleClick()"  class="text-dark h4">Dashboard</div>
+            <div onclick="handleClick()" class="text-dark h4">Dashboard</div>
             <div>|</div>
-            <div onclick="handleTest()"  class="text-truncate">Start new campaign and reach out the zoxxo users</div>
+            <div onclick="handleTest()" class="text-truncate">Start new campaign and reach out the zoxxo users</div>
           </div>
           <!-- Upload File view Section -->
           <div class="d-flex gap-3 text-secondary justify-content-between px-2 py-lg-2 px-lg-5 align-items-center">
@@ -234,7 +234,7 @@
           </div>
           <div class="d-flex flex-column flex-xl-row mt-xl-4 gap-xl-0 mt-3 mt-xl-0 justify-content-xl-between gap-xl-2">
             <!-- Table Section -->
-            <div class="rounded p-3 mb-3 col-xl-9" style="background-color: #f8f8f9; height: min-content;">
+            <div class="rounded p-3 mb-3 col-xl-9" style="background-color: #f8f8f9; height: min-content">
               <div class="d-flex p-3 px-lg-5 flex-column justify-content-between gap-4 mb-3 my-auto">
                 <div>
                   <div class="fw-bold mb-2 text-center text-lg-start">Campaigns in Details</div>
@@ -268,7 +268,7 @@
                       </tr>
                     </tbody>
                   </table>
-                  <div class="text-center text-info">See more</div>
+                  <div class="text-center text-info" data-bs-toggle="modal" data-bs-target="#seeMoreModal">See more</div>
                 </div>
               </div>
             </div>
@@ -288,7 +288,7 @@
                 <div class="text-secondary mt-1">01.01.2022 - 12.01.2022</div>
               </div>
               <div class="mb-3 col-md-3 col-4 mx-auto col-lg-5 mx-xl-0 text-xl-center">
-                <div class="bg-white border-danger border rounded-3 py-5 py-xl-3 ">Preview</div>
+                <div class="bg-white border-danger border rounded-3 py-5 py-xl-3">Preview</div>
               </div>
             </div>
           </div>
@@ -296,6 +296,135 @@
       </div>
     </div>
   </body>
+  <!-- See More Modal -->
+  <div class="modal fade" id="seeMoreModal" tabindex="5" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="col-12 mx-auto text-start">
+            <div class="h6 text-secondary fw-semibold my-3">Uploaded Files :</div>
+            <table class="table table-responsive-sm">
+              <thead>
+                <tr>
+                  <th class="text-secondary fw-light">Name</th>
+                  <th class="text-secondary fw-light">Size</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>name_of_file.jpg</td>
+                  <td>20.00MB</td>
+                  <td><button class="btn btn-close"></button></td>
+                </tr>
+                <tr>
+                  <td>name_of_file.jpg</td>
+                  <td>20.00MB</td>
+                  <td><button class="btn btn-close"></button></td>
+                </tr>
+                <tr>
+                  <td>name_of_file.jpg</td>
+                  <td>20.00MB</td>
+                  <td><button class="btn btn-close"></button></td>
+                </tr>
+                <tr>
+                  <td>name_of_file.jpg</td>
+                  <td>20.00MB</td>
+                  <td><button class="btn btn-close"></button></td>
+                </tr>
+                <tr>
+                  <td>name_of_file.jpg</td>
+                  <td>20.00MB</td>
+                  <td><button class="btn btn-close"></button></td>
+                </tr>
+                <tr>
+                  <td>name_of_file.jpg</td>
+                  <td>20.00MB</td>
+                  <td><button class="btn btn-close"></button></td>
+                </tr>
+                <tr>
+                  <td>name_of_file.jpg</td>
+                  <td>20.00MB</td>
+                  <td><button class="btn btn-close"></button></td>
+                </tr>
+                <tr>
+                  <td>name_of_file.jpg</td>
+                  <td>20.00MB</td>
+                  <td><button class="btn btn-close"></button></td>
+                </tr>
+                <tr>
+                  <td>name_of_file.jpg</td>
+                  <td>20.00MB</td>
+                  <td><button class="btn btn-close"></button></td>
+                </tr>
+                <tr>
+                  <td>name_of_file.jpg</td>
+                  <td>20.00MB</td>
+                  <td><button class="btn btn-close"></button></td>
+                </tr>
+                <tr>
+                  <td>name_of_file.jpg</td>
+                  <td>20.00MB</td>
+                  <td><button class="btn btn-close"></button></td>
+                </tr>
+                <tr></tr>
+                <tr>
+                  <td>name_of_file.jpg</td>
+                  <td>20.00MB</td>
+                  <td><button class="btn btn-close"></button></td>
+                </tr>
+                <tr></tr>
+                <tr>
+                  <td>name_of_file.jpg</td>
+                  <td>20.00MB</td>
+                  <td><button class="btn btn-close"></button></td>
+                </tr>
+                <tr></tr>
+                <tr>
+                  <td>name_of_file.jpg</td>
+                  <td>20.00MB</td>
+                  <td><button class="btn btn-close"></button></td>
+                </tr>
+                <tr></tr>
+                <tr>
+                  <td>name_of_file.jpg</td>
+                  <td>20.00MB</td>
+                  <td><button class="btn btn-close"></button></td>
+                </tr>
+                <tr>
+                  <td>name_of_file.jpg</td>
+                  <td>20.00MB</td>
+                  <td><button class="btn btn-close"></button></td>
+                </tr>
+                <tr>
+                  <td>name_of_file.jpg</td>
+                  <td>20.00MB</td>
+                  <td><button class="btn btn-close"></button></td>
+                </tr>
+                <tr>
+                  <td>name_of_file.jpg</td>
+                  <td>20.00MB</td>
+                  <td><button class="btn btn-close"></button></td>
+                </tr>
+                <tr>
+                  <td>name_of_file.jpg</td>
+                  <td>20.00MB</td>
+                  <td><button class="btn btn-close"></button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-ifno" data-bs-dismiss="modal">Close</button>
+            <button type="button" style="background-color: #f22967" class="btn btn-danger">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/bb1fce9dd9.js" crossorigin="anonymous"></script>

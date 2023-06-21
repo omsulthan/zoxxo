@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tornado | Zoxxo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
+    <!-- External CSS -->
+    <link rel="stylesheet" href="/assets/css/style.css" />
+  </head>
+  <style>
+    .title-login {
+      font-size: 32px;
+    }
+    hr {
+      flex-grow: 1;
+      height: 1px;
+      background-color: #000;
+    }
+    ul li {
+      backdrop-filter: blur(50px) contrast(1.2);
+    }
+    .show,
+    .collapsing {
+      height: 0 !important;
+    }
+    #register-section img {
+      width: 300px;
+      height: 300px;
+    }
+    .tornado-title-section {
+      font-size: 40px;
+    }
+    .title-radio {
+      font-size: 16px;
+    }
+    .form-check-input:checked {
+      background-color: #f21a5d !important;
+      border-color: #f21a5d !important;
+    }
+    .checklist div {
+      list-style-type: none;
+    }
+    .checklist div {
+      font-size: 13px;
+    }
+    .form-check label {
+      font-size: 12px;
+    }
+    .discount {
+      font-size: 11px;
+    }
+    .custom-btn {
+      border: 1px solid#f21a5d;
+      padding: 4px 12px;
+      border-radius: 4px;
+    }
+    .custom-btn-workspaces {
+      border: 1px solid#f21a5d;
+      padding: 4px 24px;
+      border-radius: 4px;
+    }
+    .custom-btn-workspaces:hover {
+      background-color: #fee6ed;
+      cursor: pointer;
+    }
+    .custom-btn:hover {
+      background-color: #fee6ed;
+      cursor: pointer;
+    }
+    .radio-section input[type="radio"]:checked + label {
+      /* Atur gaya CSS yang diinginkan ketika radio button tercentang */
+      background-color: #fee6ed;
+    }
+    .option-section {
+      font-size: 16px;
+    }
+    .plan-title {
+      font-size: 20px;
+    }
+    .subject-title {
+      font-size: 14px;
+    }
+    .subject-detail {
+      font-size: 14px;
+    }
+    .offer-section {
+      font-size: 24px;
+    }
+    .input-addon {
+      position: relative;
+    }
+
+    .addon {
+      position: absolute;
+      right: 10px; /* Sesuaikan dengan jarak yang diinginkan */
+      top: 50%;
+      transform: translateY(-50%);
+      /* Atur tampilan lainnya, seperti warna, ukuran, dll. */
+    }
+
+    .text-content {
+      font-size: 14px;
+    }
+
+    @media (min-width: 768px) {
+      .navbar {
+        backdrop-filter: blur(50px) contrast(1.2);
+        background-color: transparent !important;
+      }
+      .title-radio {
+        font-size: 20px;
+      }
+      .form-check label {
+        font-size: 14px;
+      }
+      .discount {
+        font: 12px;
+      }
+      .custom-btn {
+        font-size: 18px;
+        padding: 8px 16px;
+      }
+      .custom-btn-workspaces {
+        font-size: 18px;
+        padding: 8px 28px;
+      }
+      .option-section {
+        font-size: 20px;
+      }
+      .offer-section {
+        font-size: 28px;
+      }
+      .text-content {
+        font-size: 18px;
+      }
+    }
+    @media (min-width: 992px) {
+      #register-section img {
+        width: 500px;
+        height: 550px;
+      }
+      .title-login {
+        font-size: 40px;
+      }
+      #register-button-section a {
+        font-size: 20px;
+        width: 100%;
+      }
+      .tornado-title-section {
+        width: 80%;
+        font-size: 40px;
+        line-height: 1.2cm;
+      }
+      .subtitle-section {
+        width: 80%;
+        text-align: justify;
+        font-size: 24px;
+        line-height: 0.7cm;
+      }
+      .card-sticky {
+        position: sticky;
+        top: 80px;
+      }
+      .text-content {
+        font-size: 20px;
+      }
+    }
+    @media (min-width: 1280px) {
+      #register-section img {
+        width: 700px;
+        height: 750px;
+      }
+      #button-section a {
+        font-size: 24px;
+        width: 100%;
+      }
+      .tornado-title-section {
+        width: 100%;
+        font-size: 60px;
+        line-height: 1.6cm;
+      }
+      .checklist div {
+        font-size: 14px;
+      }
+      .subtitle-section {
+        width: 100%;
+        text-align: justify;
+        font-size: 24px;
+        line-height: 1cm;
+      }
+      .form-check label {
+        font-size: 18px;
+      }
+      .offer-section {
+        font-size: 40px;
+      }
+      .plan-title {
+        font-size: 28px;
+      }
+      .discount {
+        font-size: 16px;
+      }
+    }
+  </style>
+  <body>
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-expand-md bg-transparent sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand d-md-none" href="/"><img src="assets/img/zoxxo_BLK.png" alt="Logo Zoxxo" srcset="" width="45" /></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav justify-content-end justify-content-md-center flex-grow-1 pe-3 align-content-lg-center fw-semibold">
+            <li class="nav-item">
+              <a class="nav-link text-center" href="pricing.html">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-center" href="tornado.html">Tornado</a>
+            </li>
+            <li class="nav-item d-none d-md-block">
+              <a class="nav-link text-center" href="/"><img src="assets/img/zoxxo_BLK.png" alt="Logo Zoxxo" srcset="" width="45" /></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-center" href="login.html">Sign In</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-center" href="register.html">Sign Up</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    
+
+    <!-- Content -->
+    <!-- Tornado Section -->
+    <div id="register-section" style="background-color: #f5dde7; margin-top: -60px; color: #f21a5d" class="w-100 d-flex flex-column flex-lg-row-reverse align-items-center px-4 justify-content-between position-relative text-center py-5">
+      <div class="col-xl-6">
+        <img class="zoxxo-post" src="assets/img/Preview10008.png" alt="Zoxxo Register Image" srcset="" />
+      </div>
+      <div class="d-sm-flex flex-sm-column flex-lg-column justify-content-lg-center justify-content-sm-start align-items-center gap-4 col-11 col-xl-4 col-lg-6 mx-auto align-items-xl-start">
+        <div class="fw-bold text-sm-center text-lg-start tornado-title-section">Data & Privacy Policy</div>
+        <div class="subtitle-section">
+          <div class="fw-semibold text-lg-start">Why should I choose TORNADO?</div>
+          <div class="text-black">
+            With our Plan TORNADO you will get access to all of the Features & Tools immediately. This will help you to have full experience for a low price. You can upgrade or downgrade Storage with just few clicks.
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Radio Section -->
+    <div class="d-flex flex-column py-5 position-relative col-10 mx-auto gap-3 text-content">
+      <div class="mb-3">
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+        gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
+        eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+      </div>
+      <div>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro dicta reprehenderit debitis nisi, ullam soluta facilis ipsam consectetur illum error ad non nobis! Sint velit enim molestiae cumque totam aperiam. Lorem ipsum dolor,
+        sit amet consectetur adipisicing elit. Quidem itaque facilis perferendis totam architecto exercitationem at? Adipisci ex fuga aut error animi non sunt corporis aliquid beatae. Quas, tempora ratione? Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Repudiandae distinctio beatae quis voluptates sapiente sunt sequi, recusandae, quas, consectetur harum ad tempore doloribus molestiae deserunt impedit excepturi ratione dolor maxime?
+      </div>
+      <div>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro dicta reprehenderit debitis nisi, ullam soluta facilis ipsam consectetur illum error ad non nobis! Sint velit enim molestiae cumque totam aperiam. Lorem ipsum dolor,
+        sit amet consectetur adipisicing elit. Quidem itaque facilis perferendis totam architecto exercitationem at? Adipisci ex fuga aut error animi non sunt corporis aliquid beatae. Quas, tempora ratione? Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Repudiandae distinctio beatae quis voluptates sapiente sunt sequi, recusandae, quas, consectetur harum ad tempore doloribus molestiae deserunt impedit excepturi ratione dolor maxime?
+      </div>
+      <div>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro dicta reprehenderit debitis nisi, ullam soluta facilis ipsam consectetur illum error ad non nobis! Sint velit enim molestiae cumque totam aperiam. Lorem ipsum dolor,
+        sit amet consectetur adipisicing elit. Quidem itaque facilis perferendis totam architecto exercitationem at? Adipisci ex fuga aut error animi non sunt corporis aliquid beatae. Quas, tempora ratione? Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Repudiandae distinctio beatae quis voluptates sapiente sunt sequi, recusandae, quas, consectetur harum ad tempore doloribus molestiae deserunt impedit excepturi ratione dolor maxime?
+      </div>
+      <div>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro dicta reprehenderit debitis nisi, ullam soluta facilis ipsam consectetur illum error ad non nobis! Sint velit enim molestiae cumque totam aperiam. Lorem ipsum dolor,
+        sit amet consectetur adipisicing elit. Quidem itaque facilis perferendis totam architecto exercitationem at? Adipisci ex fuga aut error animi non sunt corporis aliquid beatae. Quas, tempora ratione? Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Repudiandae distinctio beatae quis voluptates sapiente sunt sequi, recusandae, quas, consectetur harum ad tempore doloribus molestiae deserunt impedit excepturi ratione dolor maxime?
+      </div>
+      <div>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro dicta reprehenderit debitis nisi, ullam soluta facilis ipsam consectetur illum error ad non nobis! Sint velit enim molestiae cumque totam aperiam. Lorem ipsum dolor,
+        sit amet consectetur adipisicing elit. Quidem itaque facilis perferendis totam architecto exercitationem at? Adipisci ex fuga aut error animi non sunt corporis aliquid beatae. Quas, tempora ratione? Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Repudiandae distinctio beatae quis voluptates sapiente sunt sequi, recusandae, quas, consectetur harum ad tempore doloribus molestiae deserunt impedit excepturi ratione dolor maxime?
+      </div>
+    </div>
+    <!-- Offer Section -->
+    <div style="background-color: #f21a5d" class="text-white text-center py-5 offer-section">
+      <div class="d-flex justify-content-between col-10 mx-auto text-start align-items-center">
+        <div class="col-4 col-lg-3">We don´t transfer, We deliver!</div>
+        <div id="button-section" class="text-lg-start text-center pb-5">
+          <a class="btn btn-danger px-5 bg-transparent border-white" href="register.html">Register now for free</a>
+        </div>
+      </div>
+    </div>
+    <div style="color: #f2f3f4; background: #161616" class="card text-center rounded-0">
+      <div class="card-body pt-4 d-lg-flex justify-content-lg-between px-lg-5 col-lg-10 mx-lg-auto">
+        <div class="d-flex flex-column align-items-center gap-3 gap-lg-5">
+          <img src="assets/img/zoxxo_CLR.png" alt="" srcset="" width="50" height="40" />
+          <div class="dropdown">
+            <button style="background-color: #252525; border-color: #252525" class="btn btn-secondary dropdown-toggle px-4" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" aria-expanded="false">English</button>
+          </div>
+        </div>
+        <div class="d-flex flex-column align-items-start mt-2">
+          <span class="h4 fw-semibold">Product</span>
+          <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Overview</a>
+          <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Features</a>
+          <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Workspaces</a>
+          <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Pricing</a>
+        </div>
+        <div class="d-flex flex-column align-items-start mt-2">
+          <span class="h4 fw-semibold">Who we are</span>
+          <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Company</a>
+          <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Newsroom</a>
+          <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Advertising</a>
+          <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Brand</a>
+        </div>
+        <div class="d-flex flex-column align-items-start mt-2">
+          <span class="h4 fw-semibold">Explore</span>
+          <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Help Center</a>
+          <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Ideas</a>
+          <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Terms</a>
+          <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Privacy</a>
+        </div>
+      </div>
+      <hr class="w-75 mx-auto" />
+      <div class="d-lg-flex justify-content-lg-between w-75 mx-auto">
+        <div class="d-flex gap-3 align-items-center justify-content-center h4">
+          <a href="#" class="text-white"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="text-white"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#" class="text-white"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+        <div class="card-footer text-secondary">©2022 zoxxo</div>
+      </div>
+    </div>
+  </body>
+
+  <!-- Script -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/bb1fce9dd9.js" crossorigin="anonymous"></script>
+  <!-- Script untuk library jQuery (dibutuhkan untuk contoh JavaScript di bawah) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</html>
