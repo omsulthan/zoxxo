@@ -103,7 +103,7 @@
           <div class="fw-bold h1">Upload your Data</div>
           <div class="h5 text-secondary w-50 mx-auto">Drag your cover image and upload it for current workspaces</div>
         </div>
-        <div onclick="handleClick()" class="d-flex justify-content-center align-items-center pointer upload-button">
+        <label for="upload" id="dropArea" class="d-flex justify-content-center align-items-center pointer upload-button">
           <div id="first-layer" class="mx-auto rounded-circle d-flex justify-content-center align-items-center">
             <div id="second-layer" class="mx-auto rounded-circle d-flex justify-content-center align-items-center second-ring">
               <div id="third-layer" class="mx-auto rounded-circle d-flex justify-content-center align-items-center flex-column">
@@ -112,7 +112,8 @@
               </div>
             </div>
           </div>
-        </div>
+        </label>
+        <input type="file" name="upload" id="upload" hidden />
         <div class="d-flex justify-content-center gap-3 justify-content-xl-end px-xl-5">
           <button style="border: 1px solid #9997bf; color: #9997bf" class="btn rounded">Upload</button>
           <button onclick="handleFirst()" style="background-color: #9997bf" class="btn btn-primary rounded">Save and Exit</button>
@@ -125,10 +126,11 @@
           <div class="fw-bold h1">Upload your Data</div>
           <div class="h5 text-primary-emphasis w-50 mx-auto">Drag your cover image and upload it for current workspaces</div>
         </div>
-        <div id="upload" style="background-color: #dadae6" class="col-7 mx-auto rounded py-5 d-flex flex-column justify-content-center align-items-center gap-2">
+        <label id="dropArea-2" for="upload-2" style="background-color: #dadae6" class="col-7 mx-auto rounded py-5 d-flex flex-column justify-content-center align-items-center gap-2">
           <img src="../assets/img/icon/upload-blue.svg" alt="Upload Icon" srcset="" />
           <div style="color: #9997bf" class="w-75 mt-2">Drag your files here or click here to upload</div>
-        </div>
+        </label>
+        <input type="file" name="upload" id="upload-2" hidden />
         <div class="col-8 mx-auto text-start">
           <div class="h6 text-secondary fw-semibold my-3">Uploaded Files :</div>
           <table class="table table-responsive-sm">
@@ -175,7 +177,7 @@
           <div class="fw-bold h1">Upload your Data</div>
           <div class="h5 text-secondary w-50 mx-auto">Drag your cover image and upload it for current workspaces</div>
         </div>
-        <div onclick="handleClick()" class="d-flex justify-content-center align-items-center pointer upload-button">
+        <label id="dropArea-3" for="upload-3" class="d-flex justify-content-center align-items-center pointer upload-button">
           <div id="first-layer" class="mx-auto rounded-circle d-flex justify-content-center align-items-center">
             <div id="second-layer" class="mx-auto rounded-circle d-flex justify-content-center align-items-center second-ring">
               <div id="third-layer" class="mx-auto rounded-circle d-flex justify-content-center align-items-center flex-column">
@@ -184,7 +186,8 @@
               </div>
             </div>
           </div>
-        </div>
+        </label>
+        <input type="file" name="upload" id="upload-3" hidden />
         <div class="d-flex justify-content-between col-6 mx-auto">
           <button style="width: 40px; height: 40px" class="bg-danger rounded-circle btn btn-danger"></button>
           <button style="width: 40px; height: 40px" class="bg-primary rounded-circle btn btn-primary"></button>
@@ -403,6 +406,38 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- My Script -->
   <script>
+    var dropArea = document.getElementById("dropArea");
+    var dropArea2 = document.getElementById("dropArea-2");
+    var dropArea3 = document.getElementById("dropArea-3");
+
+    // Menghindari tindakan default saat drag over
+    dropArea.addEventListener("dragover", function (e) {
+      e.preventDefault();
+    });
+
+    // Menangani peristiwa drop
+    dropArea.addEventListener("drop", function (e) {
+      e.preventDefault();
+    });
+
+    // Menghindari tindakan default saat drag over
+    dropArea2.addEventListener("dragover", function (e) {
+      e.preventDefault();
+    });
+
+    // Menangani peristiwa drop
+    dropArea2.addEventListener("drop", function (e) {
+      e.preventDefault();
+    });
+    // Menghindari tindakan default saat drag over
+    dropArea3.addEventListener("dragover", function (e) {
+      e.preventDefault();
+    });
+
+    // Menangani peristiwa drop
+    dropArea3.addEventListener("drop", function (e) {
+      e.preventDefault();
+    });
     const handleFirst = () => {
       $("#first-section").addClass("d-none");
       $("#first-section").removeClass("d-flex");
@@ -428,7 +463,7 @@
       $("#enjoy-section").removeClass("d-none");
     };
     const handleFinish = () => {
-      history.back()
+      history.back();
     };
   </script>
 </html>

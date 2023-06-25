@@ -86,6 +86,10 @@
       ul li {
         backdrop-filter: blur(50px) contrast(1.2);
       }
+      .upload-area {
+        width: auto;
+        height: auto;
+      }
 
       @media (min-width: 768px) {
         .navbar {
@@ -290,7 +294,7 @@
             <div class="fw-bold h1">Upload your Data</div>
             <div class="h5 text-secondary w-50 mx-auto">Deliver your data fast, save & without interference of others</div>
           </div>
-          <div onclick="handleClick()" class="d-flex justify-content-center align-items-center pointer upload-button">
+          <label onclick="handleClick()" class="d-flex justify-content-center align-items-center pointer upload-button" for="upload" id="dropArea">
             <div id="first-layer" class="mx-auto rounded-circle d-flex justify-content-center align-items-center">
               <div id="second-layer" class="mx-auto rounded-circle d-flex justify-content-center align-items-center second-ring">
                 <div id="third-layer" class="mx-auto rounded-circle d-flex justify-content-center align-items-center flex-column">
@@ -299,7 +303,8 @@
                 </div>
               </div>
             </div>
-          </div>
+          </label>
+          <input type="file" name="upload" id="upload" hidden />
           <div id="route-section" class="d-flex justify-content-center gap-5">
             <div style="color: #f21a5d"><i class="fa-solid fa-x"></i> Upload</div>
             <div style="color: #f5b5cc"><i class="fa-solid fa-x"></i> Share</div>
@@ -309,10 +314,11 @@
 
         <!-- Share Section -->
         <div id="share-section" style="background-color: #f5f5f7; height: 100vh" class="w-100 text-center py-3 flex-column justify-content-between justify-content-xl-around pt-5 d-none mt-5 py-4">
-          <div id="upload" style="background-color: #f5dde7" class="col-7 mx-auto rounded py-5 d-flex flex-column justify-content-center align-items-center gap-2">
+          <label for="upload-2" id="dropArea-2" style="background-color: #f5dde7" class="col-7 mx-auto rounded py-5 d-flex flex-column justify-content-center align-items-center gap-2">
             <img src="assets/img/icon/upload.svg" alt="Upload Icon" srcset="" />
             <div style="color: #f21a5d" class="w-75 mt-2">Drag your files here or click here to upload</div>
-          </div>
+          </label>
+          <input type="file" name="upload" id="upload-2" hidden />
           <div class="col-8 mx-auto text-start">
             <div class="h6 text-secondary fw-semibold my-3">Uploaded Files :</div>
             <table class="table table-responsive-sm">
@@ -350,7 +356,7 @@
                 <label class="form-check-label link-offset-2 link-underline link-underline-opacity-0 h6" for="flexRadioDefault1"> Via Email </label>
               </div>
               <div onclick="handleLink()" class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"/>
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
                 <label class="form-check-label link-offset-2 link-underline link-underline-opacity-0 h6" for="flexRadioDefault2"> Via Link </label>
               </div>
             </div>
@@ -608,25 +614,25 @@
                       <td>20.00MB</td>
                       <td><button class="btn btn-close"></button></td>
                     </tr>
-                    <tr>
-                    <tr>
-                      <td>name_of_file.jpg</td>
-                      <td>20.00MB</td>
-                      <td><button class="btn btn-close"></button></td>
-                    </tr>
-                    <tr>
+                    <tr></tr>
                     <tr>
                       <td>name_of_file.jpg</td>
                       <td>20.00MB</td>
                       <td><button class="btn btn-close"></button></td>
                     </tr>
-                    <tr>
+                    <tr></tr>
                     <tr>
                       <td>name_of_file.jpg</td>
                       <td>20.00MB</td>
                       <td><button class="btn btn-close"></button></td>
                     </tr>
+                    <tr></tr>
                     <tr>
+                      <td>name_of_file.jpg</td>
+                      <td>20.00MB</td>
+                      <td><button class="btn btn-close"></button></td>
+                    </tr>
+                    <tr></tr>
                     <tr>
                       <td>name_of_file.jpg</td>
                       <td>20.00MB</td>
@@ -654,10 +660,11 @@
                     </tr>
                   </tbody>
                 </table>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-ifno" data-bs-dismiss="modal">Close</button>
-              <button type="button" style="background-color: #f22967" class="btn btn-danger">Save changes</button>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-ifno" data-bs-dismiss="modal">Close</button>
+                <button type="button" style="background-color: #f22967" class="btn btn-danger">Save changes</button>
+              </div>
             </div>
           </div>
         </div>
@@ -672,12 +679,50 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- My Script -->
   <script>
-    const handleClick = () => {
+    var dropArea = document.getElementById("dropArea");
+    var dropArea2 = document.getElementById("dropArea-2");
+
+    // Menghindari tindakan default saat drag over
+    dropArea.addEventListener("dragover", function (e) {
+      e.preventDefault();
+    });
+
+    // Menangani peristiwa drop
+    dropArea.addEventListener("drop", function (e) {
+      e.preventDefault();
       $("#uploader-section").addClass("d-none");
       $("#uploader-section").removeClass("d-flex");
       $("#share-section").addClass("d-flex");
       $("#share-section").removeClass("d-none");
-    };
+    });
+    // Menghindari tindakan default saat drag over
+    dropArea2.addEventListener("dragover", function (e) {
+      e.preventDefault();
+    });
+
+    // Menangani peristiwa drop
+    dropArea2.addEventListener("drop", function (e) {
+      e.preventDefault();
+      $("#uploader-section").addClass("d-none");
+      $("#uploader-section").removeClass("d-flex");
+      $("#share-section").addClass("d-flex");
+      $("#share-section").removeClass("d-none");
+    });
+
+    var imageUpload = document.getElementById("upload");
+
+    imageUpload.addEventListener("change", function (e) {
+      var file = e.target.files[0];
+
+      if (file) {
+        $("#uploader-section").addClass("d-none");
+        $("#uploader-section").removeClass("d-flex");
+        $("#share-section").addClass("d-flex");
+        $("#share-section").removeClass("d-none");
+      } else {
+        elementToHide.classList.remove("hide");
+      }
+    });
     const handleShare = () => {
       $("#form-section").addClass("d-none");
       $("#form-section").addClass("d-block");
@@ -686,13 +731,12 @@
       $("#enjoy-route").css("color", "#f21a5d");
     };
     const handleEmail = () => {
-      $("#placeholder-section").attr('placeholder', 'E-Mail')
-      $("#email-input").show()
-
-    }
+      $("#placeholder-section").attr("placeholder", "E-Mail");
+      $("#email-input").show();
+    };
     const handleLink = () => {
-      $("#placeholder-section").attr('placeholder', 'Title')
-      $("#email-input").hide()
-    }
+      $("#placeholder-section").attr("placeholder", "Title");
+      $("#email-input").hide();
+    };
   </script>
 </html>

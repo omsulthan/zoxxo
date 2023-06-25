@@ -103,7 +103,7 @@
           <div class="fw-bold h1">Upload your Data</div>
           <div class="h5 text-secondary w-50 mx-auto">Drag your cover image and upload it for current workspaces</div>
         </div>
-        <div onclick="handleClick()" class="d-flex justify-content-center align-items-center pointer upload-button">
+        <label class="d-flex justify-content-center align-items-center pointer upload-button" for="upload" id="dropArea">
           <div id="first-layer" class="mx-auto rounded-circle d-flex justify-content-center align-items-center">
             <div id="second-layer" class="mx-auto rounded-circle d-flex justify-content-center align-items-center second-ring">
               <div id="third-layer" class="mx-auto rounded-circle d-flex justify-content-center align-items-center flex-column">
@@ -112,7 +112,8 @@
               </div>
             </div>
           </div>
-        </div>
+        </label>
+        <input type="file" name="upload" id="upload" hidden />
         <div id="route-section" class="d-flex justify-content-center gap-5">
           <div style="color: #9997bf"><i class="fa-solid fa-x"></i> Upload</div>
           <div style="color: #9f9f9f"><i class="fa-solid fa-x"></i> Customize</div>
@@ -130,10 +131,11 @@
           <div class="fw-bold h1">Upload your Data</div>
           <div class="h5 text-primary-emphasis w-50 mx-auto">Drag your cover image and upload it for current workspaces</div>
         </div>
-        <div id="upload" style="background-color: #dadae6" class="col-7 mx-auto rounded py-5 d-flex flex-column justify-content-center align-items-center gap-2">
+        <label id="dropArea-2" for="upload-2" style="background-color: #dadae6" class="col-7 mx-auto rounded py-5 d-flex flex-column justify-content-center align-items-center gap-2">
           <img src="assets/img/icon/upload-blue.svg" alt="Upload Icon" srcset="" />
           <div style="color: #9997bf" class="w-75 mt-2">Drag your files here or click here to upload</div>
-        </div>
+        </label>
+        <input type="file" name="upload" id="upload-2" hidden />
         <div class="col-8 mx-auto text-start">
           <div class="h6 text-secondary fw-semibold my-3">Uploaded Files :</div>
           <table class="table table-responsive-sm">
@@ -157,7 +159,9 @@
               </tr>
             </tbody>
           </table>
-          <div style="color: #9997bf" class="col-12 mx-auto col-md-2 col-lg-2 col-xl-4 text-center"><a class="link-offset-2 link-underline link-underline-opacity-0 h6"  data-bs-toggle="modal" data-bs-target="#seeMoreModal" href="#">See More</a></div>
+          <div style="color: #9997bf" class="col-12 mx-auto col-md-2 col-lg-2 col-xl-4 text-center">
+            <a class="link-offset-2 link-underline link-underline-opacity-0 h6" data-bs-toggle="modal" data-bs-target="#seeMoreModal" href="#">See More</a>
+          </div>
         </div>
 
         <!-- Share Link Section Default -->
@@ -178,7 +182,7 @@
           <div class="fw-bold h1">Upload your Data</div>
           <div class="h5 text-secondary w-50 mx-auto">Drag your cover image and upload it for current workspaces</div>
         </div>
-        <div onclick="handleClick()" class="d-flex justify-content-center align-items-center pointer upload-button">
+        <label id="dropArea-3" for="upload-3"  class="d-flex justify-content-center align-items-center pointer upload-button">
           <div id="first-layer" class="mx-auto rounded-circle d-flex justify-content-center align-items-center">
             <div id="second-layer" class="mx-auto rounded-circle d-flex justify-content-center align-items-center second-ring">
               <div id="third-layer" class="mx-auto rounded-circle d-flex justify-content-center align-items-center flex-column">
@@ -187,7 +191,8 @@
               </div>
             </div>
           </div>
-        </div>
+        </label>
+        <input type="file" name="upload" id="upload-3" hidden />
         <div class="d-flex justify-content-between col-6 mx-auto">
           <button style="width: 40px; height: 40px" class="bg-danger rounded-circle btn btn-danger"></button>
           <button style="width: 40px; height: 40px" class="bg-primary rounded-circle btn btn-primary"></button>
@@ -246,8 +251,8 @@
 
         <div class="col-8 mx-auto">
           <div class="input-group mb-3">
-            <input style="border: #9997bf; color: #9997bf;" type="text" class="form-control" aria-label="Amount (to the nearest dollar)" value="https://xd.adobe.com/view/5f5ec478-1928-4e28-80ea-11e61c21d60e-0a0d/grid" />
-            <button style="border: #9997bf; color: #9997bf;" class="input-group-text"><i class="fa-solid fa-copy"></i></button>
+            <input style="border: #9997bf; color: #9997bf" type="text" class="form-control" aria-label="Amount (to the nearest dollar)" value="https://xd.adobe.com/view/5f5ec478-1928-4e28-80ea-11e61c21d60e-0a0d/grid" />
+            <button style="border: #9997bf; color: #9997bf" class="input-group-text"><i class="fa-solid fa-copy"></i></button>
           </div>
         </div>
 
@@ -262,140 +267,140 @@
         </div>
       </div>
       <div class="my-way col-xl-7 d-xl-flex justify-content-xl-center align-items-xl-center">
-        <div class="bg-white rounded p-2"><img src="assets/img/Cover-Image.png" width="200" alt=""></div>
+        <div class="bg-white rounded p-2"><img src="assets/img/Cover-Image.png" width="200" alt="" /></div>
       </div>
     </div>
   </body>
 
-        <!-- See More Modal -->
-        <div class="modal fade" id="seeMoreModal" tabindex="5" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <div class="col-12 mx-auto text-start">
-                  <div class="h6 text-secondary fw-semibold my-3">Uploaded Files :</div>
-                  <table class="table table-responsive-sm">
-                    <thead>
-                      <tr>
-                        <th class="text-secondary fw-light">Name</th>
-                        <th class="text-secondary fw-light">Size</th>
-                        <th></th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>name_of_file.jpg</td>
-                        <td>20.00MB</td>
-                        <td><button class="btn btn-close"></button></td>
-                      </tr>
-                      <tr>
-                        <td>name_of_file.jpg</td>
-                        <td>20.00MB</td>
-                        <td><button class="btn btn-close"></button></td>
-                      </tr>
-                      <tr>
-                        <td>name_of_file.jpg</td>
-                        <td>20.00MB</td>
-                        <td><button class="btn btn-close"></button></td>
-                      </tr>
-                      <tr>
-                        <td>name_of_file.jpg</td>
-                        <td>20.00MB</td>
-                        <td><button class="btn btn-close"></button></td>
-                      </tr>
-                      <tr>
-                        <td>name_of_file.jpg</td>
-                        <td>20.00MB</td>
-                        <td><button class="btn btn-close"></button></td>
-                      </tr>
-                      <tr>
-                        <td>name_of_file.jpg</td>
-                        <td>20.00MB</td>
-                        <td><button class="btn btn-close"></button></td>
-                      </tr>
-                      <tr>
-                        <td>name_of_file.jpg</td>
-                        <td>20.00MB</td>
-                        <td><button class="btn btn-close"></button></td>
-                      </tr>
-                      <tr>
-                        <td>name_of_file.jpg</td>
-                        <td>20.00MB</td>
-                        <td><button class="btn btn-close"></button></td>
-                      </tr>
-                      <tr>
-                        <td>name_of_file.jpg</td>
-                        <td>20.00MB</td>
-                        <td><button class="btn btn-close"></button></td>
-                      </tr>
-                      <tr>
-                        <td>name_of_file.jpg</td>
-                        <td>20.00MB</td>
-                        <td><button class="btn btn-close"></button></td>
-                      </tr>
-                      <tr>
-                        <td>name_of_file.jpg</td>
-                        <td>20.00MB</td>
-                        <td><button class="btn btn-close"></button></td>
-                      </tr>
-                      <tr>
-                      <tr>
-                        <td>name_of_file.jpg</td>
-                        <td>20.00MB</td>
-                        <td><button class="btn btn-close"></button></td>
-                      </tr>
-                      <tr>
-                      <tr>
-                        <td>name_of_file.jpg</td>
-                        <td>20.00MB</td>
-                        <td><button class="btn btn-close"></button></td>
-                      </tr>
-                      <tr>
-                      <tr>
-                        <td>name_of_file.jpg</td>
-                        <td>20.00MB</td>
-                        <td><button class="btn btn-close"></button></td>
-                      </tr>
-                      <tr>
-                      <tr>
-                        <td>name_of_file.jpg</td>
-                        <td>20.00MB</td>
-                        <td><button class="btn btn-close"></button></td>
-                      </tr>
-                      <tr>
-                        <td>name_of_file.jpg</td>
-                        <td>20.00MB</td>
-                        <td><button class="btn btn-close"></button></td>
-                      </tr>
-                      <tr>
-                        <td>name_of_file.jpg</td>
-                        <td>20.00MB</td>
-                        <td><button class="btn btn-close"></button></td>
-                      </tr>
-                      <tr>
-                        <td>name_of_file.jpg</td>
-                        <td>20.00MB</td>
-                        <td><button class="btn btn-close"></button></td>
-                      </tr>
-                      <tr>
-                        <td>name_of_file.jpg</td>
-                        <td>20.00MB</td>
-                        <td><button class="btn btn-close"></button></td>
-                      </tr>
-                    </tbody>
-                  </table>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-ifno" data-bs-dismiss="modal">Close</button>
-                <button type="button" style="background-color: #f22967" class="btn btn-danger">Save changes</button>
-              </div>
-            </div>
+  <!-- See More Modal -->
+  <div class="modal fade" id="seeMoreModal" tabindex="5" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="col-12 mx-auto text-start">
+            <div class="h6 text-secondary fw-semibold my-3">Uploaded Files :</div>
+            <table class="table table-responsive-sm">
+              <thead>
+                <tr>
+                  <th class="text-secondary fw-light">Name</th>
+                  <th class="text-secondary fw-light">Size</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>name_of_file.jpg</td>
+                  <td>20.00MB</td>
+                  <td><button class="btn btn-close"></button></td>
+                </tr>
+                <tr>
+                  <td>name_of_file.jpg</td>
+                  <td>20.00MB</td>
+                  <td><button class="btn btn-close"></button></td>
+                </tr>
+                <tr>
+                  <td>name_of_file.jpg</td>
+                  <td>20.00MB</td>
+                  <td><button class="btn btn-close"></button></td>
+                </tr>
+                <tr>
+                  <td>name_of_file.jpg</td>
+                  <td>20.00MB</td>
+                  <td><button class="btn btn-close"></button></td>
+                </tr>
+                <tr>
+                  <td>name_of_file.jpg</td>
+                  <td>20.00MB</td>
+                  <td><button class="btn btn-close"></button></td>
+                </tr>
+                <tr>
+                  <td>name_of_file.jpg</td>
+                  <td>20.00MB</td>
+                  <td><button class="btn btn-close"></button></td>
+                </tr>
+                <tr>
+                  <td>name_of_file.jpg</td>
+                  <td>20.00MB</td>
+                  <td><button class="btn btn-close"></button></td>
+                </tr>
+                <tr>
+                  <td>name_of_file.jpg</td>
+                  <td>20.00MB</td>
+                  <td><button class="btn btn-close"></button></td>
+                </tr>
+                <tr>
+                  <td>name_of_file.jpg</td>
+                  <td>20.00MB</td>
+                  <td><button class="btn btn-close"></button></td>
+                </tr>
+                <tr>
+                  <td>name_of_file.jpg</td>
+                  <td>20.00MB</td>
+                  <td><button class="btn btn-close"></button></td>
+                </tr>
+                <tr>
+                  <td>name_of_file.jpg</td>
+                  <td>20.00MB</td>
+                  <td><button class="btn btn-close"></button></td>
+                </tr>
+                <tr></tr>
+                <tr>
+                  <td>name_of_file.jpg</td>
+                  <td>20.00MB</td>
+                  <td><button class="btn btn-close"></button></td>
+                </tr>
+                <tr></tr>
+                <tr>
+                  <td>name_of_file.jpg</td>
+                  <td>20.00MB</td>
+                  <td><button class="btn btn-close"></button></td>
+                </tr>
+                <tr></tr>
+                <tr>
+                  <td>name_of_file.jpg</td>
+                  <td>20.00MB</td>
+                  <td><button class="btn btn-close"></button></td>
+                </tr>
+                <tr></tr>
+                <tr>
+                  <td>name_of_file.jpg</td>
+                  <td>20.00MB</td>
+                  <td><button class="btn btn-close"></button></td>
+                </tr>
+                <tr>
+                  <td>name_of_file.jpg</td>
+                  <td>20.00MB</td>
+                  <td><button class="btn btn-close"></button></td>
+                </tr>
+                <tr>
+                  <td>name_of_file.jpg</td>
+                  <td>20.00MB</td>
+                  <td><button class="btn btn-close"></button></td>
+                </tr>
+                <tr>
+                  <td>name_of_file.jpg</td>
+                  <td>20.00MB</td>
+                  <td><button class="btn btn-close"></button></td>
+                </tr>
+                <tr>
+                  <td>name_of_file.jpg</td>
+                  <td>20.00MB</td>
+                  <td><button class="btn btn-close"></button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-ifno" data-bs-dismiss="modal">Close</button>
+            <button type="button" style="background-color: #f22967" class="btn btn-danger">Save changes</button>
           </div>
         </div>
       </div>
+    </div>
+  </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/bb1fce9dd9.js" crossorigin="anonymous"></script>
@@ -403,29 +408,62 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- My Script -->
   <script>
+    var dropArea = document.getElementById("dropArea");
+    var dropArea2 = document.getElementById("dropArea-2");
+    var dropArea3 = document.getElementById("dropArea-3");
+
+    // Menghindari tindakan default saat drag over
+    dropArea.addEventListener("dragover", function (e) {
+      e.preventDefault();
+    });
+
+    // Menangani peristiwa drop
+    dropArea.addEventListener("drop", function (e) {
+      e.preventDefault();
+    });
+
+    // Menghindari tindakan default saat drag over
+    dropArea2.addEventListener("dragover", function (e) {
+      e.preventDefault();
+    });
+
+    // Menangani peristiwa drop
+    dropArea2.addEventListener("drop", function (e) {
+      e.preventDefault();
+    });
+    // Menghindari tindakan default saat drag over
+    dropArea3.addEventListener("dragover", function (e) {
+      e.preventDefault();
+    });
+
+    // Menangani peristiwa drop
+    dropArea3.addEventListener("drop", function (e) {
+      e.preventDefault();
+    });
+
     const handleFirst = () => {
-        $('#first-section').addClass('d-none')
-        $('#first-section').removeClass('d-flex')
-        $('#second-section').addClass('d-flex')
-        $('#second-section').removeClass('d-none')
-    }
+      $("#first-section").addClass("d-none");
+      $("#first-section").removeClass("d-flex");
+      $("#second-section").addClass("d-flex");
+      $("#second-section").removeClass("d-none");
+    };
     const handleSecond = () => {
-        $('#second-section').addClass('d-none')
-        $('#second-section').removeClass('d-flex')
-        $('#third-section').addClass('d-flex')
-        $('#third-section').removeClass('d-none')
-    }
+      $("#second-section").addClass("d-none");
+      $("#second-section").removeClass("d-flex");
+      $("#third-section").addClass("d-flex");
+      $("#third-section").removeClass("d-none");
+    };
     const handleThird = () => {
-        $('#third-section').addClass('d-none')
-        $('#third-section').removeClass('d-flex')
-        $('#enjoy-section').addClass('d-flex')
-        $('#enjoy-section').removeClass('d-none')
-    }
+      $("#third-section").addClass("d-none");
+      $("#third-section").removeClass("d-flex");
+      $("#enjoy-section").addClass("d-flex");
+      $("#enjoy-section").removeClass("d-none");
+    };
     const handleFinish = () => {
-        $('#enjoy-section').addClass('d-none')
-        $('#enjoy-section').removeClass('d-flex')
-        $('#first-section').addClass('d-flex')
-        $('#first-section').removeClass('d-none')
-    }
+      $("#enjoy-section").addClass("d-none");
+      $("#enjoy-section").removeClass("d-flex");
+      $("#first-section").addClass("d-flex");
+      $("#first-section").removeClass("d-none");
+    };
   </script>
 </html>

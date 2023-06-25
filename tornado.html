@@ -389,7 +389,7 @@
         <div class="d-flex flex-column border rounded">
           <div class="d-flex flex-column py-4 gap-1 col-12 justify-content-evenly px-2">
             <div class="text-start">
-              <h4 class="text-secondary mx-2">Sign in or <a onclick="handleRegister()" class="text-secondary">Register now</a></h4>
+              <h4 class="text-secondary mx-2">Sign in or <a onclick="handleRegister()" style="cursor: pointer;" class="text-secondary">Register now</a></h4>
               <hr />
             </div>
             <div class="d-flex flex-column align-items-center">
@@ -446,7 +446,7 @@
         <div class="d-flex flex-column border rounded card-sticky">
           <div class="d-flex flex-column py-4 gap-1 col-12 justify-content-evenly px-2">
             <div class="text-start">
-              <h4 class="text-secondary mx-2">Register now or <a class="text-secondary" href="">Sign in</a></h4>
+              <h4 class="text-secondary mx-2">Register now or <a onclick="handleSign()" style="cursor: pointer;" class="text-secondary">Sign in</a></h4>
               <hr />
             </div>
             <div class="d-flex flex-column align-items-center">
@@ -619,6 +619,10 @@
     const handleRegister = () => {
       $('#card-register').show()
       $('#card-login').hide()
+    }
+    const handleSign = () => {
+      $('#card-register').hide()
+      $('#card-login').show()
     }
   </script>
 </html>

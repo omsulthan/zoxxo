@@ -12,6 +12,28 @@
     .title-section {
       font-size: 40px;
     }
+    .card-wrapper {
+      overflow-x: auto;
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: nowrap;
+    }
+
+    .card-container {
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    .card {
+      flex-shrink: 0;
+      width: 300px; /* Atur ukuran card sesuai kebutuhan */
+      margin-right: 10px; /* Atur jarak antara card */
+    }
+    .overflow-wrap {
+      overflow-wrap: break-word;
+    }
     .tornado-title-section {
       font-size: 40px;
     }
@@ -100,6 +122,16 @@
       .text-small {
         font-size: 13px;
       }
+      .card-wrapper,
+      .card-container,
+      .card-custom,
+      .overflow-wrap {
+        overflow-x: initial;
+        white-space: initial;
+        flex-wrap: initial;
+        width: initial;
+        margin-right: initial;
+      }
     }
     @media (min-width: 992px) {
       .title-section {
@@ -185,6 +217,10 @@
         font-size: 10px;
       }
     }
+    .hide {
+      opacity: 0;
+      display: none;
+    }
   </style>
   <body>
     <!-- Header Navbar -->
@@ -217,13 +253,13 @@
     </nav>
 
     <!-- Content -->
-    <div style="margin-top: -60px;" id="first-content" class="py-5">
-      <div style="color: #f21a5d;" class="fw-bold title-section col-6 mx-auto text-center text-md-start col-md-11 col-lg-10 pt-5">
+    <div style="margin-top: -60px" id="first-content" class="py-5">
+      <div style="color: #f21a5d" class="fw-bold title-section col-6 mx-auto text-center text-md-start col-md-11 col-lg-10 pt-5">
         <div class="col-lg-4 col-md-5">Your plan is your mission!</div>
       </div>
       <div class="mx-auto col-6 col-md-11 text-md-start fw-semibold text-center option-section mt-4 col-lg-10 choose-plan-title">Choose your plan</div>
       <div class="mx-auto col-9 d-flex justify-content-between flex-column col-md-11 justify-content-md-around flex-lg-row col-lg-10 justify-content-lg-between col-xl-10">
-        <div class="col-10 mx-auto d-flex justify-content-between flex-md-column col-md-12 col-lg-4 justify-content-lg-start mx-lg-0 mt-lg-3 col-xl-5">
+        <div class="col-10 mx-auto d-flex justify-content-between flex-md-column col-md-12 col-lg-4 justify-content-lg-start mx-lg-0 mt-lg-3 col-xl-6">
           <div class="form-check">
             <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
             <label class="form-check-label link-offset-2 link-underline link-underline-opacity-0 fw-semibold" for="flexRadioDefault1"> Monthly billing </label>
@@ -234,40 +270,44 @@
             <div class="text-secondary discount">Save Over 20%</div>
           </div>
         </div>
-        <div class="col-11 mx-auto my-3 d-block d-flex flex-column flex-md-row justify-content-md-end justify-content-lg-start gap-5 col-md-12 justify-content-xl-between col-xl-7">
-          <div class="card bg-transparent shadow-sm mb-4">
-            <div class="card-body">
-              <div class="col-9 mx-auto text-center title-card-content fw-semibold">Forever Free</div>
-              <div class="col-7 mx-auto text-center subtitle-card-content text-secondary">Upload files and share links as much as you like</div>
-              <div class="col-9 mx-auto my-2">
-                <ul class="checklist">
-                  <li class="fw-semibold"><i class="fas fa-check text-success me-1"></i> Transfer 2 GB</li>
-                  <li class="fw-semibold"><i class="fas fa-check text-success me-1"></i> 4 GB Storage</li>
-                </ul>
+        <div class="col-11 mx-auto my-3 d-block d-flex flex-row flex-md-row justify-content-md-end justify-content-lg-start gap-5 col-md-12 justify-content-xl-between col-xl-7">
+          <div class="card-wrapper">
+            <div class="card-container">
+              <div style="cursor: pointer" onclick="handleForever()" class="card bg-transparent shadow-sm mb-4 card-click">
+                <div class="card-body">
+                  <div class="col-9 mx-auto text-center title-card-content fw-semibold">Forever Free</div>
+                  <div class="mx-auto text-center subtitle-card-content text-secondary overflow-wrap">Upload files and share links as much as you like</div>
+                  <div class="col-9 mx-auto my-2">
+                    <ul class="checklist">
+                      <li class="fw-semibold"><i class="fas fa-check text-success me-1"></i> Transfer 2 GB</li>
+                      <li class="fw-semibold"><i class="fas fa-check text-success me-1"></i> 4 GB Storage</li>
+                    </ul>
+                  </div>
+                  <div class="col-11 mx-auto"><hr /></div>
+                  <div class="col-9 mx-auto text-center fw-bold price mt-4">0,00 EUR</div>
+                  <div class="col-9 mx-auto text-center fw-semibold jargon-section">no money, no problem</div>
+                  <div id="button-section" class="text-center my-3">
+                    <a style="background-color: #f22967" class="btn btn-danger px-4" href="#">Create Account</a>
+                  </div>
+                </div>
               </div>
-              <div class="col-11 mx-auto"><hr /></div>
-              <div class="col-9 mx-auto text-center fw-bold price mt-4">0,00 EUR</div>
-              <div class="col-9 mx-auto text-center fw-semibold jargon-section">no money, no problem</div>
-              <div id="button-section" class="text-center my-3">
-                <a style="background-color: #f22967" class="btn btn-danger px-4" href="#">Create Account</a>
-              </div>
-            </div>
-          </div>
-          <div style="background-color: #f5dde7; border: 2px solid#f21a5d" class="card shadow-sm mb-4">
-            <div class="card-body">
-              <div style="color: #f21a5d" class="col-9 mx-auto text-center title-card-content fw-semibold">Tornado</div>
-              <div class="col-7 mx-auto text-center subtitle-card-content text-secondary">Upload files and share links and much more</div>
-              <div class="col-9 mx-auto my-2">
-                <ul class="checklist checklist-2">
-                  <li class="fw-semibold"><i class="fas fa-check text-success me-1"></i> Unlimited file size</li>
-                  <li class="fw-semibold"><i class="fas fa-check text-success me-1"></i> 1 TB Storage</li>
-                </ul>
-              </div>
-              <div class="col-11 mx-auto"><hr /></div>
-              <div style="color: #f21a5d" class="col-9 mx-auto text-center fw-bold price mt-4">21,00 EUR</div>
-              <div style="color: #f21a5d" class="col-9 mx-auto text-center fw-semibold jargon-section">per person, billed yearly</div>
-              <div id="button-section" class="text-center my-3">
-                <a style="background-color: #f22967" class="btn btn-danger px-5" href="#">Sign up</a>
+              <div style="background-color: #f5dde7; border: 2px solid#f21a5d; cursor: pointer" onclick="handlePink()" class="card shadow-sm mb-4 card-click">
+                <div class="card-body">
+                  <div style="color: #f21a5d" class="col-9 mx-auto text-center title-card-content fw-semibold">Tornado</div>
+                  <div class="mx-auto text-center subtitle-card-content text-secondary overflow-wrap">Upload files and share links and much more</div>
+                  <div class="col-9 mx-auto my-2">
+                    <ul class="checklist checklist-2">
+                      <li class="fw-semibold"><i class="fas fa-check text-success me-1"></i> Unlimited file size</li>
+                      <li class="fw-semibold"><i class="fas fa-check text-success me-1"></i> 1 TB Storage</li>
+                    </ul>
+                  </div>
+                  <div class="col-11 mx-auto"><hr /></div>
+                  <div style="color: #f21a5d" class="col-9 mx-auto text-center fw-bold price mt-4">21,00 EUR</div>
+                  <div style="color: #f21a5d" class="col-9 mx-auto text-center fw-semibold jargon-section">per person, billed yearly</div>
+                  <div id="button-section" class="text-center my-3">
+                    <a style="background-color: #f22967" class="btn btn-danger px-5" href="#">Sign up</a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -277,30 +317,30 @@
     <!-- End Plan Section -->
     <div class="bg-white w-100">
       <div class="col-11 mx-auto py-4 col-xl-10 d-flex table-feature">
-        <div class="col-8 col-lg-9">
+        <div id="col-custom" class="col-12 col-lg-9 col-md-8">
           <div class="fw-semibold option-section py-3 text-start">Send big files</div>
           <div class="table-responsive d-flex">
             <table class="table text-center">
               <tbody>
                 <tr>
                   <td class="text-start col-6 text-truncate">Transfer size limit</td>
-                  <td>2 GB</td>
+                  <td class="forever-section">2 GB</td>
                 </tr>
                 <tr>
                   <td class="text-start">Storage</td>
-                  <td>4 GB</td>
+                  <td class="forever-section">4 GB</td>
                 </tr>
                 <tr>
                   <td class="text-start text-truncate">Workspaces</td>
-                  <td>1 Workspace</td>
+                  <td class="forever-section">1 Workspace</td>
                 </tr>
                 <tr>
                   <td class="text-start text-truncate">Download with no account</td>
-                  <td><i class="fas fa-check text-danger"></i></td>
+                  <td class="forever-section"><i class="fas fa-check text-danger"></i></td>
                 </tr>
                 <tr>
                   <td class="text-start">Track downloads</td>
-                  <td><i class="fas fa-check text-danger"></i></td>
+                  <td class="forever-section"><i class="fas fa-check text-danger"></i></td>
                 </tr>
               </tbody>
             </table>
@@ -312,15 +352,15 @@
               <tbody>
                 <tr>
                   <td class="text-start col-6 text-truncate">Custom Download page</td>
-                  <td><i class="fas fa-x text-danger"></i></td>
+                  <td class="forever-section"><i class="fas fa-x text-danger"></i></td>
                 </tr>
                 <tr>
                   <td class="text-start text-truncate">Wallpaper backgrounds</td>
-                  <td class="text-truncate">Advertising (and art)</td>
+                  <td class="text-truncate forever-section">Advertising (and art)</td>
                 </tr>
                 <tr>
                   <td class="text-start text-truncate">Custom Workspaces image</td>
-                  <td><i class="fas fa-x text-danger"></i></td>
+                  <td class="forever-section"><i class="fas fa-x text-danger"></i></td>
                 </tr>
               </tbody>
             </table>
@@ -333,15 +373,15 @@
               <tbody>
                 <tr>
                   <td class="text-start col-6 text-truncate">Custom Expiration dates</td>
-                  <td><i class="fas fa-x text-danger"></i></td>
+                  <td class="forever-section"><i class="fas fa-x text-danger"></i></td>
                 </tr>
                 <tr>
                   <td class="text-start text-truncate">Password-protected transfers</td>
-                  <td><i class="fas fa-x text-danger"></i></td>
+                  <td class="forever-section"><i class="fas fa-x text-danger"></i></td>
                 </tr>
                 <tr>
                   <td class="text-start">Data encryption</td>
-                  <td><i class="fas fa-check text-danger"></i></td>
+                  <td class="forever-section"><i class="fas fa-check text-danger"></i></td>
                 </tr>
               </tbody>
             </table>
@@ -354,78 +394,78 @@
               <tbody>
                 <tr>
                   <td class="text-start col-6 text-truncate">zoxxo MANAGE (Filemanager)</td>
-                  <td><i class="fas fa-x text-danger"></i></td>
+                  <td class="forever-section"><i class="fas fa-x text-danger"></i></td>
                 </tr>
                 <tr>
                   <td class="text-start text-truncate">zoxxo ADS (enhance your Brand)</td>
-                  <td><i class="fas fa-check text-danger"></i></td>
+                  <td class="forever-section"><i class="fas fa-check text-danger"></i></td>
                 </tr>
               </tbody>
             </table>
           </div>
           <!-- End #4 -->
         </div>
-        <div id="pink-section" class="col-4 col-lg-3 mt-1">
+        <div id="pink-section" class="col-5 col-lg-3 mt-1 d-lg-block">
           <div class="fw-semibold text-center option-section py-3 text-lg-start text-white">_</div>
           <div class="table-responsive d-flex">
             <table style="border: 2px solid #f21a5d" class="table text-center">
               <tbody>
                 <tr>
-                  <td style="background-color: #f5dde7">Unlimited</td>
+                  <td class="pink-section-2" style="background-color: #f5dde7">Unlimited</td>
                 </tr>
                 <tr>
-                  <td style="background-color: #f5dde7">1 TB</td>
+                  <td class="pink-section-2" style="background-color: #f5dde7">1 TB</td>
                 </tr>
                 <tr>
-                  <td style="background-color: #f5dde7">5 Workspaces</td>
+                  <td class="pink-section-2" style="background-color: #f5dde7">5 Workspaces</td>
                 </tr>
                 <tr>
-                  <td style="background-color: #f5dde7"><i class="fas fa-check text-danger"></i></td>
+                  <td class="pink-section-2" style="background-color: #f5dde7"><i class="fas fa-check text-danger"></i></td>
                 </tr>
                 <tr>
-                  <td style="background-color: #f5dde7"><i class="fas fa-check text-danger"></i></td>
+                  <td class="pink-section-2" style="background-color: #f5dde7"><i class="fas fa-check text-danger"></i></td>
                 </tr>
                 <tr>
-                  <td class="text-small" style="background-color: #f5dde7; color: #f5dde7">_</td>
+                  <td class="text-small pink-section-2" style="background-color: #f5dde7; color: #f5dde7">_</td>
                 </tr>
                 <tr>
-                  <td style="background-color: #f5dde7; color: #f5dde7">_</td>
+                  <td class="pink-section-2" style="background-color: #f5dde7; color: #f5dde7">_</td>
                 </tr>
                 <tr>
-                  <td style="background-color: #f5dde7"><i class="fas fa-check text-danger mt-lg-0"></i></td>
+                  <td class="pink-section-2" style="background-color: #f5dde7"><i class="fas fa-check text-danger mt-lg-0"></i></td>
                 </tr>
                 <tr>
-                  <td style="background-color: #f5dde7">Upload your own</td>
+                  <td class="pink-section-2" style="background-color: #f5dde7">Upload your own</td>
                 </tr>
                 <tr>
-                  <td style="background-color: #f5dde7"><i class="fas fa-check text-danger"></i></td>
-                </tr>
-                <tr>
-                  <td class="text-small" style="background-color: #f5dde7; color: #f5dde7">_</td>
-                </tr>
-                <tr>
-                  <td style="background-color: #f5dde7; color: #f5dde7">_</td>
-                </tr>
-                <tr>
-                  <td style="background-color: #f5dde7"><i class="fas fa-check text-danger mt-3 mt-md-0"></i></td>
-                </tr>
-                <tr>
-                  <td style="background-color: #f5dde7"><i class="fas fa-check text-danger"></i></td>
-                </tr>
-                <tr>
-                  <td style="background-color: #f5dde7"><i class="fas fa-check text-danger"></i></td>
+                  <td class="pink-section-2" style="background-color: #f5dde7"><i class="fas fa-check text-danger"></i></td>
                 </tr>
                 <tr>
                   <td class="text-small" style="background-color: #f5dde7; color: #f5dde7">_</td>
                 </tr>
                 <tr>
-                  <td style="background-color: #f5dde7; color: #f5dde7">_</td>
+                  <td class="pink-section-2" style="background-color: #f5dde7; color: #f5dde7">_</td>
                 </tr>
                 <tr>
-                  <td style="background-color: #f5dde7"><i class="fas fa-check text-danger mt-2 mt-lg-0"></i></td>
+                  <td class="pink-section-2" style="background-color: #f5dde7"><i class="fas fa-check text-danger mt-3 mt-md-0"></i></td>
                 </tr>
                 <tr>
-                  <td style="background-color: #f5dde7"><i class="fas fa-check text-danger"></i></td>
+                  <td class="pink-section-2" style="background-color: #f5dde7"><i class="fas fa-check text-danger"></i></td>
+                </tr>
+                <tr>
+                  <td class="pink-section-2" style="background-color: #f5dde7"><i class="fas fa-check text-danger"></i></td>
+                </tr>
+                <tr>
+                  <td class="pink-section-2" class="text-small" style="background-color: #f5dde7; color: #f5dde7">_</td>
+                </tr>
+                <tr>
+                  <td class="pink-section-2" style="background-color: #f5dde7; color: #f5dde7">_</td>
+                </tr>
+                <tr>
+                  <td class="pink-section-2" style="background-color: #f5dde7"><i class="fas fa-check text-danger mt-2 mt-lg-0"></i></td>
+                </tr>
+                <tr>
+                  <td class="pink-section-2" style="background-color: #f5dde7"><i class="fas fa-check text-danger"></i></td>
                 </tr>
               </tbody>
             </table>
@@ -450,7 +490,7 @@
         </div>
       </div>
       <!-- Footer -->
-      <div style="color: #f2f3f4; background: #161616" class="card text-center rounded-0">
+      <div style="color: #f2f3f4; width: 100vw; background: #161616" class="card text-center rounded-0">
         <div class="card-body pt-4 d-lg-flex justify-content-lg-between px-lg-5 col-lg-10 mx-lg-auto">
           <div class="d-flex flex-column align-items-center gap-3 gap-lg-5">
             <img src="assets/img/zoxxo_CLR.png" alt="" srcset="" width="50" height="40" />
@@ -541,4 +581,40 @@
   <script src="https://kit.fontawesome.com/bb1fce9dd9.js" crossorigin="anonymous"></script>
   <!-- Script untuk library jQuery (dibutuhkan untuk contoh JavaScript di bawah) -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- My Scritp -->
+  <script>
+    if (window.innerWidth >= 768) {
+      $(".card-click").removeEventListener("click", handleClick);
+    }
+    var element = document.getElementById("pink-section");
+    var lastScrollLeft = 0;
+
+    window.addEventListener("scroll", function () {
+      var scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+      if (scrollLeft > lastScrollLeft) {
+        // Scroll ke kanan
+        element.classList.add("hide");
+      } else {
+        // Scroll ke kiri atau tidak ada pergerakan horizontal
+        element.classList.remove("hide");
+      }
+      lastScrollLeft = scrollLeft;
+    });
+
+    $("#pink-section").hide();
+
+    const handleForever = () => {
+      $(".forever-section").show();
+      $(".pink-section-2").hide();
+      $("#pink-section").hide();
+      $("#col-custom").addClass("col-12");
+    };
+    const handlePink = () => {
+      $(".pink-section-2").show();
+      $(".forever-section").hide();
+      $("#pink-section").show();
+      $("#col-custom").addClass("col-6");
+      $("#col-custom").removeClass("col-12");
+    };
+  </script>
 </html>
