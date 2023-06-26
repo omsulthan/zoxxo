@@ -289,12 +289,12 @@
     <div class="">
       <!-- Uploader Section -->
       <div style="z-index: 0; margin-top: -66px" class="d-sm-flex flex-sm-column flex-lg-row sticky-top">
-        <div id="uploader-section" style="background-color: #f5f5f7; height: 100vh" class="col-xl-5 col-12 py-5 d-flex flex-column justify-content-between justify-content-xl-around">
+        <div id="uploader-section" style="background-color: #f5f5f7; height: 100vh" class="col-xl-5 col-12 py-5 d-flex flex-column justify-content-between justify-content-xl-evenly mt-3">
           <div class="text-center">
             <div class="fw-bold h1">Upload your Data</div>
             <div class="h5 text-secondary w-50 mx-auto">Deliver your data fast, save & without interference of others</div>
           </div>
-          <label onclick="handleClick()" class="d-flex justify-content-center align-items-center pointer upload-button" for="upload" id="dropArea">
+          <label class="d-flex justify-content-center align-items-center pointer upload-button" for="upload" id="dropArea">
             <div id="first-layer" class="mx-auto rounded-circle d-flex justify-content-center align-items-center">
               <div id="second-layer" class="mx-auto rounded-circle d-flex justify-content-center align-items-center second-ring">
                 <div id="third-layer" class="mx-auto rounded-circle d-flex justify-content-center align-items-center flex-column">
@@ -313,12 +313,18 @@
         </div>
 
         <!-- Share Section -->
-        <div id="share-section" style="background-color: #f5f5f7; height: 100vh" class="w-100 text-center py-3 flex-column justify-content-between justify-content-xl-around pt-5 d-none mt-5 py-4">
-          <label for="upload-2" id="dropArea-2" style="background-color: #f5dde7" class="col-7 mx-auto rounded py-5 d-flex flex-column justify-content-center align-items-center gap-2">
-            <img src="assets/img/icon/upload.svg" alt="Upload Icon" srcset="" />
-            <div style="color: #f21a5d" class="w-75 mt-2">Drag your files here or click here to upload</div>
-          </label>
-          <input type="file" name="upload" id="upload-2" hidden />
+        <div id="share-section" style="background-color: #f5f5f7; height: 100vh" class="w-100 text-center py-3 flex-column justify-content-between justify-content-xl-evenly pt-5 d-none mt-3 py-4">
+          <div id="ready-share" class="text-center" style="display: none">
+            <div class="fw-bold h1">ready to share!</div>
+            <div class="h5 text-primary-emphasis w-50 mx-auto">your Data is now ready to share with your partners, friends & fmaily</div>
+          </div>
+          <div id="drop-box-2">
+            <label for="upload-2" id="dropArea-2" style="background-color: #f5dde7; display: block" class="col-7 mx-auto rounded py-5 d-flex flex-column justify-content-center align-items-center gap-2">
+              <img src="assets/img/icon/upload.svg" alt="Upload Icon" srcset="" />
+              <div style="color: #f21a5d" class="w-75 mt-2">Drag your files here or click here to upload</div>
+            </label>
+            <input type="file" name="upload" id="upload-2" hidden />
+          </div>
           <div class="col-8 mx-auto text-start">
             <div class="h6 text-secondary fw-semibold my-3">Uploaded Files :</div>
             <table class="table table-responsive-sm">
@@ -342,11 +348,20 @@
                 </tr>
               </tbody>
             </table>
-            <div class="col-4 mx-auto col-md-2 col-lg-12 col-xl-4 mx-lg-auto"><a class="link-offset-2 link-underline link-underline-opacity-0 h6" data-bs-toggle="modal" data-bs-target="#seeMoreModal">See More</a></div>
+            <div class="col-4 mx-auto col-md-2 col-lg-12 col-xl-4 mx-lg-auto"><a class="link-offset-2 link-underline link-underline-opacity-0 h6 text-center" data-bs-toggle="modal" data-bs-target="#seeMoreModal">See More</a></div>
           </div>
 
           <div id="enjoy-section" class="zorro-enjoy d-none">
-            <img src="assets/img/Preview10006.png" alt="" width="272px" />
+            <img src="assets/img/Preview10006.png" alt="" width="200px" />
+            <div onclick="handleProgress()" id="progress-section" class="progress col-6 mx-auto mb-3">
+              <div class="progress-bar bg-danger" role="progressbar" aria-label="Basic example" style="width: 100%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <div id="copy-section" style="display: none;" class="col-6 mx-auto">
+              <div class="input-group mb-3 border">
+                <input style="border: #9997bf; color: #9997bf" type="text" class="form-control" aria-label="Amount (to the nearest dollar)" value="https://xd.adobe.com/view/5f5ec478-1928-4e28-80ea-11e61c21d60e-0a0d/grid" />
+                <button style="border: #9997bf; color: #9997bf" class="input-group-text"><i class="fa-solid fa-copy"></i></button>
+              </div>
+            </div>
           </div>
           <!-- Share Link Section Default -->
           <div id="form-section" class="col-8 mx-auto text-start">
@@ -729,6 +744,8 @@
       $("#enjoy-section").addClass("d-block");
       $("#enjoy-section").removeClass("d-none");
       $("#enjoy-route").css("color", "#f21a5d");
+      $("#drop-box-2").hide();
+      $("#ready-share").show();
     };
     const handleEmail = () => {
       $("#placeholder-section").attr("placeholder", "E-Mail");
@@ -738,5 +755,9 @@
       $("#placeholder-section").attr("placeholder", "Title");
       $("#email-input").hide();
     };
+    const handleProgress = () => {
+      $('#copy-section').show()
+      $('#progress-section').hide()
+    }
   </script>
 </html>
