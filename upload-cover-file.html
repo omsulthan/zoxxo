@@ -114,20 +114,20 @@
         </label>
         <input type="file" name="upload" id="upload" hidden />
         <div class="d-flex justify-content-between col-6 mx-auto">
-          <button style="width: 40px; height: 40px" class="bg-danger rounded-circle btn btn-danger"></button>
-          <button style="width: 40px; height: 40px" class="bg-primary rounded-circle btn btn-primary"></button>
-          <button style="width: 40px; height: 40px" class="bg-warning rounded-circle btn btn-warning"></button>
-          <button style="width: 40px; height: 40px" class="bg-secondary rounded-circle btn btn-secondary"></button>
-          <button style="width: 40px; height: 40px" class="bg-success rounded-circle btn btn-success"></button>
-          <button style="width: 40px; height: 40px" class="bg-danger rounded-circle btn btn-danger"></button>
+          <button onclick="handleDanger()" style="width: 40px; height: 40px" class="bg-danger rounded-circle btn btn-danger"></button>
+          <button onclick="handlePrimary()" style="width: 40px; height: 40px" class="bg-primary rounded-circle btn btn-primary"></button>
+          <button onclick="handleWarning()" style="width: 40px; height: 40px" class="bg-warning rounded-circle btn btn-warning"></button>
+          <button onclick="handleSecondary()" style="width: 40px; height: 40px" class="bg-secondary rounded-circle btn btn-secondary"></button>
+          <button onclick="handleSuccess()" style="width: 40px; height: 40px" class="bg-success rounded-circle btn btn-success"></button>
+          <button onclick="handleInfo()" style="width: 40px; height: 40px" class="bg-info rounded-circle btn btn-info"></button>
         </div>
         <div class="d-flex justify-content-center gap-3 justify-content-xl-end px-xl-5">
-          <button style="border: 1px solid #9997bf; color: #9997bf" class="btn rounded">Upload</button>
+          <button onclick="previewImage()" style="border: 1px solid #9997bf; color: #9997bf" class="btn rounded">Upload</button>
           <button onclick="handleBack()" style="background-color: #9997bf" class="btn btn-primary rounded">Save and Exit</button>
         </div>
       </div>
       <div class="my-way col-xl-7 d-xl-flex justify-content-xl-center align-items-xl-center">
-        <div class="bg-white rounded p-2"><img src="../assets/img/Cover-Image.png" width="200" alt="" /></div>
+        <div class="bg-white rounded p-2 rounded-preview"><img id="preview-image" src="../assets/img/Cover-Image.png" width="200" alt="" /></div>
       </div>
     </div>
   </body>
@@ -141,5 +141,77 @@
     const handleBack = () => {
       history.back();
     };
+    function previewImage() {
+      // Mendapatkan elemen input file
+      let imageInput = document.getElementById("upload");
+
+      // Mendapatkan elemen kontainer pratinjau gambar
+      let imagePreview = document.getElementById("preview-image");
+
+      // Mendapatkan file gambar yang diunggah
+      let imageFile = imageInput.files[0];
+
+      // Membaca file gambar sebagai URL data
+      let reader = new FileReader();
+      reader.onload = function (e) {
+        // Mengubah nilai atribut src dari elemen gambar
+        imagePreview.src = e.target.result;
+      };
+      reader.readAsDataURL(imageFile);
+    }
+    function handleDanger() {
+      $(".rounded-preview").removeClass("bg-white");
+      $(".rounded-preview").removeClass("bg-primary");
+      $(".rounded-preview").removeClass("bg-warning");
+      $(".rounded-preview").removeClass("bg-secondary");
+      $(".rounded-preview").removeClass("bg-success");
+      $(".rounded-preview").addClass("bg-danger");
+      $(".rounded-preview").removeClass("bg-info");
+    }
+    function handlePrimary() {
+      $(".rounded-preview").removeClass("bg-white");
+      $(".rounded-preview").addClass("bg-primary");
+      $(".rounded-preview").removeClass("bg-warning");
+      $(".rounded-preview").removeClass("bg-secondary");
+      $(".rounded-preview").removeClass("bg-success");
+      $(".rounded-preview").removeClass("bg-danger");
+      $(".rounded-preview").removeClass("bg-info");
+    }
+    function handleSecondary() {
+      $(".rounded-preview").removeClass("bg-white");
+      $(".rounded-preview").removeClass("bg-primary");
+      $(".rounded-preview").removeClass("bg-warning");
+      $(".rounded-preview").addClass("bg-secondary");
+      $(".rounded-preview").removeClass("bg-success");
+      $(".rounded-preview").removeClass("bg-danger");
+      $(".rounded-preview").removeClass("bg-info");
+    }
+    function handleSuccess() {
+      $(".rounded-preview").removeClass("bg-white");
+      $(".rounded-preview").removeClass("bg-primary");
+      $(".rounded-preview").removeClass("bg-warning");
+      $(".rounded-preview").removeClass("bg-secondary");
+      $(".rounded-preview").addClass("bg-success");
+      $(".rounded-preview").removeClass("bg-danger");
+      $(".rounded-preview").removeClass("bg-info");
+    }
+    function handleWarning() {
+      $(".rounded-preview").removeClass("bg-white");
+      $(".rounded-preview").removeClass("bg-primary");
+      $(".rounded-preview").addClass("bg-warning");
+      $(".rounded-preview").removeClass("bg-secondary");
+      $(".rounded-preview").removeClass("bg-success");
+      $(".rounded-preview").removeClass("bg-danger");
+      $(".rounded-preview").removeClass("bg-info");
+    }
+    function handleInfo() {
+      $(".rounded-preview").removeClass("bg-white");
+      $(".rounded-preview").removeClass("bg-primary");
+      $(".rounded-preview").removeClass("bg-warning");
+      $(".rounded-preview").removeClass("bg-secondary");
+      $(".rounded-preview").removeClass("bg-success");
+      $(".rounded-preview").removeClass("bg-danger");
+      $(".rounded-preview").addClass("bg-info");
+    }
   </script>
 </html>

@@ -121,6 +121,7 @@
         </div>
         <div class="d-flex justify-content-center gap-3 justify-content-xl-end px-xl-5">
           <button style="border: 1px solid #9997bf; color: #9997bf" class="btn rounded">Cancel</button>
+          <button onclick="previewImage()" class="btn rounded btn-outline-danger">Upload</button>
           <button onclick="handleFirst()" style="background-color: #9997bf" class="btn btn-primary rounded">Next step</button>
         </div>
       </div>
@@ -182,7 +183,7 @@
           <div class="fw-bold h1">Upload your Data</div>
           <div class="h5 text-secondary w-50 mx-auto">Drag your cover image and upload it for current workspaces</div>
         </div>
-        <label id="dropArea-3" for="upload-3"  class="d-flex justify-content-center align-items-center pointer upload-button">
+        <label id="dropArea-3" for="upload-3" class="d-flex justify-content-center align-items-center pointer upload-button">
           <div id="first-layer" class="mx-auto rounded-circle d-flex justify-content-center align-items-center">
             <div id="second-layer" class="mx-auto rounded-circle d-flex justify-content-center align-items-center second-ring">
               <div id="third-layer" class="mx-auto rounded-circle d-flex justify-content-center align-items-center flex-column">
@@ -194,12 +195,12 @@
         </label>
         <input type="file" name="upload" id="upload-3" hidden />
         <div class="d-flex justify-content-between col-6 mx-auto">
-          <button style="width: 40px; height: 40px" class="bg-danger rounded-circle btn btn-danger"></button>
-          <button style="width: 40px; height: 40px" class="bg-primary rounded-circle btn btn-primary"></button>
-          <button style="width: 40px; height: 40px" class="bg-warning rounded-circle btn btn-warning"></button>
-          <button style="width: 40px; height: 40px" class="bg-secondary rounded-circle btn btn-secondary"></button>
-          <button style="width: 40px; height: 40px" class="bg-success rounded-circle btn btn-success"></button>
-          <button style="width: 40px; height: 40px" class="bg-danger rounded-circle btn btn-danger"></button>
+          <button onclick="handleDanger()" style="width: 40px; height: 40px" class="bg-danger rounded-circle btn btn-danger"></button>
+          <button onclick="handlePrimary()" style="width: 40px; height: 40px" class="bg-primary rounded-circle btn btn-primary"></button>
+          <button onclick="handleWarning()" style="width: 40px; height: 40px" class="bg-warning rounded-circle btn btn-warning"></button>
+          <button onclick="handleSecondary()" style="width: 40px; height: 40px" class="bg-secondary rounded-circle btn btn-secondary"></button>
+          <button onclick="handleSuccess()" style="width: 40px; height: 40px" class="bg-success rounded-circle btn btn-success"></button>
+          <button onclick="handleInfo()" style="width: 40px; height: 40px" class="bg-info rounded-circle btn btn-info"></button>
         </div>
         <div id="route-section" class="d-flex justify-content-center gap-5">
           <div style="color: #9997bf"><i class="fa-solid fa-x"></i> Upload</div>
@@ -208,6 +209,7 @@
         </div>
         <div class="d-flex justify-content-center gap-3 justify-content-xl-end px-xl-5">
           <button style="border: 1px solid #9997bf; color: #9997bf" class="btn rounded">Cancel</button>
+          <button onclick="previewImage3()" class="btn rounded btn-outline-danger">Upload</button>
           <button onclick="handleThird()" style="background-color: #9997bf" class="btn btn-primary rounded">Next step</button>
         </div>
       </div>
@@ -250,9 +252,22 @@
         </div>
 
         <div class="col-8 mx-auto">
-          <div class="input-group mb-3">
-            <input style="border: #9997bf; color: #9997bf" type="text" class="form-control" aria-label="Amount (to the nearest dollar)" value="https://xd.adobe.com/view/5f5ec478-1928-4e28-80ea-11e61c21d60e-0a0d/grid" />
-            <button style="border: #9997bf; color: #9997bf" class="input-group-text"><i class="fa-solid fa-copy"></i></button>
+          <img src="../assets/img/Preview10006.png" alt="" width="200px" />
+          <div onclick="handleProgress()" id="progress-section" class="progress col-6 mx-auto mb-3">
+            <div class="progress-bar bg-danger" role="progressbar" aria-label="Basic example" style="width: 100%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <div class="container-input"></div>
+          <div class="input-group mb-3 copy-section" style="display: none">
+            <input
+              id="linkInput"
+              style="border: #9997bf; color: #9997bf"
+              type="text"
+              class="form-control bg-white"
+              disabled
+              aria-label="Amount (to the nearest dollar)"
+              value="https://xd.adobe.com/view/5f5ec478-1928-4e28-80ea-11e61c21d60e-0a0d/grid"
+            />
+            <button id="copyButton" style="border: #9997bf; color: #9997bf" class="input-group-text"><i class="fa-solid fa-copy"></i></button>
           </div>
         </div>
 
@@ -267,7 +282,7 @@
         </div>
       </div>
       <div class="my-way col-xl-7 d-xl-flex justify-content-xl-center align-items-xl-center">
-        <div class="bg-white rounded p-2"><img src="assets/img/Cover-Image.png" width="200" alt="" /></div>
+        <div class="bg-white rounded p-2 rounded-preview"><img id="preview-image" src="assets/img/Cover-Image.png" width="200" alt="" /></div>
       </div>
     </div>
   </body>
@@ -465,5 +480,123 @@
       $("#first-section").addClass("d-flex");
       $("#first-section").removeClass("d-none");
     };
+    const handleProgress = () => {
+      $(".copy-section").show();
+      $("#progress-section").hide();
+    };
+    function handleDanger() {
+      $(".rounded-preview").removeClass("bg-white");
+      $(".rounded-preview").removeClass("bg-primary");
+      $(".rounded-preview").removeClass("bg-warning");
+      $(".rounded-preview").removeClass("bg-secondary");
+      $(".rounded-preview").removeClass("bg-success");
+      $(".rounded-preview").addClass("bg-danger");
+      $(".rounded-preview").removeClass("bg-info");
+    }
+    function handlePrimary() {
+      $(".rounded-preview").removeClass("bg-white");
+      $(".rounded-preview").addClass("bg-primary");
+      $(".rounded-preview").removeClass("bg-warning");
+      $(".rounded-preview").removeClass("bg-secondary");
+      $(".rounded-preview").removeClass("bg-success");
+      $(".rounded-preview").removeClass("bg-danger");
+      $(".rounded-preview").removeClass("bg-info");
+    }
+    function handleSecondary() {
+      $(".rounded-preview").removeClass("bg-white");
+      $(".rounded-preview").removeClass("bg-primary");
+      $(".rounded-preview").removeClass("bg-warning");
+      $(".rounded-preview").addClass("bg-secondary");
+      $(".rounded-preview").removeClass("bg-success");
+      $(".rounded-preview").removeClass("bg-danger");
+      $(".rounded-preview").removeClass("bg-info");
+    }
+    function handleSuccess() {
+      $(".rounded-preview").removeClass("bg-white");
+      $(".rounded-preview").removeClass("bg-primary");
+      $(".rounded-preview").removeClass("bg-warning");
+      $(".rounded-preview").removeClass("bg-secondary");
+      $(".rounded-preview").addClass("bg-success");
+      $(".rounded-preview").removeClass("bg-danger");
+      $(".rounded-preview").removeClass("bg-info");
+    }
+    function handleWarning() {
+      $(".rounded-preview").removeClass("bg-white");
+      $(".rounded-preview").removeClass("bg-primary");
+      $(".rounded-preview").addClass("bg-warning");
+      $(".rounded-preview").removeClass("bg-secondary");
+      $(".rounded-preview").removeClass("bg-success");
+      $(".rounded-preview").removeClass("bg-danger");
+      $(".rounded-preview").removeClass("bg-info");
+    }
+    function handleInfo() {
+      $(".rounded-preview").removeClass("bg-white");
+      $(".rounded-preview").removeClass("bg-primary");
+      $(".rounded-preview").removeClass("bg-warning");
+      $(".rounded-preview").removeClass("bg-secondary");
+      $(".rounded-preview").removeClass("bg-success");
+      $(".rounded-preview").removeClass("bg-danger");
+      $(".rounded-preview").addClass("bg-info");
+    }
+    function previewImage() {
+      // Mendapatkan elemen input file
+      let imageInput = document.getElementById("upload");
+
+      // Mendapatkan elemen kontainer pratinjau gambar
+      let imagePreview = document.getElementById("preview-image");
+
+      // Mendapatkan file gambar yang diunggah
+      let imageFile = imageInput.files[0];
+
+      // Membaca file gambar sebagai URL data
+      let reader = new FileReader();
+      reader.onload = function (e) {
+        // Mengubah nilai atribut src dari elemen gambar
+        imagePreview.src = e.target.result;
+      };
+      reader.readAsDataURL(imageFile);
+    }
+    function previewImage3() {
+      // Mendapatkan elemen input file
+      let imageInput = document.getElementById("upload-3");
+
+      // Mendapatkan elemen kontainer pratinjau gambar
+      let imagePreview = document.getElementById("preview-image");
+
+      // Mendapatkan file gambar yang diunggah
+      let imageFile = imageInput.files[0];
+
+      // Membaca file gambar sebagai URL data
+      let reader = new FileReader();
+      reader.onload = function (e) {
+        // Mengubah nilai atribut src dari elemen gambar
+        imagePreview.src = e.target.result;
+      };
+      reader.readAsDataURL(imageFile);
+    }
+    $(document).ready(function () {
+      $("#copyButton").click(function () {
+        var linkInput = $("#linkInput");
+        linkInput.select();
+        linkInput[0].setSelectionRange(0, 99999); // Untuk perangkat seluler
+        document.execCommand("copy");
+
+        // Menampilkan notifikasi Bootstrap
+        var alertMessage = $("<div>", {
+          class: "alert alert-success",
+          text: "Tautan berhasil disalin!",
+        });
+
+        $(".container-input").append(alertMessage);
+
+        setTimeout(function () {
+          alertMessage.addClass("fade-out");
+
+          setTimeout(function () {
+            alertMessage.remove();
+          }, 700); // Waktu animasi fade-out
+        }, 1000); // Waktu tampil notifikasi
+      });
+    });
   </script>
 </html>
