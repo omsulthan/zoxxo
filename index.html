@@ -8,6 +8,12 @@
     <!-- External CSS -->
     <link rel="stylesheet" href="/assets/css/style.css" />
     <style>
+      td {
+        max-width: 100px !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        white-space: nowrap !important;
+      }
       body {
         background-color: #f5f5f7;
       }
@@ -359,7 +365,15 @@
             <div id="copy-section" style="display: none" class="col-6 mx-auto">
               <div class="container-input"></div>
               <div class="input-group mb-3 border">
-                <input id="linkInput" style="border: #9997bf; color: #9997bf" type="text" class="form-control bg-white" aria-label="Amount (to the nearest dollar)" value="https://xd.adobe.com/view/5f5ec478-1928-4e28-80ea-11e61c21d60e-0a0d/grid" disabled />
+                <input
+                  id="linkInput"
+                  style="border: #9997bf; color: #9997bf"
+                  type="text"
+                  class="form-control bg-white"
+                  aria-label="Amount (to the nearest dollar)"
+                  value="https://xd.adobe.com/view/5f5ec478-1928-4e28-80ea-11e61c21d60e-0a0d/grid"
+                  disabled
+                />
                 <button id="copyButton" style="border: #9997bf; color: #9997bf" class="input-group-text"><i class="fa-solid fa-copy"></i></button>
               </div>
             </div>

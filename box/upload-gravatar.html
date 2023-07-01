@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="../assets/css/style.css" />
   </head>
   <style>
+    td {
+      max-width: 100px !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+      white-space: nowrap !important;
+    }
     .upload-button {
       cursor: pointer;
     }
@@ -290,7 +296,8 @@
         </div>
       </div>
       <div class="my-way col-xl-7 d-xl-flex justify-content-xl-center align-items-xl-center">
-        <div class="rounded-preview rounded-circle p-2 bg-white"><img id="preview-image" class="rounded-circle" src="../assets/img/Cover-Image.png" width="300" height="300" alt="" /></div>
+        <div id="first-preview" class="rounded-preview rounded-circle p-2 d-flex justify-content-center align-items-center" style="width: 200px; height: 200px; background-color: rgba(255, 255, 255, 0.35)">Preview</div>
+        <div id="preview-section" class="rounded-preview rounded-circle p-2 bg-white" style="display: none"><img id="preview-image" class="rounded-circle" src="../assets/img/Cover-Image.png" width="300" height="300" alt="" /></div>
       </div>
     </div>
   </body>
@@ -546,6 +553,9 @@
       $(".rounded-preview").addClass("bg-info");
     }
     function previewImage() {
+      $("#first-preview").hide();
+      $("#first-preview").removeClass("d-flex");
+      $("#preview-section").show();
       // Mendapatkan elemen input file
       let imageInput = document.getElementById("upload");
 

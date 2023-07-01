@@ -12,8 +12,7 @@
     .plan-title {
       font-size: 20px;
     }
-    .radio-section input[type="radio"]:checked + label {
-      /* Atur gaya CSS yang diinginkan ketika radio button tercentang */
+    .radio-active {
       background-color: #fee6ed;
     }
     .option-section {
@@ -345,15 +344,15 @@
           <div class="title-radio fw-semibold">How much extra storage do you need ?</div>
           <div class="col-11 mx-auto d-flex justify-content-between py-2 col-lg-12 justify-content-lg-start gap-lg-3">
             <input type="radio" name="storage" class="btn-check" id="btn-check-1" autocomplete="off" />
-            <label class="custom-btn" for="btn-check-1">2 TB</label>
+            <label onclick="handle2Tb()" class="custom-btn 2tb" for="btn-check-1">2 TB</label>
             <input type="radio" name="storage" class="btn-check" id="btn-check-2" autocomplete="off" />
-            <label class="custom-btn" for="btn-check-2">4 TB</label>
+            <label onclick="handle4Tb()" class="custom-btn 4tb" for="btn-check-2">4 TB</label>
             <input type="radio" name="storage" class="btn-check" id="btn-check-3" autocomplete="off" />
-            <label class="custom-btn" for="btn-check-3">8 TB</label>
+            <label onclick="handle8Tb()" class="custom-btn 8tb" for="btn-check-3">8 TB</label>
             <input type="radio" name="storage" class="btn-check" id="btn-check-4" autocomplete="off" />
-            <label class="custom-btn" for="btn-check-4">16 TB</label>
-            <div class="input-addon col-2">
-              <input class="col-12 py-2 px-2 px-lg-4 custom-btn col-xl-7" type="text" placeholder="_" maxlength="2" />
+            <label onclick="handle16Tb()" class="custom-btn 16tb" for="btn-check-4">16 TB</label>
+            <div onclick="handleAddon()" class="input-addon col-2">
+              <input class="col-12 py-2 px-2 px-lg-4 custom-btn col-xl-7 custom-addon" type="text" placeholder="_" maxlength="2" />
               <span class="addon">GB</span>
             </div>
           </div>
@@ -363,15 +362,15 @@
           <div class="title-radio fw-semibold">How may extra Workspaces do you need ?</div>
           <div class="col-11 mx-auto d-flex justify-content-between py-2 col-lg-12 justify-content-lg-start gap-lg-3">
             <input type="radio" name="workspaces" class="btn-check" id="btn-workspaces-1" autocomplete="off" />
-            <label class="custom-btn-workspaces" for="btn-workspaces-1">3</label>
+            <label onclick="handle3()" class="custom-btn-workspaces 3" for="btn-workspaces-1">3</label>
             <input type="radio" name="workspaces" class="btn-check" id="btn-workspaces-2" autocomplete="off" />
-            <label class="custom-btn-workspaces" for="btn-workspaces-2">5</label>
+            <label onclick="handle5()" class="custom-btn-workspaces 5" for="btn-workspaces-2">5</label>
             <input type="radio" name="workspaces" class="btn-check" id="btn-workspaces-3" autocomplete="off" />
-            <label class="custom-btn-workspaces" for="btn-workspaces-3">10</label>
+            <label onclick="handle10()" class="custom-btn-workspaces 10" for="btn-workspaces-3">10</label>
             <input type="radio" name="workspaces" class="btn-check" id="btn-workspaces-4" autocomplete="off" />
-            <label class="custom-btn-workspaces" for="btn-workspaces-4">20</label>
+            <label onclick="handle20()" class="custom-btn-workspaces 20" for="btn-workspaces-4">20</label>
             <input type="radio" name="workspaces" class="btn-check" id="btn-workspaces-5" autocomplete="off" />
-            <label class="custom-btn-workspaces" for="btn-workspaces-5">50</label>
+            <label onclick="handle50()" class="custom-btn-workspaces 50" for="btn-workspaces-5">50</label>
           </div>
         </div>
         <div class="col-11 mx-auto py-4 col-xl-11 d-flex table-feature">
@@ -592,4 +591,76 @@
   <!-- Script untuk library jQuery (dibutuhkan untuk contoh JavaScript di bawah) -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- My Script -->
+  <script>
+    const handle2Tb = () => {
+      $(".2tb").toggleClass("radio-active");
+      $(".4tb").removeClass("radio-active");
+      $(".8tb").removeClass("radio-active");
+      $(".16tb").removeClass("radio-active");
+      $(".custom-addon").removeClass("radio-active");
+    };
+    const handle4Tb = () => {
+      $(".4tb").toggleClass("radio-active");
+      $(".2tb").removeClass("radio-active");
+      $(".8tb").removeClass("radio-active");
+      $(".16tb").removeClass("radio-active");
+      $(".custom-addon").removeClass("radio-active");
+    };
+    const handle8Tb = () => {
+      $(".8tb").toggleClass("radio-active");
+      $(".4tb").removeClass("radio-active");
+      $(".2tb").removeClass("radio-active");
+      $(".16tb").removeClass("radio-active");
+      $(".custom-addon").removeClass("radio-active");
+    };
+    const handle16Tb = () => {
+      $(".16tb").toggleClass("radio-active");
+      $(".4tb").removeClass("radio-active");
+      $(".8tb").removeClass("radio-active");
+      $(".2tb").removeClass("radio-active");
+      $(".custom-addon").removeClass("radio-active");
+    };
+    const handleAddon = () => {
+      $(".16tb").removeClass("radio-active");
+      $(".4tb").removeClass("radio-active");
+      $(".8tb").removeClass("radio-active");
+      $(".2tb").removeClass("radio-active");
+      $(".custom-addon").toggleClass("radio-active");
+    };
+    const handle3 = () => {
+      $(".3").toggleClass("radio-active");
+      $(".5").removeClass("radio-active");
+      $(".10").removeClass("radio-active");
+      $(".20").removeClass("radio-active");
+      $(".50").removeClass("radio-active");
+    };
+    const handle5 = () => {
+      $(".5").toggleClass("radio-active");
+      $(".3").removeClass("radio-active");
+      $(".10").removeClass("radio-active");
+      $(".20").removeClass("radio-active");
+      $(".50").removeClass("radio-active");
+    };
+    const handle10 = () => {
+      $(".10").toggleClass("radio-active");
+      $(".5").removeClass("radio-active");
+      $(".3").removeClass("radio-active");
+      $(".20").removeClass("radio-active");
+      $(".50").removeClass("radio-active");
+    };
+    const handle20 = () => {
+      $(".20").toggleClass("radio-active");
+      $(".5").removeClass("radio-active");
+      $(".10").removeClass("radio-active");
+      $(".3").removeClass("radio-active");
+      $(".50").removeClass("radio-active");
+    };
+    const handle50 = () => {
+      $(".20").removeClass("radio-active");
+      $(".5").removeClass("radio-active");
+      $(".10").removeClass("radio-active");
+      $(".3").removeClass("radio-active");
+      $(".50").toggleClass("radio-active");
+    };
+  </script>
 </html>

@@ -127,7 +127,8 @@
         </div>
       </div>
       <div class="my-way col-xl-7 d-xl-flex justify-content-xl-center align-items-xl-center">
-        <div class="bg-white rounded p-2 rounded-preview"><img id="preview-image" src="../assets/img/Cover-Image.png" width="200" alt="" /></div>
+        <div id="first-preview" class="rounded-preview p-2 d-flex justify-content-center align-items-center" style="width: 200px; height: 200px; background-color: rgba(255, 255, 255, 0.35)">Preview</div>
+        <div id="preview-section" class="bg-white rounded p-2 rounded-preview" style="display: none"><img id="preview-image" src="assets/img/Cover-Image.png" width="200" alt="" /></div>
       </div>
     </div>
   </body>
@@ -141,7 +142,20 @@
     const handleBack = () => {
       history.back();
     };
+    var dropArea = document.getElementById("dropArea");
+    // Menghindari tindakan default saat drag over
+    dropArea.addEventListener("dragover", function (e) {
+      e.preventDefault();
+    });
+
+    // Menangani peristiwa drop
+    dropArea.addEventListener("drop", function (e) {
+      e.preventDefault();
+    });
     function previewImage() {
+      $("#first-preview").hide();
+      $("#first-preview").removeClass("d-flex");
+      $("#preview-section").show();
       // Mendapatkan elemen input file
       let imageInput = document.getElementById("upload");
 
