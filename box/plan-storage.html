@@ -9,6 +9,14 @@
     <link rel="stylesheet" href="/assets/css/style.css" />
   </head>
   <style>
+    .radio-time-section {
+      margin-left: 2.1rem !important;
+    }
+
+    .form-check-input:checked {
+      background-color: #f21a5d !important;
+      border-color: #f21a5d !important;
+    }
     .plan-title {
       font-size: 20px;
     }
@@ -39,7 +47,6 @@
       cursor: pointer;
     }
     .custom-btn:hover {
-      background-color: #fee6ed;
       cursor: pointer;
     }
     .addon {
@@ -274,7 +281,53 @@
     <nav class="navbar navbar-expand-md bg-white sticky-top">
       <div class="container-fluid col-md-11">
         <a class="navbar-brand" href="/"><img src="../assets/img/zoxxo_CLR.png" alt="Logo Zoxxo" srcset="" width="45" /></a>
-        <div style="width: 36px; height: 36px; background-color: #2b2b2b; border-radius: 99999999px; font-size: 14px; color: white" class="d-flex justify-content-center align-items-center fw-bold">U</div>
+        <div class="d-flex gap-2">
+          <button class="bg-transparent border-0 d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"><i class="fa-solid fa-bars"></i></button>
+          <div
+            style="width: 36px; height: 36px; background-color: #2b2b2b; border-radius: 99999999px; font-size: 14px; color: white; cursor: pointer"
+            class="d-flex justify-content-center align-items-center fw-bold"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            U
+          </div>
+          <div style="right: 8px !important; left: auto !important" class="dropdown-menu">
+            <div class="d-flex gap-2 align-items-center p-3">
+              <div style="width: 48px; height: 48px; background-color: #2b2b2b; border-radius: 99999999px; font-size: 14px; color: white" class="d-flex justify-content-center align-items-center fw-bold">U</div>
+              <div>
+                <div>Username</div>
+                <div>info@username.com</div>
+              </div>
+            </div>
+            <hr />
+            <div class="px-3 dropdown-link">
+              <div class="text-secondary fw-bold">Profile</div>
+              <a class="text-decoration-none text-black" href="/box/">
+                <div class="col-12 p-2">Dashboard</div>
+              </a>
+            </div>
+            <hr />
+            <div class="d-flex flex-column px-3 dropdown-link">
+              <div class="text-secondary fw-bold">Tools</div>
+              <a class="text-decoration-none text-black" href="/manage/">
+                <div class="col-12 p-2">Zoxxo Manage</div>
+              </a>
+              <a class="text-decoration-none text-black" href="/ads/">
+                <div class="col-12 p-2">Zoxxo ads</div>
+              </a>
+
+              <a class="text-decoration-none text-black" href="#">
+                <div class="col-12 p-2">Help center</div>
+              </a>
+              <hr />
+            </div>
+            <div class="d-flex flex-column px-3 dropdown-link">
+              <a class="text-decoration-none text-black" href="/login.html">
+                <div class="col-12 p-2">Logout</div>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
       <hr />
     </nav>
@@ -291,9 +344,18 @@
       <!-- First Flex Section -->
       <div class="col-12 mx-auto text-md-start col-md-11 d-flex flex-column col-lg-8 col-xl-8">
         <div class="d-flex flex-lg-row col-12 col-lg-4 flex-column justify-content-xl-between">
-          <div style="background-color: #f8f8f9; color: #535353" class="col-11 text-center mx-auto p-5 fw-normal mb-3 current-content d-flex justify-content-center align-items-center flex-column gap-4">
-            <div class="col-xl-10">Your current plan is TORNADO. You can switch back to Free or upgrade more Storage.</div>
-            <div class="col-xl-8">Need a custom solution? <a class="link-offset-2 link-underline contact-link" href="#">Contact our sales team</a></div>
+          <div class="my-2 col-12 radio-time-section">
+            <div class="col-12 d-flex justify-content-between flex-column mt-3">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
+                <label class="form-check-label link-offset-2 link-underline link-underline-opacity-0 fw-semibold" for="flexRadioDefault1"> Monthly billing </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked />
+                <label class="form-check-label link-offset-2 link-underline link-underline-opacity-0 fw-semibold" for="flexRadioDefault2"> Yearly billing</label>
+                <div class="text-secondary discount">Save Over 20%</div>
+              </div>
+            </div>
           </div>
           <!-- First List -->
           <div class="mb-4 col-lg-12">
@@ -381,11 +443,11 @@
                 <tbody>
                   <tr>
                     <td class="text-start col-6 text-truncate">Transfer size limit</td>
-                    <td>5 GB</td>
+                    <td>2 GB</td>
                   </tr>
                   <tr>
                     <td class="text-start">Storage</td>
-                    <td>1 TB</td>
+                    <td>4 TB</td>
                   </tr>
                   <tr>
                     <td class="text-start text-truncate">Workspaces</td>
@@ -471,7 +533,7 @@
                     <td style="background-color: #f5dde7">Unlimited</td>
                   </tr>
                   <tr>
-                    <td style="background-color: #f5dde7">20 TB</td>
+                    <td style="background-color: #f5dde7">1 TB</td>
                   </tr>
                   <tr>
                     <td style="background-color: #f5dde7">5 Workspaces</td>
@@ -542,7 +604,7 @@
               <div>
                 <div class="subject-title fw-semibold">TORNADO (monthly)</div>
                 <div class="subject-detail text-black-50">Unlimited file size</div>
-                <div class="subject-detail text-black-50">20 TB Storage</div>
+                <div class="subject-detail text-black-50">1 TB Storage</div>
                 <div class="subject-detail text-black-50">5 Workspaces</div>
               </div>
               <div class="subject-title fw-semibold">21,00 EUR</div>
