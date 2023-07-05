@@ -88,6 +88,9 @@
     .method-button:hover {
       background-color: #d3d3d3;
     }
+    .active-method {
+      background-color: #d3d3d3;
+    }
     @media (min-width: 992px) {
       .pay-safe-subtitle {
         font-size: 16px;
@@ -299,7 +302,7 @@
                         <td class="text-center">Zoxxo Tornado</td>
                         <td class="text-center">29,90 EUR</td>
                         <td class="text-end">
-                          <a id="download-btn" href="../Invoice-zoxxo.pdf" class="border-0 bg-transparent text-black"><i class="fa-regular fa-circle-down"></i></a>
+                          <a href="../invoice-zoxxo.html" class="border-0 bg-transparent text-black"><i class="fa-regular fa-circle-down"></i></a>
                         </td>
                       </tr>
                       <tr>
@@ -307,7 +310,7 @@
                         <td class="text-center">Zoxxo Tornado</td>
                         <td class="text-center">29,90 EUR</td>
                         <td class="text-end">
-                          <a id="download-btn" href="../Invoice-zoxxo.pdf" class="border-0 bg-transparent text-black"><i class="fa-regular fa-circle-down"></i></a>
+                          <a href="../invoice-zoxxo.html" class="border-0 bg-transparent text-black"><i class="fa-regular fa-circle-down"></i></a>
                         </td>
                       </tr>
                       <tr>
@@ -315,7 +318,7 @@
                         <td class="text-center">Zoxxo Tornado</td>
                         <td class="text-center">29,90 EUR</td>
                         <td class="text-end">
-                          <a id="download-btn" href="../Invoice-zoxxo.pdf" class="border-0 bg-transparent text-black"><i class="fa-regular fa-circle-down"></i></a>
+                          <a href="../invoice-zoxxo.html" class="border-0 bg-transparent text-black"><i class="fa-regular fa-circle-down"></i></a>
                         </td>
                       </tr>
                     </tbody>
@@ -432,12 +435,13 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
+          <div id="my-saldo"><b>Saldo Saya : Rp 2.000.000</b></div>
           <div class="mb-2" style="color: #000000; font-size: 24px">Payment Method</div>
           <div class="d-flex gap-2 mb-3">
-            <button class="border-0 py-2 px-3 rounded method-button"><img src="../assets/img/icon/master-card.png" width="45" alt="" /></button>
-            <button class="border-0 py-2 px-3 rounded method-button"><img src="../assets/img/icon/visa.png" width="75" height="24" alt="" /></button>
-            <button class="border-0 py-2 px-3 rounded method-button"><img src="../assets/img/icon/paypal.png" width="90" height="24" alt="" /></button>
-            <button class="border-0 py-2 px-3 rounded method-button"><img src="../assets/img/icon/paysafe.png" width="86" height="21" alt="" /></button>
+            <button id="master-card" onclick="handleMasterCard()" class="border-0 py-2 px-3 rounded method-button"><img src="../assets/img/icon/master-card.png" width="45" alt="" /></button>
+            <button id="visa" onclick="handleVisa()" class="border-0 py-2 px-3 rounded method-button"><img src="../assets/img/icon/visa.png" width="75" height="24" alt="" /></button>
+            <button id="paypal" onclick="handlePaypal()" class="border-0 py-2 px-3 rounded method-button"><img src="../assets/img/icon/paypal.png" width="90" height="24" alt="" /></button>
+            <button id="paysafe" onclick="handlePaysafe()" class="border-0 py-2 px-3 rounded method-button"><img src="../assets/img/icon/paysafe.png" width="86" height="21" alt="" /></button>
           </div>
           <div class="mb-3">
             <label for="nameCompany" class="form-label text-black-50 h6">Name on card*</label>
@@ -735,6 +739,35 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- My Script -->
   <script>
+    $("#my-saldo").hide();
+    function handlePaypal() {
+      $("#my-saldo").show();
+      $("#paypal").addClass("active-method");
+      $("#master-card").removeClass("active-method");
+      $("#visa").removeClass("active-method");
+      $("#paysafe").removeClass("active-method");
+    }
+    function handlePaysafe() {
+      $("#my-saldo").show();
+      $("#paypal").removeClass("active-method");
+      $("#master-card").removeClass("active-method");
+      $("#visa").removeClass("active-method");
+      $("#paysafe").addClass("active-method");
+    }
+    function handleMasterCard() {
+      $("#my-saldo").hide();
+      $("#paypal").removeClass("active-method");
+      $("#master-card").addClass("active-method");
+      $("#visa").removeClass("active-method");
+      $("#paysafe").removeClass("active-method");
+    }
+    function handleVisa() {
+      $("#my-saldo").hide();
+      $("#paypal").removeClass("active-method");
+      $("#master-card").removeClass("active-method");
+      $("#visa").addClass("active-method");
+      $("#paysafe").removeClass("active-method");
+    }
     document.addEventListener("DOMContentLoaded", function () {
       // Data contoh untuk pencarian
       const data = [

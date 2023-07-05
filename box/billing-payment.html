@@ -31,6 +31,12 @@
     .subject-title {
       font-size: 14px;
     }
+    .active-method {
+      background-color: #d3d3d3;
+    }
+    .modal-header {
+      border-bottom: none !important;
+    }
     .subject-detail {
       font-size: 14px;
     }
@@ -128,7 +134,7 @@
                 <div>Username Company GmbH</div>
                 <div>Streetname and number 21</div>
                 <div>Postal code, City, Country</div>
-                <button type="button" class="btn btn-outline-danger mt-3">Edit billing details</button>
+                <button type="button" class="btn btn-outline-danger mt-3" data-bs-toggle="modal" data-bs-target="#billingDetails">Edit billing details</button>
               </div>
             </div>
           </div>
@@ -144,7 +150,7 @@
                 <div>Name on Card is Max Mustermann</div>
               </div>
               <div class="mt-4">
-                <button type="button" class="btn btn-outline-danger mt-3">Edit payment method</button>
+                <button type="button" class="btn btn-outline-danger mt-3" data-bs-toggle="modal" data-bs-target="#paymentModal">Edit payment method</button>
               </div>
             </div>
           </div>
@@ -177,8 +183,8 @@
               <div>
                 <div class="subject-title fw-semibold">TORNADO (monthly)</div>
                 <div class="subject-detail text-black-50">Unlimited file size</div>
-                <div class="subject-detail text-black-50">20 TB Storage</div>
-                <div class="subject-detail text-black-50">5 Workspaces</div>
+                <div class="subject-detail text-black-50">4 GB Storage</div>
+                <div class="subject-detail text-black-50">1 Workspaces</div>
               </div>
               <div class="subject-title fw-semibold">21,00 EUR</div>
             </div>
@@ -220,10 +226,174 @@
       </div>
     </div>
   </body>
+
+    <!-- Billing details Modal -->
+    <div class="modal fade" id="billingDetails" tabindex="-1" aria-labelledby="billingDetailsLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" style="max-width: 600px">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body px-3">
+            <div class="mb-2" style="color: #000000; font-size: 24px">Billing details</div>
+            <div>
+              <form>
+                <div class="mb-3">
+                  <label for="nameCompany" class="form-label text-black-50 h6">Name of company*</label>
+                  <input type="email" placeholder="Name of the company" class="form-control" id="nameCompany" aria-describedby="emailHelp" />
+                </div>
+                <div class="mb-3">
+                  <label for="nameCompany" class="form-label text-black-50 h6">Address*</label>
+                  <input
+                    type="email"
+                    placeholder="Name of the Street and Number
+                  "
+                    class="form-control"
+                    id="nameCompany"
+                    aria-describedby="emailHelp"
+                  />
+                </div>
+                <div class="mb-3 d-flex justify-content-between gap-2">
+                  <div>
+                    <label for="nameCompany" class="form-label text-black-50 h6">Postal code*</label>
+                    <input
+                      type="email"
+                      placeholder="123456
+                    "
+                      class="form-control"
+                      id="nameCompany"
+                      aria-describedby="emailHelp"
+                    />
+                  </div>
+                  <div>
+                    <label for="nameCompany" class="form-label text-black-50 h6">City*</label>
+                    <input
+                      type="email"
+                      placeholder="Frankfurt am Main
+                    "
+                      class="form-control"
+                      id="nameCompany"
+                      aria-describedby="emailHelp"
+                    />
+                  </div>
+                  <div>
+                    <label for="nameCompany" class="form-label text-black-50 h6">City*</label>
+                    <button
+                      style="border: 1px solid #e8ebee !important; padding: 6px 12px; color: #797b7e"
+                      class="bg-transparent border-1 dropdown-toggle rounded col-12 d-flex gap-3 align-items-center"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Country
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li class="dropdown-item">Indonesia</li>
+                      <li class="dropdown-item">Malaysia</li>
+                      <li class="dropdown-item">Brunei</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="nameCompany" class="form-label text-black-50 h6">VAT Number*</label>
+                  <input
+                    type="email"
+                    placeholder="DE - 12345678
+                  "
+                    class="form-control"
+                    id="nameCompany"
+                    aria-describedby="emailHelp"
+                  />
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button style="background-color: #f4f4f4; color: #aaaaaa; border-color: #f4f4f4" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-danger">Confirm</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- Payment Method Modal -->
+  <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 600px">
+      <div class="modal-content px-3 mx-auto">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="my-saldo"><b>Saldo Saya : Rp 2.000.000</b></div>
+          <div class="mb-2" style="color: #000000; font-size: 24px">Payment Method</div>
+          <div class="d-flex gap-2 mb-3">
+            <button id="master-card" onclick="handleMasterCard()" class="border-0 py-2 px-3 rounded method-button"><img src="../assets/img/icon/master-card.png" width="45" alt="" /></button>
+            <button id="visa" onclick="handleVisa()" class="border-0 py-2 px-3 rounded method-button"><img src="../assets/img/icon/visa.png" width="75" height="24" alt="" /></button>
+            <button id="paypal" onclick="handlePaypal()" class="border-0 py-2 px-3 rounded method-button"><img src="../assets/img/icon/paypal.png" width="90" height="24" alt="" /></button>
+            <button id="paysafe" onclick="handlePaysafe()" class="border-0 py-2 px-3 rounded method-button"><img src="../assets/img/icon/paysafe.png" width="86" height="21" alt="" /></button>
+          </div>
+          <div class="mb-3">
+            <label for="nameCompany" class="form-label text-black-50 h6">Name on card*</label>
+            <input
+              type="email"
+              placeholder="Name on card
+              "
+              class="form-control"
+              id="nameCompany"
+              aria-describedby="emailHelp"
+            />
+          </div>
+          <div class="mb-3 position-relative">
+            <label for="nameCompany" class="form-label text-black-50 h6">Card number*</label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="fas fa-credit-card"></i></span>
+              <input type="email" placeholder="Card number" class="form-control" id="nameCompany" aria-describedby="emailHelp" />
+              <span class="input-group-text">MM / YY CVC</span>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button style="background-color: #f4f4f4; color: #aaaaaa; border-color: #f4f4f4" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-danger">Confirm</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/bb1fce9dd9.js" crossorigin="anonymous"></script>
   <!-- Script untuk library jQuery (dibutuhkan untuk contoh JavaScript di bawah) -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- My Script -->
+  <script>
+    $("#my-saldo").hide();
+    function handlePaypal() {
+      $("#my-saldo").show();
+      $("#paypal").addClass("active-method");
+      $("#master-card").removeClass("active-method");
+      $("#visa").removeClass("active-method");
+      $("#paysafe").removeClass("active-method");
+    }
+    function handlePaysafe() {
+      $("#my-saldo").show();
+      $("#paypal").removeClass("active-method");
+      $("#master-card").removeClass("active-method");
+      $("#visa").removeClass("active-method");
+      $("#paysafe").addClass("active-method");
+    }
+    function handleMasterCard() {
+      $("#my-saldo").hide();
+      $("#paypal").removeClass("active-method");
+      $("#master-card").addClass("active-method");
+      $("#visa").removeClass("active-method");
+      $("#paysafe").removeClass("active-method");
+    }
+    function handleVisa() {
+      $("#my-saldo").hide();
+      $("#paypal").removeClass("active-method");
+      $("#master-card").removeClass("active-method");
+      $("#visa").addClass("active-method");
+      $("#paysafe").removeClass("active-method");
+    }
+  </script>
 </html>
