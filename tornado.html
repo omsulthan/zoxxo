@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
     <!-- External CSS -->
     <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
   </head>
   <style>
     .title-login {
@@ -60,7 +61,7 @@
       padding: 4px 24px;
       border-radius: 4px;
     }
-    .radio-active{
+    .radio-active {
       background-color: #fee6ed;
     }
     .option-section {
@@ -264,7 +265,7 @@
             <label onclick="handle8Tb()" class="custom-btn 8tb" for="btn-check-3">8 TB</label>
             <input type="radio" name="storage" class="btn-check" id="btn-check-4" autocomplete="off" />
             <label onclick="handle16Tb()" class="custom-btn 16tb" for="btn-check-4">16 TB</label>
-            <div onclick="handleAddon()" class="input-addon  col-2">
+            <div onclick="handleAddon()" class="input-addon col-2">
               <input class="col-12 py-2 px-2 px-lg-4 custom-btn custom-addon" type="text" placeholder="_" maxlength="2" />
               <span class="addon">TB</span>
             </div>
@@ -274,15 +275,15 @@
           <div class="title-radio fw-semibold">How may extra Workspaces do you need ?</div>
           <div class="col-11 mx-auto d-flex justify-content-between py-2 col-lg-12 justify-content-lg-start gap-lg-3">
             <input type="radio" name="workspaces" class="btn-check" id="btn-workspaces-1" autocomplete="off" />
-             <label onclick="handle3()" class="custom-btn-workspaces 3" for="btn-workspaces-1">3</label>
+            <label onclick="handle3()" class="custom-btn-workspaces 3" for="btn-workspaces-1">3</label>
             <input type="radio" name="workspaces" class="btn-check" id="btn-workspaces-2" autocomplete="off" />
-             <label onclick="handle5()" class="custom-btn-workspaces 5" for="btn-workspaces-2">5</label>
+            <label onclick="handle5()" class="custom-btn-workspaces 5" for="btn-workspaces-2">5</label>
             <input type="radio" name="workspaces" class="btn-check" id="btn-workspaces-3" autocomplete="off" />
-             <label onclick="handle10()" class="custom-btn-workspaces 10" for="btn-workspaces-3">10</label>
+            <label onclick="handle10()" class="custom-btn-workspaces 10" for="btn-workspaces-3">10</label>
             <input type="radio" name="workspaces" class="btn-check" id="btn-workspaces-4" autocomplete="off" />
-             <label onclick="handle20()" class="custom-btn-workspaces 20" for="btn-workspaces-4">20</label>
+            <label onclick="handle20()" class="custom-btn-workspaces 20" for="btn-workspaces-4">20</label>
             <input type="radio" name="workspaces" class="btn-check" id="btn-workspaces-5" autocomplete="off" />
-             <label onclick="handle50()" class="custom-btn-workspaces 50" for="btn-workspaces-5">50</label>
+            <label onclick="handle50()" class="custom-btn-workspaces 50" for="btn-workspaces-5">50</label>
           </div>
         </div>
         <!-- Table -->
@@ -376,11 +377,11 @@
         </div>
       </div>
       <!-- Login -->
-      <div id="card-login" style="display: none;" class="col-11 mx-auto mb-5 mt-2 col-lg-5 col-xl-3">
+      <div id="card-login" style="display: none" class="col-11 mx-auto mb-5 mt-2 col-lg-5 col-xl-3">
         <div class="d-flex flex-column border rounded">
           <div class="d-flex flex-column py-4 gap-1 col-12 justify-content-evenly px-2">
             <div class="text-start">
-              <h4 class="text-secondary mx-2">Sign in or <a onclick="handleRegister()" style="cursor: pointer;" class="text-secondary">Register now</a></h4>
+              <h4 class="text-secondary mx-2">Sign in or <a onclick="handleRegister()" style="cursor: pointer" class="text-secondary">Register now</a></h4>
               <hr />
             </div>
             <div class="d-flex flex-column align-items-center">
@@ -433,11 +434,11 @@
         </div>
       </div>
       <!-- Register -->
-      <div id="card-register" style="display: none;" class="col-11 mx-auto mb-5 mt-2 col-lg-5 col-xl-3">
+      <div id="card-register" style="display: none" class="col-11 mx-auto mb-5 mt-2 col-lg-5 col-xl-3">
         <div class="d-flex flex-column border rounded card-sticky">
           <div class="d-flex flex-column py-4 gap-1 col-12 justify-content-evenly px-2">
             <div class="text-start">
-              <h4 class="text-secondary mx-2">Register now or <a onclick="handleSign()" style="cursor: pointer;" class="text-secondary">Sign in</a></h4>
+              <h4 class="text-secondary mx-2">Register now or <a onclick="handleSign()" style="cursor: pointer" class="text-secondary">Sign in</a></h4>
               <hr />
             </div>
             <div class="d-flex flex-column align-items-center">
@@ -548,51 +549,51 @@
         </div>
       </div>
     </div>
-        <!-- Offer Section -->
-        <div style="background-color: #f21a5d" class="text-white text-center py-5 offer-section">
-          <div>Want to save more money?</div>
-          <div>Go for yearly plan and save over 20%!</div>
-        </div>
-        <div style="color: #f2f3f4; background: #161616" class="card text-center rounded-0">
-          <div class="card-body pt-4 d-lg-flex justify-content-lg-between px-lg-5 col-lg-10 mx-lg-auto">
-            <div class="d-flex flex-column align-items-center gap-3 gap-lg-5">
-              <img src="assets/img/zoxxo_CLR.png" alt="" srcset="" width="50" height="40" />
-              <div class="dropdown">
-                <button style="background-color: #252525; border-color: #252525" class="btn btn-secondary dropdown-toggle px-4" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" aria-expanded="false">English</button>
-              </div>
-            </div>
-            <div class="d-flex flex-column align-items-start mt-2">
-              <span class="h4 fw-semibold">Product</span>
-              <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Overview</a>
-              <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Features</a>
-              <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Workspaces</a>
-              <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Pricing</a>
-            </div>
-            <div class="d-flex flex-column align-items-start mt-2">
-              <span class="h4 fw-semibold">Who we are</span>
-              <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Company</a>
-              <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Newsroom</a>
-              <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Advertising</a>
-              <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Brand</a>
-            </div>
-            <div class="d-flex flex-column align-items-start mt-2">
-              <span class="h4 fw-semibold">Explore</span>
-              <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Help Center</a>
-              <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Ideas</a>
-              <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Terms</a>
-              <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Privacy</a>
-            </div>
-          </div>
-          <hr class="w-75 mx-auto" />
-          <div class="d-lg-flex justify-content-lg-between w-75 mx-auto">
-            <div class="d-flex gap-3 align-items-center justify-content-center h4">
-              <a href="#" class="text-white"><i class="fa-brands fa-instagram"></i></a>
-              <a href="#" class="text-white"><i class="fa-brands fa-facebook"></i></a>
-              <a href="#" class="text-white"><i class="fa-brands fa-twitter"></i></a>
-            </div>
-            <div class="card-footer text-secondary">©2022 zoxxo</div>
+    <!-- Offer Section -->
+    <div style="background-color: #f21a5d" class="text-white text-center py-5 offer-section">
+      <div>Want to save more money?</div>
+      <div>Go for yearly plan and save over 20%!</div>
+    </div>
+    <div style="color: #f2f3f4; background: #161616" class="card text-center rounded-0">
+      <div class="card-body pt-4 d-lg-flex justify-content-lg-between px-lg-5 col-lg-10 mx-lg-auto">
+        <div class="d-flex flex-column align-items-center gap-3 gap-lg-5">
+          <img src="assets/img/zoxxo_CLR.png" alt="" srcset="" width="50" height="40" />
+          <div class="dropdown">
+            <button style="background-color: #252525; border-color: #252525" class="btn btn-secondary dropdown-toggle px-4" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" aria-expanded="false">English</button>
           </div>
         </div>
+        <div class="d-flex flex-column align-items-start mt-2">
+          <span class="h4 fw-semibold">Product</span>
+          <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Overview</a>
+          <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Features</a>
+          <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Workspaces</a>
+          <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Pricing</a>
+        </div>
+        <div class="d-flex flex-column align-items-start mt-2">
+          <span class="h4 fw-semibold">Who we are</span>
+          <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Company</a>
+          <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Newsroom</a>
+          <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Advertising</a>
+          <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Brand</a>
+        </div>
+        <div class="d-flex flex-column align-items-start mt-2">
+          <span class="h4 fw-semibold">Explore</span>
+          <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Help Center</a>
+          <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Ideas</a>
+          <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Terms</a>
+          <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Privacy</a>
+        </div>
+      </div>
+      <hr class="w-75 mx-auto" />
+      <div class="d-lg-flex justify-content-lg-between w-75 mx-auto">
+        <div class="d-flex gap-3 align-items-center justify-content-center h4">
+          <a href="#" class="text-white"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="text-white"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#" class="text-white"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+        <div class="card-footer text-secondary">©2022 zoxxo</div>
+      </div>
+    </div>
   </body>
 
   <!-- Script -->
@@ -604,86 +605,86 @@
   <!-- Script -->
   <script>
     const handle2Tb = () => {
-      $('.2tb').toggleClass('radio-active')
-      $('.4tb').removeClass('radio-active')
-      $('.8tb').removeClass('radio-active')
-      $('.16tb').removeClass('radio-active')
-      $('.custom-addon').removeClass('radio-active')
-    }
+      $(".2tb").toggleClass("radio-active");
+      $(".4tb").removeClass("radio-active");
+      $(".8tb").removeClass("radio-active");
+      $(".16tb").removeClass("radio-active");
+      $(".custom-addon").removeClass("radio-active");
+    };
     const handle4Tb = () => {
-      $('.4tb').toggleClass('radio-active')
-      $('.2tb').removeClass('radio-active')
-      $('.8tb').removeClass('radio-active')
-      $('.16tb').removeClass('radio-active')
-      $('.custom-addon').removeClass('radio-active')
-    }
+      $(".4tb").toggleClass("radio-active");
+      $(".2tb").removeClass("radio-active");
+      $(".8tb").removeClass("radio-active");
+      $(".16tb").removeClass("radio-active");
+      $(".custom-addon").removeClass("radio-active");
+    };
     const handle8Tb = () => {
-      $('.8tb').toggleClass('radio-active')
-      $('.4tb').removeClass('radio-active')
-      $('.2tb').removeClass('radio-active')
-      $('.16tb').removeClass('radio-active')
-      $('.custom-addon').removeClass('radio-active')
-    }
+      $(".8tb").toggleClass("radio-active");
+      $(".4tb").removeClass("radio-active");
+      $(".2tb").removeClass("radio-active");
+      $(".16tb").removeClass("radio-active");
+      $(".custom-addon").removeClass("radio-active");
+    };
     const handle16Tb = () => {
-      $('.16tb').toggleClass('radio-active')
-      $('.4tb').removeClass('radio-active')
-      $('.8tb').removeClass('radio-active')
-      $('.2tb').removeClass('radio-active')
-      $('.custom-addon').removeClass('radio-active')
-    }
+      $(".16tb").toggleClass("radio-active");
+      $(".4tb").removeClass("radio-active");
+      $(".8tb").removeClass("radio-active");
+      $(".2tb").removeClass("radio-active");
+      $(".custom-addon").removeClass("radio-active");
+    };
     const handleAddon = () => {
-      $('.16tb').removeClass('radio-active')
-      $('.4tb').removeClass('radio-active')
-      $('.8tb').removeClass('radio-active')
-      $('.2tb').removeClass('radio-active')
-      $('.custom-addon').toggleClass('radio-active')
-    }
+      $(".16tb").removeClass("radio-active");
+      $(".4tb").removeClass("radio-active");
+      $(".8tb").removeClass("radio-active");
+      $(".2tb").removeClass("radio-active");
+      $(".custom-addon").toggleClass("radio-active");
+    };
     const handle3 = () => {
-      $('.3').toggleClass('radio-active')
-      $('.5').removeClass('radio-active')
-      $('.10').removeClass('radio-active')
-      $('.20').removeClass('radio-active')
-      $('.50').removeClass('radio-active')
-    }
+      $(".3").toggleClass("radio-active");
+      $(".5").removeClass("radio-active");
+      $(".10").removeClass("radio-active");
+      $(".20").removeClass("radio-active");
+      $(".50").removeClass("radio-active");
+    };
     const handle5 = () => {
-      $('.5').toggleClass('radio-active')
-      $('.3').removeClass('radio-active')
-      $('.10').removeClass('radio-active')
-      $('.20').removeClass('radio-active')
-      $('.50').removeClass('radio-active')
-    }
+      $(".5").toggleClass("radio-active");
+      $(".3").removeClass("radio-active");
+      $(".10").removeClass("radio-active");
+      $(".20").removeClass("radio-active");
+      $(".50").removeClass("radio-active");
+    };
     const handle10 = () => {
-      $('.10').toggleClass('radio-active')
-      $('.5').removeClass('radio-active')
-      $('.3').removeClass('radio-active')
-      $('.20').removeClass('radio-active')
-      $('.50').removeClass('radio-active')
-    }
+      $(".10").toggleClass("radio-active");
+      $(".5").removeClass("radio-active");
+      $(".3").removeClass("radio-active");
+      $(".20").removeClass("radio-active");
+      $(".50").removeClass("radio-active");
+    };
     const handle20 = () => {
-      $('.20').toggleClass('radio-active')
-      $('.5').removeClass('radio-active')
-      $('.10').removeClass('radio-active')
-      $('.3').removeClass('radio-active')
-      $('.50').removeClass('radio-active')
-    }
+      $(".20").toggleClass("radio-active");
+      $(".5").removeClass("radio-active");
+      $(".10").removeClass("radio-active");
+      $(".3").removeClass("radio-active");
+      $(".50").removeClass("radio-active");
+    };
     const handle50 = () => {
-      $('.20').removeClass('radio-active')
-      $('.5').removeClass('radio-active')
-      $('.10').removeClass('radio-active')
-      $('.3').removeClass('radio-active')
-      $('.50').toggleClass('radio-active')
-    }
+      $(".20").removeClass("radio-active");
+      $(".5").removeClass("radio-active");
+      $(".10").removeClass("radio-active");
+      $(".3").removeClass("radio-active");
+      $(".50").toggleClass("radio-active");
+    };
     const handleContinue = () => {
-      $('#card-transaction').hide()
-      $('#card-login').show()
-    }
+      $("#card-transaction").hide();
+      $("#card-login").show();
+    };
     const handleRegister = () => {
-      $('#card-register').show()
-      $('#card-login').hide()
-    }
+      $("#card-register").show();
+      $("#card-login").hide();
+    };
     const handleSign = () => {
-      $('#card-register').hide()
-      $('#card-login').show()
-    }
+      $("#card-register").hide();
+      $("#card-login").show();
+    };
   </script>
 </html>
