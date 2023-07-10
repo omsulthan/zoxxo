@@ -16,27 +16,14 @@
       text-overflow: ellipsis !important;
       white-space: nowrap !important;
     }
-    .upload-button {
-      cursor: pointer;
-    }
-    .fade-out {
-      animation: fadeOut 1s ease-in-out forwards;
-    }
-
     .color-picker {
       width: 40px;
       height: 40px;
       border-radius: 50%;
       cursor: pointer;
     }
-
-    @keyframes fadeOut {
-      0% {
-        opacity: 1;
-      }
-      100% {
-        opacity: 0;
-      }
+    .upload-button {
+      cursor: pointer;
     }
     #first-layer {
       width: 300px;
@@ -95,7 +82,7 @@
     @media (min-width: 1200px) {
       .my-way {
         display: block;
-        background-image: url("../assets/img/bg-gravatar.png");
+        background-image: url("../assets/img/bg-preview.svg");
         height: 100vh;
         background-size: cover;
         background-repeat: no-repeat;
@@ -126,8 +113,8 @@
       <!-- First Section -->
       <div id="first-section" style="background-color: #f5f5f7; height: 100vh" class="col-xl-5 col-12 py-5 d-flex flex-column justify-content-between justify-content-xl-around d-flex">
         <div class="text-center">
-          <div class="fw-bold h1">Upload your Data</div>
-          <div class="h5 text-secondary w-50 mx-auto">Drag your cover image and upload it for current workspaces</div>
+          <div class="fw-bold h1">Edit your Image</div>
+          <div class="h5 text-secondary w-50 mx-auto">Drag your cover image and upload it for name of the file</div>
         </div>
         <label for="upload" id="dropArea" class="d-flex justify-content-center align-items-center pointer upload-button">
           <div id="first-layer" class="mx-auto rounded-circle d-flex justify-content-center align-items-center">
@@ -141,18 +128,18 @@
         </label>
         <input type="file" name="upload" id="upload" hidden />
         <div class="d-flex justify-content-center gap-3 justify-content-xl-end px-xl-5">
-          <button onclick="previewImage()" class="btn rounded btn-outline-danger">Upload</button>
-          <button onclick="history.back()" class="btn btn-danger rounded">Save and Exit</button>
+          <button onclick="previewImage()" style="border: 1px solid #9997bf; color: #9997bf" class="btn rounded">Upload</button>
+          <button onclick="handleFirst()" style="background-color: #9997bf" class="btn btn-primary rounded">Next Step</button>
         </div>
       </div>
 
       <!-- Second Section -->
       <div id="second-section" style="background-color: #f5f5f7; height: 100vh" class="w-100 text-center py-3 flex-column justify-content-between justify-content-xl-around pt-5 d-none py-4">
         <div class="text-center">
-          <div class="fw-bold h1">Upload your Data</div>
-          <div class="h5 text-primary-emphasis w-50 mx-auto">Drag your cover image and upload it for current workspaces</div>
+          <div class="fw-bold h1">Edit your Image</div>
+          <div class="h5 text-secondary w-50 mx-auto">Drag your cover image and upload it for name of the file</div>
         </div>
-        <label for="upload-2" id="dropArea-2" style="background-color: #dadae6" class="col-7 mx-auto rounded py-5 d-flex flex-column justify-content-center align-items-center gap-2">
+        <label id="dropArea-2" for="upload-2" style="background-color: #dadae6" class="col-7 mx-auto rounded py-5 d-flex flex-column justify-content-center align-items-center gap-2">
           <img src="../assets/img/icon/upload-blue.svg" alt="Upload Icon" srcset="" />
           <div style="color: #9997bf" class="w-75 mt-2">Drag your files here or click here to upload</div>
         </label>
@@ -192,7 +179,6 @@
           <div style="color: #9f9f9f"><i class="fa-solid fa-x"></i> Enjoy</div>
         </div>
         <div class="d-flex justify-content-center gap-3 justify-content-xl-end px-xl-5">
-          <button style="border: 1px solid #9997bf; color: #9997bf" class="btn rounded">Cancel</button>
           <button onclick="handleSecond()" style="background-color: #9997bf" class="btn btn-primary rounded">Next step</button>
         </div>
       </div>
@@ -230,7 +216,7 @@
           <div style="color: #9f9f9f"><i class="fa-solid fa-x"></i> Enjoy</div>
         </div>
         <div class="d-flex justify-content-center gap-3 justify-content-xl-end px-xl-5">
-          <button style="border: 1px solid #9997bf; color: #9997bf" class="btn rounded">Cancel</button>
+          <button onclick="handleBackThird()" style="border: 1px solid #9997bf; color: white" class="btn rounded btn-info">Back</button>
           <button onclick="previewImage3()" class="btn rounded btn-outline-danger">Upload</button>
           <button onclick="handleThird()" style="background-color: #9997bf" class="btn btn-primary rounded">Next step</button>
         </div>
@@ -533,11 +519,6 @@
       var colorValue = colorPicker.value;
       $(".rounded-preview").css("background-color", colorValue);
     });
-
-    const handleProgress = () => {
-      $(".copy-section").show();
-      $("#progress-section").hide();
-    };
     const handleFirst = () => {
       $("#first-section").addClass("d-none");
       $("#first-section").removeClass("d-flex");
@@ -550,6 +531,12 @@
       $("#third-section").addClass("d-flex");
       $("#third-section").removeClass("d-none");
     };
+    const handleBackThird = () => {
+      $("#second-section").addClass("d-flex");
+      $("#second-section").removeClass("d-none");
+      $("#third-section").addClass("d-none");
+      $("#third-section").removeClass("d-flex");
+    };
     const handleThird = () => {
       $("#third-section").addClass("d-none");
       $("#third-section").removeClass("d-flex");
@@ -557,10 +544,11 @@
       $("#enjoy-section").removeClass("d-none");
     };
     const handleFinish = () => {
-      $("#enjoy-section").addClass("d-none");
-      $("#enjoy-section").removeClass("d-flex");
-      $("#first-section").addClass("d-flex");
-      $("#first-section").removeClass("d-none");
+      history.back();
+    };
+    const handleProgress = () => {
+      $(".copy-section").show();
+      $("#progress-section").hide();
     };
     function handleDanger() {
       $(".rounded-preview").removeClass("bg-white");
