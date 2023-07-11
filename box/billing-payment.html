@@ -330,25 +330,36 @@
             <button id="master-card" onclick="handleMasterCard()" class="border-0 py-2 px-3 rounded method-button"><img src="../assets/img/icon/master-card.png" width="45" alt="" /></button>
             <button id="visa" onclick="handleVisa()" class="border-0 py-2 px-3 rounded method-button"><img src="../assets/img/icon/visa.png" width="75" height="24" alt="" /></button>
             <button id="paypal" onclick="handlePaypal()" class="border-0 py-2 px-3 rounded method-button"><img src="../assets/img/icon/paypal.png" width="90" height="24" alt="" /></button>
-            <button id="paysafe" onclick="handlePaysafe()" class="border-0 py-2 px-3 rounded method-button"><img src="../assets/img/icon/paysafe.png" width="86" height="21" alt="" /></button>
+            <button id="paysafe" onclick="handlePaysafe()" class="border-0 py-2 px-3 rounded method-button d-none"><img src="../assets/img/icon/paysafe.png" width="86" height="21" alt="" /></button>
           </div>
-          <div class="mb-3">
-            <label for="nameCompany" class="form-label text-black-50 h6">Name on card*</label>
-            <input
-              type="email"
-              placeholder="Name on card
-              "
-              class="form-control"
-              id="nameCompany"
-              aria-describedby="emailHelp"
-            />
+          <div id="bottom-payment-section">
+            <div class="mb-3">
+              <label for="nameCompany" class="form-label text-black-50 h6">Name on card*</label>
+              <input
+                type="email"
+                placeholder="Name on card
+                "
+                class="form-control"
+                id="nameCompany"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3 position-relative">
+              <label for="nameCompany" class="form-label text-black-50 h6">Card number*</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="fas fa-credit-card"></i></span>
+                <input type="email" placeholder="Card number" class="form-control" id="nameCompany" aria-describedby="emailHelp" />
+                <span class="input-group-text">MM / YY CVC</span>
+              </div>
+            </div>
           </div>
-          <div class="mb-3 position-relative">
-            <label for="nameCompany" class="form-label text-black-50 h6">Card number*</label>
-            <div class="input-group">
-              <span class="input-group-text"><i class="fas fa-credit-card"></i></span>
-              <input type="email" placeholder="Card number" class="form-control" id="nameCompany" aria-describedby="emailHelp" />
-              <span class="input-group-text">MM / YY CVC</span>
+          <div id="bottom-paypal-section" class="justify-content-between align-items-center my-5 col-12">
+            <div class="d-flex flex-column col-9 gap-3">
+              <div style="font-size: 13px;" class="text-secondary">You will be redirected to the secure (SSL) pages of PayPal. Here you will be able to complete the Paypal payment for your order.</div>
+              <div style="font-size: 14px;">Remember my PayPal information for the next time I order.</div>
+            </div>
+            <div class="form-check form-switch p-3 px-lg-0 col-3 d-lg-flex justify-content-end">
+              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked />
             </div>
           </div>
         </div>
@@ -368,12 +379,15 @@
   <!-- My Script -->
   <script>
     $("#my-saldo").hide();
+    $("#bottom-paypal-section").hide();
     function handlePaypal() {
       $("#my-saldo").show();
       $("#paypal").addClass("active-method");
       $("#master-card").removeClass("active-method");
       $("#visa").removeClass("active-method");
       $("#paysafe").removeClass("active-method");
+      $("#bottom-paypal-section").addClass("d-flex");
+      $("#bottom-payment-section").hide();
     }
     function handlePaysafe() {
       $("#my-saldo").show();
@@ -381,6 +395,8 @@
       $("#master-card").removeClass("active-method");
       $("#visa").removeClass("active-method");
       $("#paysafe").addClass("active-method");
+      $("#bottom-payment-section").show();
+      $("#bottom-paypal-section").removeClass("d-flex");
     }
     function handleMasterCard() {
       $("#my-saldo").hide();
@@ -388,6 +404,8 @@
       $("#master-card").addClass("active-method");
       $("#visa").removeClass("active-method");
       $("#paysafe").removeClass("active-method");
+      $("#bottom-payment-section").show();
+      $("#bottom-paypal-section").removeClass("d-flex");
     }
     function handleVisa() {
       $("#my-saldo").hide();
@@ -395,6 +413,8 @@
       $("#master-card").removeClass("active-method");
       $("#visa").addClass("active-method");
       $("#paysafe").removeClass("active-method");
+      $("#bottom-payment-section").show();
+      $("#bottom-paypal-section").removeClass("d-flex");
     }
   </script>
 </html>
