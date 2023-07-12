@@ -16,7 +16,7 @@
     .card-wrapper {
       overflow-x: auto;
     }
-    #col-custom .table>:not(caption)>*>* {
+    #col-custom .table > :not(caption) > * > * {
       background-color: transparent !important;
     }
 
@@ -99,7 +99,7 @@
       margin-top: 0px;
     }
 
-    .show,
+    .container-fluid .show,
     .collapsing {
       height: 0 !important;
     }
@@ -205,7 +205,7 @@
         width: 100%;
         text-align: justify;
         font-size: 24px;
-        line-height: 1cm;
+        line-height: 0.8cm;
       }
       .tornado-title-section {
         width: 100%;
@@ -226,6 +226,14 @@
     .mr-6 {
       margin-left: 6rem;
     }
+    .pt-100 {
+      padding-top: 100px;
+    }
+    @media (min-width: 1800px) {
+      .ms-xxl-6 {
+        margin-left: 6rem;
+      }
+    }
   </style>
   <body>
     <!-- Header Navbar -->
@@ -237,20 +245,20 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav justify-content-end justify-content-md-center flex-grow-1 pe-3 align-content-lg-center fw-semibold">
-            <li class="nav-item">
+            <li class="nav-item pt-1">
               <a class="nav-link text-center" href="pricing.html">Pricing</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item pt-1">
               <a class="nav-link text-center" href="tornado.html">Tornado</a>
             </li>
             <li class="nav-item d-none d-md-block">
               <a class="nav-link text-center" href="/"><img src="assets/img/zoxxo_BLK.png" alt="Logo Zoxxo" srcset="" width="45" /></a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link text-center" href="login.html">Sign In</a>
+            <li class="nav-item pt-1">
+              <a class="nav-link text-center" href="register.html">Sign up</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link text-center" href="register.html">Sign Up</a>
+            <li class="nav-item pt-1">
+              <a class="nav-link text-center" href="login.html">Sign in</a>
             </li>
           </ul>
         </div>
@@ -272,7 +280,7 @@
           <div class="form-check">
             <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked />
             <label class="form-check-label link-offset-2 link-underline link-underline-opacity-0 fw-semibold" for="flexRadioDefault2"> Yearly billing</label>
-            <div class="text-secondary discount">Save Over 20%</div>
+            <div class="text-secondary discount">Save upto 20%</div>
           </div>
         </div>
         <div class="col-11 mx-auto my-3 d-block d-flex flex-row flex-md-row justify-content-md-end justify-content-lg-start gap-5 col-md-12 justify-content-xl-between col-xl-7">
@@ -289,14 +297,14 @@
                     </ul>
                   </div>
                   <div class="col-11 mx-auto"><hr /></div>
-                  <div class="col-9 mx-auto text-center fw-bold price mt-4">0,00 EUR</div>
+                  <div class="col-9 mx-auto text-center fw-bold price mt-4">0,00 USD</div>
                   <div class="col-9 mx-auto text-center fw-semibold jargon-section">no money, no problem</div>
                   <div id="button-section" class="text-center my-3">
                     <a style="background-color: #f22967" class="btn btn-danger px-4" href="#">Create Account</a>
                   </div>
                 </div>
               </div>
-              <div style="background-color: #f5dde7; border: 2px solid#f21a5d; cursor: pointer" onclick="handlePink()" class="card shadow-sm mb-4 card-click mr-6">
+              <div style="background-color: #f5dde7; border: 2px solid#f21a5d; cursor: pointer" onclick="handlePink()" class="card shadow-sm mb-4 card-click ms-xxl-6">
                 <div class="card-body">
                   <div style="color: #f21a5d" class="col-9 mx-auto text-center title-card-content fw-semibold">Tornado</div>
                   <div class="mx-auto text-center subtitle-card-content text-secondary overflow-wrap">Upload files and share links and much more</div>
@@ -307,7 +315,7 @@
                     </ul>
                   </div>
                   <div class="col-11 mx-auto"><hr /></div>
-                  <div style="color: #f21a5d" class="col-9 mx-auto text-center fw-bold price mt-4">21,00 EUR</div>
+                  <div style="color: #f21a5d" class="col-9 mx-auto text-center fw-bold price mt-4">21,00 USD</div>
                   <div style="color: #f21a5d" class="col-9 mx-auto text-center fw-semibold jargon-section">per person, billed yearly</div>
                   <div id="button-section" class="text-center my-3">
                     <a style="background-color: #f22967" class="btn btn-danger px-5" href="#">Sign up</a>
@@ -320,8 +328,8 @@
       </div>
     </div>
     <!-- End Plan Section -->
-    <div style="background-color: #F5F5F7;" class="w-100">
-      <div class="col-11 mx-auto py-4 col-xl-10 d-flex table-feature">
+    <div style="background-color: #f5f5f7" class="w-100">
+      <div class="col-11 mx-auto py-4 col-xl-10 d-flex table-feature gap-3">
         <div id="col-custom" class="col-12 col-lg-9 col-md-8">
           <div class="fw-semibold option-section py-3 text-start">Send big files</div>
           <div class="table-responsive d-flex">
@@ -410,25 +418,29 @@
           </div>
           <!-- End #4 -->
         </div>
-        <div id="pink-section" class="col-5 col-md-4 mt-1 d-lg-block">
+        <div id="pink-section" class="col-5 col-md-4 d-lg-block col-lg-3 mt-1">
           <div class="fw-semibold text-center option-section py-3 text-lg-start text-white">_</div>
           <div class="table-responsive d-flex">
-            <table style="border: 2px solid #f21a5d" class="table text-center">
+            <table style="border: 2px solid #f21a5d; border-radius: 999px" class="table text-center">
               <tbody>
                 <tr>
-                  <td class="pink-section-2" style="background-color: #f5dde7">Unlimited</td>
+                  <td class="pink-section-2" style="background-color: #f5dde7"><div class="border-dark-subtle border-bottom col-8 mx-auto">Unlimited</div></td>
                 </tr>
                 <tr>
-                  <td class="pink-section-2" style="background-color: #f5dde7">1 TB</td>
+                  <td class="pink-section-2" style="background-color: #f5dde7"><div class="border-dark-subtle border-bottom col-8 mx-auto">1 TB</div></td>
                 </tr>
                 <tr>
-                  <td class="pink-section-2" style="background-color: #f5dde7">5 Workspaces</td>
+                  <td class="pink-section-2" style="background-color: #f5dde7"><div class="border-dark-subtle border-bottom col-8 mx-auto">5 Workspaces</div></td>
                 </tr>
                 <tr>
-                  <td class="pink-section-2" style="background-color: #f5dde7"><i class="fas fa-check text-danger"></i></td>
+                  <td class="pink-section-2" style="background-color: #f5dde7">
+                    <div class="border-dark-subtle border-bottom col-8 mx-auto"><i class="fas fa-check text-danger"></i></div>
+                  </td>
                 </tr>
                 <tr>
-                  <td class="pink-section-2" style="background-color: #f5dde7"><i class="fas fa-check text-danger"></i></td>
+                  <td class="pink-section-2" style="background-color: #f5dde7">
+                    <div class="border-dark-subtle border-bottom col-8 mx-auto"><i class="fas fa-check text-danger"></i></div>
+                  </td>
                 </tr>
                 <tr>
                   <td class="text-small pink-section-2" style="background-color: #f5dde7; color: #f5dde7">_</td>
@@ -437,13 +449,17 @@
                   <td class="pink-section-2" style="background-color: #f5dde7; color: #f5dde7">_</td>
                 </tr>
                 <tr>
-                  <td class="pink-section-2" style="background-color: #f5dde7"><i class="fas fa-check text-danger mt-lg-0"></i></td>
+                  <td class="pink-section-2" style="background-color: #f5dde7">
+                    <div class="border-dark-subtle border-bottom col-8 mx-auto"><i class="fas fa-check text-danger mt-lg-0"></i></div>
+                  </td>
                 </tr>
                 <tr>
-                  <td class="pink-section-2" style="background-color: #f5dde7">Upload your own</td>
+                  <td class="pink-section-2" style="background-color: #f5dde7"><div class="border-dark-subtle border-bottom col-8 mx-auto">Upload your own</div></td>
                 </tr>
                 <tr>
-                  <td class="pink-section-2" style="background-color: #f5dde7"><i class="fas fa-check text-danger"></i></td>
+                  <td class="pink-section-2" style="background-color: #f5dde7">
+                    <div class="border-dark-subtle border-bottom col-8 mx-auto"><i class="fas fa-check text-danger"></i></div>
+                  </td>
                 </tr>
                 <tr>
                   <td class="text-small" style="background-color: #f5dde7; color: #f5dde7">_</td>
@@ -452,22 +468,30 @@
                   <td class="pink-section-2" style="background-color: #f5dde7; color: #f5dde7">_</td>
                 </tr>
                 <tr>
-                  <td class="pink-section-2" style="background-color: #f5dde7"><i class="fas fa-check text-danger mt-3 mt-md-0"></i></td>
+                  <td class="pink-section-2" style="background-color: #f5dde7">
+                    <div class="border-dark-subtle border-bottom col-8 mx-auto"><i class="fas fa-check text-danger mt-3 mt-md-0"></i></div>
+                  </td>
                 </tr>
                 <tr>
-                  <td class="pink-section-2" style="background-color: #f5dde7"><i class="fas fa-check text-danger"></i></td>
+                  <td class="pink-section-2" style="background-color: #f5dde7">
+                    <div class="border-dark-subtle border-bottom col-8 mx-auto"><i class="fas fa-check text-danger"></i></div>
+                  </td>
                 </tr>
                 <tr>
-                  <td class="pink-section-2" style="background-color: #f5dde7"><i class="fas fa-check text-danger"></i></td>
+                  <td class="pink-section-2" style="background-color: #f5dde7">
+                    <div class="border-dark-subtle border-bottom col-8 mx-auto"><i class="fas fa-check text-danger"></i></div>
+                  </td>
                 </tr>
                 <tr>
-                  <td class="pink-section-2" class="text-small" style="background-color: #f5dde7; color: #f5dde7">_</td>
+                  <td class="pink-section-2" class="text-small" style="background-color: #f5dde7; color: #f5dde7"></td>
                 </tr>
                 <tr>
-                  <td class="pink-section-2" style="background-color: #f5dde7; color: #f5dde7">_</td>
+                  <td class="pink-section-2" style="background-color: #f5dde7; color: #f5dde7"><div class="mt-2">_</div></td>
                 </tr>
                 <tr>
-                  <td class="pink-section-2" style="background-color: #f5dde7"><i class="fas fa-check text-danger mt-2 mt-lg-0"></i></td>
+                  <td class="pink-section-2" style="background-color: #f5dde7">
+                    <div class="border-dark-subtle border-bottom col-8 mx-auto"><i class="fas fa-check text-danger mt-2 mt-lg-0"></i></div>
+                  </td>
                 </tr>
                 <tr>
                   <td class="pink-section-2" style="background-color: #f5dde7"><i class="fas fa-check text-danger"></i></td>
@@ -487,7 +511,9 @@
           <div class="fw-bold text-sm-center text-lg-start tornado-title-section">TORNADO Go faster and faster!</div>
           <div class="subtitle-section">
             <div class="fw-semibold text-lg-start">Why should I choose TORNADO?</div>
-            With our Plan TORNADO you will get access to all of the Features & Tools immediately. This will help you to have full experience for a low price. You can upgrade or downgrade Storage with just few clicks.
+            <span style="color: #363636"
+              >With our Plan TORNADO you will get access to all of the Features & Tools immediately. This will help you to have full experience for a low price. You can upgrade or downgrade Storage with just few clicks.</span
+            >
           </div>
           <div id="register-button-section" class="text-lg-start text-center mt-4">
             <a style="background-color: #f22967" class="btn btn-danger" href="register.html">Register now for free</a>
@@ -495,7 +521,7 @@
         </div>
       </div>
       <!-- Footer -->
-      <div style="color: #f2f3f4; width: 100vw; background: #161616" class="card text-center rounded-0">
+      <div style="color: #f2f3f4; width: 100vw; background: #161616" class="card text-center rounded-0 pt-100">
         <div class="card-body pt-4 d-lg-flex justify-content-lg-between px-lg-5 col-lg-10 mx-lg-auto">
           <div class="d-flex flex-column align-items-center gap-3 gap-lg-5">
             <img src="assets/img/zoxxo_CLR.png" alt="" srcset="" width="50" height="40" />
@@ -549,30 +575,36 @@
           <div class="d-flex flex-column align-items-center gap-3">
             <img src="assets/img/zoxxo_CLR.png" alt="" width="50" />
             <div class="fw-semibold">Choose your language</div>
-            <div class="row col-9 gap-3">
-              <div class="col">
-                <a class="text-dark link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">English</a>
+            <div class="d-flex gap-3 col-12 justify-content-around h3">
+              <div class="">
+                <div class="col">
+                  <a class="text-dark link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">English</a>
+                </div>
+                <div class="col">
+                  <a class="text-dark link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">France</a>
+                </div>
+                <div class="col">
+                  <a class="text-dark link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Deutch</a>
+                </div>
               </div>
-              <div class="col">
-                <a class="text-dark link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">France</a>
+              <div>
+                <div class="col">
+                  <a class="text-dark link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Arabic</a>
+                </div>
+                <div class="col">
+                  <a class="text-dark link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Espanol</a>
+                </div>
+                <div class="col">
+                  <a class="text-dark link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Italiano</a>
+                </div>
               </div>
-              <div class="col">
-                <a class="text-dark link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Deutch</a>
-              </div>
-              <div class="col">
-                <a class="text-dark link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Arabic</a>
-              </div>
-              <div class="col">
-                <a class="text-dark link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Espanol</a>
-              </div>
-              <div class="col">
-                <a class="text-dark link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Italiano</a>
-              </div>
-              <div class="col">
-                <a class="text-dark link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Netherlands</a>
-              </div>
-              <div class="col">
-                <a class="text-dark link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Portugues</a>
+              <div>
+                <div class="col">
+                  <a class="text-dark link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Netherlands</a>
+                </div>
+                <div class="col">
+                  <a class="text-dark link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Portugues</a>
+                </div>
               </div>
             </div>
           </div>

@@ -130,7 +130,7 @@
           <div class="d-flex p-3 px-lg-5 flex-column justify-content-between gap-4 mb-3 text-start">
             <div>
               <div class="fw-bold mb-2">Billing details</div>
-              <div class="subtitle-section text-secondary">Your next invoice is for 29,90 EUR on 2 June 2023</div>
+              <div class="subtitle-section text-secondary">Your next invoice is for 29,90 USD on 2 June 2023</div>
               <div class="mt-4">
                 <div>Username Company GmbH</div>
                 <div>Streetname and number 21</div>
@@ -187,36 +187,36 @@
                 <div class="subject-detail text-black-50">4 GB Storage</div>
                 <div class="subject-detail text-black-50">1 Workspaces</div>
               </div>
-              <div class="subject-title fw-semibold">21,00 EUR</div>
+              <div class="subject-title fw-semibold">21,00 USD</div>
             </div>
             <div class="d-flex justify-content-between mb-2">
               <div>
                 <div class="subject-title fw-semibold">Extra Storage</div>
                 <div class="subject-detail text-black-50">20 TB Extra Storage</div>
               </div>
-              <div class="subject-title fw-semibold">20,00 EUR</div>
+              <div class="subject-title fw-semibold">20,00 USD</div>
             </div>
             <div class="d-flex justify-content-between mb-2">
               <div>
                 <div class="subject-title fw-semibold">Prorated discount</div>
               </div>
-              <div class="subject-title fw-semibold">-5,00 EUR</div>
+              <div class="subject-title fw-semibold">-5,00 USD</div>
             </div>
             <div class="d-flex justify-content-between mb-2">
               <div>
                 <div class="subject-title fw-semibold">Reverse chrage (19%)</div>
               </div>
-              <div class="subject-title fw-semibold">0,00 EUR</div>
+              <div class="subject-title fw-semibold">0,00 USD</div>
             </div>
             <hr />
             <div class="d-flex justify-content-between plan-title fw-bold">
               <div>TOTAL</div>
-              <div>46,00 EUR</div>
+              <div>46,00 USD</div>
             </div>
             <hr />
             <ul class="text-black-50">
-              <li>You’ll pay 46.00 EUR now, which is prorated for the current billing period.</li>
-              <li>Your plan is billed yearly and will renew for 890 EUR (plus any applicable taxes and minus any discounts) on Invalid Date.</li>
+              <li>You’ll pay 46.00 USD now, which is prorated for the current billing period.</li>
+              <li>Your plan is billed yearly and will renew for 890 USD (plus any applicable taxes and minus any discounts) on Invalid Date.</li>
               <li>You can cancel any time before this date.</li>
             </ul>
             <div id="checkout-section" class="text-lg-start text-center mt-4">
@@ -381,7 +381,7 @@
     $("#my-saldo").hide();
     $("#bottom-paypal-section").hide();
     function handlePaypal() {
-      $("#my-saldo").show();
+      $("#my-saldo").hide();
       $("#paypal").addClass("active-method");
       $("#master-card").removeClass("active-method");
       $("#visa").removeClass("active-method");
@@ -390,7 +390,7 @@
       $("#bottom-payment-section").hide();
     }
     function handlePaysafe() {
-      $("#my-saldo").show();
+      $("#my-saldo").hide();
       $("#paypal").removeClass("active-method");
       $("#master-card").removeClass("active-method");
       $("#visa").removeClass("active-method");

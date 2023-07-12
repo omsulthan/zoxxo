@@ -186,22 +186,22 @@
         <div id="grid-view">
           <div class="d-flex flex-column flex-md-row justify-content-md-center justify-content-lg-start gap-md-3 px-md-3">
             <!-- First Item -->
-            <div class="d-flex flex-column mb-3">
+            <div class="d-flex flex-column mb-3" onclick="handleManage()">
               <div class="card col-9 col-md-12 mx-auto shadow-sm">
                 <div style="background-color: #9997bf" class="text-center">
                   <div style="padding: 80px 120px" class="d-flex flex-column align-items-center justify-content-center my-auto gap-2">
-                    <a style="color: #525253" class="navbar-brand" href="/"><img src="../assets/img/zoxxo_BLK.png" alt="Logo Zoxxo" srcset="" width="120" height="110" /></a>
+                    <a style="color: #525253" class="navbar-brand" href="../manage/"><img src="../assets/img/zoxxo_BLK.png" alt="Logo Zoxxo" srcset="" width="120" height="110" /></a>
                     <div class="text-black text-content">Manage</div>
                   </div>
                 </div>
               </div>
             </div>
             <!-- Second Item -->
-            <div class="d-flex flex-column gap-2 mb-3">
+            <div class="d-flex flex-column gap-2 mb-3" onclick="handleAds()">
               <div class="card col-9 col-md-12 mx-auto shadow-sm">
                 <div style="background-color: #b0cde8" class="text-center">
                   <div style="padding: 80px 120px" class="d-flex flex-column align-items-center justify-content-center my-auto gap-2">
-                    <a style="color: #525253" class="navbar-brand" href="/"><img src="../assets/img/zoxxo_BLK.png" alt="Logo Zoxxo" srcset="" width="120" height="110" /></a>
+                    <a style="color: #525253" class="navbar-brand" href="../ads/"><img src="../assets/img/zoxxo_BLK.png" alt="Logo Zoxxo" srcset="" width="120" height="110" /></a>
                     <div class="text-black text-content">Ads</div>
                   </div>
                 </div>
@@ -219,6 +219,12 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- My Script -->
   <script>
+    function handleManage() {
+      window.location.href = "../manage";
+    }
+    function handleAds() {
+      window.location.href = "../ads";
+    }
     const handleList = () => {
       $("#grid-view").hide();
       $("#list-view").show();

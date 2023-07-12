@@ -225,20 +225,27 @@
         #ideas-section a,
         #ads-section a {
           font-size: 24px;
-          width: 60%;
+          width: 80%;
         }
       }
       @media (min-width: 1536px) {
         .title-section {
           width: 70%;
           font-size: 64px;
-          line-height: 1.5cm;
+          line-height: 1.8cm;
         }
         .subtitle-section {
           width: 70%;
           text-align: justify;
           font-size: 28px;
-          line-height: 1.2cm;
+          line-height: 1cm;
+        }
+        .big-ideas-section {
+          width: 82% !important ;
+          margin-right: 5rem;
+        }
+        .transfer-section {
+          width: 72% !important ;
         }
         #button-section {
           width: 70%;
@@ -256,9 +263,22 @@
       table tr th {
         background-color: transparent !important;
       }
+      .pt-100 {
+        padding-top: 100px;
+      }
       .form-check-input:checked {
         background-color: #f21a5d !important;
         border-color: #f21a5d !important;
+      }
+
+      @media (min-width: 1700px) {
+        .transfer-section {
+          width: 70% !important ;
+        }
+        .big-ideas-section {
+          width: 70% !important ;
+          margin-right: 0;
+        }
       }
     </style>
   </head>
@@ -272,20 +292,20 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav justify-content-end justify-content-md-center flex-grow-1 pe-3 align-content-lg-center fw-semibold">
-            <li class="nav-item">
+            <li class="nav-item pt-1">
               <a class="nav-link text-center" href="pricing.html">Pricing</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item pt-1">
               <a class="nav-link text-center" href="tornado.html">Tornado</a>
             </li>
             <li class="nav-item d-none d-md-block">
               <a class="nav-link text-center" href="/"><img src="assets/img/zoxxo_BLK.png" alt="Logo Zoxxo" srcset="" width="45" /></a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link text-center" href="login.html">Sign In</a>
+            <li class="nav-item pt-1">
+              <a class="nav-link text-center" href="register.html">Sign up</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link text-center" href="register.html">Sign Up</a>
+            <li class="nav-item pt-1">
+              <a class="nav-link text-center" href="login.html">Sign in</a>
             </li>
           </ul>
         </div>
@@ -314,8 +334,8 @@
           <input type="file" name="upload" id="upload" hidden />
           <div id="route-section" class="d-flex justify-content-center gap-5">
             <div style="color: #f21a5d"><i class="fa-solid fa-x"></i> Upload</div>
-            <div style="color: #f5b5cc"><i class="fa-solid fa-x"></i> Share</div>
-            <div style="color: #f5b5cc"><i class="fa-solid fa-x"></i> Enjoy</div>
+            <div style="color: #9f9f9f"><i class="fa-solid fa-x"></i> Share</div>
+            <div style="color: #9f9f9f"><i class="fa-solid fa-x"></i> Enjoy</div>
           </div>
         </div>
 
@@ -403,24 +423,24 @@
           <div id="route-section" class="col-lg-8 mx-lg-auto d-flex justify-content-center gap-5">
             <div style="color: #f21a5d"><i class="fa-solid fa-x"></i> Upload</div>
             <div style="color: #f21a5d"><i class="fa-solid fa-x"></i> Share</div>
-            <div id="enjoy-route" style="color: #f5b5cc"><i class="fa-solid fa-x"></i> Enjoy</div>
+            <div id="enjoy-route" style="color: #9f9f9f"><i class="fa-solid fa-x"></i> Enjoy</div>
           </div>
         </div>
         <div class="my-way col-xl-7"></div>
       </div>
 
       <!-- Register Section -->
-      <div id="register-section" style="background-color: #f5dde7; height: 100vh; color: #f21a5d" class="w-100 d-flex flex-column flex-lg-row-reverse align-items-center px-4 justify-content-evenly position-relative text-center">
+      <div id="register-section" style="background-color: #f5dde7; height: 100vh; color: #535353" class="w-100 d-flex flex-column flex-lg-row-reverse align-items-center px-4 justify-content-evenly position-relative text-center">
         <div>
           <img class="zoxxo-post" src="assets/img/Preview10005.png" alt="Zoxxo Register Image" srcset="" />
         </div>
         <div class="d-flex flex-column flex-lg-column justify-content-lg-center justify-content-sm-start align-items-center gap-4 w-100">
-          <div class="fw-bold text-center text-lg-start title-section">We don't transfer, we deliver!</div>
+          <div style="color: #f21a5d" class="fw-bold text-center text-lg-start title-section transfer-section">We don't transfer, we deliver!</div>
           <div class="subtitle-section">
             zoxxo do not focus on ,,just doing the work", we deliver instead. We deliver your data to your destination fast, secure and easy. For managing your data, you can use our next generation file manager with workspaces
           </div>
           <div id="button-section" class="text-lg-start text-center pb-5">
-            <a style="background-color: #f22967" class="btn btn-danger px-5" href="register.html">Register now for free</a>
+            <a style="background-color: #f22967" class="btn btn-danger px-5" href="register.html">Register now for free!</a>
           </div>
         </div>
       </div>
@@ -431,7 +451,7 @@
           <img class="zoxxo-post" src="assets/img/Preview10004.png" alt="Zoxxo Ideas Image" srcset="" />
         </div>
         <div class="d-flex flex-column flex-lg-column justify-content-lg-center justify-content-sm-start align-items-center gap-4 w-100">
-          <div class="fw-bold title-section text-center text-lg-end">Big ideas, big data. Not a big deal for us!</div>
+          <div class="fw-bold title-section text-center text-lg-end big-ideas-section">Big ideas, big data. Not a big deal for us!</div>
           <div class="subtitle-section text-dark text-lg-end">If you upload huge files ad want to have more space, then you should use our TORNADO plan. You can upgrade and downgrade your storage every month.</div>
           <sup class="subtitle-section text-dark text-lg-end fw-semibold">Only pay what you see</sup>
           <div id="button-section" class="text-lg-end text-center">
@@ -487,7 +507,7 @@
       </div>
 
       <!-- Footer  -->
-      <div style="color: #f2f3f4; background: #161616" class="card text-center rounded-0">
+      <div style="color: #f2f3f4; background: #161616" class="card text-center rounded-0 pt-100">
         <div class="card-body pt-4 d-lg-flex justify-content-lg-between px-lg-5 col-lg-10 mx-lg-auto">
           <div class="d-flex flex-column align-items-center gap-3 gap-lg-5">
             <img src="assets/img/zoxxo_CLR.png" alt="" srcset="" width="50" height="40" />
@@ -536,33 +556,39 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body pb-4">
-              <div class="d-flex flex-column align-items-center gap-3">
+              <div class="d-flex flex-column align-items-center gap-3 ">
                 <img src="assets/img/zoxxo_CLR.png" alt="" width="50" />
                 <div class="fw-semibold">Choose your language</div>
-                <div class="row col-9 gap-3">
-                  <div class="col">
-                    <a class="text-dark link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">English</a>
+                <div class="d-flex gap-3 col-12 justify-content-around h3">
+                  <div class="">
+                    <div class="col">
+                      <a class="text-dark link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">English</a>
+                    </div>
+                    <div class="col">
+                      <a class="text-dark link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">France</a>
+                    </div>
+                    <div class="col">
+                      <a class="text-dark link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Deutch</a>
+                    </div>
                   </div>
-                  <div class="col">
-                    <a class="text-dark link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">France</a>
+                  <div>
+                    <div class="col">
+                      <a class="text-dark link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Arabic</a>
+                    </div>
+                    <div class="col">
+                      <a class="text-dark link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Espanol</a>
+                    </div>
+                    <div class="col">
+                      <a class="text-dark link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Italiano</a>
+                    </div>
                   </div>
-                  <div class="col">
-                    <a class="text-dark link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Deutch</a>
-                  </div>
-                  <div class="col">
-                    <a class="text-dark link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Arabic</a>
-                  </div>
-                  <div class="col">
-                    <a class="text-dark link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Espanol</a>
-                  </div>
-                  <div class="col">
-                    <a class="text-dark link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Italiano</a>
-                  </div>
-                  <div class="col">
-                    <a class="text-dark link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Netherlands</a>
-                  </div>
-                  <div class="col">
-                    <a class="text-dark link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Portugues</a>
+                  <div>
+                    <div class="col">
+                      <a class="text-dark link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Netherlands</a>
+                    </div>
+                    <div class="col">
+                      <a class="text-dark link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Portugues</a>
+                    </div>
                   </div>
                 </div>
               </div>
