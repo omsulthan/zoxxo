@@ -64,19 +64,14 @@
 
       .title-section {
         font-size: 40px;
-        width: 75%;
       }
       .subtitle-section {
-        width: 75%;
         text-align: center;
         font-size: 20px;
       }
 
       .feature-title {
         font-size: 12px;
-      }
-      #button-section {
-        width: 80%;
       }
       .upload-button {
         cursor: pointer;
@@ -123,7 +118,6 @@
           width: 60%;
         }
         .title-section {
-          width: 80%;
           font-size: 40px;
           line-height: 1.2cm;
         }
@@ -154,7 +148,6 @@
         }
 
         .subtitle-section {
-          width: 80%;
           text-align: justify;
           font-size: 24px;
           line-height: 0.7cm;
@@ -185,8 +178,8 @@
         #register-section img,
         #ideas-section img,
         #ads-section img {
-          width: 800px;
-          height: 800px;
+          width: 600px;
+          height: 600px;
         }
         #first-layer {
           width: 400px;
@@ -230,25 +223,16 @@
       }
       @media (min-width: 1536px) {
         .title-section {
-          width: 70%;
           font-size: 64px;
           line-height: 1.8cm;
         }
         .subtitle-section {
-          width: 70%;
           text-align: justify;
           font-size: 28px;
           line-height: 1cm;
         }
         .big-ideas-section {
-          width: 82% !important ;
           margin-right: 5rem;
-        }
-        .transfer-section {
-          width: 72% !important ;
-        }
-        #button-section {
-          width: 70%;
         }
         #share-section #upload img {
           width: 70px;
@@ -276,11 +260,7 @@
       }
 
       @media (min-width: 1700px) {
-        .transfer-section {
-          width: 70% !important ;
-        }
         .big-ideas-section {
-          width: 70% !important ;
           margin-right: 0;
         }
       }
@@ -435,52 +415,52 @@
 
       <!-- Register Section -->
       <div id="register-section" style="background-color: #f5dde7; height: 100vh; color: #535353" class="col-12 d-flex flex-column flex-lg-row-reverse align-items-center px-4 justify-content-between position-relative">
-        <div class="col-5">
+        <div class="col-11 mx-auto d-flex flex-column flex-lg-row-reverse mx-lg-0">
           <img class="zoxxo-post" src="assets/img/Preview10005.png" alt="Zoxxo Register Image" srcset="" />
-        </div>
-        <div class="d-flex flex-column flex-lg-column justify-content-lg-center justify-content-sm-start align-items-center gap-5 col-5">
-          <div style="color: #f21a5d" class="fw-bold text-center text-lg-start title-section transfer-section">We don't transfer, we deliver!</div>
-          <div class="subtitle-section">
-            zoxxo do not focus on ,,just doing the work", we deliver instead. We deliver your data to your destination fast, secure and easy. For managing your data, you can use our next generation file manager with workspaces
-          </div>
-          <div id="button-section" class="text-lg-start text-center pb-5">
-            <a style="background-color: #f22967" class="btn btn-danger px-5" href="register.html">Register now for free!</a>
+          <div class="d-flex flex-column flex-lg-column justify-content-lg-center justify-content-sm-start gap-5">
+            <div style="color: #f21a5d" class="fw-bold text-center text-lg-start title-section">We don't transfer, we deliver!</div>
+            <div class="subtitle-section col-md-8">
+              zoxxo do not focus on ,,just doing the work", we deliver instead. We deliver your data to your destination fast, secure and easy. For managing your data, you can use our next generation file manager with workspaces
+            </div>
+            <div id="button-section" class="text-lg-start text-center pb-5 col-md-12 col-xl-6">
+              <a style="background-color: #f22967" class="btn btn-danger px-5" href="register.html">Register now for free!</a>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Ideas Section -->
-      <div id="ideas-section" style="background-color: #d6d5e5; height: 100vh; color: #999cbf" class="w-100 d-flex flex-column flex-lg-row align-items-center px-4 justify-content-evenly position-relative py-4">
-        <div>
+      <div id="ideas-section" style="background-color: #d6d5e5; height: 100vh; color: #999cbf" class="col-12 d-flex flex-column flex-lg-row-reverse px-4 justify-content-between position-relative">
+        <div class="col-11 mx-auto d-flex flex-column flex-lg-row align-items-lg-center">
           <img class="zoxxo-post" src="assets/img/Preview10004.png" alt="Zoxxo Ideas Image" srcset="" />
-        </div>
-        <div class="d-flex flex-column flex-lg-column justify-content-lg-center justify-content-sm-start align-items-center gap-4 w-100">
-          <div class="fw-bold title-section text-center text-lg-end big-ideas-section">Big ideas, big data. Not a big deal for us!</div>
-          <div class="subtitle-section text-dark text-lg-end">If you upload huge files ad want to have more space, then you should use our TORNADO plan. You can upgrade and downgrade your storage every month.</div>
-          <sup class="subtitle-section text-dark text-lg-end fw-semibold">Only pay what you see</sup>
-          <div id="button-section" class="text-lg-end text-center">
-            <a style="background-color: #999cbf" class="btn btn-primary border-0" href="tornado.html">Pay what you see</a>
+          <div class="d-flex flex-column flex-lg-column justify-content-lg-center justify-content-sm-start align-items-xl-end gap-5">
+            <div class="fw-bold title-section text-center text-lg-end big-ideas-section">Big ideas, big data. Not a big deal for us!</div>
+            <div class="subtitle-section text-dark text-lg-end col-xl-8">If you upload huge files ad want to have more space, then you should use our TORNADO plan. You can upgrade and downgrade your storage every month.</div>
+            <sup class="subtitle-section text-dark text-lg-end fw-semibold">Only pay what you see</sup>
+            <div id="button-section" class="text-lg-end text-center pb-5 col-md-8">
+              <a style="background-color: #999cbf" class="btn btn-primary border-0 col-xl-2" href="tornado.html">Pay what you see</a>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Ads Section -->
       <div id="ads-section" style="background-color: #deeaf6; height: 100vh; color: #b0cde8" class="col-12 d-flex flex-column flex-lg-row-reverse align-items-center px-4 justify-content-between position-relative">
-        <div class="col-5">
+        <div class="col-11 mx-auto d-flex flex-column flex-lg-row-reverse align-items-lg-center">
           <img class="zoxxo-post" src="assets/img/Preview10008.png" alt="Zoxxo Ideas Image" srcset="" />
-        </div>
-        <div class="d-flex flex-column flex-lg-column justify-content-lg-center justify-content-sm-start align-items-center gap-5 col-5">
-          <div class="fw-bold title-section text-center text-lg-start">Brand on top, to make impression</div>
-          <div class="subtitle-section text-dark">Make noise about your brand. Advertise next to the data from all over the world. The more you impres your audience the higher will they regocnize you!</div>
-          <div id="button-section" class="text-lg-start text-center">
-            <a style="background-color: #b0cde8" class="btn btn-primary border-0" href="#">Advertise with us!</a>
+          <div class="d-flex flex-column flex-lg-column justify-content-lg-center justify-content-sm-start gap-5">
+            <div class="fw-bold title-section text-center text-lg-start col-12">Brand on top, to make impression</div>
+            <div class="subtitle-section text-dark col-lg-10">Make noise about your brand. Advertise next to the data from all over the world. The more you impres your audience the higher will they regocnize you!</div>
+            <div id="button-section" class="text-lg-start text-center col-4">
+              <a style="background-color: #b0cde8" class="btn btn-primary border-0" href="#">Advertise with us!</a>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Feature Section -->
       <div id="feature-section" style="background-color: #f5f5f7; gap: 1px" class="w-100 row row-cols-1 px-2 text-center py-5 mx-auto position-relative">
-        <div class="d-flex justify-content-between justify-content-lg-around w-100 mb-3 gap-2 gap-lg-4 px-lg-5">
+        <div class="d-flex justify-content-between justify-content-lg-around col-12 mb-3 gap-2 gap-lg-4 px-lg-3">
           <div style="background-color: #f5dde7" class="d-flex flex-column justify-content-evenly align-items-center p-3 p col-lg-3 col-xl-2 col-6 rounded-2">
             <img src="assets/img/icon/Anonymus.png" alt="" srcset="" />
             <div class="text-secondary feature-title">From A To Z Nobody knows you!</div>
@@ -512,7 +492,7 @@
 
       <!-- Footer  -->
       <div style="color: #f2f3f4; background: #161616" class="card text-center rounded-0 py-100">
-        <div style="padding-left: 2rem !important; padding-right: 4rem !important" class="card-body pt-4 d-lg-flex justify-content-lg-between px-lg-5 col-lg-10 mx-lg-auto col-xl-11">
+        <div style="padding-left: 2rem !important; padding-right: 4rem !important" class="card-body pt-4 d-lg-flex justify-content-lg-between px-lg-5 col-lg-9 mx-lg-auto col-xl-11">
           <div class="d-flex flex-column align-items-center gap-3 gap-lg-5">
             <img src="assets/img/zoxxo_CLR.png" alt="" srcset="" width="50" height="40" />
             <div class="dropdown">
