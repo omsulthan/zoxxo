@@ -9,6 +9,55 @@
     <link rel="stylesheet" href="/assets/css/style.css" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <style>
+      .loading-spinner {
+        position: relative;
+        width: 60px;
+        height: 60px;
+        text-align: center;
+      }
+
+      .spinner,
+      .progress-bar {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+      }
+
+      .spinner {
+        width: 100%;
+        height: 100%;
+        border: 2px solid transparent;
+        border-top: 2px solid #f21a5d;
+        animation: spin 2s linear infinite;
+      }
+
+      .progress-bar {
+        width: 80%;
+        height: 80%;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .progress-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 12px;
+        color: #555;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: translate(-50%, -50%) rotate(0deg);
+        }
+        100% {
+          transform: translate(-50%, -50%) rotate(360deg);
+        }
+      }
+
       td {
         max-width: 100px !important;
         overflow: hidden !important;
@@ -264,6 +313,10 @@
           margin-right: 0;
         }
       }
+      .pink-underline {
+        text-decoration: underline;
+        text-decoration-color: pink;
+      }
     </style>
   </head>
   <body>
@@ -325,6 +378,10 @@
 
         <!-- Share Section -->
         <div id="share-section" style="background-color: #f5f5f7; height: 100vh" class="w-100 text-center py-3 flex-column justify-content-between justify-content-xl-evenly pt-5 d-none mt-3 py-4">
+          <div id="upload-section" class="text-center" style="display: none">
+            <div class="fw-bold h1">we are uploading!</div>
+            <div class="h5 text-primary-emphasis w-50 mx-auto">your Data is now uploading to share with your partners, friends & family</div>
+          </div>
           <div id="ready-share" class="text-center" style="display: none">
             <div class="fw-bold h1">ready to share!</div>
             <div class="h5 text-primary-emphasis w-50 mx-auto">your Data is now ready to share with your partners, friends & fmaily</div>
@@ -359,27 +416,31 @@
                 </tr>
               </tbody>
             </table>
-            <div class="col-4 mx-auto col-md-2 col-lg-12 col-xl-4 mx-lg-auto"><a class="link-offset-2 link-underline link-underline-opacity-0 h6 text-center" data-bs-toggle="modal" data-bs-target="#seeMoreModal">See More</a></div>
+            <div class="col-4 mx-auto col-md-2 col-lg-12 col-xl-4 mx-lg-auto"><a class="link-offset-2 h6 text-center pink-underline" data-bs-toggle="modal" data-bs-target="#seeMoreModal">See More</a></div>
           </div>
 
           <div id="enjoy-section" class="zorro-enjoy d-none">
-            <img src="assets/img/Preview10006.png" alt="" width="200px" />
-            <div onclick="handleProgress()" id="progress-section" class="progress col-6 mx-auto mb-3">
-              <div class="progress-bar bg-danger" role="progressbar" aria-label="Basic example" style="width: 100%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="loading-spinner col-4 mx-auto">
+              <div class="spinner"></div>
+              <div class="progress-bar"></div>
+              <div class="progress-text">0%</div>
             </div>
-            <div id="copy-section" style="display: none" class="col-6 mx-auto">
-              <div class="container-input"></div>
-              <div class="input-group mb-3 border">
-                <input
-                  id="linkInput"
-                  style="border: #9997bf; color: #9997bf"
-                  type="text"
-                  class="form-control bg-white"
-                  aria-label="Amount (to the nearest dollar)"
-                  value="https://xd.adobe.com/view/5f5ec478-1928-4e28-80ea-11e61c21d60e-0a0d/grid"
-                  disabled
-                />
-                <button id="copyButton" style="border: #9997bf; color: #9997bf" class="input-group-text"><i class="fa-solid fa-copy"></i></button>
+            <div id="after-load">
+              <img src="assets/img/Preview10006.png" alt="" width="200px" />
+              <div id="copy-section" class="col-6 mx-auto">
+                <div class="container-input"></div>
+                <div class="input-group mb-3 border">
+                  <input
+                    id="linkInput"
+                    style="border: #f21a5d; color: #f21a5d"
+                    type="text"
+                    class="form-control bg-white"
+                    aria-label="Amount (to the nearest dollar)"
+                    value="https://xd.adobe.com/view/5f5ec478-1928-4e28-80ea-11e61c21d60e-0a0d/grid"
+                    disabled
+                  />
+                  <button id="copyButton" style="border: #f21a5d; color: #f21a5d; background-color: #f5c8d9" class="input-group-text"><i class="fa-solid fa-copy"></i></button>
+                </div>
               </div>
             </div>
           </div>
@@ -720,6 +781,40 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- My Script -->
   <script>
+    $("#after-load").hide();
+    function updateProgress(progress) {
+      const progressText = document.querySelector(".progress-text");
+      progressText.textContent = progress + "%";
+
+      const progressBar = document.querySelector(".progress-bar");
+      progressBar.style.opacity = "1";
+      progressBar.style.transform = `translate(-50%, -50%) rotate(${(progress / 100) * 360}deg)`;
+
+      const loadingSpinner = document.querySelector(".loading-spinner");
+      if (progress === 100) {
+        loadingSpinner.style.display = "none";
+        $("#after-load").show();
+        $("#ready-share").show();
+        $("#upload-section").hide();
+      } else {
+        loadingSpinner.style.display = "block";
+      }
+    }
+
+    function simulateProgress() {
+      let progress = 0;
+      const interval = setInterval(() => {
+        progress += 5; // Menambahkan 5 persen setiap interval
+        if (progress > 100) {
+          progress = 100;
+          clearInterval(interval);
+        }
+        updateProgress(progress);
+      }, 150); // Interval 0.5 detik (500ms)
+    }
+
+    // Panggil fungsi simulateProgress untuk memulai simulasi loading
+
     var dropArea = document.getElementById("dropArea");
     var dropArea2 = document.getElementById("dropArea-2");
 
@@ -771,7 +866,8 @@
       $("#enjoy-section").removeClass("d-none");
       $("#enjoy-route").css("color", "#f21a5d");
       $("#drop-box-2").hide();
-      $("#ready-share").show();
+      $("#upload-section").show();
+      simulateProgress();
     };
     const handleEmail = () => {
       $("#placeholder-section").attr("placeholder", "E-Mail");
