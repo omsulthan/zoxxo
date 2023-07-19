@@ -317,6 +317,26 @@
         text-decoration: underline;
         text-decoration-color: pink;
       }
+      .loading-container {
+        position: relative;
+        text-align: center;
+      }
+
+      .loading-container img {
+        max-width: 100px;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .percentage {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 16px;
+        color: #333;
+        display: none;
+      }
     </style>
   </head>
   <body>
@@ -420,10 +440,9 @@
           </div>
 
           <div id="enjoy-section" class="zorro-enjoy d-none">
-            <div class="loading-spinner col-4 mx-auto">
-              <div class="spinner"></div>
-              <div class="progress-bar"></div>
-              <div class="progress-text">0%</div>
+            <div class="loading-container">
+              <img src="assets/Uploader_Spinner.gif" alt="Loading Spinner" />
+              <div class="percentage" id="loadingText"></div>
             </div>
             <div id="after-load">
               <img src="assets/img/Preview10006.png" alt="" width="200px" />
@@ -476,9 +495,9 @@
 
       <!-- Register Section -->
       <div id="register-section" style="background-color: #f5dde7; height: 100vh; color: #535353" class="col-12 d-flex flex-column flex-lg-row-reverse align-items-center px-4 justify-content-between position-relative">
-        <div class="col-11 mx-auto d-flex flex-column flex-lg-row-reverse mx-lg-0">
+        <div class="col-11 mx-auto d-flex flex-column flex-lg-row-reverse align-items-lg-center">
           <img class="zoxxo-post" src="assets/img/Preview10005.png" alt="Zoxxo Register Image" srcset="" />
-          <div class="d-flex flex-column flex-lg-column justify-content-lg-center justify-content-sm-start gap-5">
+          <div class="d-flex flex-column flex-lg-column justify-content-lg-center justify-content-sm-start gap-5 col-9">
             <div style="color: #f21a5d" class="fw-bold text-center text-lg-start title-section">We don't transfer, we deliver!</div>
             <div class="subtitle-section col-md-8">
               zoxxo do not focus on ,,just doing the work", we deliver instead. We deliver your data to your destination fast, secure and easy. For managing your data, you can use our next generation file manager with workspaces
@@ -491,7 +510,7 @@
       </div>
 
       <!-- Ideas Section -->
-      <div id="ideas-section" style="background-color: #d6d5e5; height: 100vh; color: #999cbf" class="col-12 d-flex flex-column flex-lg-row-reverse px-4 justify-content-between position-relative">
+      <div id="ideas-section" style="background-color: #d6d5e5; height: 100vh; color: #999cbf" class="col-12 d-flex flex-column flex-lg-row-reverse align-items-center px-4 justify-content-between position-relative">
         <div class="col-11 mx-auto d-flex flex-column flex-lg-row align-items-lg-center">
           <img class="zoxxo-post" src="assets/img/Preview10004.png" alt="Zoxxo Ideas Image" srcset="" />
           <div class="d-flex flex-column flex-lg-column justify-content-lg-center justify-content-sm-start align-items-xl-end gap-5">
@@ -520,7 +539,7 @@
       </div>
 
       <!-- Feature Section -->
-      <div id="feature-section" style="background-color: #f5f5f7; gap: 1px" class="w-100 row row-cols-1 px-2 text-center py-5 mx-auto position-relative">
+      <div id="feature-section" style="background-color: #f5f5f7; gap: 1px" class="col-12 row row-cols-1 px-2 text-center py-5 mx-auto position-relative">
         <div class="d-flex justify-content-between justify-content-lg-around col-12 mb-3 gap-2 gap-lg-4 px-lg-3">
           <div style="background-color: #f5dde7" class="d-flex flex-column justify-content-evenly align-items-center p-3 p col-lg-3 col-xl-2 col-6 rounded-2">
             <img src="assets/img/icon/Anonymus.png" alt="" srcset="" />
@@ -781,40 +800,39 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- My Script -->
   <script>
-    $("#after-load").hide();
-    function updateProgress(progress) {
-      const progressText = document.querySelector(".progress-text");
-      progressText.textContent = progress + "%";
+    let percentage = 0;
+    const loadingText = document.getElementById("loadingText");
+    const spinnerContainer = document.querySelector(".loading-container");
 
-      const progressBar = document.querySelector(".progress-bar");
-      progressBar.style.opacity = "1";
-      progressBar.style.transform = `translate(-50%, -50%) rotate(${(progress / 100) * 360}deg)`;
+    function updateLoadingText() {
+      loadingText.textContent = percentage + "%";
+    }
 
-      const loadingSpinner = document.querySelector(".loading-spinner");
-      if (progress === 100) {
-        loadingSpinner.style.display = "none";
-        $("#after-load").show();
-        $("#ready-share").show();
-        $("#upload-section").hide();
+    function hideSpinner() {
+      spinnerContainer.style.display = "none";
+    }
+
+    function setLoadingComplete() {
+      percentage = 100;
+      updateLoadingText();
+      setTimeout(hideSpinner, 1000); // Menunggu 1 detik sebelum menyembunyikan spinner
+      $(".loading-container").hide();
+      $("#after-load").show();
+      $("#ready-share").show();
+      $("#upload-section").hide();
+    }
+    function simulateLoading() {
+      percentage += 5; // Simulasi peningkatan persentase loading (Anda bisa sesuaikan ini dengan kebutuhan Anda)
+      if (percentage <= 100) {
+        updateLoadingText();
+        loadingText.style.display = "block"; // Menampilkan teks persentase
+        setTimeout(simulateLoading, 200); // Simulasi setiap 200ms
       } else {
-        loadingSpinner.style.display = "block";
+        setLoadingComplete();
       }
     }
 
-    function simulateProgress() {
-      let progress = 0;
-      const interval = setInterval(() => {
-        progress += 5; // Menambahkan 5 persen setiap interval
-        if (progress > 100) {
-          progress = 100;
-          clearInterval(interval);
-        }
-        updateProgress(progress);
-      }, 150); // Interval 0.5 detik (500ms)
-    }
-
-    // Panggil fungsi simulateProgress untuk memulai simulasi loading
-
+    $("#after-load").hide();
     var dropArea = document.getElementById("dropArea");
     var dropArea2 = document.getElementById("dropArea-2");
 
@@ -867,7 +885,7 @@
       $("#enjoy-route").css("color", "#f21a5d");
       $("#drop-box-2").hide();
       $("#upload-section").show();
-      simulateProgress();
+      simulateLoading();
     };
     const handleEmail = () => {
       $("#placeholder-section").attr("placeholder", "E-Mail");
