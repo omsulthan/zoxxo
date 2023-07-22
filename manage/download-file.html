@@ -101,11 +101,26 @@
             </div>
           </div>
         </div>
-        <div class="d-flex justify-content-center flex-column mx-auto align-items-center gap-3">
-          <div>
-            <button class="btn text-white px-4" style="background-color: #b6bf97">Download</button>
+        <div id="download-section" class="text-center">
+          <div class="mb-2">
+            <button onclick="handleFirst()" style="background-color: #b6bf97" class="btn btn-success px-5">Download</button>
           </div>
-          <div>E-mail Username</div>
+          <div onclick="handleEmail()">
+            <a class="link-offset-2 link-underline link-underline-opacity-0 text-danger">Email user</a>
+          </div>
+        </div>
+        <div style="display: none" id="email-section" class="text-center">
+          <div class="col-9 mx-auto">
+            <div class="mb-3">
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Type Email" />
+            </div>
+          </div>
+          <div class="d-flex justify-content-between col-9 mx-auto align-items-center">
+            <div onclick="handleDownload()">
+              <a class="link-offset-2 link-underline link-underline-opacity-0 text-danger">Download</a>
+            </div>
+            <button type="submit" style="background-color: #f22967" class="btn btn-danger px-3">Send</button>
+          </div>
         </div>
       </div>
       <div class="my-way col-xl-7 d-xl-flex justify-content-xl-center align-items-xl-center">
@@ -119,4 +134,14 @@
   <!-- Script untuk library jQuery (dibutuhkan untuk contoh JavaScript di bawah) -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- My Script -->
+  <script>
+    const handleEmail = () => {
+      $("#download-section").hide();
+      $("#email-section").show();
+    };
+    const handleDownload = () => {
+      $("#download-section").show();
+      $("#email-section").hide();
+    };
+  </script>
 </html>

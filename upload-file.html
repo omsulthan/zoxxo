@@ -107,6 +107,30 @@
         height: 100px;
       }
     }
+    .pink-underline {
+      text-decoration: underline;
+      text-decoration-color: pink;
+    }
+    .loading-container {
+      position: relative;
+      text-align: center;
+    }
+
+    .loading-container img {
+      max-width: 100px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .percentage {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 16px;
+      color: #333;
+      display: none;
+    }
   </style>
   <body>
     <div class="d-flex justify-content-between">
@@ -267,11 +291,14 @@
         </div>
 
         <div class="col-8 mx-auto">
-          <img src="../assets/img/Preview10006.png" alt="" width="200px" />
-          <div onclick="handleProgress()" id="progress-section" class="progress col-6 mx-auto mb-3">
-            <div class="progress-bar bg-danger" role="progressbar" aria-label="Basic example" style="width: 100%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+          <div class="loading-container">
+            <img src="assets/Uploader_Spinner_Manage.gif" alt="Loading Spinner" />
+            <div class="percentage" id="loadingText"></div>
           </div>
-          <div class="container-input"></div>
+          <div id="after-load">
+            <img src="../assets/img/Preview10006.png" alt="" width="200px" />
+            <div class="container-input"></div>
+          </div>
           <div class="input-group mb-3 copy-section" style="display: none">
             <input
               id="linkInput"
@@ -292,7 +319,7 @@
           <div style="color: #9997bf"><i class="fa-solid fa-x"></i> Customize</div>
           <div style="color: #9997bf"><i class="fa-solid fa-x"></i> Enjoy</div>
         </div>
-        <div class="d-flex justify-content-center gap-3 justify-content-xl-end px-xl-5">
+        <div id="back-workspace" class="d-flex justify-content-center gap-3 justify-content-xl-end px-xl-5">
           <button onclick="handleFinish()" style="background-color: #9997bf" class="btn btn-primary rounded">Back to Workspaces</button>
         </div>
       </div>
@@ -439,6 +466,43 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- My Script -->
   <script>
+    let percentage = 0;
+    const loadingText = document.getElementById("loadingText");
+    const spinnerContainer = document.querySelector(".loading-container");
+
+    function updateLoadingText() {
+      loadingText.textContent = percentage + "%";
+    }
+
+    function hideSpinner() {
+      spinnerContainer.style.display = "none";
+    }
+
+    function setLoadingComplete() {
+      percentage = 100;
+      updateLoadingText();
+      setTimeout(hideSpinner, 1000); // Menunggu 1 detik sebelum menyembunyikan spinner
+      $(".loading-container").hide();
+      $("#after-load").show();
+      $("#back-workspace").attr('disabled', 'false');
+      $("#ready-share").show();
+      $("#upload-section").hide();
+      $(".copy-section").show();
+      $("#progress-section").hide();
+    }
+    function simulateLoading() {
+      percentage += 5; // Simulasi peningkatan persentase loading (Anda bisa sesuaikan ini dengan kebutuhan Anda)
+      if (percentage <= 100) {
+        updateLoadingText();
+        loadingText.style.display = "block"; // Menampilkan teks persentase
+        setTimeout(simulateLoading, 200); // Simulasi setiap 200ms
+      } else {
+        setLoadingComplete();
+      }
+    }
+
+    $("#after-load").hide();
+    $("#back-workspace").attr('disabled', 'true');
     var dropArea = document.getElementById("dropArea");
     var dropArea2 = document.getElementById("dropArea-2");
     var dropArea3 = document.getElementById("dropArea-3");
@@ -542,16 +606,13 @@
       $("#third-section").removeClass("d-flex");
       $("#enjoy-section").addClass("d-flex");
       $("#enjoy-section").removeClass("d-none");
+      simulateLoading();
     };
     const handleFinish = () => {
       $("#enjoy-section").addClass("d-none");
       $("#enjoy-section").removeClass("d-flex");
       $("#first-section").addClass("d-flex");
       $("#first-section").removeClass("d-none");
-    };
-    const handleProgress = () => {
-      $(".copy-section").show();
-      $("#progress-section").hide();
     };
     function handleDanger() {
       $(".rounded-preview").removeClass("bg-white");
