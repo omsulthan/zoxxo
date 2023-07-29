@@ -281,7 +281,7 @@
                   <div class="subtitle-section text-secondary">If you do this, all your files, links and stats will be deleted forever.</div>
                   <div class="subtitle-section text-secondary">To keep your files, links and stats, <a class="text-danger text-decoration-underline" href="#">cancel your subscription</a> instead of deleting your account.</div>
                   <div class="mt-4">
-                    <button style="background-color: #d8d8d8" type="button" class="btn text-danger">Delete my account</button>
+                    <button data-bs-toggle="modal" data-bs-target="#deleteAccount" style="background-color: #d8d8d8" type="button" class="btn text-danger">Delete my account</button>
                   </div>
                 </div>
               </div>
@@ -316,6 +316,24 @@
               <div class="input-group-text bg-transparent"><i class="fa-solid fa-circle-check" style="color: #10c45b; font-size: 20px"></i></div>
             </div>
           </form>
+        </div>
+        <div class="modal-footer">
+          <button style="background-color: #f4f4f4; color: #aaaaaa; border-color: #f4f4f4" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-danger">Confirm</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Delete Account Modal -->
+  <div class="modal fade" id="deleteAccount" tabindex="-1" aria-labelledby="changeAccountLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 600px">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3" style="color: #000000; font-size: 24px">Are you sure ?</div>
+          <div style="font-size: 18px">You will lose all of your data</div>
         </div>
         <div class="modal-footer">
           <button style="background-color: #f4f4f4; color: #aaaaaa; border-color: #f4f4f4" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>

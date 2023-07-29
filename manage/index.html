@@ -433,9 +433,10 @@
                 <input type="file" id="fileInput" />
                 <div class="dropbox-text">Upload File Disini</div>
               </div>
-              <div class="mt-3 d-flex justify-content-end">
-                <button style="background-color: #f22967;" id="uploadButton" class="btn btn-danger">Upload</button>
+              <div class="my-3 d-flex justify-content-end">
+                <button style="background-color: #f22967" id="uploadButton" class="btn btn-danger">Upload</button>
               </div>
+              <div class="container-input"></div>
               <div class="h6 text-secondary fw-semibold my-3">Uploaded Files :</div>
               <table class="table table-responsive-sm">
                 <thead>
@@ -621,9 +622,27 @@
         $("#fileInput").val(""); // Clear the file input
         $(".dropbox-text").text("Upload File Disini");
       });
+      // Handle the click event on the "Upload" button
       $("#uploadButton").on("click", function () {
         var fileName = $("#fileInput").val().split("\\").pop();
-        console.log("File yang diupload: " + fileName);
+        if (fileName) {
+          // Menampilkan notifikasi Bootstrap
+          var alertMessage = $("<div>", {
+            class: "alert alert-success fade-out",
+            text: "File " + fileName + " berhasil diupload!",
+          });
+
+          $(".container-input").append(alertMessage);
+
+          setTimeout(function () {
+            alertMessage.remove();
+          }, 4000); // Perpanjang waktu notifikasi menjadi 10 detik
+
+          $("#fileInput").val(""); // Clear the file input
+          $(".dropbox-text").text("Upload File Disini"); // Reset the dropbox text
+        } else {
+          alert("Anda belum memilih file untuk diupload");
+        }
       });
       // Handle the dragover event on the dropbox container
       $("#dropboxContainer").on("dragover", function (event) {
