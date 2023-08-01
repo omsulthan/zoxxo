@@ -29,6 +29,18 @@
     .subtitle-section {
       width: 70%;
     }
+    .scrollable-div {
+      height: 400px; /* Set a fixed height for the container */
+      overflow: auto; /* Show horizontal and vertical scrollbars if content overflows */
+      overflow-x: hidden; /* Hide the vertical scrollbar */
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 15rem); /* Set a fixed width for each item */
+      gap: 8px;
+      justify-content: center;
+    }
     @media (min-width: 992px) {
       .subtitle-section {
         width: 50%;
@@ -56,11 +68,11 @@
             <div class="mx-auto title-section mt-3">Download your Files</div>
             <div class="h5 text-secondary mx-auto subtitle-section">Username wants to share this workspace with you. Enjoy!</div>
           </div>
-          <div class="d-md-flex gap-md-4 justify-content-md-center gap-lg-0">
+          <div class="grid-container scrollable-div">
             <!-- First Item -->
-            <div class="d-flex flex-column gap-2 mb-3">
+            <div style="width: 17rem; height: 14rem" class="item">
               <div class="card col-9 mx-auto shadow-sm">
-                <div style="background-color: #b6bf97" class="text-center p-5 text-white">Name of the uploaded files</div>
+                <div style="background-color: #b6bf97; height: 10rem" class="text-center p-5 text-white">Name of </div>
                 <div class="card-body">
                   <div class="text-center">
                     <a style="color: #b6bf97" class="text-decoration-none" href="#">Download</a>
@@ -69,7 +81,18 @@
               </div>
             </div>
             <!-- Second Item -->
-            <div class="d-flex flex-column gap-2 mb-3">
+            <!-- First Item -->
+            <div style="width: 17rem; height: 14rem" class="item">
+              <div class="card col-9 mx-auto shadow-sm">
+                <div style="background-color: #b6bf97; height: 10rem" class="text-center p-5 text-white">Name of the uploaded files</div>
+                <div class="card-body">
+                  <div class="text-center">
+                    <a style="color: #b6bf97" class="text-decoration-none" href="#">Download</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="width: 17rem; height: 14rem" class="item">
               <div class="card col-9 mx-auto shadow-sm">
                 <div style="background-color: #b0cde8" class="text-center p-5 text-black">Name of the uploaded files</div>
                 <div class="card-body">
@@ -80,9 +103,9 @@
               </div>
             </div>
             <!-- Third Item -->
-            <div class="d-flex flex-column gap-2 mb-3">
+            <div style="width: 17rem; height: 14rem" class="item">
               <div class="card col-9 mx-auto shadow-sm">
-                <div style="background-color: #735577" class="text-center p-5 text-white">Name of the uploaded files</div>
+                <div style="background-color: #735577; height: 10rem" class="text-center p-5 text-white">Name of the uploaded files</div>
                 <div class="card-body">
                   <div class="text-center">
                     <a style="color: #735577" class="text-decoration-none" href="#">Download</a>

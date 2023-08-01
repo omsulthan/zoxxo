@@ -10,6 +10,9 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
   </head>
   <style>
+    .sidebar-responsive {
+      height: 93vh;
+    }
     .offcanvas {
       width: 65vw !important;
     }
@@ -82,6 +85,11 @@
     }
     .dropbox-container.drag-over {
       border-color: #007bff; /* Change border color when dragging over */
+    }
+    @media (min-width: 2300px) {
+      .sidebar-responsive {
+        height: 96vh;
+      }
     }
   </style>
   <body>
@@ -174,7 +182,7 @@
 
     <!-- Sidebar -->
     <div class="d-flex">
-      <div style="height: 93vh; box-shadow: 0 1rem 1rem 1px rgba(0, 0, 0, 0.175) !important; top: 61px" class="sticky-top d-lg-flex flex-column justify-content-between col-lg-3 col-xl-2 d-none">
+      <div style="box-shadow: 0 1rem 1rem 1px rgba(0, 0, 0, 0.175) !important; top: 61px" class="sticky-top d-lg-flex flex-column justify-content-between col-lg-3 col-xl-2 d-none sidebar-responsive">
         <div>
           <!-- Desktop View -->
           <!-- Search -->
@@ -202,7 +210,7 @@
       <div class="p-2 col-lg-9 col-xl-10 col-12 px-4">
         <!-- Header Content -->
         <div class="d-flex justify-content-lg-between flex-column flex-lg-row align-items-lg-center">
-          <div class="d-flex gap-3 text-secondary title-content px-2 align-items-center py-lg-2 mb-3 mb-lg-0">
+          <div class="d-flex gap-3 text-secondary title-content px-0 align-items-center py-lg-2 mb-3 mb-lg-0">
             <div>Private Workspace</div>
             <div>|</div>
             <button class="bg-transparent border-0 text-secondary"><i class="fa-solid fa-arrow-up-from-bracket"></i> Share</button>
@@ -229,8 +237,8 @@
           <div class="d-flex flex-column flex-lg-row justify-content-lg-start align-items-lg-start">
             <!-- First Item -->
             <div class="d-flex flex-column gap-2 mb-3">
-              <div class="card col-9 mx-auto shadow-sm">
-                <div style="background-color: #b6bf97" class="text-center p-5 text-white">Name of the uploaded files</div>
+              <div style="width: 15rem; height: 14rem" class="card col-9 mx-auto shadow-sm me-4">
+                <div style="background-color: #b6bf97; height: 10rem" class="text-center p-5 text-white">Name of Uploaded files</div>
                 <div class="card-body">
                   <div class="d-flex justify-content-between align-items-baseline">
                     <p class="card-text">123 Downloads</p>
@@ -248,8 +256,8 @@
             </div>
             <!-- Second Item -->
             <div class="d-flex flex-column gap-2 mb-3">
-              <div class="card col-9 mx-auto shadow-sm">
-                <div style="background-color: #b0cde8" class="text-center p-5 text-black">Name of the uploaded files</div>
+              <div style="width: 15rem; height: 14rem" class="card col-9 mx-auto shadow-sm me-4">
+                <div style="background-color: #b0cde8; height: 10rem" class="text-center p-5 text-white">Name of Uploaded files</div>
                 <div class="card-body">
                   <div class="d-flex justify-content-between align-items-baseline">
                     <p class="card-text">123 Downloads</p>

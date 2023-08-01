@@ -13,6 +13,10 @@
     .my-way {
       display: none;
     }
+    .scrollable-div {
+      height: 400px; /* Sesuaikan tinggi div sesuai kebutuhan */
+      overflow: auto; /* Menampilkan scroll jika konten melebihi ukuran div */
+    }
     table tr td,
     table tr th {
       background-color: transparent !important;
@@ -56,7 +60,7 @@
             <div class="mx-auto title-section mt-3">Download your Files</div>
             <div class="h5 text-secondary mx-auto subtitle-section">Username wants to share this workspace with you. Enjoy!</div>
           </div>
-          <div class="d-flex flex-column px-2 px-xl-5">
+          <div class="d-flex flex-column px-2 px-xl-5 scrollable-div">
             <!-- List Item 1 -->
             <div class="card mb-3 col-12 col-md-9 mx-md-auto col-xl-12">
               <div class="card-body">
