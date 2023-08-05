@@ -30,7 +30,7 @@
       white-space: nowrap;
     }
 
-    .card {
+    .card-custom {
       flex-shrink: 0;
       width: 300px; /* Atur ukuran card sesuai kebutuhan */
       margin-right: 10px; /* Atur jarak antara card */
@@ -108,12 +108,14 @@
       font-size: 12px;
     }
     ul li {
-      backdrop-filter: blur(50px) contrast(1.2);
-    }
+        backdrop-filter: blur(50px) contrast(1.2);
+        -webkit-backdrop-filter: blur(50px) contrast(1.2);
+      }
 
     @media (min-width: 768px) {
       .navbar {
         backdrop-filter: blur(50px) contrast(1.2);
+        -webkit-backdrop-filter: blur(50px) contrast(1.2);
         background-color: transparent !important;
       }
       #first-content {
@@ -292,7 +294,7 @@
             <div class="">
               <div class="card-wrapper">
                 <div class="card-container">
-                  <div style="cursor: pointer" onclick="handleForever()" class="card bg-transparent shadow-sm mb-4 card-click me-xl-5">
+                  <div style="cursor: pointer" onclick="handleForever()" class="card-custom bg-transparent shadow-sm mb-4 card-click me-xl-5">
                     <div class="card-body">
                       <div class="col-9 mx-auto text-center title-card-content fw-semibold">Forever Free</div>
                       <div class="mx-auto text-center subtitle-card-content text-secondary overflow-wrap">Upload files and share links as much as you like</div>
@@ -316,7 +318,7 @@
             <div class="ms-2">
               <div class="card-wrapper">
                 <div class="card-container">
-                  <div style="background-color: #f5dde7; border: 2px solid#f21a5d; cursor: pointer" onclick="handlePink()" class="card shadow-sm mb-4 card-click">
+                  <div style="background-color: #f5dde7; border: 2px solid#f21a5d; cursor: pointer" onclick="handlePink()" class="card-custom shadow-sm mb-4 card-click">
                     <div class="card-body">
                       <div style="color: #f21a5d" class="col-9 mx-auto text-center title-card-content fw-semibold">Tornado</div>
                       <div class="mx-auto text-center subtitle-card-content text-secondary overflow-wrap">Upload files and share links and much more</div>
@@ -538,51 +540,49 @@
           </div>
         </div>
       </div>
-      <!-- Footer -->
-      <div style="color: #f2f3f4; width: 100vw; background: #161616" class="card text-center rounded-0 py-100">
-        <div style="padding-left: 4rem !important; padding-right: 5rem !important;" class="card-body pt-4 d-lg-flex justify-content-lg-between px-lg-5 col-lg-10 mx-lg-auto col-xl-11">
-          <div class="d-flex flex-column align-items-center gap-3 gap-lg-5">
-            <img src="assets/img/zoxxo_CLR.png" alt="" srcset="" width="50" height="40" />
-            <div class="dropdown">
-              <button style="background-color: #252525; border-color: #252525" class="btn btn-secondary dropdown-toggle px-4" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" aria-expanded="false">English</button>
-            </div>
-          </div>
-          <div class="d-flex flex-column align-items-start mt-2">
-            <span class="h4 fw-semibold">Product</span>
-            <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Overview</a>
-            <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Features</a>
-            <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Workspaces</a>
-            <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Pricing</a>
-          </div>
-          <div class="d-flex flex-column align-items-start mt-2">
-            <span class="h4 fw-semibold">Who we are</span>
-            <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Company</a>
-            <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Newsroom</a>
-            <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Advertising</a>
-            <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Brand</a>
-          </div>
-          <div class="d-flex flex-column align-items-start mt-2">
-            <span class="h4 fw-semibold">Explore</span>
-            <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Help Center</a>
-            <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Ideas</a>
-            <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Terms</a>
-            <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Privacy</a>
+    </div>
+    <!-- Footer  -->
+    <div style="color: #f2f3f4; background: #161616" class="card text-center rounded-0 py-100">
+      <div style="max-width: 1600px; width: 100%" class="card-body pt-4 d-lg-flex justify-content-lg-between col-lg-10 mx-lg-auto col-xl-11">
+        <div class="d-flex flex-column align-items-center gap-3 gap-lg-5">
+          <img src="assets/img/zoxxo_CLR.png" alt="" srcset="" width="50" height="40" />
+          <div class="dropdown">
+            <button style="background-color: #252525; border-color: #252525" class="btn btn-secondary dropdown-toggle px-4" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" aria-expanded="false">English</button>
           </div>
         </div>
-        <hr style="width: 85vw" class="col-9 mx-auto" />
-        <div class="d-lg-flex justify-content-lg-between col-9 mx-auto col-xxl-10 px-xxl-1">
-          <div class="d-flex gap-3 align-items-center justify-content-center h4">
-            <a href="#" class="text-white"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" class="text-white"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#" class="text-white"><i class="fa-brands fa-twitter"></i></a>
-          </div>
-          <div class="card-footer text-secondary">©2022 zoxxo</div>
+        <div class="d-flex flex-column align-items-start mt-2">
+          <span class="h4 fw-semibold">Product</span>
+          <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Overview</a>
+          <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Features</a>
+          <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Workspaces</a>
+          <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Pricing</a>
+        </div>
+        <div class="d-flex flex-column align-items-start mt-2">
+          <span class="h4 fw-semibold">Who we are</span>
+          <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Company</a>
+          <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Newsroom</a>
+          <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Advertising</a>
+          <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Brand</a>
+        </div>
+        <div class="d-flex flex-column align-items-start mt-2">
+          <span class="h4 fw-semibold">Explore</span>
+          <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Help Center</a>
+          <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Ideas</a>
+          <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Terms</a>
+          <a style="color: #f2f3f4" class="text-white link-offset-2 link-underline link-underline-opacity-0 h6" href="#">Privacy</a>
         </div>
       </div>
+      <hr style="max-width: 1600px; width: 100%" class="col-9 mx-auto" />
+      <div style="max-width: 1600px; width: 100%" class="d-lg-flex justify-content-lg-between col-9 mx-auto col-xxl-10 px-xxl-1">
+        <div class="d-flex gap-3 align-items-center justify-content-center h4">
+          <a href="#" class="text-white"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="text-white"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#" class="text-white"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+        <div class="card-footer text-secondary">©2022 zoxxo</div>
+      </div>
     </div>
-  </body>
-
-  <!-- Modal -->
+      <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -629,6 +629,7 @@
         </div>
       </div>
   </div>
+  </body>
   <!-- Script -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
   <!-- Font Awesome -->
