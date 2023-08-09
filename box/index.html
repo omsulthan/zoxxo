@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
     <!-- External CSS -->
     <link rel="stylesheet" href="../assets/css/style.css" />
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico" />
   </head>
   <style>
     .offcanvas {
@@ -50,6 +50,22 @@
     }
     .list-link:hover {
       background-color: #f5f3f3 !important;
+    }
+    .form-switch input[type="checkbox"].form-check-input {
+      height: 25px;
+      width: 45px;
+    }
+
+    .form-switch .form-check-label {
+      padding-left: 70px;
+    }
+    .form-check-input:checked {
+      background-color: #f21a5d;
+      border: none;
+    }
+
+    .form-check-input:checked ~ .form-check-label {
+      color: white;
     }
     @media (min-width: 1700px) {
       .sidebar {
@@ -158,7 +174,7 @@
 
     <!-- Sidebar -->
     <div class="d-flex">
-      <div style="box-shadow: 0 1rem 1rem 1px rgba(0, 0, 0, 0.175) !important; top: 61px" class="sticky-top d-lg-flex flex-column justify-content-between col-lg-3 col-xl-2 d-none sidebar">
+      <div style="top: 61px" class="sticky-top d-lg-flex flex-column justify-content-between col-lg-3 col-xl-2 d-none sidebar">
         <div>
           <!-- Desktop View -->
           <!-- Search -->
@@ -199,7 +215,7 @@
         <hr />
 
         <!-- Main Content -->
-        <div id="grid-view">
+        <div id="dashboard-section">
           <div class="d-flex flex-column flex-md-row justify-content-md-center justify-content-lg-start gap-md-3 px-md-0">
             <!-- First Item -->
             <div class="d-flex flex-column mb-3" onclick="handleManage()">
@@ -225,6 +241,920 @@
             </div>
           </div>
         </div>
+        <!-- Account Content -->
+        <div id="account-section" class="d-flex flex-column flex-lg-row gap-3 px-lg-0">
+          <div class="col-lg-9">
+            <div class="rounded p-3" style="background-color: #f8f8f9">
+              <div class="d-flex p-3 px-lg-5 flex-column gap-4 mb-3 text-center text-lg-start">
+                <div class="d-flex flex-column gap-2 flex-lg-row align-items-lg-center gap-lg-3">
+                  <!-- <div style="background-color: #2b2b2b; border-radius: 99999999px; color: white" class="auth d-flex justify-content-center align-items-center fw-bold mx-auto mx-lg-0">U</div> -->
+                  <div style="border-radius: 99999999px; color: white" class="auth d-flex justify-content-center align-items-center fw-bold mx-auto mx-lg-0">
+                    <img src="../assets//img/zoxxo_BLK.png" alt="Profile Picture" class="img-fluid rounded-circle border p-2" style="width: 80px; height: 80px" />
+                  </div>
+                  <div>Username</div>
+                </div>
+                <div class="subtitle-section text-secondary">
+                  <button style="border-color: #f21a5d" type="button" class="btn btn-outline-danger me-3" data-bs-toggle="modal" data-bs-target="#changeAccount">Change account name</button>
+                  <a href="upload-gravatar.html" type="button" class="btn btn-outline-danger">Change Gravatar</a>
+                </div>
+                <hr />
+                <div>
+                  <div class="fw-bold mb-2">zoxxo URL</div>
+                  <div class="subtitle-section text-secondary">All the URLs for your files contain this:</div>
+                  <div class="mt-4">
+                    <div class="fw-semibold">www.zoxxo.io/consumer/xxxxx</div>
+                    <div class="d-flex gap-2">
+                      <button style="border-color: #f21a5d" type="button" class="btn btn-outline-danger mt-3" data-bs-toggle="modal" data-bs-target="#editUrl">Edit your URL</button>
+                      <button type="button" class="btn btn-outline-secondary mt-3 dropdown-toggle d-flex justify-content-between align-items-center col-2" data-bs-toggle="dropdown" aria-expanded="false">Workspace</button>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Name Of Workspace</a></li>
+                        <li><a class="dropdown-item" href="#">Name Of Workspace 2</a></li>
+                        <li><a class="dropdown-item" href="#">Name Of Workspace 3</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="p-3">
+              <div class="d-flex p-3 px-lg-5 flex-column gap-4 mb-3 text-center text-lg-start">
+                <div>
+                  <div class="fw-bold mb-2">Delete your account</div>
+                  <div class="subtitle-section text-secondary">If you do this, all your files, links and stats will be deleted forever.</div>
+                  <div class="subtitle-section text-secondary">
+                    To keep your files, links and stats, <a class="text-danger text-decoration-underline" href="#" data-bs-toggle="modal" data-bs-target="#cancelModal">cancel your subscription</a> instead of deleting your account.
+                  </div>
+                  <div class="mt-4">
+                    <button data-bs-toggle="modal" data-bs-target="#deleteAccount" style="background-color: #d8d8d8" type="button" class="btn text-danger">Delete my account</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 rounded pe-3" style="height: min-content">
+            <div style="background-color: #f5dde7" class="text-center pay-safe p-3 d-flex flex-column justify-content-center align-items-center">
+              <img src="../assets/img/icon/pay-safe.png" width= "120px"; height="32px;"" alt="" />
+              <img src="../assets/img/Preview10005.png" width="200px" height="200px" alt="" />
+              <div class="fw-bold my-2 pay-safe-title">Paysafe is coming!</div>
+              <div class="pay-safe-subtitle">We are working on Paysafe Payment Method and will launch it very soon. Stay tuned!</div>
+            </div>
+          </div>
+        </div>
+        <!-- Plan and Billing Content -->
+        <div id="plan-billing-section" class="d-flex flex-column flex-lg-row gap-3 px-lg-0">
+          <div class="col-lg-9 d-flex flex-column gap-4">
+            <!-- Zoxxo Tornado -->
+            <div class="rounded p-3" style="background-color: #f8f8f9">
+              <div class="d-flex p-3 px-lg-5 flex-column justify-content-between gap-4 mb-3 text-center text-lg-start">
+                <div>
+                  <div class="fw-bold mb-2">zoxxo <span style="color: #f21a5d">Tornado</span></div>
+                  <div class="subtitle-section text-secondary">Powerful plan with Storage upgrade option.</div>
+                </div>
+                <div class="mt-4 d-flex justify-content-center justify-content-lg-start gap-2">
+                  <a href="plan-storage.html" style="background-color: #f21a5d" type="button" class="btn btn-danger">Upgrade Storage</a>
+                  <button type="button" style="border-color: #f21a5d" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#seeMoreModal">Downgrade to FREE Plan</button>
+                </div>
+              </div>
+            </div>
+            <!-- Billing -->
+            <div class="rounded p-3" style="background-color: #f8f8f9">
+              <div class="d-flex p-3 px-lg-5 flex-column justify-content-between gap-4 mb-3 text-center text-lg-start">
+                <div>
+                  <div class="fw-bold mb-2">Billing details</div>
+                  <div class="subtitle-section text-secondary">Your next invoice is for 29,90 USD on 2 June 2023</div>
+                  <div class="mt-4">
+                    <div>Username Company GmbH</div>
+                    <div>Streetname and number 21</div>
+                    <div>Postal code, City, Country</div>
+                    <button style="border-color: #f21a5d" type="button" class="btn btn-outline-danger mt-3" data-bs-toggle="modal" data-bs-target="#billingDetails">Edit billing details</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Payment method -->
+            <div class="rounded p-3" style="background-color: #f8f8f9">
+              <div class="d-flex p-3 px-lg-5 flex-column justify-content-between gap-4 mb-3 text-center text-lg-start">
+                <div>
+                  <div class="fw-bold mb-2">Payment method</div>
+                  <div class="subtitle-section text-secondary">
+                    <div>You are using MasterCard with ending in 9521</div>
+                    <div>Name on Card is Max Mustermann</div>
+                  </div>
+                  <div class="mt-4">
+                    <button type="button" style="border-color: #f21a5d" class="btn btn-outline-danger mt-3" data-bs-toggle="modal" data-bs-target="#paymentModal">Edit payment method</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Table Section -->
+            <div class="rounded p-3" style="background-color: #f8f8f9">
+              <div class="d-flex p-3 px-lg-5 flex-column justify-content-between gap-4 mb-3">
+                <div>
+                  <div class="fw-bold mb-2 text-center text-lg-start">Invoices</div>
+                  <table class="table table-responsive">
+                    <thead>
+                      <tr>
+                        <th scope="col" class="text-secondary fw-normal">Date</th>
+                        <th scope="col" class="text-center text-secondary fw-normal">Plan</th>
+                        <th scope="col" class="text-center text-secondary fw-normal">Amount</th>
+                        <th scope="col" class="text-end text-secondary fw-normal">Download</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>2 June 2023</td>
+                        <td class="text-center">Zoxxo Tornado</td>
+                        <td class="text-center">29,90 USD</td>
+                        <td class="text-end">
+                          <a href="../invoice-zoxxo.html" class="border-0 bg-transparent text-black"><i class="fa-regular fa-circle-down"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2 June 2023</td>
+                        <td class="text-center">Zoxxo Tornado</td>
+                        <td class="text-center">29,90 USD</td>
+                        <td class="text-end">
+                          <a href="../invoice-zoxxo.html" class="border-0 bg-transparent text-black"><i class="fa-regular fa-circle-down"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2 June 2023</td>
+                        <td class="text-center">Zoxxo Tornado</td>
+                        <td class="text-center">29,90 USD</td>
+                        <td class="text-end">
+                          <a href="../invoice-zoxxo.html" class="border-0 bg-transparent text-black"><i class="fa-regular fa-circle-down"></i></a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div class="text-center text-danger" data-bs-toggle="modal" data-bs-target="#seeMoreModalTable">See more</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 rounded pe-3" style="height: min-content">
+            <div style="background-color: #f5dde7" class="text-center pay-safe p-3 d-flex flex-column justify-content-center align-items-center">
+              <img src="../assets/img/icon/pay-safe.png" width= "120px"; height="32px;"" alt="" />
+              <img src="../assets/img/Preview10005.png" width="200px" height="200px" alt="" />
+              <div class="fw-bold my-2 pay-safe-title">Paysafe is coming!</div>
+              <div class="pay-safe-subtitle">We are working on Paysafe Payment Method and will launch it very soon. Stay tuned!</div>
+            </div>
+          </div>
+        </div>
+        <!-- Preferences Content -->
+        <div id="preferences-section" class="d-flex flex-column flex-lg-row gap-3 px-lg-0">
+          <div class="col-lg-9 rounded p-3" style="background-color: #f8f8f9">
+            <div class="d-flex p-3 px-lg-5 flex-column gap-4 mb-3">
+              <div>
+                <div class="fw-bold mb-2">Login details</div>
+                <div class="subtitle-section text-secondary">Your email is :</div>
+              </div>
+              <div>
+                <div class="fw-bold mb-2">info@username.com</div>
+                <div class="subtitle-section text-secondary">
+                  <button style="border-color: #f21a5d" type="button" class="btn btn-outline-danger me-3" data-bs-toggle="modal" data-bs-target="#changeEmail">Change Email</button>
+                  <button style="border-color: #f21a5d" type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#changePassword">Change Password</button>
+                </div>
+              </div>
+              <hr class="col-12 mx-auto" />
+              <div>
+                <div class="fw-bold mb-2">Language</div>
+                <div class="subtitle-section text-secondary">Your account language is currently:</div>
+                <button style="border-color: #f21a5d" type="button" class="btn btn-outline-danger mt-2 dropdown-toggle d-flex justify-content-between align-items-center col-2" data-bs-toggle="dropdown" aria-expanded="false">English</button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Bahasa Indonesia</a></li>
+                  <li><a class="dropdown-item" href="#">Arabic</a></li>
+                  <li><a class="dropdown-item" href="#">China</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 rounded pe-3" style="height: min-content">
+            <div style="background-color: #f5dde7" class="text-center pay-safe p-3 d-flex flex-column justify-content-center align-items-center">
+              <img src="../assets/img/icon/pay-safe.png" width= "120px"; height="32px;"" alt="" />
+              <img src="../assets/img/Preview10005.png" width="200px" height="200px" alt="" />
+              <div class="fw-bold my-2 pay-safe-title">Paysafe is coming!</div>
+              <div class="pay-safe-subtitle">We are working on Paysafe Payment Method and will launch it very soon. Stay tuned!</div>
+            </div>
+          </div>
+        </div>
+        <!-- Communications Content -->
+        <div id="communication-section" class="d-flex flex-column flex-lg-row gap-3 px-lg-0">
+          <div class="col-lg-9 rounded p-3" style="background-color: #f8f8f9">
+            <div class="mb-3">
+              <div class="d-flex justify-content-between p-3 px-lg-5">
+                <div>
+                  <div class="fw-bold">Product intro, tips and inspiration</div>
+                  <div class="subtitle-section text-secondary">How to make your uploads succes</div>
+                </div>
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked />
+                </div>
+              </div>
+              <hr class="col-11 mx-auto" />
+            </div>
+            <div class="mb-3">
+              <div class="d-flex justify-content-between p-3 px-lg-5">
+                <div>
+                  <div class="fw-bold">Company news</div>
+                  <div class="subtitle-section text-secondary">about zoxo and our latest features</div>
+                </div>
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked />
+                </div>
+              </div>
+              <hr class="col-11 mx-auto" />
+            </div>
+            <div class="mb-3">
+              <div class="d-flex justify-content-between p-3 px-lg-5">
+                <div>
+                  <div class="fw-bold">Coupons and announcements</div>
+                  <div class="subtitle-section text-secondary">saving your alots of money</div>
+                </div>
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked />
+                </div>
+              </div>
+              <hr class="col-11 mx-auto" />
+            </div>
+          </div>
+          <div class="col-lg-3 rounded pe-3" style="height: min-content">
+            <div style="background-color: #f5dde7" class="text-center pay-safe p-3 d-flex flex-column justify-content-center align-items-center">
+              <img src="../assets/img/icon/pay-safe.png" width= "120px"; height="32px;"" alt="" />
+              <img src="../assets/img/Preview10005.png" width="200px" height="200px" alt="" />
+              <div class="fw-bold my-2 pay-safe-title">Paysafe is coming!</div>
+              <div class="pay-safe-subtitle">We are working on Paysafe Payment Method and will launch it very soon. Stay tuned!</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Change Email Modal -->
+    <div class="modal fade" id="changeEmail" tabindex="-1" aria-labelledby="changeEmailLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" style="max-width: 600px">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-2" style="color: #000000; font-size: 24px">Change your email</div>
+            <div class="text-secondary">Weil send an email to the new address for you to confirm.</div>
+            <div class="text-secondary mb-3">Your current email is valid until then.</div>
+            <form>
+              <div class="mb-3">
+                <label for="nameCompany" class="form-label text-black-50 h6">Your new email</label>
+                <input type="email" placeholder="Username" class="form-control" id="nameCompany" aria-describedby="emailHelp" />
+              </div>
+              <div class="mb-3">
+                <label for="nameCompany" class="form-label text-black-50 h6">Your password</label>
+                <input type="email" class="form-control" id="nameCompany" aria-describedby="emailHelp" />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button style="background-color: #f4f4f4; color: #aaaaaa; border-color: #f4f4f4" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-danger">Confirm</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Change Password Modal -->
+    <div class="modal fade" id="changePassword" tabindex="-1" aria-labelledby="changePasswordLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" style="max-width: 600px">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-2" style="color: #000000; font-size: 24px">Change your Password</div>
+            <div class="text-secondary">You’ll be logged out after making the change.</div>
+            <div class="text-secondary mb-3">Use your new password to log back in.</div>
+            <form>
+              <div class="mb-3">
+                <label for="nameCompany" class="form-label text-black-50 h6">Your old password</label>
+                <input type="email" class="form-control" id="nameCompany" aria-describedby="emailHelp" />
+              </div>
+              <div class="mb-3">
+                <label for="nameCompany" class="form-label text-black-50 h6">Your new password</label>
+                <input type="email" class="form-control" id="nameCompany" aria-describedby="emailHelp" />
+              </div>
+              <div class="mb-3">
+                <label for="nameCompany" class="form-label text-black-50 h6">Your new password</label>
+                <input type="email" class="form-control" id="nameCompany" aria-describedby="emailHelp" />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button style="background-color: #f4f4f4; color: #aaaaaa; border-color: #f4f4f4" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-danger">Confirm</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Billing details Modal -->
+    <div class="modal fade" id="billingDetails" tabindex="-1" aria-labelledby="billingDetailsLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" style="max-width: 600px">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body px-3">
+            <div class="mb-2" style="color: #000000; font-size: 24px">Billing details</div>
+            <div>
+              <form>
+                <div class="mb-3">
+                  <label for="nameCompany" class="form-label text-black-50 h6">Name of company*</label>
+                  <input type="email" placeholder="Name of the company" class="form-control" id="nameCompany" aria-describedby="emailHelp" />
+                </div>
+                <div class="mb-3">
+                  <label for="nameCompany" class="form-label text-black-50 h6">Address*</label>
+                  <input
+                    type="email"
+                    placeholder="Name of the Street and Number
+                  "
+                    class="form-control"
+                    id="nameCompany"
+                    aria-describedby="emailHelp"
+                  />
+                </div>
+                <div class="mb-3 d-flex justify-content-between gap-2">
+                  <div>
+                    <label for="nameCompany" class="form-label text-black-50 h6">Postal code*</label>
+                    <input
+                      type="email"
+                      placeholder="123456
+                    "
+                      class="form-control"
+                      id="nameCompany"
+                      aria-describedby="emailHelp"
+                    />
+                  </div>
+                  <div>
+                    <label for="nameCompany" class="form-label text-black-50 h6">City*</label>
+                    <input
+                      type="email"
+                      placeholder="Frankfurt am Main
+                    "
+                      class="form-control"
+                      id="nameCompany"
+                      aria-describedby="emailHelp"
+                    />
+                  </div>
+                  <div>
+                    <label for="nameCompany" class="form-label text-black-50 h6">City*</label>
+                    <button
+                      style="border: 1px solid #e8ebee !important; padding: 6px 12px; color: #797b7e"
+                      class="bg-transparent border-1 dropdown-toggle rounded col-12 d-flex gap-3 align-items-center"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Country
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li class="dropdown-item">Indonesia</li>
+                      <li class="dropdown-item">Malaysia</li>
+                      <li class="dropdown-item">Brunei</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="nameCompany" class="form-label text-black-50 h6">VAT Number*</label>
+                  <input
+                    type="email"
+                    placeholder="DE - 12345678
+                  "
+                    class="form-control"
+                    id="nameCompany"
+                    aria-describedby="emailHelp"
+                  />
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button style="background-color: #f4f4f4; color: #aaaaaa; border-color: #f4f4f4" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-danger">Confirm</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Payment Method Modal -->
+    <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" style="max-width: 600px">
+        <div class="modal-content px-3 mx-auto">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div id="my-saldo"><b>Saldo Saya : Rp 2.000.000</b></div>
+            <div class="mb-2" style="color: #000000; font-size: 24px">Payment Method</div>
+            <div class="d-flex gap-2 mb-3">
+              <button id="master-card" onclick="handleMasterCard()" class="border-0 py-2 px-3 rounded method-button"><img src="../assets/img/icon/master-card.png" width="45" alt="" /></button>
+              <button id="visa" onclick="handleVisa()" class="border-0 py-2 px-3 rounded method-button"><img src="../assets/img/icon/visa.png" width="75" height="24" alt="" /></button>
+              <button id="paypal" onclick="handlePaypal()" class="border-0 py-2 px-3 rounded method-button"><img src="../assets/img/icon/paypal.png" width="90" height="24" alt="" /></button>
+              <button id="paysafe" onclick="handlePaysafe()" class="border-0 py-2 px-3 rounded method-button d-none"><img src="../assets/img/icon/paysafe.png" width="86" height="21" alt="" /></button>
+            </div>
+            <div id="bottom-payment-section">
+              <div class="mb-3">
+                <label for="nameCompany" class="form-label text-black-50 h6">Name on card*</label>
+                <input
+                  type="email"
+                  placeholder="Name on card
+                  "
+                  class="form-control"
+                  id="nameCompany"
+                  aria-describedby="emailHelp"
+                />
+              </div>
+              <div class="mb-3 position-relative">
+                <label for="nameCompany" class="form-label text-black-50 h6">Card number*</label>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="fas fa-credit-card"></i></span>
+                  <input type="email" placeholder="Card number" class="form-control" id="nameCompany" aria-describedby="emailHelp" />
+                  <span class="input-group-text">MM / YY CVC</span>
+                </div>
+              </div>
+            </div>
+            <div id="bottom-paypal-section" class="justify-content-between align-items-center my-5 col-12">
+              <div class="d-flex flex-column col-9 gap-3">
+                <div style="font-size: 13px" class="text-secondary">You will be redirected to the secure (SSL) pages of PayPal. Here you will be able to complete the Paypal payment for your order.</div>
+                <div style="font-size: 14px">Remember my PayPal information for the next time I order.</div>
+              </div>
+              <div class="form-check form-switch p-3 px-lg-0 col-3 d-lg-flex justify-content-end">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked />
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button style="background-color: #f4f4f4; color: #aaaaaa; border-color: #f4f4f4" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-danger">Confirm</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- See More Modal -->
+    <div class="modal fade" id="seeMoreModal" tabindex="5" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="col-12 mx-auto text-start">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="h6 text-secondary fw-semibold my-3">Please make you storage below 4 gb</div>
+                <div class="fw-bold">Max Size : 3,98 GB</div>
+              </div>
+              <table class="table table-responsive-sm">
+                <thead>
+                  <tr>
+                    <th class="text-secondary fw-light">Name</th>
+                    <th style="width: 36px" class="text-secondary fw-light">Size</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr></tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr></tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr></tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr></tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-ifno" data-bs-dismiss="modal">Close</button>
+              <button type="button" style="background-color: #f22967" class="btn btn-danger">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- See More Modal -->
+    <div class="modal fade" id="seeMoreModalTable" tabindex="5" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="col-12 mx-auto text-start">
+              <div class="h6 text-secondary fw-semibold my-3">Uploaded Files :</div>
+              <table class="table table-responsive-sm">
+                <thead>
+                  <tr>
+                    <th class="text-secondary fw-light">Name</th>
+                    <th style="width: 36px" class="text-secondary fw-light">Size</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr></tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr></tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr></tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr></tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-ifno" data-bs-dismiss="modal">Close</button>
+              <button type="button" style="background-color: #f22967" class="btn btn-danger">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Change Account Modal -->
+    <div class="modal fade" id="changeAccount" tabindex="-1" aria-labelledby="changeAccountLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" style="max-width: 600px">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-2" style="color: #000000; font-size: 24px">Change account name</div>
+            <form>
+              <div style="border: 0.5px solid #707070" class="input-group mb-3">
+                <input type="text" class="form-control border-0" aria-label="Amount (to the nearest dollar)" value="Username" />
+                <div class="input-group-text bg-transparent"><i class="fa-solid fa-circle-check" style="color: #10c45b; font-size: 20px"></i></div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button style="background-color: #f4f4f4; color: #aaaaaa; border-color: #f4f4f4" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-danger">Confirm</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Delete Account Modal -->
+    <div class="modal fade" id="deleteAccount" tabindex="-1" aria-labelledby="changeAccountLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" style="max-width: 600px">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3" style="color: #000000; font-size: 24px">Are you sure ?</div>
+            <div style="font-size: 18px">You will lose all of your data</div>
+          </div>
+          <div class="modal-footer">
+            <button style="background-color: #f4f4f4; color: #aaaaaa; border-color: #f4f4f4" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-danger">Confirm</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Edit URL Modal -->
+    <div class="modal fade" id="editUrl" tabindex="-1" aria-labelledby="editUrlLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" style="max-width: 600px">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-2" style="color: #000000; font-size: 24px">Edit your URL</div>
+            <div class="d-flex align-items-center gap-4">
+              <div class="fw-bold">www.zoxxo.io/consumer/</div>
+              <div class="d-flex align-items-center">
+                <form>
+                  <div style="border: 0.5px solid #707070" class="input-group mb-3">
+                    <input type="text" class="form-control border-0" aria-label="Amount (to the nearest dollar)" value="xxxxx" />
+                    <div class="input-group-text bg-transparent"><i class="fa-solid fa-circle-check" style="color: #10c45b; font-size: 20px"></i></div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button style="background-color: #f4f4f4; color: #aaaaaa; border-color: #f4f4f4" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-danger">Confirm</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- See More Modal -->
+    <div class="modal fade" id="cancelModal" tabindex="5" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="col-12 mx-auto text-start">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="h6 text-secondary fw-semibold my-3">Please make you storage below 4 gb</div>
+                <div class="fw-bold">Max Size : 3,98 GB</div>
+              </div>
+              <table class="table table-responsive-sm">
+                <thead>
+                  <tr>
+                    <th class="text-secondary fw-light">Name</th>
+                    <th style="width: 36px" class="text-secondary fw-light">Size</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr></tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr></tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr></tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr></tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                  <tr>
+                    <td>name_of_file.jpg</td>
+                    <td>20.00MB</td>
+                    <td><button class="btn btn-close"></button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-ifno" data-bs-dismiss="modal">Close</button>
+              <button type="button" style="background-color: #f22967" class="btn btn-danger">Save changes</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>
@@ -235,12 +1165,83 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- My Script -->
   <script>
+    $("#account-section").addClass("d-none");
+    $("#plan-billing-section").addClass("d-none");
+    $("#preferences-section").addClass("d-none");
+    $("#communication-section").addClass("d-none");
+
     function handleManage() {
       window.location.href = "../manage";
     }
     function handleAds() {
       window.location.href = "../ads";
     }
+    const handleAccountSection = () => {
+      $("#account-section").removeClass("d-none");
+      $("#plan-billing-section").addClass("d-none");
+      $("#preferences-section").addClass("d-none");
+      $("#communication-section").addClass("d-none");
+      $("#dashboard-section").addClass("d-none");
+      // Sidebar css
+      $(".dashboard-sidebar").removeClass("active");
+      $(".account-sidebar").addClass("active");
+      $(".plan-sidebar").removeClass("active");
+      $(".preferences-sidebar").removeClass("active");
+      $(".communication-sidebar").removeClass("active");
+    };
+    const handlePlanBillingSection = () => {
+      $("#account-section").addClass("d-none");
+      $("#plan-billing-section").removeClass("d-none");
+      $("#preferences-section").addClass("d-none");
+      $("#communication-section").addClass("d-none");
+      $("#dashboard-section").addClass("d-none");
+      // Sidebar css
+      $(".dashboard-sidebar").removeClass("active");
+      $(".account-sidebar").removeClass("active");
+      $(".plan-sidebar").addClass("active");
+      $(".preferences-sidebar").removeClass("active");
+      $(".communication-sidebar").removeClass("active");
+    };
+    const handlePreferencesSection = () => {
+      $("#account-section").addClass("d-none");
+      $("#plan-billing-section").addClass("d-none");
+      $("#preferences-section").removeClass("d-none");
+      $("#communication-section").addClass("d-none");
+      $("#dashboard-section").addClass("d-none");
+      // Sidebar css
+      $(".dashboard-sidebar").removeClass("active");
+      $(".account-sidebar").removeClass("active");
+      $(".plan-sidebar").removeClass("active");
+      $(".preferences-sidebar").addClass("active");
+      $(".communication-sidebar").removeClass("active");
+    };
+    const handleCommunicationSection = () => {
+      $("#account-section").addClass("d-none");
+      $("#plan-billing-section").addClass("d-none");
+      $("#preferences-section").addClass("d-none");
+      $("#communication-section").removeClass("d-none");
+      $("#dashboard-section").addClass("d-none");
+      // Sidebar css
+      $(".dashboard-sidebar").removeClass("active");
+      $(".account-sidebar").removeClass("active");
+      $(".plan-sidebar").removeClass("active");
+      $(".preferences-sidebar").removeClass("active");
+      $(".communication-sidebar").addClass("active");
+    };
+    const handleDashboardSection = () => {
+      $("#account-section").addClass("d-none");
+      $("#plan-billing-section").addClass("d-none");
+      $("#preferences-section").addClass("d-none");
+      $("#communication-section").addClass("d-none");
+      $("#dashboard-section").removeClass("d-none");
+      $("#dashboard-section").removeClass("d-none");
+      // Sidebar css
+      $(".dashboard-sidebar").addClass("active");
+      $(".account-sidebar").removeClass("active");
+      $(".plan-sidebar").removeClass("active");
+      $(".preferences-sidebar").removeClass("active");
+      $(".communication-sidebar").removeClass("active");
+    };
     const handleList = () => {
       $("#grid-view").hide();
       $("#list-view").show();
@@ -249,39 +1250,31 @@
       $("#grid-button").addClass("deactive-view");
       $("#grid-button").removeClass("active-view");
     };
-    const handleGrid = () => {
-      $("#grid-view").show();
-      $("#list-view").hide();
-      $("#grid-button").removeClass("deactive-view");
-      $("#grid-button").addClass("active-view");
-      $("#list-button").addClass("deactive-view");
-      $("#list-button").removeClass("active-view");
-    };
     document.addEventListener("DOMContentLoaded", function () {
       // Data contoh untuk pencarian
       const data = [
         `
-          <a href="/box/" class="d-flex justify-content-between align-items-center mb-1 p-3 text-decoration-none text-black list-link ps-4 active">
+          <a href="#dashboard" onclick="handleDashboardSection()" class="dashboard-sidebar d-flex justify-content-between align-items-center mb-1 p-3 text-decoration-none text-black list-link ps-4 active">
           <div class="fw-normal"><i class="fa-solid fa-gauge"></i> Dashboard</div>
               </a>
             `,
         `
-          <a href="account.html" class="d-flex justify-content-between align-items-center mb-1 p-3 text-decoration-none text-black list-link ps-4">
+          <a href="#account" onclick="handleAccountSection()" class="account-sidebar d-flex justify-content-between align-items-center mb-1 p-3 text-decoration-none text-black list-link ps-4">
           <div class="fw-normal"><i class="fa-solid fa-user"></i> Account</div>
             </a>
           `,
         `
-          <a href="plan-billing.html" class="d-flex justify-content-between align-items-center mb-1 p-3 text-decoration-none text-black list-link ps-4">
+          <a href="#plan-billing" onclick="handlePlanBillingSection()" class="plan-sidebar d-flex justify-content-between align-items-center mb-1 p-3 text-decoration-none text-black list-link ps-4">
           <div class="fw-normal"><i class="fa-solid fa-money-bill"></i> Plan & Billing</div>
             </a>
           `,
         `
-          <a href="preferences.html" class="d-flex justify-content-between align-items-center mb-1 p-3 text-decoration-none text-black list-link ps-4 ">
+          <a href="#preferences" onclick="handlePreferencesSection()" class="preferences-sidebar d-flex justify-content-between align-items-center mb-1 p-3 text-decoration-none text-black list-link ps-4 ">
           <div class="fw-normal"><i class="fa-solid fa-key"></i> Preferences</div>
             </a>
           `,
         `
-          <a href="communcations.html" class="d-flex justify-content-between align-items-center mb-1 p-3 text-decoration-none text-black list-link ps-4">
+          <a href="#communcations" onclick="handleCommunicationSection()" class="communication-sidebar d-flex justify-content-between align-items-center mb-1 p-3 text-decoration-none text-black list-link ps-4">
           <div class="fw-normal"><i class="fa-solid fa-comment"></i> Communcation</div>
             </a>
           `,
