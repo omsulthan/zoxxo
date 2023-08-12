@@ -86,8 +86,19 @@
     .dropbox-container.drag-over {
       border-color: #007bff; /* Change border color when dragging over */
     }
-    @media (min-width: 2300px) {
-      .sidebar-responsive {
+    @media (min-width: 1700px) {
+      .sidebar {
+        height: 93vh;
+      }
+    }
+
+    @media (min-width: 2000px) {
+      .sidebar {
+        height: 95vh;
+      }
+    }
+    @media (min-width: 2200px) {
+      .sidebar {
         height: 96vh;
       }
     }
@@ -95,7 +106,7 @@
   <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-md bg-white sticky-top">
-      <div class="px-3 col-md-12 align-items-center d-flex justify-content-between">
+      <div style="box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);" class="px-3 py-2 col-md-12 align-items-center d-flex justify-content-between">
         <a style="color: #525253" class="navbar-brand" href="/"><img src="../assets/img/zoxxo_CLR.png" alt="Logo Zoxxo" srcset="" width="45" /><span class="ms-2">MANAGE</span></a>
         <div class="d-flex gap-2 pe-4">
           <button class="bg-transparent border-0 d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"><i class="fa-solid fa-bars"></i></button>
@@ -181,8 +192,8 @@
     </nav>
 
     <!-- Sidebar -->
-    <div class="d-flex">
-      <div style="top: 61px" class="sticky-top d-lg-flex flex-column justify-content-between col-lg-3 col-xl-2 d-none sidebar-responsive">
+    <div class="d-flex justify-content-end">
+      <div style="top: 80px; background-color: #F8F8F9;" class="fixed-top d-lg-flex flex-column justify-content-between col-lg-3 col-xl-2 d-none sidebar">
         <div>
           <!-- Desktop View -->
           <!-- Search -->
@@ -234,13 +245,13 @@
 
         <!-- Main Content -->
         <div id="grid-view">
-          <div class="d-flex flex-column flex-lg-row justify-content-lg-start align-items-lg-start">
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-5 g-4">
             <!-- First Item -->
-            <div class="d-flex flex-column gap-2 mb-3">
-              <div style="width: 15rem; height: 14rem" class="card col-9 mx-auto shadow-sm me-4">
+            <div class="col">
+              <div class="card shadow-sm">
                 <div style="background-color: #b6bf97; height: 10rem; overflow: hidden" class="text-center text-white d-flex align-items-center justify-content-center">
                   <!-- Konten Anda di sini -->
-                  <p>Name of Uploaded</p>
+                  <div class="px-5 col-10">Name of Uploaded</div>
                 </div>
                 <div class="card-body">
                   <div class="d-flex justify-content-between align-items-baseline">
@@ -258,8 +269,8 @@
               </div>
             </div>
             <!-- Second Item -->
-            <div class="d-flex flex-column gap-2 mb-3">
-              <div style="width: 15rem; height: 14rem" class="card col-9 mx-auto shadow-sm me-4">
+            <div class="col">
+              <div class="card shadow-sm">
                 <div style="background-color: #b0cde8; height: 10rem; overflow: hidden" class="text-center text-white d-flex align-items-center justify-content-center">
                   <!-- Konten Anda di sini -->
                   <p>Name of Uploaded</p>
@@ -279,6 +290,7 @@
                 </div>
               </div>
             </div>
+            <!-- Repeat the structure for the other cards -->
           </div>
         </div>
 

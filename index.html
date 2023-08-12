@@ -9,6 +9,33 @@
     <link rel="stylesheet" href="/assets/css/style.css" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <style>
+      #language-section {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Item berada dalam 1 baris dengan lebar minimum 200px */
+        gap: 8px; /* Jarak antara grid item */
+        justify-content: center; /* Untuk mengatur posisi horizontal menjadi di tengah */
+      }
+      .language-col {
+        display: inline-block;
+        position: relative;
+        padding-left: 25px; /* Lebar ikon tanda centang + jarak dari teks */
+        cursor: pointer;
+      }
+
+      .language-col.checked::before {
+        content: "\f00c"; /* Kode unicode untuk ikon tanda centang (font-awesome) */
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 20px; /* Lebar ikon tanda centang */
+        text-align: center;
+      }
+
+      .bg-hover {
+        background-color: #f0f0f0;
+      }
       .loading-spinner {
         position: relative;
         width: 60px;
@@ -499,7 +526,7 @@
       <div id="register-section" style="background-color: #f5dde7; height: 100vh; color: #535353" class="col-12 d-flex flex-column flex-lg-row-reverse align-items-center px-4 justify-content-between position-relative">
         <div style="max-width: 1600px; width: 100%" class="mx-auto d-flex flex-column flex-lg-row-reverse align-items-lg-center justify-content-between my-auto my-lg-0">
           <img class="zoxxo-post mx-auto mx-lg-0" src="assets/img/Preview10005.png" alt="Zoxxo Register Image" srcset="" />
-          <div class="d-flex flex-column flex-lg-column justify-content-lg-center justify-content-sm-start gap-5 ">
+          <div class="d-flex flex-column flex-lg-column justify-content-lg-center justify-content-sm-start gap-5">
             <div style="color: #f21a5d" class="fw-bold text-center text-lg-start title-section">We don't transfer, we deliver!</div>
             <div class="subtitle-section col-8 mx-auto mx-lg-0">
               zoxxo do not focus on ,,just doing the work", we deliver instead. We deliver your data to your destination fast, secure and easy. For managing your data, you can use our next generation file manager with workspaces
@@ -625,36 +652,9 @@
               <div class="d-flex flex-column align-items-center gap-3">
                 <img src="assets/img/zoxxo_CLR.png" alt="" width="50" />
                 <div class="fw-semibold">Choose your language</div>
-                <div class="d-flex gap-3 col-12 justify-content-around h3">
-                  <div class="">
-                    <div class="col">
-                      <a class="text-dark link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">English</a>
-                    </div>
-                    <div class="col">
-                      <a class="text-dark link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">France</a>
-                    </div>
-                    <div class="col">
-                      <a class="text-dark link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Deutch</a>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="col">
-                      <a class="text-dark link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Arabic</a>
-                    </div>
-                    <div class="col">
-                      <a class="text-dark link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Espanol</a>
-                    </div>
-                    <div class="col">
-                      <a class="text-dark link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Italiano</a>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="col">
-                      <a class="text-dark link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Netherlands</a>
-                    </div>
-                    <div class="col">
-                      <a class="text-dark link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal" href="#">Portugues</a>
-                    </div>
+                <div class="container">
+                  <div id="language-section" class="row mx-auto">
+                    <!-- Language Content -->
                   </div>
                 </div>
               </div>
@@ -802,6 +802,68 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- My Script -->
   <script>
+    const language = [
+      {
+        language: "English",
+      },
+      {
+        language: "France",
+      },
+      {
+        language: "Deutch",
+      },
+      {
+        language: "Arabic",
+      },
+      {
+        language: "Portugues",
+      },
+      {
+        language: "Espanol",
+      },
+      {
+        language: "Italiano",
+      },
+      {
+        language: "Netherlands",
+      },
+    ];
+    const languageRow = $("#language-section");
+    let selectedLanguageIndex = -1; // Tidak ada bahasa terpilih pada awalnya
+
+    language.forEach(function (item, i) {
+      const languageCol = $("<div>").addClass(`col-md-3 p-1 language-${i} m-1 language-col m-1`).attr("onclick", `handleClick(${i})`);
+      const languageLink = $("<span>").addClass(`text-dark link-offset-2 link-underline link-underline-opacity-0 h6 fw-normal py-2 px-4 language-item`).text(item.language).css("cursor", "pointer");
+
+      languageLink.appendTo(languageCol);
+      languageCol.appendTo(languageRow);
+    });
+
+    function handleClick(index) {
+      if (selectedLanguageIndex !== index) {
+        // Menghapus kelas CSS yang mengatur gaya tanda centang pada semua elemen
+        $(".language-col").removeClass("checked");
+
+        // Menambahkan kelas CSS "checked" pada elemen yang dipilih
+        $(`.language-${index}`).addClass("checked");
+
+        selectedLanguageIndex = index;
+      } else {
+        // Jika item sudah dipilih dan di-klik lagi, hapus pilihan
+        $(".language-col").removeClass("checked");
+        selectedLanguageIndex = -1; // Setel kembali ke tidak ada yang dipilih
+      }
+    }
+
+    $(`.language-item`).hover(
+      function () {
+        $(this).addClass("bg-hover");
+      },
+      function () {
+        $(this).removeClass("bg-hover");
+      }
+    );
+
     let percentage = 0;
     const loadingText = document.getElementById("loadingText");
     const spinnerContainer = document.querySelector(".loading-container");

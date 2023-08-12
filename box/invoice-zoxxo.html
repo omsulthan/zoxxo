@@ -26,10 +26,10 @@
     }
   </style>
   <body id="html">
-    <div onclick="downloadAsPDF()" class="mt-3 text-primary text-end px-3 col-lg-6 px-lg-5 mx-lg-auto">Download Invoice</div>
+    <div id="download-div" style="cursor: pointer" onclick="downloadAsPDF()" class="mt-3 text-primary text-end px-3 col-lg-6 px-lg-5 mx-lg-auto">Download Invoice</div>
     <div class="px-5 py-2 d-flex flex-column col-lg-6 mx-lg-auto">
       <div class="my-4 text-center">
-        <img src="assets/img/zoxxo_CLR.png" width="140" alt="" srcset="" />
+        <img src="../assets/img/zoxxo_CLR.png" width="140" alt="" srcset="" />
       </div>
       <div class="text-center"><b>ZOXXO - FZCO</b></div>
       <div class="text-center col-11 mx-auto mb-3">25898 - 001, IFZA Business Park, DDP Dubai, United Arab Emirates</div>
@@ -113,17 +113,24 @@
   <!-- Script -->
   <script>
     function downloadAsPDF() {
-      html2canvas(document.getElementById("html")).then(function (canvas) {
-        var imgData = canvas.toDataURL("image/png");
-        var doc = new jsPDF({
-          format: "f4", // Ubah ukuran kertas sesuai kebutuhan, misalnya 'letter', 'legal', dll.
+      // Sembunyikan div sebelum mengambil screenshot
+      const downloadDiv = document.getElementById("download-div");
+      downloadDiv.style.display = "none";
+      setTimeout(function () {
+        html2canvas(document.getElementById("html")).then(function (canvas) {
+          var imgData = canvas.toDataURL("image/png");
+          var doc = new jsPDF({
+            format: "f4", // Ubah ukuran kertas sesuai kebutuhan, misalnya 'letter', 'legal', dll.
+          });
+
+          doc.addImage(imgData, "JPG", -85, 0, 380, 200);
+
+          // Mengembalikan tampilan div setelah PDF selesai di-generate
+          downloadDiv.style.display = "block";
+          // Mengunduh file PDF
+          doc.save("invoice.pdf");
         });
-
-        doc.addImage(imgData, "PNG", -85, 0, 380, 240);
-
-        // Mengunduh file PDF
-        doc.save("invoice.pdf");
-      });
+      }, 3000);
     }
   </script>
 </html>

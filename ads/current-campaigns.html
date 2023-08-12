@@ -51,11 +51,27 @@
     .list-link:hover {
       background-color: #f5f3f3 !important;
     }
+    @media (min-width: 1700px) {
+      .sidebar {
+        height: 93vh;
+      }
+    }
+
+    @media (min-width: 2000px) {
+      .sidebar {
+        height: 95vh;
+      }
+    }
+    @media (min-width: 2200px) {
+      .sidebar {
+        height: 96vh;
+      }
+    }
   </style>
   <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-md bg-white sticky-top shadow-sm">
-      <div class="px-3 col-md-12 align-items-center d-flex justify-content-between">
+    <nav class="navbar navbar-expand-md bg-white sticky-top">
+      <div style="box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1)" class="px-3 py-2 col-md-12 align-items-center d-flex justify-content-between">
         <a style="color: #525253" class="navbar-brand" href="/"><img src="../assets/img/zoxxo_CLR.png" alt="Logo Zoxxo" srcset="" width="45" /><span class="ms-2">Ads</span></a>
         <div class="d-flex gap-2 pe-4">
           <button class="bg-transparent border-0 d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"><i class="fa-solid fa-bars"></i></button>
@@ -137,8 +153,8 @@
     </nav>
 
     <!-- Sidebar -->
-    <div class="d-flex">
-      <div style="height: 93vh; box-shadow: 0 1rem 1rem 1px rgba(0, 0, 0, 0.175) !important; top: 61px" class="sticky-top d-lg-flex flex-column justify-content-between col-lg-3 col-xl-2 d-none">
+    <div class="d-flex justify-content-end">
+      <div style="top: 80px; background-color: #f8f8f9" class="fixed-top d-lg-flex flex-column justify-content-between col-lg-3 col-xl-2 d-none sidebar">
         <div>
           <!-- Desktop View -->
           <!-- Search -->
